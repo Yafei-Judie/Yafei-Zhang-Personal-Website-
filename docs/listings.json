@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blog/maxdiff-msba-classes/index.html",
       "/blog/poisson-regression-blueprinty/index.html",
       "/blog/angrist-lavy-replication/index.html",
       "/blog/ab-testing-intuition/index.html"
