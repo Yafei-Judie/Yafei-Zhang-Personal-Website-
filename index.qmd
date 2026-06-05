@@ -1,9 +1,9 @@
 ---
 title: "Yafei Zhang"
 description: "Yafei (Judie) Zhang — Data-driven business and marketing strategist specializing in customer analytics, predictive modeling, and marketing strategy."
-image: "IMG_8940.jpg"
+image: "IMG_8862.jpg"
 open-graph:
-  image: "IMG_8940.jpg"
+  image: "IMG_8862.jpg"
 about:
   template: jolla
   links:
