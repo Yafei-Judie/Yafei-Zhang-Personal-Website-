@@ -29,6 +29,23 @@ format:
   <div class="resume-entry">
     <div class="resume-entry-header">
       <div>
+        <span class="resume-role">Merchandise Analyst</span>
+        <span class="resume-company">&mdash; PlanetArt</span>
+        <span class="resume-type">(Intern)</span>
+        <span class="resume-type">&middot; La Jolla, CA (On-site)</span>
+      </div>
+      <span class="resume-date">Jun 2026 &ndash; Present</span>
+    </div>
+    <ul>
+      <li>Priced identical bulk orders across CafePress Business and three competitors, including the setup fees, order minimums, and shipping costs rivals hide. Found CPB only looks expensive on the sticker and lands close on true cost, then recommended surfacing landed cost instead of cutting margins.</li>
+      <li>Traced the real weakness to merchandising, not the website. Star ratings and bulk pricing already existed but never showed on the browse page, so built a before-and-after demo adding star ratings, bestseller tags, and a rush option to each listing.</li>
+      <li>Audited the full corporate buying path on Personal Creations against four competitors, scored where business buyers drop off, and built a new homepage to win those buyers back as the brand moves into B2B.</li>
+    </ul>
+  </div>
+
+  <div class="resume-entry">
+    <div class="resume-entry-header">
+      <div>
         <span class="resume-role">Score Framework & Customer Experience Analytics</span>
         <span class="resume-company">&mdash; Thermo Fisher Scientific Client</span>
       </div>
