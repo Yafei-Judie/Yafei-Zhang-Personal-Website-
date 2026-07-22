@@ -1,6 +1,6 @@
 ---
 title: "Resume"
-description: "Resume of Yafei (Judie) Zhang — Experience in data analytics, marketing strategy, and business intelligence."
+description: "Resume of Yafei (Judie) Zhang. Experience in data analytics, marketing strategy, and business intelligence."
 format:
   html:
     toc: true
@@ -30,7 +30,7 @@ format:
     <div class="resume-entry-header">
       <div>
         <span class="resume-role">Merchandise Analyst</span>
-        <span class="resume-company">&mdash; PlanetArt</span>
+        <span class="resume-company">&middot; PlanetArt</span>
         <span class="resume-type">(Intern)</span>
         <span class="resume-type">&middot; La Jolla, CA (On-site)</span>
       </div>
@@ -47,7 +47,7 @@ format:
     <div class="resume-entry-header">
       <div>
         <span class="resume-role">Score Framework & Customer Experience Analytics</span>
-        <span class="resume-company">&mdash; Thermo Fisher Scientific Client</span>
+        <span class="resume-company">&middot; Thermo Fisher Scientific Client</span>
       </div>
       <span class="resume-date">Spring 2026 | In Progress</span>
     </div>
@@ -61,13 +61,13 @@ format:
     <div class="resume-entry-header">
       <div>
         <span class="resume-role">Data Marketing Analyst</span>
-        <span class="resume-company">&mdash; Levra Labs</span>
+        <span class="resume-company">&middot; Levra Labs</span>
         <span class="resume-type">(Part-Time)</span>
       </div>
       <span class="resume-date">Feb 2026 &ndash; Present</span>
     </div>
     <ul>
-      <li>Built an investor metrics workbook tracking MRR, ARR, LTV:CAC ratio, gross margin, and churn across 10 linked sheets &mdash; used by the CEO in every investor meeting.</li>
+      <li>Built an investor metrics workbook tracking MRR, ARR, LTV:CAC ratio, gross margin, and churn across 10 linked sheets. The CEO uses it in every investor meeting.</li>
       <li>Researched and profiled 15+ partnership targets across three tiers, scoring each on revenue fit, team size, and strategic alignment to prioritize outreach.</li>
       <li>Created a competitive tracker comparing client company against two funded competitors ($78M and $62M raised), with gap analysis and investor rebuttal scripts.</li>
       <li>Developed a 5-year financial model projecting revenue across three streams (subscription, transaction, commission) with auto-updating growth assumptions.</li>
@@ -78,15 +78,15 @@ format:
     <div class="resume-entry-header">
       <div>
         <span class="resume-role">Data & Strategy Analyst</span>
-        <span class="resume-company">&mdash; Hawaii DBET</span>
+        <span class="resume-company">&middot; Hawaii DBET</span>
         <span class="resume-type">(Part-Time)</span>
       </div>
       <span class="resume-date">May 2024 &ndash; Jul 2025</span>
     </div>
     <ul>
-      <li>Designed an automated, reproducible Python pipeline that analyzed 9 years of USDA Kona Coffee data (2015&ndash;2024) spanning production, yield, and pricing &mdash; replacing manual reporting, cut turnaround by 40%.</li>
+      <li>Designed an automated, reproducible Python pipeline that analyzed 9 years of USDA Kona Coffee data (2015&ndash;2024) spanning production, yield, and pricing. It replaced manual reporting and cut turnaround by 40%.</li>
       <li>Enabled stakeholders to stress-test seasonality, service level, and price sensitivity for export decision making.</li>
-      <li>Identified the structural ceiling on coffee supply &mdash; 7,000 acres, yield variance of 3,150&ndash;4,180 lbs/acre, and a 62% price run-up ($1.55&rarr;$2.51/lb) over 9 seasons &mdash; for risk framework strategy making.</li>
+      <li>Identified the structural ceiling on coffee supply: 7,000 acres, yield variance of 3,150&ndash;4,180 lbs/acre, and a 62% price run-up ($1.55&rarr;$2.51/lb) over 9 seasons. Those limits framed the risk strategy.</li>
       <li>Segmented Chinese B2B urban buyers and pressure-tested the margin resilience under disruptions, which shaped the premium positioning of export strategy's customer targeting.</li>
     </ul>
   </div>
@@ -95,13 +95,13 @@ format:
     <div class="resume-entry-header">
       <div>
         <span class="resume-role">Marketing and Content Strategist</span>
-        <span class="resume-company">&mdash; MirrorAI</span>
+        <span class="resume-company">&middot; MirrorAI</span>
         <span class="resume-type">(Part-Time)</span>
       </div>
       <span class="resume-date">Nov 2024 &ndash; Jul 2025</span>
     </div>
     <ul>
-      <li>Noticed friction in the report delivery flow and ran an A/B test that revealed 70% of customers preferred partial previews over a 3-minute wait &mdash; findings that drove a UX redesign and measurably improved user satisfaction.</li>
+      <li>Noticed friction in the report delivery flow and ran an A/B test that revealed 70% of customers preferred partial previews over a 3-minute wait. The finding drove a UX redesign and measurably improved user satisfaction.</li>
       <li>Spotted patterns in customer behavior data and partnered with Engineering and Product to weave those insights into the LLM development cycle, contributing to a 30% lift in customer retention.</li>
     </ul>
   </div>
@@ -113,7 +113,7 @@ format:
     <div class="resume-entry-header">
       <div>
         <span class="resume-role">Global Wine Market Investment & Sourcing Strategy</span>
-        <span class="resume-company">&mdash; Python (Polars), Tableau</span>
+        <span class="resume-company">&middot; Python (Polars), Tableau</span>
       </div>
       <span class="resume-date">2025</span>
     </div>
@@ -152,7 +152,7 @@ format:
     <div class="resume-entry-header">
       <div>
         <span class="resume-role">Master of Science in Business Analytics</span>
-        <span class="resume-company">&mdash; Rady School of Management, UC San Diego</span>
+        <span class="resume-company">&middot; Rady School of Management, UC San Diego</span>
       </div>
       <span class="resume-date">Dec 2026</span>
     </div>
@@ -163,7 +163,7 @@ format:
     <div class="resume-entry-header">
       <div>
         <span class="resume-role">Master of Arts in Media, Heritage, and Integrated Product Design</span>
-        <span class="resume-company">&mdash; University of Pennsylvania</span>
+        <span class="resume-company">&middot; University of Pennsylvania</span>
       </div>
       <span class="resume-date">May 2025</span>
     </div>
@@ -173,7 +173,7 @@ format:
     <div class="resume-entry-header">
       <div>
         <span class="resume-role">Bachelor of Arts in Communication</span>
-        <span class="resume-company">&mdash; University of Colorado Denver</span>
+        <span class="resume-company">&middot; University of Colorado Denver</span>
       </div>
       <span class="resume-date">May 2023</span>
     </div>
