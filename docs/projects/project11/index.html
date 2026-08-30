@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang: churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
+<meta name="dcterms.date" content="2025-12-05">
+<meta name="description" content="Negative binomial regression on CDC overdose and SAMHSA facility data across 3,081 U.S. counties, testing whether treatment access offsets the income-overdose relationship.">
 
-<title>Projects – Yafei (Judie) Zhang</title>
+<title>Opioid Overdose Vulnerability &amp; Treatment Access – Yafei (Judie) Zhang</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,24 +28,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,32 +84,32 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Projects – Yafei (Judie) Zhang">
-<meta property="og:description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang: churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
-<meta property="og:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/fraud/placeholder-ssn-spike.png">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Opioid Overdose Vulnerability &amp; Treatment Access – Yafei (Judie) Zhang">
+<meta property="og:description" content="Negative binomial regression on CDC overdose and SAMHSA facility data across 3,081 U.S. counties, testing whether treatment access offsets the income-overdose relationship.">
+<meta property="og:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/opioid/income-group-od-rate.png">
 <meta property="og:site_name" content="Yafei (Judie) Zhang">
 <meta property="og:locale" content="en_US">
-<meta property="og:image:alt" content="Bar chart showing a placeholder SSN value appearing over 16,000 times, far more than any real value">
-<meta property="og:image:height" content="352">
-<meta property="og:image:width" content="880">
-<meta name="twitter:title" content="Projects – Yafei (Judie) Zhang">
-<meta name="twitter:description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang: churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
-<meta name="twitter:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/fraud/placeholder-ssn-spike.png">
+<meta property="og:image:alt" content="Scatterplot of county overdose rate per 100,000 residents against median household income, colored by above- versus below-median income group, showing overdose rate declining as income rises">
+<meta property="og:image:height" content="690">
+<meta property="og:image:width" content="989">
+<meta name="twitter:title" content="Opioid Overdose Vulnerability &amp; Treatment Access – Yafei (Judie) Zhang">
+<meta name="twitter:description" content="Negative binomial regression on CDC overdose and SAMHSA facility data across 3,081 U.S. counties, testing whether treatment access offsets the income-overdose relationship.">
+<meta name="twitter:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/opioid/income-group-od-rate.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image:alt" content="Bar chart showing a placeholder SSN value appearing over 16,000 times, far more than any real value">
-<meta name="twitter:image-height" content="352">
-<meta name="twitter:image-width" content="880">
+<meta name="twitter:image:alt" content="Scatterplot of county overdose rate per 100,000 residents against median household income, colored by above- versus below-median income group, showing overdose rate declining as income rises">
+<meta name="twitter:image-height" content="690">
+<meta name="twitter:image-width" content="989">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Yafei (Judie) Zhang</span>
     </a>
   </div>
@@ -119,35 +120,35 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#home"> 
+    <a class="nav-link" href="../../index.html#home"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#about"> 
+    <a class="nav-link" href="../../index.html#about"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#skills"> 
+    <a class="nav-link" href="../../index.html#skills"> 
 <span class="menu-text">Skills</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#portfolio"> 
+    <a class="nav-link" href="../../index.html#portfolio"> 
 <span class="menu-text">Portfolio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#testimonials"> 
+    <a class="nav-link" href="../../index.html#testimonials"> 
 <span class="menu-text">Testimonials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#culture"> 
+    <a class="nav-link" href="../../index.html#culture"> 
 <span class="menu-text">Culture</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html"> 
+    <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">Resume</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#contact"> 
+    <a class="nav-link" href="../../index.html#contact"> 
 <span class="menu-text">Connect</span></a>
   </li>  
 </ul>
@@ -161,18 +162,34 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#problem" id="toc-problem" class="nav-link active" data-scroll-target="#problem">Problem</a></li>
+  <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach">Approach</a></li>
+  <li><a href="#key-insights" id="toc-key-insights" class="nav-link" data-scroll-target="#key-insights">Key Insights</a></li>
+  <li><a href="#tools-skills" id="toc-tools-skills" class="nav-link" data-scroll-target="#tools-skills">Tools &amp; Skills</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
-</div>
+<h1 class="title">Opioid Overdose Vulnerability &amp; Treatment Access</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Public Health Analytics</div>
+    <div class="quarto-category">Regression</div>
+    <div class="quarto-category">Data Collection</div>
+  </div>
+  </div>
 
 <div>
   <div class="description">
-    Data analytics and marketing strategy projects by Yafei (Judie) Zhang: churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.
+    Negative binomial regression on CDC overdose and SAMHSA facility data across 3,081 U.S. counties, testing whether treatment access offsets the income-overdose relationship.
   </div>
 </div>
 
@@ -180,6 +197,12 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 5, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -189,182 +212,44 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </header>
 
 
-<div id="bg-canvas" aria-hidden="true">
-  <div class="aurora-blob blob-1"></div>
-  <div class="aurora-blob blob-2"></div>
-  <div class="aurora-blob blob-3"></div>
-  <div class="aurora-blob blob-4"></div>
+<section id="problem" class="level2">
+<h2 class="anchored" data-anchor-id="problem">Problem</h2>
+<p>A two-person capstone asking: does proximity to SAMHSA-affiliated substance-abuse treatment facilities weaken the relationship between low county income and opioid overdose deaths? We built the analysis from scratch — merging CDC overdose surveillance, SAMHSA facility locations, and county-level income and unemployment data, none of which arrive pre-joined.</p>
+<p><strong>My role:</strong> the regression modeling and visualization — specifying and interpreting the negative binomial models below, including the income-stratified and clinic-access specifications.</p>
+<p><strong><a href="deck.html" target="_blank">Explore the team’s interactive site ↗</a></strong> (Tableau dashboards + the team’s shared regression writeup)</p>
+</section>
+<section id="approach" class="level2">
+<h2 class="anchored" data-anchor-id="approach">Approach</h2>
+<p>Merged CDC drug-overdose counts, SAMHSA facility locations, and county income/unemployment data on FIPS codes into a single panel of 3,081 U.S. counties (2023). Overdose counts are a skewed count outcome, so I modeled them with a <strong>negative binomial GLM</strong> (population offset) rather than OLS, and converted every coefficient to an <strong>incidence rate ratio (IRR)</strong> with 95% confidence intervals so the results read in plain terms — “X% more/less overdose risk” — instead of raw log-coefficients.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/projects/opioid/income-group-od-rate.png" class="img-fluid figure-img" alt="Scatterplot of county overdose rate per 100,000 residents against median household income, colored by above- versus below-median income group, showing overdose rate declining as income rises"></p>
+<figcaption>Overdose rate falls sharply as county income rises, with below-median-income counties (orange) clustering at the high end of the burden distribution</figcaption>
+</figure>
 </div>
-<div class="proj-intro">
-  <p>Eleven projects, ordered by the business decision each one actually changes, from the highest-stakes call down. Every chart and diagram below is pulled straight from my own analysis.</p>
+</section>
+<section id="key-insights" class="level2">
+<h2 class="anchored" data-anchor-id="key-insights">Key Insights</h2>
+<ul>
+<li><strong>Income is the strongest driver.</strong> Every $10,000 increase in median household income is associated with roughly <strong>12% lower</strong> overdose incidence, holding unemployment, opioid dispensing, and clinic access constant (IRR = 0.9999866 per dollar, p &lt; .001).</li>
+<li><strong>Unemployment moves the other way.</strong> Each 1-point increase in the unemployment rate is associated with about <strong>8.2% higher</strong> overdose incidence (IRR = 1.082, p &lt; .001).</li>
+<li><strong>Below-median-income counties carry 37% higher overdose risk</strong> than above-median counties in a simplified model isolating that gap (IRR = 1.374, p &lt; .001) — the clearest single number in the analysis.</li>
+<li><strong>Clinic density is not protective in this cross-section — and that’s the honest, harder-to-report finding.</strong> Counties with more SAMHSA-affiliated clinics per capita showed a small but statistically significant <em>increase</em> in overdose incidence (IRR = 1.006, p = .003), and a binary “has clinic access” indicator showed a non-significant effect (p = .18).</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/projects/opioid/clinic-count-vs-od-rate.png" class="img-fluid figure-img" alt="Scatterplot of SAMHSA clinic count per county against overdose rate per 100,000 residents, showing the highest overdose rates concentrated among counties with very few clinics"></p>
+<figcaption>Counties with the highest overdose rates cluster at low clinic counts — a pattern consistent with clinics being deployed in response to an existing crisis, not preventing one</figcaption>
+</figure>
 </div>
-
-<div class="proj-filters">
-  <button class="proj-filter active" data-filter="all">Show all</button>
-  <button class="proj-filter" data-filter="bi">Business Intelligence</button>
-  <button class="proj-filter" data-filter="sql">SQL &amp; Data Engineering</button>
-  <button class="proj-filter" data-filter="ml">Machine Learning</button>
-  <button class="proj-filter" data-filter="pm">Product Management</button>
-  <button class="proj-filter" data-filter="marketing">Marketing Analytics</button>
-  <button class="proj-filter" data-filter="ops">Operations</button>
-  <button class="proj-filter" data-filter="exp">Experimentation</button>
-</div>
-
-<div class="proj-grid">
-
-  <a class="proj-card" href="projects/project9/index.html" data-cats="ml">
-    <div class="proj-card-img">
-      <span class="proj-badge">$317M/yr savings</span>
-      <img src="images/projects/fraud/placeholder-ssn-spike.png" alt="Bar chart showing a placeholder SSN value appearing over 16,000 times, far more than any real value">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Machine Learning · Fraud Detection</span>
-      <h3 class="anchored">Application Identity Fraud Detection</h3>
-      <p>1,841 engineered velocity features on 1M applications, an insight about placeholder SSNs faking identity links, and a LightGBM model that catches 59% of fraud reviewing just 3% of cases.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project8/index.html" data-cats="sql ml pm marketing">
-    <div class="proj-card-img">
-      <span class="proj-badge">$565K value at risk</span>
-      <img src="images/projects/ecommerce/delay-vs-review.png" alt="Delivery timing versus average review score chart">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">SQL · Machine Learning · Product Management</span>
-      <h3 class="anchored">E-Commerce Customer Journey: SQL, Churn &amp; CLV</h3>
-      <p>8 SQL queries + a churn/CLV model on real GA4, Olist, and UK retail data, pressure-tested against its own critique before shipping a PRD. Public repo + live embedded dashboard.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project2/index.html" data-cats="bi marketing">
-    <div class="proj-card-img">
-      <span class="proj-badge">130K reviews analyzed</span>
-      <img src="images/projects/wine/dashboard-quality-price.png" alt="Global wine quality and price dashboard">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Business Intelligence · Tableau</span>
-      <h3 class="anchored">Global Wine Market Sourcing Strategy</h3>
-      <p>Built a 4-dashboard Tableau system to turn 130K wine reviews and global GDP data into a two-tier country sourcing recommendation.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project10/index.html" data-cats="bi marketing">
-    <div class="proj-card-img">
-      <span class="proj-badge">11 competitors tracked</span>
-      <img src="images/projects/vianexta/positioning-matrix.png" alt="Bubble chart mapping competitors by enterprise-vs-emerging-brand focus and point-solution-vs-end-to-end scope">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Business Intelligence · Automation</span>
-      <h3 class="anchored">Competitive Intelligence Dashboard for a Startup</h3>
-      <p>An automated Python pipeline that scans public funding and market signals for an early-stage CPG startup and renders them into a live, interactive competitive dashboard.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project7/index.html" data-cats="sql ops">
-    <div class="proj-card-img">
-      <span class="proj-badge">3 sources unified</span>
-      <img src="images/projects/sql/erd-procure-to-pay.png" alt="Procure-to-pay entity relationship diagram">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">SQL · Snowflake · ETL</span>
-      <h3 class="anchored">Multi-Source ETL Pipeline for Spend Analysis</h3>
-      <p>Built a Snowflake pipeline joining CSV, Postgres, and XML sources to catch supplier invoice-vs-quote variance at the transaction level.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project1/index.html" data-cats="ml marketing">
-    <div class="proj-card-img">
-      <span class="proj-badge">$105M impact</span>
-      <img src="images/projects/smobile/permutation-importance.png" alt="Permutation importance chart for churn drivers">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Machine Learning · CLV</span>
-      <h3 class="anchored">S-Mobile: Proactive Churn Management</h3>
-      <p>Churn model + 60-month CLV framework on 1M subscribers: two retention programs worth $105M combined, and one that loses money.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project4/index.html" data-cats="ml marketing">
-    <div class="proj-card-img">
-      <span class="proj-badge">20-25% optimal reach</span>
-      <img src="images/projects/uplift/xgboost-comparison.png" alt="Uplift versus propensity targeting comparison">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Marketing Analytics · Uplift Modeling</span>
-      <h3 class="anchored">Who to Target: Uplift Modeling</h3>
-      <p>Compared propensity vs. uplift targeting across Neural Net, Random Forest, and XGBoost to find who a campaign actually moves, versus who simply looks like a buyer.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project5/index.html" data-cats="ops">
-    <div class="proj-card-img">
-      <span class="proj-badge">$10K/yr saved</span>
-      <img src="images/projects/supplychain/total-cost-by-policy.png" alt="Inventory policy cost comparison chart">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Operations · Simulation</span>
-      <h3 class="anchored">Inventory Policy Under Supply Uncertainty</h3>
-      <p>Monte Carlo simulation across 1,000 trials found my seasonally adaptive ordering policy beats fixed and JIT policies by about $10K per location a year.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project6/index.html" data-cats="exp">
-    <div class="proj-card-img">
-      <span class="proj-badge">+29pt lift</span>
-      <img src="images/projects/abtest/click-rate-treatment-vs-control.png" alt="A/B test click rate results">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Experimentation · A/B Testing</span>
-      <h3 class="anchored">A/B Test: Landing Page Click-Through</h3>
-      <p>Randomized test lifted click-through from 34.7% to 63.9%, confirmed with OLS regression and a day-of-week heterogeneity check.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project12/index.html" data-cats="marketing ml">
-    <div class="proj-card-img">
-      <span class="proj-badge">35x profit lift</span>
-      <img src="images/projects/intuit/zip-bin-response-rate.png" alt="Bar chart of mail response rate by ZIP code bin">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Marketing Analytics · Predictive Modeling</span>
-      <h3 class="anchored">Wave-2 Mail Targeting: Logistic Regression vs. Neural Net</h3>
-      <p>Chose a 26-coefficient logistic model over a higher-scoring neural net for an auditable mail/no-mail rule projected to beat mailing everyone by 35x.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project11/index.html" data-cats="ml">
-    <div class="proj-card-img">
-      <span class="proj-badge">37% higher risk</span>
-      <img src="images/projects/opioid/income-group-od-rate.png" alt="Scatterplot of county overdose rate versus median household income by income group">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Public Health Analytics · Regression</span>
-      <h3 class="anchored">Opioid Overdose Vulnerability &amp; Treatment Access</h3>
-      <p>Negative binomial regression on 3,081 counties found below-median-income counties carry 37% higher overdose risk, and that raw clinic counts aren't the protective signal they look like.</p>
-    </div>
-  </a>
-
-</div>
-
-<script>
-(function() {
-  const buttons = document.querySelectorAll('.proj-filter');
-  const cards = document.querySelectorAll('.proj-card');
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      cards.forEach(card => {
-        const cats = card.dataset.cats.split(' ');
-        card.style.display = (filter === 'all' || cats.includes(filter)) ? '' : 'none';
-      });
-    });
-  });
-})();
-</script>
+<p>That last result is easy to misread as “clinics don’t work.” The more defensible read: this is a single cross-section, and counties experiencing a worse crisis are precisely the ones installing more clinics in response. A static regression can’t separate “clinics fail to help” from “clinics get built where the fire is already burning” — that needs panel data tracking counties before and after a clinic opens, which we flagged as the direct next step.</p>
+</section>
+<section id="tools-skills" class="level2">
+<h2 class="anchored" data-anchor-id="tools-skills">Tools &amp; Skills</h2>
+<p><code>Python</code> · <code>statsmodels (GLM, Negative Binomial)</code> · <code>Multi-Source Data Merging (FIPS)</code> · <code>Incidence Rate Ratios</code> · <code>Tableau</code> · <code>Public Health Data Interpretation</code></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <a href="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/index.html#contact" class="floating-contact" aria-label="Contact Yafei">

@@ -14,7 +14,7 @@ format:
   <div class="aurora-blob blob-4"></div>
 </div>
 <div class="proj-intro">
-  <p>Nine projects, ordered by the business decision each one actually changes, from the highest-stakes call down. Every chart and diagram below is pulled straight from my own analysis.</p>
+  <p>Eleven projects, ordered by the business decision each one actually changes, from the highest-stakes call down. Every chart and diagram below is pulled straight from my own analysis.</p>
 </div>
 
 <div class="proj-filters">
@@ -135,6 +135,30 @@ format:
       <span class="proj-card-tags">Experimentation · A/B Testing</span>
       <h3>A/B Test: Landing Page Click-Through</h3>
       <p>Randomized test lifted click-through from 34.7% to 63.9%, confirmed with OLS regression and a day-of-week heterogeneity check.</p>
+    </div>
+  </a>
+
+  <a class="proj-card" href="projects/project12/index.html" data-cats="marketing ml">
+    <div class="proj-card-img">
+      <span class="proj-badge">35x profit lift</span>
+      <img src="images/projects/intuit/zip-bin-response-rate.png" alt="Bar chart of mail response rate by ZIP code bin">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">Marketing Analytics · Predictive Modeling</span>
+      <h3>Wave-2 Mail Targeting: Logistic Regression vs. Neural Net</h3>
+      <p>Chose a 26-coefficient logistic model over a higher-scoring neural net for an auditable mail/no-mail rule projected to beat mailing everyone by 35x.</p>
+    </div>
+  </a>
+
+  <a class="proj-card" href="projects/project11/index.html" data-cats="ml">
+    <div class="proj-card-img">
+      <span class="proj-badge">37% higher risk</span>
+      <img src="images/projects/opioid/income-group-od-rate.png" alt="Scatterplot of county overdose rate versus median household income by income group">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">Public Health Analytics · Regression</span>
+      <h3>Opioid Overdose Vulnerability &amp; Treatment Access</h3>
+      <p>Negative binomial regression on 3,081 counties found below-median-income counties carry 37% higher overdose risk, and that raw clinic counts aren't the protective signal they look like.</p>
     </div>
   </a>
 
