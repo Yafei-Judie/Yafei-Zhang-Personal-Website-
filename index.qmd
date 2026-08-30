@@ -9,6 +9,8 @@ about:
 format:
   html:
     toc: false
+    resources:
+      - files/sophia-sunjara-recommendation-letter.pdf
 ---
 
 ```{=html}
@@ -202,11 +204,12 @@ I turn messy data into decisions companies actually act on: churn models that fl
   <h2 class="art-section-label home-section-label">Testimonials</h2>
 
   <div class="testimonial-grid">
-    <div class="testimonial-card">
+    <a class="testimonial-card testimonial-card-link" href="files/sophia-sunjara-recommendation-letter.pdf" target="_blank" rel="noopener">
       <span class="testimonial-mark">&ldquo;</span>
       <p class="testimonial-quote">What sets Yafei apart is a rare combination of analytical rigor and creativity. When faced with a challenge, she never simply flagged it. Yafei came to the table with well-thought-out options and a recommendation.</p>
       <p class="testimonial-attribution"><strong>Sophia Sunjara</strong> &middot; Director, Merchandising, PlanetArt</p>
-    </div>
+      <span class="testimonial-read-more">Read the full letter &rarr;</span>
+    </a>
     <div class="testimonial-card">
       <span class="testimonial-mark">&ldquo;</span>
       <p class="testimonial-quote">She translated complex technical findings into concise, actionable recommendations that both technical teams and business leaders could immediately understand. I would highly recommend Yafei to any organization looking for someone who can bridge analytics, data governance, and business strategy.</p>
