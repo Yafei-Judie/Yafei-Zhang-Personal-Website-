@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2025-02-10">
-<meta name="description" content="Compared a standard propensity model against uplift models across Neural Network, Random Forest, and XGBoost to find the targeting rule that maximizes incremental profit — not just response rate.">
+<meta name="description" content="Compared a standard propensity model against uplift models across Neural Network, Random Forest, and XGBoost to find the targeting rule that maximizes incremental profit, rather than just response rate.">
 
 <title>Who to Target: Uplift Modeling for a Marketing Campaign – Yafei (Judie) Zhang</title>
 <style>
@@ -86,7 +86,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Who to Target: Uplift Modeling for a Marketing Campaign – Yafei (Judie) Zhang">
-<meta property="og:description" content="Compared a standard propensity model against uplift models across Neural Network, Random Forest, and XGBoost to find the targeting rule that maximizes incremental profit — not just response rate.">
+<meta property="og:description" content="Compared a standard propensity model against uplift models across Neural Network, Random Forest, and XGBoost to find the targeting rule that maximizes incremental profit, rather than just response rate.">
 <meta property="og:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/uplift/uplift-targeting.png">
 <meta property="og:site_name" content="Yafei (Judie) Zhang">
 <meta property="og:locale" content="en_US">
@@ -94,7 +94,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <meta property="og:image:height" content="960">
 <meta property="og:image:width" content="1280">
 <meta name="twitter:title" content="Who to Target: Uplift Modeling for a Marketing Campaign – Yafei (Judie) Zhang">
-<meta name="twitter:description" content="Compared a standard propensity model against uplift models across Neural Network, Random Forest, and XGBoost to find the targeting rule that maximizes incremental profit — not just response rate.">
+<meta name="twitter:description" content="Compared a standard propensity model against uplift models across Neural Network, Random Forest, and XGBoost to find the targeting rule that maximizes incremental profit, rather than just response rate.">
 <meta name="twitter:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/uplift/uplift-targeting.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image:alt" content="Line chart of incremental profit versus percentage of population targeted, peaking around 20-25%">
@@ -187,7 +187,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    Compared a standard propensity model against uplift models across Neural Network, Random Forest, and XGBoost to find the targeting rule that maximizes incremental profit — not just response rate.
+    Compared a standard propensity model against uplift models across Neural Network, Random Forest, and XGBoost to find the targeting rule that maximizes incremental profit, rather than just response rate.
   </div>
 </div>
 
@@ -212,11 +212,11 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <section id="the-business-problem" class="level2">
 <h2 class="anchored" data-anchor-id="the-business-problem">The Business Problem</h2>
-<p>A standard marketing model asks “who is most likely to respond?” — but that includes customers who would have bought anyway. The more useful question is “who will respond <strong>because of</strong> the campaign?” Sending an offer to someone who was buying regardless just gives away margin. This project compares both approaches on the same customer base to see how much profit is actually left on the table by targeting on response propensity instead of incremental impact.</p>
+<p>A standard marketing model asks “who is most likely to respond?” That includes customers who would have bought anyway. The more useful question is “who will respond <strong>because of</strong> the campaign?” Sending an offer to someone who was buying regardless just gives away margin. This project compares both approaches on the same customer base to see how much profit is actually left on the table by targeting on response propensity instead of incremental impact.</p>
 </section>
 <section id="approach" class="level2">
 <h2 class="anchored" data-anchor-id="approach">Approach</h2>
-<p>I built a standard <strong>propensity model</strong> (predicts response probability directly) as the baseline, then built <strong>uplift models</strong> — trained to predict the <em>difference</em> in response between treated and untreated customers — across three algorithms: Neural Network, Random Forest, and XGBoost. For each model, I ranked customers by their score and simulated incremental profit at every targeting depth from 0% to 100% of the population.</p>
+<p>I built a standard <strong>propensity model</strong> (predicts response probability directly) as the baseline, then built <strong>uplift models</strong>, trained to predict the <em>difference</em> in response between treated and untreated customers, across three algorithms: Neural Network, Random Forest, and XGBoost. For each model, I ranked customers by their score and simulated incremental profit at every targeting depth from 0% to 100% of the population.</p>
 </section>
 <section id="the-targeting-curve" class="level2">
 <h2 class="anchored" data-anchor-id="the-targeting-curve">The Targeting Curve</h2>
@@ -230,7 +230,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </section>
 <section id="propensity-vs.-uplift-head-to-head" class="level2">
 <h2 class="anchored" data-anchor-id="propensity-vs.-uplift-head-to-head">Propensity vs.&nbsp;Uplift, Head to Head</h2>
-<p>The real test is comparing a propensity-based targeting rule against an uplift-based one on the same population. Using XGBoost for both, the uplift score identifies a <strong>higher and later-peaking profit curve</strong> — it keeps finding incrementally profitable customers well past the point where the plain propensity model turns negative:</p>
+<p>The real test is comparing a propensity-based targeting rule against an uplift-based one on the same population. Using XGBoost for both, the uplift score identifies a <strong>higher and later-peaking profit curve</strong>, and keeps finding incrementally profitable customers well past the point where the plain propensity model turns negative:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../images/projects/uplift/xgboost-comparison.png" class="img-fluid figure-img" alt="Line chart comparing incremental profit curves for XGBoost propensity-based targeting versus uplift-score-based targeting, with uplift score outperforming"></p>
@@ -240,7 +240,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </section>
 <section id="why-it-matters" class="level2">
 <h2 class="anchored" data-anchor-id="why-it-matters">Why It Matters</h2>
-<p>The gap between the two curves <em>is</em> the money a propensity-only targeting strategy leaves on the table — or overspends chasing customers who were never incremental in the first place. For a marketing or growth analytics role, this is the difference between “who looks like a buyer” and “who our spend actually moves” — the second question is the one that protects budget.</p>
+<p>The gap between the two curves <em>is</em> the money a propensity-only targeting strategy either leaves on the table or overspends chasing customers who were never incremental in the first place. For a marketing or growth analytics role, that gap is the difference between “who looks like a buyer” and “who our spend actually moves.” The second question is the one that protects budget.</p>
 </section>
 <section id="skills-used" class="level2">
 <h2 class="anchored" data-anchor-id="skills-used">Skills Used</h2>

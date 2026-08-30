@@ -1631,6 +1631,28 @@ main#quarto-document-content table tbody tr:hover {
   }
 }
 
+/* ─── Interactive Network Background (Hero) ─────────────────── */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Content above the canvas needs an opaque or near-opaque backdrop once
+   it's no longer meant to show the network (everything past the hero). */
+.home-section {
+  position: relative;
+  background: #faf8f5;
+}
+
+.quarto-about-jolla {
+  position: relative;
+}
+
 /* ─── One-Page Homepage Scroll ──────────────────────────────── */
 html {
   scroll-behavior: smooth;

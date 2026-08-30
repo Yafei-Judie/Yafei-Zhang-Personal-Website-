@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2025-03-01">
-<meta name="description" content="Monte Carlo simulation (1,000 trials x 5 years) comparing three inventory ordering policies for last-mile medication delivery under a resupply-disruption model — the seasonally adaptive policy I designed won on total cost.">
+<meta name="description" content="Monte Carlo simulation (1,000 trials x 5 years) comparing three inventory ordering policies for last-mile medication delivery under a resupply-disruption model. The seasonally adaptive policy I designed won on total cost.">
 
 <title>Inventory Policy Under Supply Uncertainty – Yafei (Judie) Zhang</title>
 <style>
@@ -86,7 +86,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Inventory Policy Under Supply Uncertainty – Yafei (Judie) Zhang">
-<meta property="og:description" content="Monte Carlo simulation (1,000 trials x 5 years) comparing three inventory ordering policies for last-mile medication delivery under a resupply-disruption model — the seasonally adaptive policy I designed won on total cost.">
+<meta property="og:description" content="Monte Carlo simulation (1,000 trials x 5 years) comparing three inventory ordering policies for last-mile medication delivery under a resupply-disruption model. The seasonally adaptive policy I designed won on total cost.">
 <meta property="og:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/supplychain/total-cost-by-policy.png">
 <meta property="og:site_name" content="Yafei (Judie) Zhang">
 <meta property="og:locale" content="en_US">
@@ -94,7 +94,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <meta property="og:image:height" content="1000">
 <meta property="og:image:width" content="1600">
 <meta name="twitter:title" content="Inventory Policy Under Supply Uncertainty – Yafei (Judie) Zhang">
-<meta name="twitter:description" content="Monte Carlo simulation (1,000 trials x 5 years) comparing three inventory ordering policies for last-mile medication delivery under a resupply-disruption model — the seasonally adaptive policy I designed won on total cost.">
+<meta name="twitter:description" content="Monte Carlo simulation (1,000 trials x 5 years) comparing three inventory ordering policies for last-mile medication delivery under a resupply-disruption model. The seasonally adaptive policy I designed won on total cost.">
 <meta name="twitter:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/supplychain/total-cost-by-policy.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image:alt" content="Bar chart showing average total cost over 5 years: Seasonal Order-Up-To $50,653, Fixed Conservative $56,297, Just-In-Time $82,462">
@@ -187,7 +187,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    Monte Carlo simulation (1,000 trials x 5 years) comparing three inventory ordering policies for last-mile medication delivery under a resupply-disruption model — the seasonally adaptive policy I designed won on total cost.
+    Monte Carlo simulation (1,000 trials x 5 years) comparing three inventory ordering policies for last-mile medication delivery under a resupply-disruption model. The seasonally adaptive policy I designed won on total cost.
   </div>
 </div>
 
@@ -212,20 +212,20 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <section id="the-business-problem" class="level2">
 <h2 class="anchored" data-anchor-id="the-business-problem">The Business Problem</h2>
-<p>Last-mile medication delivery can’t run out of stock, but holding too much inventory is expensive too. The real challenge is deciding how to order when resupply routes themselves are unreliable — and unreliability varies by season. I modeled this as a policy-comparison problem: given the same disruption risk, which ordering rule costs the least over time?</p>
+<p>Last-mile medication delivery can’t run out of stock, but holding too much inventory is expensive too. The real challenge is deciding how to order when resupply routes themselves are unreliable, and unreliability varies by season. I modeled this as a policy-comparison problem: given the same disruption risk, which ordering rule costs the least over time?</p>
 </section>
 <section id="approach" class="level2">
 <h2 class="anchored" data-anchor-id="approach">Approach</h2>
-<p>I built a <strong>Monte Carlo simulation</strong> — 1,000 independent trials over a 5-year (60-month) horizon — with a two-state Markov model governing whether resupply routes were “on” or “off” in a given month, with season-dependent transition probabilities. Against that disruption model, I compared three ordering policies:</p>
+<p>I built a <strong>Monte Carlo simulation</strong> (1,000 independent trials over a 5-year, 60-month horizon) with a two-state Markov model governing whether resupply routes were “on” or “off” in a given month, with season-dependent transition probabilities. Against that disruption model, I compared three ordering policies:</p>
 <ul>
-<li><strong>Seasonal Order-Up-To</strong> (my design) — adapts order quantity to the season’s disruption risk</li>
-<li><strong>Fixed Conservative</strong> — a flat, always-cautious order-up-to level</li>
-<li><strong>Just-In-Time (JIT)</strong> — lean ordering, minimal buffer stock</li>
+<li><strong>Seasonal Order-Up-To</strong> (my design): adapts order quantity to the season’s disruption risk</li>
+<li><strong>Fixed Conservative</strong>: a flat, always-cautious order-up-to level</li>
+<li><strong>Just-In-Time (JIT)</strong>: lean ordering, minimal buffer stock</li>
 </ul>
 </section>
 <section id="result-the-adaptive-policy-wins-on-total-cost" class="level2">
 <h2 class="anchored" data-anchor-id="result-the-adaptive-policy-wins-on-total-cost">Result: the Adaptive Policy Wins on Total Cost</h2>
-<p>Across all 1,000 trials, the seasonally adaptive policy produced the lowest average total cost — about <strong>$10,131 per location per year</strong> cheaper than the fixed conservative benchmark, and far cheaper than JIT:</p>
+<p>Across all 1,000 trials, the seasonally adaptive policy produced the lowest average total cost, about <strong>$10,131 per location per year</strong> cheaper than the fixed conservative benchmark, and far cheaper than JIT:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../images/projects/supplychain/total-cost-by-policy.png" class="img-fluid figure-img" alt="Bar chart showing average total cost over 5 years: Seasonal Order-Up-To $50,653, Fixed Conservative $56,297, Just-In-Time $82,462"></p>
@@ -235,14 +235,14 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </section>
 <section id="where-the-savings-actually-come-from" class="level2">
 <h2 class="anchored" data-anchor-id="where-the-savings-actually-come-from">Where the Savings Actually Come From</h2>
-<p>Breaking total cost into its components shows the trade-off clearly: the adaptive policy accepts modestly higher <strong>holding cost</strong> in exchange for a much larger cut in expensive <strong>emergency deliveries</strong> — every extra dollar spent on holding inventory saved roughly $2.33 in avoided emergency shipments.</p>
+<p>Breaking total cost into its components shows the trade-off clearly: the adaptive policy accepts modestly higher <strong>holding cost</strong> in exchange for a much larger cut in expensive <strong>emergency deliveries</strong>. Every extra dollar spent on holding inventory saved roughly $2.33 in avoided emergency shipments.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../images/projects/supplychain/cost-breakdown.png" class="img-fluid figure-img" alt="Stacked bar chart breaking down total cost into holding, ordering, and emergency components for each policy"></p>
 <figcaption>Cost breakdown by component: holding, ordering, and emergency delivery</figcaption>
 </figure>
 </div>
-<p>The adaptive policy is also the most <strong>predictable</strong> one — lower cost variability across trials means fewer expensive surprise months, which matters as much to a budget-owner as the average itself:</p>
+<p>The adaptive policy is also the most <strong>predictable</strong> one: lower cost variability across trials means fewer expensive surprise months, which matters as much to a budget-owner as the average itself.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -266,7 +266,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </section>
 <section id="why-it-matters" class="level2">
 <h2 class="anchored" data-anchor-id="why-it-matters">Why It Matters</h2>
-<p>This is a prioritization decision, not just a simulation exercise: given a fixed budget, which policy do you actually recommend to the business? I ran a full sensitivity analysis on each cost and probability assumption before packaging the result as a management-facing recommendation — the kind of trade-off-driven, quantified case a business or product analytics role is expected to make.</p>
+<p>This is a prioritization decision as much as a simulation exercise: given a fixed budget, which policy do you actually recommend to the business? I ran a full sensitivity analysis on each cost and probability assumption before packaging the result as a management-facing recommendation, the kind of trade-off-driven, quantified case a business or product analytics role is expected to make.</p>
 </section>
 <section id="skills-used" class="level2">
 <h2 class="anchored" data-anchor-id="skills-used">Skills Used</h2>

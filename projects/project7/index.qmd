@@ -7,7 +7,7 @@ categories: [SQL, Data Engineering, Snowflake, Operations]
 
 ## The Business Question
 
-Every purchase order carries an expected price. Every supplier invoice carries what actually got billed. When those two numbers drift apart across thousands of orders, nobody notices row by row — it shows up as margin leakage a quarter later. This project (a team assignment; my role was building and owning the pipeline) set out to make that drift visible at the transaction level, automatically, instead of after the fact.
+Every purchase order carries an expected price. Every supplier invoice carries what actually got billed. When those two numbers drift apart across thousands of orders, nobody notices row by row; it shows up as margin leakage a quarter later. This project (a team assignment; my role was building and owning the pipeline) set out to make that drift visible at the transaction level, automatically, instead of after the fact.
 
 ## The Data Problem
 
@@ -15,13 +15,13 @@ The inputs didn't live in one place or one format: monthly purchase-order extrac
 
 ## Data Model
 
-I mapped the underlying Procure-to-Pay structure — suppliers, purchase orders, receiving reports, and supplier invoices — before writing a single COPY statement, since a bad join here silently corrupts the variance calculation downstream:
+I mapped the underlying Procure-to-Pay structure, suppliers, purchase orders, receiving reports, and supplier invoices, before writing a single COPY statement, since a bad join here silently corrupts the variance calculation downstream:
 
-![Procure-to-Pay entity relationship diagram — suppliers, purchase orders, receiving reports, and invoices](../../images/projects/sql/erd-procure-to-pay.png){fig-alt="Entity relationship diagram showing Supplier, SupplierLocation, PurchaseOrderHeader, PurchaseOrderLine, ReceivingReportHeader, ReceivingReportLine, and SupplierInvoice tables with their keys and relationships"}
+![Procure-to-Pay entity relationship diagram: suppliers, purchase orders, receiving reports, and invoices](../../images/projects/sql/erd-procure-to-pay.png){fig-alt="Entity relationship diagram showing Supplier, SupplierLocation, PurchaseOrderHeader, PurchaseOrderLine, ReceivingReportHeader, ReceivingReportLine, and SupplierInvoice tables with their keys and relationships"}
 
 ## Pipeline
 
-I built a Python-orchestrated pipeline (`pipeline_runner.py`) that: exports the Postgres invoice table to CSV, stages all three source formats into Snowflake internal stages, `COPY INTO`s them into raw tables with tolerant staging (numeric and date fields loaded as text first, then normalized — messy real-world CSVs break strict-typed loads), normalizes order dates into a consistent format, and geocodes supplier ZIP codes against the ZCTA gazetteer using `TO_GEOGRAPHY` for spatial joins.
+I built a Python-orchestrated pipeline (`pipeline_runner.py`) that exports the Postgres invoice table to CSV, stages all three source formats into Snowflake internal stages, `COPY INTO`s them into raw tables with tolerant staging (numeric and date fields loaded as text first, then normalized, since messy real-world CSVs break strict-typed loads), normalizes order dates into a consistent format, and geocodes supplier ZIP codes against the ZCTA gazetteer using `TO_GEOGRAPHY` for spatial joins.
 
 On top of the raw tables, I layered views that total purchase-order amounts, aggregate invoice line items per order, and finally join the two:
 
@@ -38,11 +38,11 @@ from v_po_amounts p
 join inv_ex on inv_ex.purchaseorderid = p.purchaseorderid;
 ```
 
-`invoiced_vs_quoted` is the column the whole pipeline exists to produce — a per-order variance that can be sorted, thresholded, and handed to a procurement team as an exception list instead of a full re-audit.
+`invoiced_vs_quoted` is the column the whole pipeline exists to produce: a per-order variance that can be sorted, thresholded, and handed to a procurement team as an exception list instead of a full re-audit.
 
 ## Why It Matters
 
-This is the unglamorous half of analytics that most portfolios skip: before you can build a dashboard or a model, the data has to actually be trustworthy and joinable. Tolerant staging, explicit normalization steps, and verification queries against `COPY_HISTORY` were as important to getting a correct answer here as the final variance formula — and it's exactly the kind of pipeline work a business or data analyst role expects you to be comfortable owning, not just consuming.
+This is the unglamorous half of analytics that most portfolios skip: before you can build a dashboard or a model, the data has to actually be trustworthy and joinable. Tolerant staging, explicit normalization steps, and verification queries against `COPY_HISTORY` were as important to getting a correct answer here as the final variance formula, and this is exactly the kind of pipeline work a business or data analyst role expects you to be comfortable owning yourself, not just consuming secondhand.
 
 ## Skills Used
 

@@ -1,6 +1,6 @@
 ---
 title: "More About Me"
-description: "Yafei (Judie) Zhang beyond the spreadsheet — a graduate background in museum heritage and design at UPenn, and photography along the California coast."
+description: "Yafei (Judie) Zhang beyond the spreadsheet: a graduate background in museum heritage and design at UPenn, and photography along the California coast."
 format:
   html:
     toc: false
@@ -9,7 +9,7 @@ format:
 ```{=html}
 <div class="art-page">
 
-  <!-- ═══ Hero image — museum atrium ═══ -->
+  <!-- ═══ Hero image: museum atrium ═══ -->
   <div class="art-hero-image">
     <img src="art .JPG" alt="Suspended sculptural installations in a museum atrium with iridescent digital murals">
     <div class="art-hero-overlay">
@@ -23,7 +23,7 @@ format:
       <span class="art-divider-diamond"></span>
     </div>
     <p>
-      Before I found my path in analytics, I fell in love with museums — the way
+      Before I found my path in analytics, I fell in love with museums, the way
       a single artifact can collapse centuries into a moment of understanding.
       My graduate work at the <strong>University of Pennsylvania</strong> in
       <em>Media, Heritage, and Integrated Product Design</em> taught me to see
@@ -38,24 +38,24 @@ format:
       <div class="art-frame">
         <img src="art2.JPG" alt="Yafei Zhang at a sculpted garden landscape">
       </div>
-      <span class="art-caption">At the garden labyrinth — where landscape becomes language</span>
+      <span class="art-caption">At the garden labyrinth: where landscape becomes language</span>
     </div>
     <div class="art-split-text">
       <h2 class="art-section-label">The Artist's Eye</h2>
       <p>
-        I believe the best design disappears. It doesn't announce itself —
-        it makes you <em>feel</em> something before you understand why.
+        I believe the best design disappears. It doesn't announce itself.
+        It makes you <em>feel</em> something before you understand why.
         A spiral hedge is not just topiary; it is a meditation on patience.
         A suspended sculpture is not decoration; it is gravity, reimagined.
       </p>
       <p>
         This is what I carry into every project: the instinct that beauty
-        and rigor are not opposites — they are collaborators.
+        and rigor work together rather than against each other.
       </p>
     </div>
   </div>
 
-  <!-- ═══ Reading desk — full bleed ═══ -->
+  <!-- ═══ Reading desk: full bleed ═══ -->
   <div class="art-reading">
     <div class="art-reading-content">
       <h2 class="art-section-label">The Reading Table</h2>
@@ -89,12 +89,12 @@ format:
       <div class="art-pillar">
         <div class="art-pillar-number">02</div>
         <h4>Material & Memory</h4>
-        <p>Objects are not static — they carry the weight of the hands that made them, the journeys they've traveled, and the meanings communities have given them.</p>
+        <p>Objects carry the weight of the hands that made them, the journeys they've traveled, and the meanings communities have given them.</p>
       </div>
       <div class="art-pillar">
         <div class="art-pillar-number">03</div>
         <h4>Spatial Storytelling</h4>
-        <p>The gallery is a language. Light, distance, sequence, and silence — each element shapes how a visitor moves through understanding.</p>
+        <p>The gallery is a language. Light, distance, sequence, and silence: each element shapes how a visitor moves through understanding.</p>
       </div>
     </div>
   </div>
@@ -107,8 +107,8 @@ format:
         <h3 class="art-featured-title">Project Overview Portfolio</h3>
         <p class="art-featured-desc">
           A curated portfolio of heritage design work exploring museum exhibition
-          concepts, cultural artifact interpretation, and integrated product design
-          — developed during my graduate studies at UPenn's Weitzman School of Design.
+          concepts, cultural artifact interpretation, and integrated product design,
+          developed during my graduate studies at UPenn's Weitzman School of Design.
         </p>
         <div class="art-featured-details">
           <div class="art-detail">
@@ -132,11 +132,11 @@ format:
     </div>
   </div>
 
-  <!-- ═══ Closing — Pullquote ═══ -->
+  <!-- ═══ Closing: Pullquote ═══ -->
   <div class="art-pullquote">
     <div class="art-pullquote-inner">
       <span class="art-pullquote-mark">&ldquo;</span>
-      <p class="art-pullquote-text">This work shaped how I see data today — not as numbers on a screen, but as <em>stories waiting for the right frame.</em></p>
+      <p class="art-pullquote-text">This work shaped how I see data today: less a column of numbers, more <em>a story waiting for the right frame.</em></p>
       <p class="art-pullquote-text art-pullquote-second">
         Heritage taught me that context is everything.<br>
         <strong>Analytics lets me prove it.</strong>
@@ -161,7 +161,7 @@ format:
   <div class="art-divider"><div class="art-divider-diamond"></div></div>
 
   <div class="lens-intro">
-    <p>Photography is how I pause. Between data models and strategy decks, I chase golden hours along the California coast — drawn to the fleeting moments where light, water, and life converge. These are some of those moments.</p>
+    <p>Photography is how I pause. Between data models and strategy decks, I chase golden hours along the California coast, drawn to the fleeting moments where light, water, and life converge. These are some of those moments.</p>
   </div>
 
   <!-- ── Golden Hour ── -->
@@ -169,10 +169,10 @@ format:
 
   <div class="lens-masonry">
     <div class="lens-item lens-item--tall" onclick="openLightbox(this)">
-      <img src="photo /DSC_3047.JPG" alt="Golden sunset silhouette — person walking their dog at the water's edge">
+      <img src="photo /DSC_3047.JPG" alt="Golden sunset silhouette: person walking their dog at the water's edge">
       <div class="lens-caption">
         <span class="lens-caption-title">Homeward</span>
-        <span class="lens-caption-text">A silhouette at the edge of the world — the kind of moment that makes you stop mid-step.</span>
+        <span class="lens-caption-text">A silhouette at the edge of the world, the kind of moment that makes you stop mid-step.</span>
       </div>
     </div>
     <div class="lens-item" onclick="openLightbox(this)">
@@ -186,7 +186,7 @@ format:
       <img src="photo /DSC_3077.JPG" alt="Abstract golden light refracting through ocean waves">
       <div class="lens-caption">
         <span class="lens-caption-title">Liquid Gold</span>
-        <span class="lens-caption-text">Sunlight caught inside a wave — sometimes the most beautiful things last less than a second.</span>
+        <span class="lens-caption-text">Sunlight caught inside a wave, sometimes the most beautiful things last less than a second.</span>
       </div>
     </div>
   </div>
@@ -213,7 +213,7 @@ format:
       <img src="photo /DSC_3475.JPG" alt="Huntington Beach pier at dusk with beachgoers in the foreground">
       <div class="lens-caption">
         <span class="lens-caption-title">The Pier</span>
-        <span class="lens-caption-text">Huntington Beach at dusk — where surfers, seagulls, and strangers share the same golden hour.</span>
+        <span class="lens-caption-text">Huntington Beach at dusk, where surfers, seagulls, and strangers share the same golden hour.</span>
       </div>
     </div>
   </div>
@@ -226,14 +226,14 @@ format:
       <img src="photo /DSC_3471.JPG" alt="Seagull spreading its wings with another looking on">
       <div class="lens-caption">
         <span class="lens-caption-title">Wingspan</span>
-        <span class="lens-caption-text">Caught mid-stretch — a small moment of wild grace at arm's length.</span>
+        <span class="lens-caption-text">Caught mid-stretch, a small moment of wild grace at arm's length.</span>
       </div>
     </div>
     <div class="lens-item lens-item--tall" onclick="openLightbox(this)">
       <img src="photo /DSC_2949.JPG" alt="Person wading in surf alongside sandpipers near rocky coast">
       <div class="lens-caption">
         <span class="lens-caption-title">Shared Shore</span>
-        <span class="lens-caption-text">We're all just visitors here — sandpipers, humans, and the tide.</span>
+        <span class="lens-caption-text">We're all just visitors here: sandpipers, humans, and the tide.</span>
       </div>
     </div>
     <div class="lens-item" onclick="openLightbox(this)">
@@ -249,7 +249,7 @@ format:
   <div class="art-divider"><div class="art-divider-diamond"></div></div>
 
   <div class="lens-closing">
-    <p>Every photograph is a small act of noticing — a reminder that beauty doesn't wait for us to be ready.</p>
+    <p>Every photograph is a small act of noticing, a reminder that beauty doesn't wait for us to be ready.</p>
   </div>
 
 </div>

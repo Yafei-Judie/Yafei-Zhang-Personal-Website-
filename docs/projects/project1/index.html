@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2024-12-01">
-<meta name="description" content="Built a churn early-warning model for a 1M-subscriber telecom, translated the drivers into three costed retention programs, and used a 60-month CLV framework to show two of them nets $105M combined — while flagging the third as money-losing.">
+<meta name="description" content="Built a churn early-warning model for a 1M-subscriber telecom, translated the drivers into three costed retention programs, and used a 60-month CLV framework to show two of them nets $105M combined, while flagging the third as money-losing.">
 
 <title>S-Mobile: Proactive Churn Management – Yafei (Judie) Zhang</title>
 <style>
@@ -86,7 +86,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="S-Mobile: Proactive Churn Management – Yafei (Judie) Zhang">
-<meta property="og:description" content="Built a churn early-warning model for a 1M-subscriber telecom, translated the drivers into three costed retention programs, and used a 60-month CLV framework to show two of them nets $105M combined — while flagging the third as money-losing.">
+<meta property="og:description" content="Built a churn early-warning model for a 1M-subscriber telecom, translated the drivers into three costed retention programs, and used a 60-month CLV framework to show two of them nets $105M combined, while flagging the third as money-losing.">
 <meta property="og:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/smobile/permutation-importance.png">
 <meta property="og:site_name" content="Yafei (Judie) Zhang">
 <meta property="og:locale" content="en_US">
@@ -94,7 +94,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <meta property="og:image:height" content="1680">
 <meta property="og:image:width" content="1200">
 <meta name="twitter:title" content="S-Mobile: Proactive Churn Management – Yafei (Judie) Zhang">
-<meta name="twitter:description" content="Built a churn early-warning model for a 1M-subscriber telecom, translated the drivers into three costed retention programs, and used a 60-month CLV framework to show two of them nets $105M combined — while flagging the third as money-losing.">
+<meta name="twitter:description" content="Built a churn early-warning model for a 1M-subscriber telecom, translated the drivers into three costed retention programs, and used a 60-month CLV framework to show two of them nets $105M combined, while flagging the third as money-losing.">
 <meta name="twitter:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/smobile/permutation-importance.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image:alt" content="Bar chart of permutation importance showing occupation, equipment age (eqpdays), overage, and high credit rating as the top churn drivers">
@@ -166,7 +166,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
   <li><a href="#the-business-problem" id="toc-the-business-problem" class="nav-link active" data-scroll-target="#the-business-problem">The Business Problem</a></li>
   <li><a href="#what-i-built" id="toc-what-i-built" class="nav-link" data-scroll-target="#what-i-built">What I Built</a></li>
   <li><a href="#what-actually-drives-churn" id="toc-what-actually-drives-churn" class="nav-link" data-scroll-target="#what-actually-drives-churn">What Actually Drives Churn</a></li>
-  <li><a href="#turning-drivers-into-costed-programs-and-the-dollar-impact" id="toc-turning-drivers-into-costed-programs-and-the-dollar-impact" class="nav-link" data-scroll-target="#turning-drivers-into-costed-programs-and-the-dollar-impact">Turning Drivers Into Costed Programs — and the Dollar Impact</a></li>
+  <li><a href="#turning-drivers-into-costed-programs-the-dollar-impact" id="toc-turning-drivers-into-costed-programs-the-dollar-impact" class="nav-link" data-scroll-target="#turning-drivers-into-costed-programs-the-dollar-impact">Turning Drivers Into Costed Programs: the Dollar Impact</a></li>
   <li><a href="#skills-used" id="toc-skills-used" class="nav-link" data-scroll-target="#skills-used">Skills Used</a></li>
   </ul>
 </nav>
@@ -186,7 +186,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    Built a churn early-warning model for a 1M-subscriber telecom, translated the drivers into three costed retention programs, and used a 60-month CLV framework to show two of them nets $105M combined — while flagging the third as money-losing.
+    Built a churn early-warning model for a 1M-subscriber telecom, translated the drivers into three costed retention programs, and used a 60-month CLV framework to show two of them nets $105M combined, while flagging the third as money-losing.
   </div>
 </div>
 
@@ -211,22 +211,22 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <section id="the-business-problem" class="level2">
 <h2 class="anchored" data-anchor-id="the-business-problem">The Business Problem</h2>
-<p>S-Mobile, a Singapore telecom with 1 million subscribers, was losing <strong>2% of its base every month</strong> — a rate that compounds into millions in lost recurring revenue a year. The company didn’t just need to know <em>who</em> would churn; it needed to know which interventions were actually worth paying for.</p>
+<p>S-Mobile, a Singapore telecom with 1 million subscribers, was losing <strong>2% of its base every month</strong>, a rate that compounds into millions in lost recurring revenue a year. The company didn’t just need to know <em>who</em> would churn; it needed to know which interventions were actually worth paying for.</p>
 </section>
 <section id="what-i-built" class="level2">
 <h2 class="anchored" data-anchor-id="what-i-built">What I Built</h2>
-<p>I trained a churn model on a 27,300-customer sample, using a 50% oversampling scheme with case weights (1:49) so predictions stayed calibrated to the real-world 2% churn rate. A weighted <strong>logistic regression</strong> (AUC 0.688) and a <strong>Random Forest</strong> (AUC 0.726) agreed closely on which customers were most at risk, which gave me confidence the drivers below were real signal, not noise.</p>
+<p>I trained a churn model on a 27,300-customer sample, using a 50% oversampling scheme with case weights (1:49) so predictions stayed calibrated to the real-world 2% churn rate. A weighted <strong>logistic regression</strong> (AUC 0.688) and a <strong>Random Forest</strong> (AUC 0.726) agreed closely on which customers were most at risk, which gave me confidence the drivers below were real signal rather than noise.</p>
 </section>
 <section id="what-actually-drives-churn" class="level2">
 <h2 class="anchored" data-anchor-id="what-actually-drives-churn">What Actually Drives Churn</h2>
-<p>Permutation importance on the full feature set surfaced four factors that matter far more than the rest — job/occupation type, equipment age, overage minutes, and credit standing:</p>
+<p>Permutation importance on the full feature set surfaced four factors that matter far more than the rest: job/occupation type, equipment age, overage minutes, and credit standing.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../images/projects/smobile/permutation-importance.png" class="img-fluid figure-img" alt="Bar chart of permutation importance showing occupation, equipment age (eqpdays), overage, and high credit rating as the top churn drivers"></p>
-<figcaption>Permutation Importance — which features actually move the churn prediction</figcaption>
+<figcaption>Permutation Importance: which features actually move the churn prediction</figcaption>
 </figure>
 </div>
-<p>Partial dependence plots then showed <em>how</em> each driver moves risk — customers with older handsets, heavier overage charges, and repeated customer-service contacts churn at meaningfully higher rates, together touching <strong>over 30% of the subscriber base</strong>:</p>
+<p>Partial dependence plots then showed <em>how</em> each driver moves risk. Customers with older handsets, heavier overage charges, and repeated customer-service contacts churn at meaningfully higher rates, together touching <strong>over 30% of the subscriber base</strong>:</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -248,8 +248,8 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </div>
 </div>
 </section>
-<section id="turning-drivers-into-costed-programs-and-the-dollar-impact" class="level2">
-<h2 class="anchored" data-anchor-id="turning-drivers-into-costed-programs-and-the-dollar-impact">Turning Drivers Into Costed Programs — and the Dollar Impact</h2>
+<section id="turning-drivers-into-costed-programs-the-dollar-impact" class="level2">
+<h2 class="anchored" data-anchor-id="turning-drivers-into-costed-programs-the-dollar-impact">Turning Drivers Into Costed Programs: the Dollar Impact</h2>
 <p>A driver is only useful if it changes what the business does next. I designed three retention interventions and ran each through a <strong>60-month CLV and breakeven model</strong> (40% margin, 7.44% annual discount rate), scaled to the full 1M-subscriber base:</p>
 <table class="caption-top table">
 <colgroup>
@@ -287,7 +287,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </tr>
 </tbody>
 </table>
-<p>That third result is the point of doing the math at all — the refurb-replacement idea <em>sounded</em> reasonable, but the subsidy cost more than the churn it prevented. Running the CLV numbers before committing budget kept S-Mobile from funding a program that would have lost money.</p>
+<p>That third result is the point of doing the math at all. The refurb-replacement idea <em>sounded</em> reasonable, but the subsidy cost more than the churn it prevented. Running the CLV numbers before committing budget kept S-Mobile from funding a program that would have lost money.</p>
 </section>
 <section id="skills-used" class="level2">
 <h2 class="anchored" data-anchor-id="skills-used">Skills Used</h2>

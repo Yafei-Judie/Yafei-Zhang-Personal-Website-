@@ -8,7 +8,7 @@
 
 <meta name="author" content="Yafei (Judie) Zhang">
 <meta name="dcterms.date" content="2025-04-13">
-<meta name="description" content="I ran a simulated A/B test on two newsletter CTAs — and the real lesson wasn’t which button won, but how easily intuition can mislead us without the right statistical guardrails.">
+<meta name="description" content="I ran a simulated A/B test on two newsletter CTAs, and came away with a lesson about how easily intuition can mislead us without the right statistical guardrails.">
 
 <title>What a Simple Button Taught Me About Statistical Thinking – Yafei (Judie) Zhang</title>
 <style>
@@ -151,14 +151,14 @@ window.Quarto = {
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="What a Simple Button Taught Me About Statistical Thinking – Yafei (Judie) Zhang">
-<meta property="og:description" content="I ran a simulated A/B test on two newsletter CTAs — and the real lesson wasn’t which button won, but how easily intuition can mislead us without the right statistical guardrails.">
+<meta property="og:description" content="I ran a simulated A/B test on two newsletter CTAs, and came away with a lesson about how easily intuition can mislead us without the right statistical guardrails.">
 <meta property="og:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/wine/dashboard-quality-price.png">
 <meta property="og:site_name" content="Yafei (Judie) Zhang">
 <meta property="og:locale" content="en_US">
 <meta property="og:image:height" content="953">
 <meta property="og:image:width" content="1368">
 <meta name="twitter:title" content="What a Simple Button Taught Me About Statistical Thinking – Yafei (Judie) Zhang">
-<meta name="twitter:description" content="I ran a simulated A/B test on two newsletter CTAs — and the real lesson wasn’t which button won, but how easily intuition can mislead us without the right statistical guardrails.">
+<meta name="twitter:description" content="I ran a simulated A/B test on two newsletter CTAs, and came away with a lesson about how easily intuition can mislead us without the right statistical guardrails.">
 <meta name="twitter:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/wine/dashboard-quality-price.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="953">
@@ -253,7 +253,7 @@ window.Quarto = {
 
 <div>
   <div class="description">
-    I ran a simulated A/B test on two newsletter CTAs — and the real lesson wasn’t which button won, but how easily intuition can mislead us without the right statistical guardrails.
+    I ran a simulated A/B test on two newsletter CTAs, and came away with a lesson about how easily intuition can mislead us without the right statistical guardrails.
   </div>
 </div>
 
@@ -284,20 +284,20 @@ window.Quarto = {
 
 <section id="the-question-that-started-it-all" class="level2">
 <h2 class="anchored" data-anchor-id="the-question-that-started-it-all">The Question That Started It All</h2>
-<p>During my MSBA coursework, I found myself staring at a deceptively simple question: <em>if you change the wording on a sign-up button, how do you know whether the new version is actually better — or whether you just got lucky?</em></p>
-<p>It sounds trivial. But the deeper I dug, the more I realized this tiny question sits at the heart of every data-driven marketing decision. Every product launch, every email subject line, every pricing experiment — they all come down to the same challenge: <strong>separating signal from noise.</strong></p>
-<p>So I built a simulation from scratch — not because I had to, but because I wanted to <em>feel</em> the statistics, not just compute them. Here’s what I learned.</p>
+<p>During my MSBA coursework, I found myself staring at a deceptively simple question: <em>if you change the wording on a sign-up button, how do you know whether the new version is actually better, or whether you just got lucky?</em></p>
+<p>It sounds trivial. But the deeper I dug, the more I realized this tiny question sits at the heart of every data-driven marketing decision. Every product launch, every email subject line, every pricing experiment all comes down to the same challenge: <strong>separating signal from noise.</strong></p>
+<p>So I built a simulation from scratch, because I wanted to <em>feel</em> the statistics rather than just compute them. Here’s what I learned.</p>
 </section>
 <section id="setting-the-scene" class="level2">
 <h2 class="anchored" data-anchor-id="setting-the-scene">Setting the Scene</h2>
-<p>Picture this: you run a website and your landing page has a newsletter sign-up prompt. For months you’ve used <strong>“Sign up for our newsletter here!”</strong> (CTA A). A colleague suggests trying <strong>“Stay up to date — join our list!”</strong> (CTA B). Which one actually converts better?</p>
-<p>The temptation is to just try the new one for a week and compare. But that approach is riddled with hidden traps — day-of-week effects, seasonal traffic shifts, different user segments arriving at different times. What we need is an <strong>A/B test</strong>: randomly splitting visitors so the <em>only</em> systematic difference between groups is the CTA they see.</p>
-<p>I modeled each visitor’s behavior as a coin flip — a <strong>Bernoulli trial</strong> — where the probability of signing up depends on which CTA they saw:</p>
+<p>Picture this: you run a website and your landing page has a newsletter sign-up prompt. For months you’ve used <strong>“Sign up for our newsletter here!”</strong> (CTA A). A colleague suggests trying <strong>“Stay up to date: join our list!”</strong> (CTA B). Which one actually converts better?</p>
+<p>The temptation is to just try the new one for a week and compare. But that approach is riddled with hidden traps: day-of-week effects, seasonal traffic shifts, different user segments arriving at different times. What we need is an <strong>A/B test</strong>: randomly splitting visitors so the <em>only</em> systematic difference between groups is the CTA they see.</p>
+<p>I modeled each visitor’s behavior as a coin flip, a <strong>Bernoulli trial</strong>, where the probability of signing up depends on which CTA they saw:</p>
 <p><span class="math display">\[
 \theta = \pi_A - \pi_B
 \]</span></p>
-<p>Playing the role of an omniscient simulator, I set <span class="math inline">\(\pi_A = 0.22\)</span> and <span class="math inline">\(\pi_B = 0.18\)</span> — a 4-percentage-point lift for CTA A — then generated 1,000 visitors per group.</p>
-<div id="acb498c3" class="cell" data-execution_count="1">
+<p>Playing the role of an omniscient simulator, I set <span class="math inline">\(\pi_A = 0.22\)</span> and <span class="math inline">\(\pi_B = 0.18\)</span>, a 4-percentage-point lift for CTA A, then generated 1,000 visitors per group.</p>
+<div id="e52aab0c" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -332,9 +332,9 @@ Estimated difference: 0.0380  (true value: 0.04000000000000001)</code></pre>
 </section>
 <section id="lesson-1-patience-pays-off-the-law-of-large-numbers" class="level2">
 <h2 class="anchored" data-anchor-id="lesson-1-patience-pays-off-the-law-of-large-numbers">Lesson 1: Patience Pays Off (The Law of Large Numbers)</h2>
-<p>The first thing that struck me was how <em>noisy</em> small samples are. With only a handful of visitors, the estimated difference bounced wildly — sometimes suggesting CTA B was better when we <em>know</em> it isn’t. But as the sample grew, the estimate settled down and converged toward the truth.</p>
-<p>This is the <strong>Law of Large Numbers</strong> in action — and it carries a practical lesson I think about constantly now: <strong>don’t make decisions on small data.</strong> Early results from a campaign or test can be profoundly misleading.</p>
-<div id="0fb59a9d" class="cell" data-execution_count="2">
+<p>The first thing that struck me was how <em>noisy</em> small samples are. With only a handful of visitors, the estimated difference bounced wildly, sometimes suggesting CTA B was better when we <em>know</em> it isn’t. But as the sample grew, the estimate settled down and converged toward the truth.</p>
+<p>This is the <strong>Law of Large Numbers</strong> in action, and it carries a practical lesson I think about constantly now: <strong>don’t make decisions on small data.</strong> Early results from a campaign or test can be profoundly misleading.</p>
+<div id="29bff5ed" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -347,8 +347,8 @@ Estimated difference: 0.0380  (true value: 0.04000000000000001)</code></pre>
 </section>
 <section id="lesson-2-quantifying-uncertainty-the-bootstrap" class="level2">
 <h2 class="anchored" data-anchor-id="lesson-2-quantifying-uncertainty-the-bootstrap">Lesson 2: Quantifying Uncertainty (The Bootstrap)</h2>
-<p>A point estimate is only half the story. Saying “CTA A is 4 points better” means nothing without knowing how <em>confident</em> we should be. Enter the <strong>bootstrap</strong> — a beautifully simple idea: resample your data with replacement thousands of times and see how much the estimate varies.</p>
-<div id="f0b00001" class="cell" data-execution_count="3">
+<p>A point estimate is only half the story. Saying “CTA A is 4 points better” means nothing without knowing how <em>confident</em> we should be. Enter the <strong>bootstrap</strong>, a beautifully simple idea: resample your data with replacement thousands of times and see how much the estimate varies.</p>
+<div id="3e08d7b2" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n_boot <span class="op">=</span> <span class="dv">1000</span></span>
@@ -367,7 +367,7 @@ Estimated difference: 0.0380  (true value: 0.04000000000000001)</code></pre>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>analytical_se <span class="op">=</span> np.sqrt(p_a <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> p_a) <span class="op">/</span> n <span class="op">+</span> p_b <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> p_b) <span class="op">/</span> n)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="b2451355" class="cell" data-execution_count="4">
+<div id="d67d2b96" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>Point estimate:    0.0380
 Bootstrap SE:      0.0177
@@ -375,12 +375,12 @@ Analytical SE:     0.0178
 95% CI:            [0.0034, 0.0726]</code></pre>
 </div>
 </div>
-<p>What I love about the bootstrap is its honesty. It doesn’t assume your data follows a textbook distribution — it lets the data speak for itself. In marketing, where real-world data is messy and rarely Normal, that pragmatism matters.</p>
+<p>What I love about the bootstrap is its honesty. It lets the data speak for itself instead of assuming a textbook distribution. In marketing, where real-world data is messy and rarely Normal, that pragmatism matters.</p>
 </section>
 <section id="lesson-3-watching-the-bell-curve-emerge-clt" class="level2">
 <h2 class="anchored" data-anchor-id="lesson-3-watching-the-bell-curve-emerge-clt">Lesson 3: Watching the Bell Curve Emerge (CLT)</h2>
 <p>The <strong>Central Limit Theorem</strong> is one of those results that sounds abstract until you <em>see</em> it. I simulated 1,000 experiments at four different sample sizes and watched the sampling distribution of the estimated effect transform from a jagged, lumpy mess into a smooth bell curve.</p>
-<div id="a47f3d0f" class="cell" data-execution_count="5">
+<div id="bb114b1f" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -389,13 +389,13 @@ Analytical SE:     0.0178
 </div>
 </div>
 </div>
-<p>At <span class="math inline">\(n = 25\)</span>, you could flip a coin and get a more reliable answer. By <span class="math inline">\(n = 500\)</span>, the distribution is tight and centered on the truth. This is why sample size calculators exist — and why I now refuse to sign off on an A/B test without a proper power analysis first.</p>
+<p>At <span class="math inline">\(n = 25\)</span>, you could flip a coin and get a more reliable answer. By <span class="math inline">\(n = 500\)</span>, the distribution is tight and centered on the truth. This is why sample size calculators exist, and why I now refuse to sign off on an A/B test without a proper power analysis first.</p>
 </section>
 <section id="lesson-4-is-the-difference-real-hypothesis-testing" class="level2">
 <h2 class="anchored" data-anchor-id="lesson-4-is-the-difference-real-hypothesis-testing">Lesson 4: Is the Difference Real? (Hypothesis Testing)</h2>
 <p>With the CLT backing us up, we can ask the critical question: <strong>is the difference we observed large enough that it’s unlikely to be pure chance?</strong></p>
-<p>We standardize our estimate into a z-statistic and compute a p-value — the probability of seeing a result this extreme if the two CTAs were actually identical.</p>
-<div id="94c8e125" class="cell" data-execution_count="6">
+<p>We standardize our estimate into a z-statistic and compute a p-value: the probability of seeing a result this extreme if the two CTAs were actually identical.</p>
+<div id="e5d0b6c8" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>z_stat <span class="op">=</span> theta_hat <span class="op">/</span> analytical_se</span>
@@ -413,10 +413,10 @@ z-statistic:       2.1388
 p-value:           0.0325</code></pre>
 </div>
 </div>
-<div id="c9d37963" class="cell" data-execution_count="7">
+<div id="233ee5bc" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-stdout">
 <pre><code>
-Verdict: We reject the null — there is statistically significant evidence that CTA A outperforms CTA B.</code></pre>
+Verdict: We reject the null: there is statistically significant evidence that CTA A outperforms CTA B.</code></pre>
 </div>
 </div>
 <p>A technical note worth remembering: this is often called a “t-test,” but with binary data it’s really a <strong>z-test justified by the CLT</strong>. For large samples the distinction is negligible, but understanding what’s actually happening under the hood matters when the assumptions get pushed.</p>
@@ -424,7 +424,7 @@ Verdict: We reject the null — there is statistically significant evidence that
 <section id="lesson-5-the-regression-connection" class="level2">
 <h2 class="anchored" data-anchor-id="lesson-5-the-regression-connection">Lesson 5: The Regression Connection</h2>
 <p>Here’s the insight that tied everything together for me: a two-sample test is <strong>mathematically identical</strong> to a simple linear regression with a binary predictor. The treatment effect <span class="math inline">\(\hat{\theta}\)</span> is just the OLS coefficient <span class="math inline">\(\hat{\beta}_1\)</span>.</p>
-<div id="27841138" class="cell" data-execution_count="8">
+<div id="6919b0d1" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
@@ -436,7 +436,7 @@ Verdict: We reject the null — there is statistically significant evidence that
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(Y, X).fit()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="fa5e7dd8" class="cell" data-execution_count="9">
+<div id="0ff81694" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
 <pre><code>OLS Regression Results
                   Coefficient Estimate Std Error p-value
@@ -446,12 +446,12 @@ Treatment effect (CTA A lift)   0.0380    0.0178  0.0327
 Manual estimate: 0.0380  |  Regression β₁: 0.0380</code></pre>
 </div>
 </div>
-<p>Why does this matter? Because the regression framework <em>scales</em>. Want to control for device type or time of day? Add covariates. Testing three CTAs? Add indicators. The simple A/B test is just the special case — and seeing that connection made the whole framework click for me.</p>
+<p>Why does this matter? Because the regression framework <em>scales</em>. Want to control for device type or time of day? Add covariates. Testing three CTAs? Add indicators. The simple A/B test is just the special case, and seeing that connection made the whole framework click for me.</p>
 </section>
 <section id="the-biggest-lesson-dont-peek" class="level2">
 <h2 class="anchored" data-anchor-id="the-biggest-lesson-dont-peek">The Biggest Lesson: Don’t Peek</h2>
 <p>This was the finding that genuinely surprised me. I simulated a scenario where there is <strong>no real difference</strong> between the CTAs (<span class="math inline">\(\pi_A = \pi_B = 0.20\)</span>), but an impatient manager checks the results every 100 visitors and stops the test as soon as <span class="math inline">\(p &lt; 0.05\)</span>.</p>
-<div id="46ce2941" class="cell" data-execution_count="10">
+<div id="5c30e742" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>n_experiments <span class="op">=</span> <span class="dv">10000</span></span>
@@ -482,7 +482,7 @@ Manual estimate: 0.0380  |  Regression β₁: 0.0380</code></pre>
 <span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>false_positive_rate <span class="op">=</span> false_positives <span class="op">/</span> n_experiments</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="79dbdfec" class="cell" data-execution_count="11">
+<div id="669c4551" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-stdout">
 <pre><code>Experiments simulated:    10,000
 False positive rate:      19.9%
@@ -490,20 +490,20 @@ Expected (no peeking):    5.0%
 Inflation factor:         4.0×</code></pre>
 </div>
 </div>
-<p>The false positive rate balloons to roughly <strong>two to three times</strong> the nominal 5%. In a world where there is <em>no real winner</em>, peeking would lead you to confidently pick one anyway — about 15% of the time.</p>
-<p>This result changed how I think about experimentation culture in organizations. The instinct to check early and act fast is deeply human, but it’s statistically dangerous. If you must monitor results in real time, use methods built for it — <strong>sequential testing</strong> or <strong>always-valid confidence intervals</strong> — not the classical fixed-sample test.</p>
+<p>The false positive rate balloons to roughly <strong>two to three times</strong> the nominal 5%. In a world where there is <em>no real winner</em>, peeking would lead you to confidently pick one anyway, about 15% of the time.</p>
+<p>This result changed how I think about experimentation culture in organizations. The instinct to check early and act fast is deeply human, but it’s statistically dangerous. If you must monitor results in real time, use methods built for it, like <strong>sequential testing</strong> or <strong>always-valid confidence intervals</strong>, instead of the classical fixed-sample test.</p>
 </section>
 <section id="what-i-took-away" class="level2">
 <h2 class="anchored" data-anchor-id="what-i-took-away">What I Took Away</h2>
 <p>This exercise was about more than passing a homework assignment. It gave me a visceral understanding of ideas I now carry into every analytics project:</p>
 <ol type="1">
-<li><strong>Small samples lie.</strong> Don’t trust early results — let the Law of Large Numbers do its work.</li>
+<li><strong>Small samples lie.</strong> Let the Law of Large Numbers do its work instead of trusting early results.</li>
 <li><strong>Always quantify uncertainty.</strong> A point estimate without a confidence interval is a number without context.</li>
-<li><strong>The bell curve is your friend.</strong> The CLT is why hypothesis testing works — and why sample size planning matters.</li>
+<li><strong>The bell curve is your friend.</strong> The CLT is why hypothesis testing works, and why sample size planning matters.</li>
 <li><strong>Testing = regression.</strong> Seeing the equivalence unlocks a much more powerful and flexible toolkit.</li>
 <li><strong>Don’t let impatience corrupt your evidence.</strong> Peeking inflates false positives. Design your monitoring strategy <em>before</em> you launch the test.</li>
 </ol>
-<p>As someone building a career at the intersection of marketing and data science, I believe the most valuable skill isn’t knowing how to run a t-test — it’s knowing <em>when the t-test is lying to you.</em></p>
+<p>As someone building a career at the intersection of marketing and data science, I believe the most valuable skill is knowing <em>when a t-test is lying to you</em>, not just knowing how to run one.</p>
 
 
 </section>

@@ -248,7 +248,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <section id="the-business-question" class="level2">
 <h2 class="anchored" data-anchor-id="the-business-question">The Business Question</h2>
-<p>Every purchase order carries an expected price. Every supplier invoice carries what actually got billed. When those two numbers drift apart across thousands of orders, nobody notices row by row — it shows up as margin leakage a quarter later. This project (a team assignment; my role was building and owning the pipeline) set out to make that drift visible at the transaction level, automatically, instead of after the fact.</p>
+<p>Every purchase order carries an expected price. Every supplier invoice carries what actually got billed. When those two numbers drift apart across thousands of orders, nobody notices row by row; it shows up as margin leakage a quarter later. This project (a team assignment; my role was building and owning the pipeline) set out to make that drift visible at the transaction level, automatically, instead of after the fact.</p>
 </section>
 <section id="the-data-problem" class="level2">
 <h2 class="anchored" data-anchor-id="the-data-problem">The Data Problem</h2>
@@ -256,17 +256,17 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </section>
 <section id="data-model" class="level2">
 <h2 class="anchored" data-anchor-id="data-model">Data Model</h2>
-<p>I mapped the underlying Procure-to-Pay structure — suppliers, purchase orders, receiving reports, and supplier invoices — before writing a single COPY statement, since a bad join here silently corrupts the variance calculation downstream:</p>
+<p>I mapped the underlying Procure-to-Pay structure, suppliers, purchase orders, receiving reports, and supplier invoices, before writing a single COPY statement, since a bad join here silently corrupts the variance calculation downstream:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../images/projects/sql/erd-procure-to-pay.png" class="img-fluid figure-img" alt="Entity relationship diagram showing Supplier, SupplierLocation, PurchaseOrderHeader, PurchaseOrderLine, ReceivingReportHeader, ReceivingReportLine, and SupplierInvoice tables with their keys and relationships"></p>
-<figcaption>Procure-to-Pay entity relationship diagram — suppliers, purchase orders, receiving reports, and invoices</figcaption>
+<figcaption>Procure-to-Pay entity relationship diagram: suppliers, purchase orders, receiving reports, and invoices</figcaption>
 </figure>
 </div>
 </section>
 <section id="pipeline" class="level2">
 <h2 class="anchored" data-anchor-id="pipeline">Pipeline</h2>
-<p>I built a Python-orchestrated pipeline (<code>pipeline_runner.py</code>) that: exports the Postgres invoice table to CSV, stages all three source formats into Snowflake internal stages, <code>COPY INTO</code>s them into raw tables with tolerant staging (numeric and date fields loaded as text first, then normalized — messy real-world CSVs break strict-typed loads), normalizes order dates into a consistent format, and geocodes supplier ZIP codes against the ZCTA gazetteer using <code>TO_GEOGRAPHY</code> for spatial joins.</p>
+<p>I built a Python-orchestrated pipeline (<code>pipeline_runner.py</code>) that exports the Postgres invoice table to CSV, stages all three source formats into Snowflake internal stages, <code>COPY INTO</code>s them into raw tables with tolerant staging (numeric and date fields loaded as text first, then normalized, since messy real-world CSVs break strict-typed loads), normalizes order dates into a consistent format, and geocodes supplier ZIP codes against the ZCTA gazetteer using <code>TO_GEOGRAPHY</code> for spatial joins.</p>
 <p>On top of the raw tables, I layered views that total purchase-order amounts, aggregate invoice line items per order, and finally join the two:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">or</span> <span class="kw">replace</span> <span class="kw">table</span> purchase_orders_and_invoices <span class="kw">as</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">with</span> inv_ex <span class="kw">as</span> (</span>
@@ -278,11 +278,11 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>       (inv_ex.amount_ex_tax <span class="op">-</span> p.POAmount) <span class="kw">as</span> invoiced_vs_quoted</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> v_po_amounts p</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">join</span> inv_ex <span class="kw">on</span> inv_ex.purchaseorderid <span class="op">=</span> p.purchaseorderid;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>invoiced_vs_quoted</code> is the column the whole pipeline exists to produce — a per-order variance that can be sorted, thresholded, and handed to a procurement team as an exception list instead of a full re-audit.</p>
+<p><code>invoiced_vs_quoted</code> is the column the whole pipeline exists to produce: a per-order variance that can be sorted, thresholded, and handed to a procurement team as an exception list instead of a full re-audit.</p>
 </section>
 <section id="why-it-matters" class="level2">
 <h2 class="anchored" data-anchor-id="why-it-matters">Why It Matters</h2>
-<p>This is the unglamorous half of analytics that most portfolios skip: before you can build a dashboard or a model, the data has to actually be trustworthy and joinable. Tolerant staging, explicit normalization steps, and verification queries against <code>COPY_HISTORY</code> were as important to getting a correct answer here as the final variance formula — and it’s exactly the kind of pipeline work a business or data analyst role expects you to be comfortable owning, not just consuming.</p>
+<p>This is the unglamorous half of analytics that most portfolios skip: before you can build a dashboard or a model, the data has to actually be trustworthy and joinable. Tolerant staging, explicit normalization steps, and verification queries against <code>COPY_HISTORY</code> were as important to getting a correct answer here as the final variance formula, and this is exactly the kind of pipeline work a business or data analyst role expects you to be comfortable owning yourself, not just consuming secondhand.</p>
 </section>
 <section id="skills-used" class="level2">
 <h2 class="anchored" data-anchor-id="skills-used">Skills Used</h2>

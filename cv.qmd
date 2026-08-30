@@ -17,7 +17,7 @@ format:
     <h1 class="resume-name">Yafei Zhang</h1>
     <div class="resume-contact">
       San Diego, CA &nbsp;|&nbsp; (445) 800-6477 &nbsp;|&nbsp;
-      <a href="mailto:yaz133@ucsd.edu">yaz133@ucsd.edu</a> &nbsp;|&nbsp;
+      <a href="mailto:zhangyafeijudy@gmail.com">zhangyafeijudy@gmail.com</a> &nbsp;|&nbsp;
       <a href="https://www.linkedin.com/in/yafei-zhang-judie/" target="_blank">LinkedIn</a>
     </div>
     <a href="files/resume.pdf" class="resume-download" download>Download PDF</a>

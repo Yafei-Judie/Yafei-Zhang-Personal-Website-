@@ -19,10 +19,10 @@ Built a professional portfolio website to present and organize project work in a
 
 ## Features
 
-- **Project showcase** — Dedicated sections for presenting individual projects with context, visuals, and key takeaways
-- **Responsive layout** — Grid and flexbox-based design that adapts to different screen sizes
-- **View transitions** — Smooth page navigation animations for a polished user experience
-- **Accessibility** — Built with browser zoom support and accessible navigation patterns
+- **Project showcase:** dedicated sections for presenting individual projects with context, visuals, and key takeaways
+- **Responsive layout:** grid and flexbox-based design that adapts to different screen sizes
+- **View transitions:** smooth page navigation animations for a polished user experience
+- **Accessibility:** built with browser zoom support and accessible navigation patterns
 
 ## Tools & Skills
 
