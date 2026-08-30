@@ -1631,6 +1631,266 @@ main#quarto-document-content table tbody tr:hover {
   }
 }
 
+/* ─── One-Page Homepage Scroll ──────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+section[id], #home {
+  scroll-margin-top: 84px;
+}
+
+.scroll-cue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  width: fit-content;
+  margin: 0.5rem auto 4rem;
+  color: #b0909a;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  animation: scroll-cue-bounce 2.2s ease-in-out infinite;
+}
+
+.scroll-cue:hover {
+  color: #c4849a;
+}
+
+@keyframes scroll-cue-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+.home-section {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+  border-top: 1px solid #ece4df;
+}
+
+.home-section-label {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.home-section-intro {
+  text-align: center;
+  max-width: 560px;
+  margin: -1rem auto 2.2rem;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  color: #7a7a7a;
+}
+
+/* Scroll-reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* About stats */
+.about-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.6rem;
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #c4849a;
+  line-height: 1;
+}
+
+.about-stat-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: #8a8a8a;
+  max-width: 140px;
+  margin-top: 0.5rem;
+}
+
+.about-copy {
+  max-width: 680px;
+  margin: 0 auto 1.2rem;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: #5a5a5a;
+  text-align: center;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.skills-group h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #4a4a4a;
+  margin-bottom: 0.9rem;
+  text-align: center;
+}
+
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.skill-pill {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.76rem;
+  color: #9a7a84;
+  background: white;
+  border: 1px solid #e4d4da;
+  border-radius: 50px;
+  padding: 0.4rem 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.skill-pill:hover {
+  background: #c4849a;
+  color: white;
+  border-color: #c4849a;
+}
+
+/* View-all links */
+.view-all-link {
+  display: block;
+  text-align: center;
+  margin-top: 2.2rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: #c4849a;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.view-all-link:hover {
+  border-bottom-color: #c4849a;
+  color: #a66880;
+  text-decoration: none;
+}
+
+/* Culture teaser */
+.culture-teaser {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.culture-teaser-img {
+  border: 1px solid #e0d3d7;
+  padding: 8px;
+  background: #faf8f5;
+  box-shadow: 0 6px 36px rgba(150, 100, 120, 0.1);
+}
+
+.culture-teaser-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.culture-teaser-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #4a3a40;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.culture-teaser-text p:not(.culture-teaser-quote) {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.98rem;
+  line-height: 1.85;
+  color: #6a6a6a;
+}
+
+.culture-teaser-text .view-all-link {
+  text-align: left;
+  margin-top: 1.2rem;
+}
+
+/* Homepage contact section */
+.home-contact-section {
+  max-width: 720px;
+}
+
+.home-contact-section .connect-intro {
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+.home-footer {
+  text-align: center;
+  padding: 2.5rem 1rem 3.5rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  color: #a0a0a0;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.home-footer a {
+  color: #a0a0a0;
+}
+
+.home-footer a:hover {
+  color: #c4849a;
+}
+
+@media (max-width: 700px) {
+  .culture-teaser {
+    grid-template-columns: 1fr;
+  }
+  .about-stats {
+    gap: 1.8rem;
+  }
+  .home-section {
+    padding: 3.5rem 1.2rem;
+  }
+}
+
 /* ─── Inline Code / Skill Tags ──────────────────────────────── */
 main#quarto-document-content code {
   background-color: #f5e6eb;

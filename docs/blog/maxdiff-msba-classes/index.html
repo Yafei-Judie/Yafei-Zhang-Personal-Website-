@@ -186,27 +186,31 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Hi</span></a>
+    <a class="nav-link" href="../../index.html#home"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html#about"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html#skills"> 
+<span class="menu-text">Skills</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html#portfolio"> 
+<span class="menu-text">Portfolio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html#culture"> 
+<span class="menu-text">Culture</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">Resume</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects.html"> 
-<span class="menu-text">Projects</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../blog.html"> 
-<span class="menu-text">Blog</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../more-about-me.html"> 
-<span class="menu-text">More About Me</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../connect.html"> 
+    <a class="nav-link" href="../../index.html#contact"> 
 <span class="menu-text">Connect</span></a>
   </li>  
 </ul>
@@ -312,7 +316,7 @@ window.Quarto = {
 </section>
 <section id="the-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-data">The data</h2>
-<div id="65ae7142" class="cell" data-execution_count="1">
+<div id="83743f43" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -350,7 +354,7 @@ window.Quarto = {
 </div>
 </div>
 <p>The response data has one row per item per screen per respondent. I noticed that tasks 9 through 15 only have 2 items each and include an “Item 11” that isn’t in my labels file. These look like follow-up pairwise comparisons with a different format, so I’m filtering down to tasks 1-8 which are the standard 4-item MaxDiff screens.</p>
-<div id="6355a5da" class="cell" data-execution_count="2">
+<div id="3e5f713b" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># keep only the standard 4-item tasks</span></span>
@@ -379,7 +383,7 @@ Total task-observations: 680</code></pre>
 <section id="sanity-check" class="level3">
 <h3 class="anchored" data-anchor-id="sanity-check">Sanity check</h3>
 <p>I want to make sure the data is clean before I do anything with it. Every task should have exactly one Response=1 (best), one Response=-1 (worst), and two Response=0.</p>
-<div id="3f3b5c79" class="cell" data-execution_count="3">
+<div id="d1afb805" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># group by respondent and task, check the response pattern</span></span>
@@ -412,7 +416,7 @@ Total task-observations: 680</code></pre>
 <section id="how-often-was-each-item-shown" class="level3">
 <h3 class="anchored" data-anchor-id="how-often-was-each-item-shown">How often was each item shown?</h3>
 <p>Good MaxDiff designs show every item roughly the same number of times. If one class appeared way more than others, that would be a problem.</p>
-<div id="c86e7c6a" class="cell" data-execution_count="4">
+<div id="35f02de1" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>times_shown <span class="op">=</span> md4.groupby(<span class="st">'Item'</span>).size().reset_index(name<span class="op">=</span><span class="st">'Times Shown'</span>)</span>
@@ -509,7 +513,7 @@ Total task-observations: 680</code></pre>
 \text{score}_j = \frac{\text{times best}_j}{\text{times shown}_j} - \frac{\text{times worst}_j}{\text{times shown}_j}
 \]</span></p>
 <p>Score near +1 = almost always picked as the favorite. Near -1 = almost always picked as least favorite. Near zero = either genuinely middle-of-the-road or polarizing.</p>
-<div id="3c35d897" class="cell" data-execution_count="5">
+<div id="72b801c1" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute counts for each item</span></span>
@@ -545,141 +549,141 @@ Total task-observations: 680</code></pre>
 <style type="text/css">
 </style>
 
-<table id="T_e13c1" class="caption-top table table-sm table-striped small">
+<table id="T_cb503" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
-<th id="T_e13c1_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Rank</th>
-<th id="T_e13c1_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Item</th>
-<th id="T_e13c1_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Label</th>
-<th id="T_e13c1_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Times Shown</th>
-<th id="T_e13c1_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Times Best</th>
-<th id="T_e13c1_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Times Worst</th>
-<th id="T_e13c1_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">% Best</th>
-<th id="T_e13c1_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">% Worst</th>
-<th id="T_e13c1_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">Score</th>
+<th id="T_cb503_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Rank</th>
+<th id="T_cb503_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Item</th>
+<th id="T_cb503_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Label</th>
+<th id="T_cb503_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Times Shown</th>
+<th id="T_cb503_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Times Best</th>
+<th id="T_cb503_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Times Worst</th>
+<th id="T_cb503_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">% Best</th>
+<th id="T_cb503_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">% Worst</th>
+<th id="T_cb503_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">Score</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th id="T_e13c1_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</th>
-<td id="T_e13c1_row0_col0" class="data row0 col0">1</td>
-<td id="T_e13c1_row0_col1" class="data row0 col1">9</td>
-<td id="T_e13c1_row0_col2" class="data row0 col2">MGTA 495 Marketing Analytics (Spring with Yavorsky)</td>
-<td id="T_e13c1_row0_col3" class="data row0 col3">274</td>
-<td id="T_e13c1_row0_col4" class="data row0 col4">147</td>
-<td id="T_e13c1_row0_col5" class="data row0 col5">12</td>
-<td id="T_e13c1_row0_col6" class="data row0 col6">53.6%</td>
-<td id="T_e13c1_row0_col7" class="data row0 col7">4.4%</td>
-<td id="T_e13c1_row0_col8" class="data row0 col8">+0.493</td>
+<th id="T_cb503_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</th>
+<td id="T_cb503_row0_col0" class="data row0 col0">1</td>
+<td id="T_cb503_row0_col1" class="data row0 col1">9</td>
+<td id="T_cb503_row0_col2" class="data row0 col2">MGTA 495 Marketing Analytics (Spring with Yavorsky)</td>
+<td id="T_cb503_row0_col3" class="data row0 col3">274</td>
+<td id="T_cb503_row0_col4" class="data row0 col4">147</td>
+<td id="T_cb503_row0_col5" class="data row0 col5">12</td>
+<td id="T_cb503_row0_col6" class="data row0 col6">53.6%</td>
+<td id="T_cb503_row0_col7" class="data row0 col7">4.4%</td>
+<td id="T_cb503_row0_col8" class="data row0 col8">+0.493</td>
 </tr>
 <tr class="even">
-<th id="T_e13c1_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</th>
-<td id="T_e13c1_row1_col0" class="data row1 col0">2</td>
-<td id="T_e13c1_row1_col1" class="data row1 col1">5</td>
-<td id="T_e13c1_row1_col2" class="data row1 col2">MGTA 453 Business Analytics (Fall with August)</td>
-<td id="T_e13c1_row1_col3" class="data row1 col3">270</td>
-<td id="T_e13c1_row1_col4" class="data row1 col4">93</td>
-<td id="T_e13c1_row1_col5" class="data row1 col5">55</td>
-<td id="T_e13c1_row1_col6" class="data row1 col6">34.4%</td>
-<td id="T_e13c1_row1_col7" class="data row1 col7">20.4%</td>
-<td id="T_e13c1_row1_col8" class="data row1 col8">+0.141</td>
+<th id="T_cb503_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</th>
+<td id="T_cb503_row1_col0" class="data row1 col0">2</td>
+<td id="T_cb503_row1_col1" class="data row1 col1">5</td>
+<td id="T_cb503_row1_col2" class="data row1 col2">MGTA 453 Business Analytics (Fall with August)</td>
+<td id="T_cb503_row1_col3" class="data row1 col3">270</td>
+<td id="T_cb503_row1_col4" class="data row1 col4">93</td>
+<td id="T_cb503_row1_col5" class="data row1 col5">55</td>
+<td id="T_cb503_row1_col6" class="data row1 col6">34.4%</td>
+<td id="T_cb503_row1_col7" class="data row1 col7">20.4%</td>
+<td id="T_cb503_row1_col8" class="data row1 col8">+0.141</td>
 </tr>
 <tr class="odd">
-<th id="T_e13c1_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</th>
-<td id="T_e13c1_row2_col0" class="data row2 col0">3</td>
-<td id="T_e13c1_row2_col1" class="data row2 col1">7</td>
-<td id="T_e13c1_row2_col2" class="data row2 col2">MGTA 455 Customer Analytics (Winter with Nijs)</td>
-<td id="T_e13c1_row2_col3" class="data row2 col3">276</td>
-<td id="T_e13c1_row2_col4" class="data row2 col4">104</td>
-<td id="T_e13c1_row2_col5" class="data row2 col5">71</td>
-<td id="T_e13c1_row2_col6" class="data row2 col6">37.7%</td>
-<td id="T_e13c1_row2_col7" class="data row2 col7">25.7%</td>
-<td id="T_e13c1_row2_col8" class="data row2 col8">+0.120</td>
+<th id="T_cb503_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</th>
+<td id="T_cb503_row2_col0" class="data row2 col0">3</td>
+<td id="T_cb503_row2_col1" class="data row2 col1">7</td>
+<td id="T_cb503_row2_col2" class="data row2 col2">MGTA 455 Customer Analytics (Winter with Nijs)</td>
+<td id="T_cb503_row2_col3" class="data row2 col3">276</td>
+<td id="T_cb503_row2_col4" class="data row2 col4">104</td>
+<td id="T_cb503_row2_col5" class="data row2 col5">71</td>
+<td id="T_cb503_row2_col6" class="data row2 col6">37.7%</td>
+<td id="T_cb503_row2_col7" class="data row2 col7">25.7%</td>
+<td id="T_cb503_row2_col8" class="data row2 col8">+0.120</td>
 </tr>
 <tr class="even">
-<th id="T_e13c1_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</th>
-<td id="T_e13c1_row3_col0" class="data row3 col0">4</td>
-<td id="T_e13c1_row3_col1" class="data row3 col1">4</td>
-<td id="T_e13c1_row3_col2" class="data row3 col2">MGTA 452 Large Data (Fall with Hansen)</td>
-<td id="T_e13c1_row3_col3" class="data row3 col3">276</td>
-<td id="T_e13c1_row3_col4" class="data row3 col4">77</td>
-<td id="T_e13c1_row3_col5" class="data row3 col5">60</td>
-<td id="T_e13c1_row3_col6" class="data row3 col6">27.9%</td>
-<td id="T_e13c1_row3_col7" class="data row3 col7">21.7%</td>
-<td id="T_e13c1_row3_col8" class="data row3 col8">+0.062</td>
+<th id="T_cb503_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</th>
+<td id="T_cb503_row3_col0" class="data row3 col0">4</td>
+<td id="T_cb503_row3_col1" class="data row3 col1">4</td>
+<td id="T_cb503_row3_col2" class="data row3 col2">MGTA 452 Large Data (Fall with Hansen)</td>
+<td id="T_cb503_row3_col3" class="data row3 col3">276</td>
+<td id="T_cb503_row3_col4" class="data row3 col4">77</td>
+<td id="T_cb503_row3_col5" class="data row3 col5">60</td>
+<td id="T_cb503_row3_col6" class="data row3 col6">27.9%</td>
+<td id="T_cb503_row3_col7" class="data row3 col7">21.7%</td>
+<td id="T_cb503_row3_col8" class="data row3 col8">+0.062</td>
 </tr>
 <tr class="odd">
-<th id="T_e13c1_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</th>
-<td id="T_e13c1_row4_col0" class="data row4 col0">5</td>
-<td id="T_e13c1_row4_col1" class="data row4 col1">8</td>
-<td id="T_e13c1_row4_col2" class="data row4 col2">MGTA 454 Capstone Project (Spring with Advisor)</td>
-<td id="T_e13c1_row4_col3" class="data row4 col3">272</td>
-<td id="T_e13c1_row4_col4" class="data row4 col4">72</td>
-<td id="T_e13c1_row4_col5" class="data row4 col5">69</td>
-<td id="T_e13c1_row4_col6" class="data row4 col6">26.5%</td>
-<td id="T_e13c1_row4_col7" class="data row4 col7">25.4%</td>
-<td id="T_e13c1_row4_col8" class="data row4 col8">+0.011</td>
+<th id="T_cb503_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</th>
+<td id="T_cb503_row4_col0" class="data row4 col0">5</td>
+<td id="T_cb503_row4_col1" class="data row4 col1">8</td>
+<td id="T_cb503_row4_col2" class="data row4 col2">MGTA 454 Capstone Project (Spring with Advisor)</td>
+<td id="T_cb503_row4_col3" class="data row4 col3">272</td>
+<td id="T_cb503_row4_col4" class="data row4 col4">72</td>
+<td id="T_cb503_row4_col5" class="data row4 col5">69</td>
+<td id="T_cb503_row4_col6" class="data row4 col6">26.5%</td>
+<td id="T_cb503_row4_col7" class="data row4 col7">25.4%</td>
+<td id="T_cb503_row4_col8" class="data row4 col8">+0.011</td>
 </tr>
 <tr class="even">
-<th id="T_e13c1_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</th>
-<td id="T_e13c1_row5_col0" class="data row5 col0">6</td>
-<td id="T_e13c1_row5_col1" class="data row5 col1">2</td>
-<td id="T_e13c1_row5_col2" class="data row5 col2">MGTA 464 SQL (Summer with Nijs)</td>
-<td id="T_e13c1_row5_col3" class="data row5 col3">274</td>
-<td id="T_e13c1_row5_col4" class="data row5 col4">55</td>
-<td id="T_e13c1_row5_col5" class="data row5 col5">56</td>
-<td id="T_e13c1_row5_col6" class="data row5 col6">20.1%</td>
-<td id="T_e13c1_row5_col7" class="data row5 col7">20.4%</td>
-<td id="T_e13c1_row5_col8" class="data row5 col8">-0.004</td>
+<th id="T_cb503_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</th>
+<td id="T_cb503_row5_col0" class="data row5 col0">6</td>
+<td id="T_cb503_row5_col1" class="data row5 col1">2</td>
+<td id="T_cb503_row5_col2" class="data row5 col2">MGTA 464 SQL (Summer with Nijs)</td>
+<td id="T_cb503_row5_col3" class="data row5 col3">274</td>
+<td id="T_cb503_row5_col4" class="data row5 col4">55</td>
+<td id="T_cb503_row5_col5" class="data row5 col5">56</td>
+<td id="T_cb503_row5_col6" class="data row5 col6">20.1%</td>
+<td id="T_cb503_row5_col7" class="data row5 col7">20.4%</td>
+<td id="T_cb503_row5_col8" class="data row5 col8">-0.004</td>
 </tr>
 <tr class="odd">
-<th id="T_e13c1_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</th>
-<td id="T_e13c1_row6_col0" class="data row6 col0">7</td>
-<td id="T_e13c1_row6_col1" class="data row6 col1">10</td>
-<td id="T_e13c1_row6_col2" class="data row6 col2">MGTA 457 Biz. Intelligence Systems (Fall with Schibler)</td>
-<td id="T_e13c1_row6_col3" class="data row6 col3">266</td>
-<td id="T_e13c1_row6_col4" class="data row6 col4">23</td>
-<td id="T_e13c1_row6_col5" class="data row6 col5">55</td>
-<td id="T_e13c1_row6_col6" class="data row6 col6">8.6%</td>
-<td id="T_e13c1_row6_col7" class="data row6 col7">20.7%</td>
-<td id="T_e13c1_row6_col8" class="data row6 col8">-0.120</td>
+<th id="T_cb503_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</th>
+<td id="T_cb503_row6_col0" class="data row6 col0">7</td>
+<td id="T_cb503_row6_col1" class="data row6 col1">10</td>
+<td id="T_cb503_row6_col2" class="data row6 col2">MGTA 457 Biz. Intelligence Systems (Fall with Schibler)</td>
+<td id="T_cb503_row6_col3" class="data row6 col3">266</td>
+<td id="T_cb503_row6_col4" class="data row6 col4">23</td>
+<td id="T_cb503_row6_col5" class="data row6 col5">55</td>
+<td id="T_cb503_row6_col6" class="data row6 col6">8.6%</td>
+<td id="T_cb503_row6_col7" class="data row6 col7">20.7%</td>
+<td id="T_cb503_row6_col8" class="data row6 col8">-0.120</td>
 </tr>
 <tr class="even">
-<th id="T_e13c1_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</th>
-<td id="T_e13c1_row7_col0" class="data row7 col0">8</td>
-<td id="T_e13c1_row7_col1" class="data row7 col1">1</td>
-<td id="T_e13c1_row7_col2" class="data row7 col2">MGTA 403 AI Math, Prog., &amp; Analytics (Summer with Nijs)</td>
-<td id="T_e13c1_row7_col3" class="data row7 col3">273</td>
-<td id="T_e13c1_row7_col4" class="data row7 col4">33</td>
-<td id="T_e13c1_row7_col5" class="data row7 col5">90</td>
-<td id="T_e13c1_row7_col6" class="data row7 col6">12.1%</td>
-<td id="T_e13c1_row7_col7" class="data row7 col7">33.0%</td>
-<td id="T_e13c1_row7_col8" class="data row7 col8">-0.209</td>
+<th id="T_cb503_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</th>
+<td id="T_cb503_row7_col0" class="data row7 col0">8</td>
+<td id="T_cb503_row7_col1" class="data row7 col1">1</td>
+<td id="T_cb503_row7_col2" class="data row7 col2">MGTA 403 AI Math, Prog., &amp; Analytics (Summer with Nijs)</td>
+<td id="T_cb503_row7_col3" class="data row7 col3">273</td>
+<td id="T_cb503_row7_col4" class="data row7 col4">33</td>
+<td id="T_cb503_row7_col5" class="data row7 col5">90</td>
+<td id="T_cb503_row7_col6" class="data row7 col6">12.1%</td>
+<td id="T_cb503_row7_col7" class="data row7 col7">33.0%</td>
+<td id="T_cb503_row7_col8" class="data row7 col8">-0.209</td>
 </tr>
 <tr class="odd">
-<th id="T_e13c1_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</th>
-<td id="T_e13c1_row8_col0" class="data row8 col0">9</td>
-<td id="T_e13c1_row8_col1" class="data row8 col1">3</td>
-<td id="T_e13c1_row8_col2" class="data row8 col2">MGTA 451 Marketing/Finance/Operations (Summer with Wilbur/Buti/Shin)</td>
-<td id="T_e13c1_row8_col3" class="data row8 col3">272</td>
-<td id="T_e13c1_row8_col4" class="data row8 col4">43</td>
-<td id="T_e13c1_row8_col5" class="data row8 col5">101</td>
-<td id="T_e13c1_row8_col6" class="data row8 col6">15.8%</td>
-<td id="T_e13c1_row8_col7" class="data row8 col7">37.1%</td>
-<td id="T_e13c1_row8_col8" class="data row8 col8">-0.213</td>
+<th id="T_cb503_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</th>
+<td id="T_cb503_row8_col0" class="data row8 col0">9</td>
+<td id="T_cb503_row8_col1" class="data row8 col1">3</td>
+<td id="T_cb503_row8_col2" class="data row8 col2">MGTA 451 Marketing/Finance/Operations (Summer with Wilbur/Buti/Shin)</td>
+<td id="T_cb503_row8_col3" class="data row8 col3">272</td>
+<td id="T_cb503_row8_col4" class="data row8 col4">43</td>
+<td id="T_cb503_row8_col5" class="data row8 col5">101</td>
+<td id="T_cb503_row8_col6" class="data row8 col6">15.8%</td>
+<td id="T_cb503_row8_col7" class="data row8 col7">37.1%</td>
+<td id="T_cb503_row8_col8" class="data row8 col8">-0.213</td>
 </tr>
 <tr class="even">
-<th id="T_e13c1_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</th>
-<td id="T_e13c1_row9_col0" class="data row9 col0">10</td>
-<td id="T_e13c1_row9_col1" class="data row9 col1">6</td>
-<td id="T_e13c1_row9_col2" class="data row9 col2">MGTA 444 Analytics Consulting (Winter with Peterson)</td>
-<td id="T_e13c1_row9_col3" class="data row9 col3">267</td>
-<td id="T_e13c1_row9_col4" class="data row9 col4">33</td>
-<td id="T_e13c1_row9_col5" class="data row9 col5">111</td>
-<td id="T_e13c1_row9_col6" class="data row9 col6">12.4%</td>
-<td id="T_e13c1_row9_col7" class="data row9 col7">41.6%</td>
-<td id="T_e13c1_row9_col8" class="data row9 col8">-0.292</td>
+<th id="T_cb503_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</th>
+<td id="T_cb503_row9_col0" class="data row9 col0">10</td>
+<td id="T_cb503_row9_col1" class="data row9 col1">6</td>
+<td id="T_cb503_row9_col2" class="data row9 col2">MGTA 444 Analytics Consulting (Winter with Peterson)</td>
+<td id="T_cb503_row9_col3" class="data row9 col3">267</td>
+<td id="T_cb503_row9_col4" class="data row9 col4">33</td>
+<td id="T_cb503_row9_col5" class="data row9 col5">111</td>
+<td id="T_cb503_row9_col6" class="data row9 col6">12.4%</td>
+<td id="T_cb503_row9_col7" class="data row9 col7">41.6%</td>
+<td id="T_cb503_row9_col8" class="data row9 col8">-0.292</td>
 </tr>
 </tbody>
 </table>
@@ -688,7 +692,7 @@ Total task-observations: 680</code></pre>
 <section id="bootstrap-confidence-intervals" class="level3">
 <h3 class="anchored" data-anchor-id="bootstrap-confidence-intervals">Bootstrap confidence intervals</h3>
 <p>A single score doesn’t tell me how uncertain I should be. To get error bars, I bootstrap: resample the 85 respondents with replacement, recompute all the scores, repeat 1000 times. The middle 95% of the bootstrap distribution gives me a confidence interval.</p>
-<div id="0bbe5e8f" class="cell" data-execution_count="6">
+<div id="f1e77568" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
@@ -714,7 +718,7 @@ Total task-observations: 680</code></pre>
 <span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>ci_upper <span class="op">=</span> np.percentile(boot_scores, <span class="fl">97.5</span>, axis<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="5b014968" class="cell" data-execution_count="7">
+<div id="0f9b1179" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">5</span>))</span>
@@ -773,7 +777,7 @@ P(\text{worst} = c \mid \text{best} = b) = \frac{\exp(-\beta_c)}{\exp(-\beta_a) 
 <p>The negation makes sense: the item with the lowest utility (most negative <span class="math inline">\(\beta\)</span>) should be most likely to be picked as worst, and <span class="math inline">\(\exp(-\beta_c)\)</span> is biggest when <span class="math inline">\(\beta_c\)</span> is most negative.</p>
 <p>So each task gives me two choice observations: the best pick from all 4, and the worst pick from the remaining 3.</p>
 <p>One issue: if I add any constant to all the <span class="math inline">\(\beta\)</span> values, the probabilities don’t change (it cancels in the numerator and denominator). So I can’t estimate all 10 freely. I pin <span class="math inline">\(\beta_1 = 0\)</span> as a reference and estimate the other 9. Everything is relative to item 1.</p>
-<div id="eddc0936" class="cell" data-execution_count="8">
+<div id="79bda696" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I need to restructure the data for the likelihood.</span></span>
@@ -813,7 +817,7 @@ First task: items=[5 7 4 1], best=7, worst=1</code></pre>
 \]</span></p>
 <p>where <span class="math inline">\(b_t\)</span> is the best-picked item in task <span class="math inline">\(t\)</span>, <span class="math inline">\(w_t\)</span> is the worst-picked item, and <span class="math inline">\(S_t\)</span> is the set of 4 shown items.</p>
 <p>I code this as a function that takes a vector of 9 betas (since beta_1 is fixed at 0) and returns the log-likelihood. Then I hand it to scipy’s optimizer.</p>
-<div id="28918c9f" class="cell" data-execution_count="9">
+<div id="1fb8ef97" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> minimize</span>
@@ -861,7 +865,7 @@ Expected (if all items equal): -1689.7</code></pre>
 </div>
 </div>
 <p>Good, the log-likelihood at zero matches what I’d expect for a null model. Now let me maximize it.</p>
-<div id="2198682c" class="cell" data-execution_count="10">
+<div id="9071db1c" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># minimize the NEGATIVE log-likelihood</span></span>
@@ -881,7 +885,7 @@ Expected (if all items equal): -1689.7</code></pre>
 Log-likelihood at optimum: -1572.73</code></pre>
 </div>
 </div>
-<div id="26b1c30f" class="cell" data-execution_count="11">
+<div id="f9813163" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard errors from the Hessian.</span></span>
@@ -920,7 +924,7 @@ Log-likelihood at optimum: -1572.73</code></pre>
 \hat{s}_j = \frac{\exp(\hat\beta_j)}{\sum_{k=1}^{10} \exp(\hat\beta_k)}
 \]</span></p>
 <p>These answer the question: if all 10 classes were on one screen, what fraction of the time would each get picked? They sum to 1 and are easy to compare.</p>
-<div id="8552a974" class="cell" data-execution_count="12">
+<div id="54747070" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>shares_mle <span class="op">=</span> np.exp(beta_mle) <span class="op">/</span> np.<span class="bu">sum</span>(np.exp(beta_mle))</span>
@@ -942,114 +946,114 @@ Log-likelihood at optimum: -1572.73</code></pre>
 <style type="text/css">
 </style>
 
-<table id="T_c1608" class="caption-top table table-sm table-striped small">
+<table id="T_cdd9b" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
-<th id="T_c1608_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Rank</th>
-<th id="T_c1608_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Item</th>
-<th id="T_c1608_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Label</th>
-<th id="T_c1608_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Beta</th>
-<th id="T_c1608_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">SE</th>
-<th id="T_c1608_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Share</th>
+<th id="T_cdd9b_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Rank</th>
+<th id="T_cdd9b_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Item</th>
+<th id="T_cdd9b_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Label</th>
+<th id="T_cdd9b_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Beta</th>
+<th id="T_cdd9b_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">SE</th>
+<th id="T_cdd9b_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Share</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th id="T_c1608_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</th>
-<td id="T_c1608_row0_col0" class="data row0 col0">1</td>
-<td id="T_c1608_row0_col1" class="data row0 col1">9</td>
-<td id="T_c1608_row0_col2" class="data row0 col2">MGTA 495 Marketing Analytics (Spring with Yavorsky)</td>
-<td id="T_c1608_row0_col3" class="data row0 col3">+1.630</td>
-<td id="T_c1608_row0_col4" class="data row0 col4">0.146</td>
-<td id="T_c1608_row0_col5" class="data row0 col5">28.4%</td>
+<th id="T_cdd9b_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</th>
+<td id="T_cdd9b_row0_col0" class="data row0 col0">1</td>
+<td id="T_cdd9b_row0_col1" class="data row0 col1">9</td>
+<td id="T_cdd9b_row0_col2" class="data row0 col2">MGTA 495 Marketing Analytics (Spring with Yavorsky)</td>
+<td id="T_cdd9b_row0_col3" class="data row0 col3">+1.630</td>
+<td id="T_cdd9b_row0_col4" class="data row0 col4">0.146</td>
+<td id="T_cdd9b_row0_col5" class="data row0 col5">28.4%</td>
 </tr>
 <tr class="even">
-<th id="T_c1608_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</th>
-<td id="T_c1608_row1_col0" class="data row1 col0">2</td>
-<td id="T_c1608_row1_col1" class="data row1 col1">5</td>
-<td id="T_c1608_row1_col2" class="data row1 col2">MGTA 453 Business Analytics (Fall with August)</td>
-<td id="T_c1608_row1_col3" class="data row1 col3">+0.744</td>
-<td id="T_c1608_row1_col4" class="data row1 col4">0.142</td>
-<td id="T_c1608_row1_col5" class="data row1 col5">11.7%</td>
+<th id="T_cdd9b_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</th>
+<td id="T_cdd9b_row1_col0" class="data row1 col0">2</td>
+<td id="T_cdd9b_row1_col1" class="data row1 col1">5</td>
+<td id="T_cdd9b_row1_col2" class="data row1 col2">MGTA 453 Business Analytics (Fall with August)</td>
+<td id="T_cdd9b_row1_col3" class="data row1 col3">+0.744</td>
+<td id="T_cdd9b_row1_col4" class="data row1 col4">0.142</td>
+<td id="T_cdd9b_row1_col5" class="data row1 col5">11.7%</td>
 </tr>
 <tr class="odd">
-<th id="T_c1608_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</th>
-<td id="T_c1608_row2_col0" class="data row2 col0">3</td>
-<td id="T_c1608_row2_col1" class="data row2 col1">7</td>
-<td id="T_c1608_row2_col2" class="data row2 col2">MGTA 455 Customer Analytics (Winter with Nijs)</td>
-<td id="T_c1608_row2_col3" class="data row2 col3">+0.656</td>
-<td id="T_c1608_row2_col4" class="data row2 col4">0.142</td>
-<td id="T_c1608_row2_col5" class="data row2 col5">10.7%</td>
+<th id="T_cdd9b_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</th>
+<td id="T_cdd9b_row2_col0" class="data row2 col0">3</td>
+<td id="T_cdd9b_row2_col1" class="data row2 col1">7</td>
+<td id="T_cdd9b_row2_col2" class="data row2 col2">MGTA 455 Customer Analytics (Winter with Nijs)</td>
+<td id="T_cdd9b_row2_col3" class="data row2 col3">+0.656</td>
+<td id="T_cdd9b_row2_col4" class="data row2 col4">0.142</td>
+<td id="T_cdd9b_row2_col5" class="data row2 col5">10.7%</td>
 </tr>
 <tr class="even">
-<th id="T_c1608_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</th>
-<td id="T_c1608_row3_col0" class="data row3 col0">4</td>
-<td id="T_c1608_row3_col1" class="data row3 col1">4</td>
-<td id="T_c1608_row3_col2" class="data row3 col2">MGTA 452 Large Data (Fall with Hansen)</td>
-<td id="T_c1608_row3_col3" class="data row3 col3">+0.555</td>
-<td id="T_c1608_row3_col4" class="data row3 col4">0.140</td>
-<td id="T_c1608_row3_col5" class="data row3 col5">9.7%</td>
+<th id="T_cdd9b_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</th>
+<td id="T_cdd9b_row3_col0" class="data row3 col0">4</td>
+<td id="T_cdd9b_row3_col1" class="data row3 col1">4</td>
+<td id="T_cdd9b_row3_col2" class="data row3 col2">MGTA 452 Large Data (Fall with Hansen)</td>
+<td id="T_cdd9b_row3_col3" class="data row3 col3">+0.555</td>
+<td id="T_cdd9b_row3_col4" class="data row3 col4">0.140</td>
+<td id="T_cdd9b_row3_col5" class="data row3 col5">9.7%</td>
 </tr>
 <tr class="odd">
-<th id="T_c1608_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</th>
-<td id="T_c1608_row4_col0" class="data row4 col0">5</td>
-<td id="T_c1608_row4_col1" class="data row4 col1">8</td>
-<td id="T_c1608_row4_col2" class="data row4 col2">MGTA 454 Capstone Project (Spring with Advisor)</td>
-<td id="T_c1608_row4_col3" class="data row4 col3">+0.443</td>
-<td id="T_c1608_row4_col4" class="data row4 col4">0.140</td>
-<td id="T_c1608_row4_col5" class="data row4 col5">8.7%</td>
+<th id="T_cdd9b_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</th>
+<td id="T_cdd9b_row4_col0" class="data row4 col0">5</td>
+<td id="T_cdd9b_row4_col1" class="data row4 col1">8</td>
+<td id="T_cdd9b_row4_col2" class="data row4 col2">MGTA 454 Capstone Project (Spring with Advisor)</td>
+<td id="T_cdd9b_row4_col3" class="data row4 col3">+0.443</td>
+<td id="T_cdd9b_row4_col4" class="data row4 col4">0.140</td>
+<td id="T_cdd9b_row4_col5" class="data row4 col5">8.7%</td>
 </tr>
 <tr class="even">
-<th id="T_c1608_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</th>
-<td id="T_c1608_row5_col0" class="data row5 col0">6</td>
-<td id="T_c1608_row5_col1" class="data row5 col1">2</td>
-<td id="T_c1608_row5_col2" class="data row5 col2">MGTA 464 SQL (Summer with Nijs)</td>
-<td id="T_c1608_row5_col3" class="data row5 col3">+0.438</td>
-<td id="T_c1608_row5_col4" class="data row5 col4">0.137</td>
-<td id="T_c1608_row5_col5" class="data row5 col5">8.6%</td>
+<th id="T_cdd9b_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</th>
+<td id="T_cdd9b_row5_col0" class="data row5 col0">6</td>
+<td id="T_cdd9b_row5_col1" class="data row5 col1">2</td>
+<td id="T_cdd9b_row5_col2" class="data row5 col2">MGTA 464 SQL (Summer with Nijs)</td>
+<td id="T_cdd9b_row5_col3" class="data row5 col3">+0.438</td>
+<td id="T_cdd9b_row5_col4" class="data row5 col4">0.137</td>
+<td id="T_cdd9b_row5_col5" class="data row5 col5">8.6%</td>
 </tr>
 <tr class="odd">
-<th id="T_c1608_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</th>
-<td id="T_c1608_row6_col0" class="data row6 col0">7</td>
-<td id="T_c1608_row6_col1" class="data row6 col1">10</td>
-<td id="T_c1608_row6_col2" class="data row6 col2">MGTA 457 Biz. Intelligence Systems (Fall with Schibler)</td>
-<td id="T_c1608_row6_col3" class="data row6 col3">+0.236</td>
-<td id="T_c1608_row6_col4" class="data row6 col4">0.137</td>
-<td id="T_c1608_row6_col5" class="data row6 col5">7.0%</td>
+<th id="T_cdd9b_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</th>
+<td id="T_cdd9b_row6_col0" class="data row6 col0">7</td>
+<td id="T_cdd9b_row6_col1" class="data row6 col1">10</td>
+<td id="T_cdd9b_row6_col2" class="data row6 col2">MGTA 457 Biz. Intelligence Systems (Fall with Schibler)</td>
+<td id="T_cdd9b_row6_col3" class="data row6 col3">+0.236</td>
+<td id="T_cdd9b_row6_col4" class="data row6 col4">0.137</td>
+<td id="T_cdd9b_row6_col5" class="data row6 col5">7.0%</td>
 </tr>
 <tr class="even">
-<th id="T_c1608_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</th>
-<td id="T_c1608_row7_col0" class="data row7 col0">8</td>
-<td id="T_c1608_row7_col1" class="data row7 col1">1</td>
-<td id="T_c1608_row7_col2" class="data row7 col2">MGTA 403 AI Math, Prog., &amp; Analytics (Summer with Nijs)</td>
-<td id="T_c1608_row7_col3" class="data row7 col3">+0.000</td>
-<td id="T_c1608_row7_col4" class="data row7 col4">0.000</td>
-<td id="T_c1608_row7_col5" class="data row7 col5">5.6%</td>
+<th id="T_cdd9b_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</th>
+<td id="T_cdd9b_row7_col0" class="data row7 col0">8</td>
+<td id="T_cdd9b_row7_col1" class="data row7 col1">1</td>
+<td id="T_cdd9b_row7_col2" class="data row7 col2">MGTA 403 AI Math, Prog., &amp; Analytics (Summer with Nijs)</td>
+<td id="T_cdd9b_row7_col3" class="data row7 col3">+0.000</td>
+<td id="T_cdd9b_row7_col4" class="data row7 col4">0.000</td>
+<td id="T_cdd9b_row7_col5" class="data row7 col5">5.6%</td>
 </tr>
 <tr class="odd">
-<th id="T_c1608_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</th>
-<td id="T_c1608_row8_col0" class="data row8 col0">9</td>
-<td id="T_c1608_row8_col1" class="data row8 col1">3</td>
-<td id="T_c1608_row8_col2" class="data row8 col2">MGTA 451 Marketing/Finance/Operations (Summer with Wilbur/Buti/Shin)</td>
-<td id="T_c1608_row8_col3" class="data row8 col3">-0.067</td>
-<td id="T_c1608_row8_col4" class="data row8 col4">0.139</td>
-<td id="T_c1608_row8_col5" class="data row8 col5">5.2%</td>
+<th id="T_cdd9b_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</th>
+<td id="T_cdd9b_row8_col0" class="data row8 col0">9</td>
+<td id="T_cdd9b_row8_col1" class="data row8 col1">3</td>
+<td id="T_cdd9b_row8_col2" class="data row8 col2">MGTA 451 Marketing/Finance/Operations (Summer with Wilbur/Buti/Shin)</td>
+<td id="T_cdd9b_row8_col3" class="data row8 col3">-0.067</td>
+<td id="T_cdd9b_row8_col4" class="data row8 col4">0.139</td>
+<td id="T_cdd9b_row8_col5" class="data row8 col5">5.2%</td>
 </tr>
 <tr class="even">
-<th id="T_c1608_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</th>
-<td id="T_c1608_row9_col0" class="data row9 col0">10</td>
-<td id="T_c1608_row9_col1" class="data row9 col1">6</td>
-<td id="T_c1608_row9_col2" class="data row9 col2">MGTA 444 Analytics Consulting (Winter with Peterson)</td>
-<td id="T_c1608_row9_col3" class="data row9 col3">-0.239</td>
-<td id="T_c1608_row9_col4" class="data row9 col4">0.141</td>
-<td id="T_c1608_row9_col5" class="data row9 col5">4.4%</td>
+<th id="T_cdd9b_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</th>
+<td id="T_cdd9b_row9_col0" class="data row9 col0">10</td>
+<td id="T_cdd9b_row9_col1" class="data row9 col1">6</td>
+<td id="T_cdd9b_row9_col2" class="data row9 col2">MGTA 444 Analytics Consulting (Winter with Peterson)</td>
+<td id="T_cdd9b_row9_col3" class="data row9 col3">-0.239</td>
+<td id="T_cdd9b_row9_col4" class="data row9 col4">0.141</td>
+<td id="T_cdd9b_row9_col5" class="data row9 col5">4.4%</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="a9cc3b26" class="cell" data-execution_count="13">
+<div id="e4b6f9a6" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">5</span>))</span>
@@ -1093,7 +1097,7 @@ Log-likelihood at optimum: -1572.73</code></pre>
 <li>Repeat</li>
 </ol>
 <p>The step size of the Gaussian noise needs tuning. Too big and you reject almost everything. Too small and you accept everything but barely move. I’m aiming for acceptance around 25-40%.</p>
-<div id="c937ce39" class="cell" data-execution_count="14">
+<div id="3cb661f3" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calc_log_prior(beta9):</span>
@@ -1106,7 +1110,7 @@ Log-likelihood at optimum: -1572.73</code></pre>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> calc_log_likelihood(beta9) <span class="op">+</span> calc_log_prior(beta9)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="40fe23c5" class="cell" data-execution_count="15">
+<div id="6e3659a3" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> run_mh_sampler(start, n_iter, step_size, seed<span class="op">=</span><span class="dv">42</span>):</span>
@@ -1142,7 +1146,7 @@ Log-likelihood at optimum: -1572.73</code></pre>
 <span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> chain, acceptance_rate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="0bd0fba8" class="cell" data-execution_count="16">
+<div id="f1f8dba8" class="cell" data-execution_count="16">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the sampler. I start from the MLE to skip burn-in time.</span></span>
@@ -1159,7 +1163,7 @@ Acceptance rate: 42.2%
 (Target range: 25-40%)</code></pre>
 </div>
 </div>
-<div id="a85cc6d5" class="cell" data-execution_count="17">
+<div id="058e4dba" class="cell" data-execution_count="17">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Discard first 25% as burn-in</span></span>
@@ -1174,7 +1178,7 @@ Acceptance rate: 42.2%
 <section id="diagnostics-trace-plots" class="level3">
 <h3 class="anchored" data-anchor-id="diagnostics-trace-plots">Diagnostics: trace plots</h3>
 <p>If the sampler is working well, the trace for each parameter should look like random noise bouncing around a stable mean, not drifting or getting stuck.</p>
-<div id="bcfb92d7" class="cell" data-execution_count="18">
+<div id="289542c9" class="cell" data-execution_count="18">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>), sharex<span class="op">=</span><span class="va">True</span>)</span>
@@ -1212,7 +1216,7 @@ Acceptance rate: 42.2%
 </section>
 <section id="posterior-estimates" class="level3">
 <h3 class="anchored" data-anchor-id="posterior-estimates">Posterior estimates</h3>
-<div id="5265381b" class="cell" data-execution_count="19">
+<div id="d9c392b1" class="cell" data-execution_count="19">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Posterior means and 95% credible intervals for the 9 free betas</span></span>
@@ -1235,7 +1239,7 @@ Acceptance rate: 42.2%
 <span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>post_share_hi <span class="op">=</span> np.percentile(shares_each_draw, <span class="fl">97.5</span>, axis<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="2e285e11" class="cell" data-execution_count="20">
+<div id="0ae2d75c" class="cell" data-execution_count="20">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>bayes_results <span class="op">=</span> pd.DataFrame({</span>
@@ -1260,147 +1264,147 @@ Acceptance rate: 42.2%
 <style type="text/css">
 </style>
 
-<table id="T_a9859" class="caption-top table table-sm table-striped small">
+<table id="T_19ae0" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
-<th id="T_a9859_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Rank</th>
-<th id="T_a9859_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Item</th>
-<th id="T_a9859_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Label</th>
-<th id="T_a9859_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Post Mean Beta</th>
-<th id="T_a9859_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">CI Lo</th>
-<th id="T_a9859_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">CI Hi</th>
-<th id="T_a9859_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Post Share</th>
-<th id="T_a9859_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Share CI Lo</th>
-<th id="T_a9859_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">Share CI Hi</th>
+<th id="T_19ae0_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Rank</th>
+<th id="T_19ae0_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Item</th>
+<th id="T_19ae0_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Label</th>
+<th id="T_19ae0_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Post Mean Beta</th>
+<th id="T_19ae0_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">CI Lo</th>
+<th id="T_19ae0_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">CI Hi</th>
+<th id="T_19ae0_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Post Share</th>
+<th id="T_19ae0_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Share CI Lo</th>
+<th id="T_19ae0_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">Share CI Hi</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th id="T_a9859_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</th>
-<td id="T_a9859_row0_col0" class="data row0 col0">1</td>
-<td id="T_a9859_row0_col1" class="data row0 col1">9</td>
-<td id="T_a9859_row0_col2" class="data row0 col2">MGTA 495 Marketing Analytics (Spring with Yavorsky)</td>
-<td id="T_a9859_row0_col3" class="data row0 col3">+1.644</td>
-<td id="T_a9859_row0_col4" class="data row0 col4">+1.367</td>
-<td id="T_a9859_row0_col5" class="data row0 col5">+1.922</td>
-<td id="T_a9859_row0_col6" class="data row0 col6">28.5%</td>
-<td id="T_a9859_row0_col7" class="data row0 col7">24.1%</td>
-<td id="T_a9859_row0_col8" class="data row0 col8">33.2%</td>
+<th id="T_19ae0_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</th>
+<td id="T_19ae0_row0_col0" class="data row0 col0">1</td>
+<td id="T_19ae0_row0_col1" class="data row0 col1">9</td>
+<td id="T_19ae0_row0_col2" class="data row0 col2">MGTA 495 Marketing Analytics (Spring with Yavorsky)</td>
+<td id="T_19ae0_row0_col3" class="data row0 col3">+1.644</td>
+<td id="T_19ae0_row0_col4" class="data row0 col4">+1.367</td>
+<td id="T_19ae0_row0_col5" class="data row0 col5">+1.922</td>
+<td id="T_19ae0_row0_col6" class="data row0 col6">28.5%</td>
+<td id="T_19ae0_row0_col7" class="data row0 col7">24.1%</td>
+<td id="T_19ae0_row0_col8" class="data row0 col8">33.2%</td>
 </tr>
 <tr class="even">
-<th id="T_a9859_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</th>
-<td id="T_a9859_row1_col0" class="data row1 col0">2</td>
-<td id="T_a9859_row1_col1" class="data row1 col1">5</td>
-<td id="T_a9859_row1_col2" class="data row1 col2">MGTA 453 Business Analytics (Fall with August)</td>
-<td id="T_a9859_row1_col3" class="data row1 col3">+0.752</td>
-<td id="T_a9859_row1_col4" class="data row1 col4">+0.486</td>
-<td id="T_a9859_row1_col5" class="data row1 col5">+1.004</td>
-<td id="T_a9859_row1_col6" class="data row1 col6">11.7%</td>
-<td id="T_a9859_row1_col7" class="data row1 col7">9.5%</td>
-<td id="T_a9859_row1_col8" class="data row1 col8">13.9%</td>
+<th id="T_19ae0_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</th>
+<td id="T_19ae0_row1_col0" class="data row1 col0">2</td>
+<td id="T_19ae0_row1_col1" class="data row1 col1">5</td>
+<td id="T_19ae0_row1_col2" class="data row1 col2">MGTA 453 Business Analytics (Fall with August)</td>
+<td id="T_19ae0_row1_col3" class="data row1 col3">+0.752</td>
+<td id="T_19ae0_row1_col4" class="data row1 col4">+0.486</td>
+<td id="T_19ae0_row1_col5" class="data row1 col5">+1.004</td>
+<td id="T_19ae0_row1_col6" class="data row1 col6">11.7%</td>
+<td id="T_19ae0_row1_col7" class="data row1 col7">9.5%</td>
+<td id="T_19ae0_row1_col8" class="data row1 col8">13.9%</td>
 </tr>
 <tr class="odd">
-<th id="T_a9859_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</th>
-<td id="T_a9859_row2_col0" class="data row2 col0">3</td>
-<td id="T_a9859_row2_col1" class="data row2 col1">7</td>
-<td id="T_a9859_row2_col2" class="data row2 col2">MGTA 455 Customer Analytics (Winter with Nijs)</td>
-<td id="T_a9859_row2_col3" class="data row2 col3">+0.665</td>
-<td id="T_a9859_row2_col4" class="data row2 col4">+0.396</td>
-<td id="T_a9859_row2_col5" class="data row2 col5">+0.924</td>
-<td id="T_a9859_row2_col6" class="data row2 col6">10.7%</td>
-<td id="T_a9859_row2_col7" class="data row2 col7">8.7%</td>
-<td id="T_a9859_row2_col8" class="data row2 col8">12.9%</td>
+<th id="T_19ae0_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</th>
+<td id="T_19ae0_row2_col0" class="data row2 col0">3</td>
+<td id="T_19ae0_row2_col1" class="data row2 col1">7</td>
+<td id="T_19ae0_row2_col2" class="data row2 col2">MGTA 455 Customer Analytics (Winter with Nijs)</td>
+<td id="T_19ae0_row2_col3" class="data row2 col3">+0.665</td>
+<td id="T_19ae0_row2_col4" class="data row2 col4">+0.396</td>
+<td id="T_19ae0_row2_col5" class="data row2 col5">+0.924</td>
+<td id="T_19ae0_row2_col6" class="data row2 col6">10.7%</td>
+<td id="T_19ae0_row2_col7" class="data row2 col7">8.7%</td>
+<td id="T_19ae0_row2_col8" class="data row2 col8">12.9%</td>
 </tr>
 <tr class="even">
-<th id="T_a9859_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</th>
-<td id="T_a9859_row3_col0" class="data row3 col0">4</td>
-<td id="T_a9859_row3_col1" class="data row3 col1">4</td>
-<td id="T_a9859_row3_col2" class="data row3 col2">MGTA 452 Large Data (Fall with Hansen)</td>
-<td id="T_a9859_row3_col3" class="data row3 col3">+0.563</td>
-<td id="T_a9859_row3_col4" class="data row3 col4">+0.294</td>
-<td id="T_a9859_row3_col5" class="data row3 col5">+0.832</td>
-<td id="T_a9859_row3_col6" class="data row3 col6">9.7%</td>
-<td id="T_a9859_row3_col7" class="data row3 col7">8.0%</td>
-<td id="T_a9859_row3_col8" class="data row3 col8">11.7%</td>
+<th id="T_19ae0_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</th>
+<td id="T_19ae0_row3_col0" class="data row3 col0">4</td>
+<td id="T_19ae0_row3_col1" class="data row3 col1">4</td>
+<td id="T_19ae0_row3_col2" class="data row3 col2">MGTA 452 Large Data (Fall with Hansen)</td>
+<td id="T_19ae0_row3_col3" class="data row3 col3">+0.563</td>
+<td id="T_19ae0_row3_col4" class="data row3 col4">+0.294</td>
+<td id="T_19ae0_row3_col5" class="data row3 col5">+0.832</td>
+<td id="T_19ae0_row3_col6" class="data row3 col6">9.7%</td>
+<td id="T_19ae0_row3_col7" class="data row3 col7">8.0%</td>
+<td id="T_19ae0_row3_col8" class="data row3 col8">11.7%</td>
 </tr>
 <tr class="odd">
-<th id="T_a9859_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</th>
-<td id="T_a9859_row4_col0" class="data row4 col0">5</td>
-<td id="T_a9859_row4_col1" class="data row4 col1">8</td>
-<td id="T_a9859_row4_col2" class="data row4 col2">MGTA 454 Capstone Project (Spring with Advisor)</td>
-<td id="T_a9859_row4_col3" class="data row4 col3">+0.460</td>
-<td id="T_a9859_row4_col4" class="data row4 col4">+0.206</td>
-<td id="T_a9859_row4_col5" class="data row4 col5">+0.727</td>
-<td id="T_a9859_row4_col6" class="data row4 col6">8.7%</td>
-<td id="T_a9859_row4_col7" class="data row4 col7">7.1%</td>
-<td id="T_a9859_row4_col8" class="data row4 col8">10.5%</td>
+<th id="T_19ae0_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</th>
+<td id="T_19ae0_row4_col0" class="data row4 col0">5</td>
+<td id="T_19ae0_row4_col1" class="data row4 col1">8</td>
+<td id="T_19ae0_row4_col2" class="data row4 col2">MGTA 454 Capstone Project (Spring with Advisor)</td>
+<td id="T_19ae0_row4_col3" class="data row4 col3">+0.460</td>
+<td id="T_19ae0_row4_col4" class="data row4 col4">+0.206</td>
+<td id="T_19ae0_row4_col5" class="data row4 col5">+0.727</td>
+<td id="T_19ae0_row4_col6" class="data row4 col6">8.7%</td>
+<td id="T_19ae0_row4_col7" class="data row4 col7">7.1%</td>
+<td id="T_19ae0_row4_col8" class="data row4 col8">10.5%</td>
 </tr>
 <tr class="even">
-<th id="T_a9859_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</th>
-<td id="T_a9859_row5_col0" class="data row5 col0">6</td>
-<td id="T_a9859_row5_col1" class="data row5 col1">2</td>
-<td id="T_a9859_row5_col2" class="data row5 col2">MGTA 464 SQL (Summer with Nijs)</td>
-<td id="T_a9859_row5_col3" class="data row5 col3">+0.447</td>
-<td id="T_a9859_row5_col4" class="data row5 col4">+0.181</td>
-<td id="T_a9859_row5_col5" class="data row5 col5">+0.706</td>
-<td id="T_a9859_row5_col6" class="data row5 col6">8.6%</td>
-<td id="T_a9859_row5_col7" class="data row5 col7">7.0%</td>
-<td id="T_a9859_row5_col8" class="data row5 col8">10.3%</td>
+<th id="T_19ae0_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</th>
+<td id="T_19ae0_row5_col0" class="data row5 col0">6</td>
+<td id="T_19ae0_row5_col1" class="data row5 col1">2</td>
+<td id="T_19ae0_row5_col2" class="data row5 col2">MGTA 464 SQL (Summer with Nijs)</td>
+<td id="T_19ae0_row5_col3" class="data row5 col3">+0.447</td>
+<td id="T_19ae0_row5_col4" class="data row5 col4">+0.181</td>
+<td id="T_19ae0_row5_col5" class="data row5 col5">+0.706</td>
+<td id="T_19ae0_row5_col6" class="data row5 col6">8.6%</td>
+<td id="T_19ae0_row5_col7" class="data row5 col7">7.0%</td>
+<td id="T_19ae0_row5_col8" class="data row5 col8">10.3%</td>
 </tr>
 <tr class="odd">
-<th id="T_a9859_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</th>
-<td id="T_a9859_row6_col0" class="data row6 col0">7</td>
-<td id="T_a9859_row6_col1" class="data row6 col1">10</td>
-<td id="T_a9859_row6_col2" class="data row6 col2">MGTA 457 Biz. Intelligence Systems (Fall with Schibler)</td>
-<td id="T_a9859_row6_col3" class="data row6 col3">+0.247</td>
-<td id="T_a9859_row6_col4" class="data row6 col4">-0.002</td>
-<td id="T_a9859_row6_col5" class="data row6 col5">+0.472</td>
-<td id="T_a9859_row6_col6" class="data row6 col6">7.1%</td>
-<td id="T_a9859_row6_col7" class="data row6 col7">5.8%</td>
-<td id="T_a9859_row6_col8" class="data row6 col8">8.4%</td>
+<th id="T_19ae0_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</th>
+<td id="T_19ae0_row6_col0" class="data row6 col0">7</td>
+<td id="T_19ae0_row6_col1" class="data row6 col1">10</td>
+<td id="T_19ae0_row6_col2" class="data row6 col2">MGTA 457 Biz. Intelligence Systems (Fall with Schibler)</td>
+<td id="T_19ae0_row6_col3" class="data row6 col3">+0.247</td>
+<td id="T_19ae0_row6_col4" class="data row6 col4">-0.002</td>
+<td id="T_19ae0_row6_col5" class="data row6 col5">+0.472</td>
+<td id="T_19ae0_row6_col6" class="data row6 col6">7.1%</td>
+<td id="T_19ae0_row6_col7" class="data row6 col7">5.8%</td>
+<td id="T_19ae0_row6_col8" class="data row6 col8">8.4%</td>
 </tr>
 <tr class="even">
-<th id="T_a9859_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</th>
-<td id="T_a9859_row7_col0" class="data row7 col0">8</td>
-<td id="T_a9859_row7_col1" class="data row7 col1">1</td>
-<td id="T_a9859_row7_col2" class="data row7 col2">MGTA 403 AI Math, Prog., &amp; Analytics (Summer with Nijs)</td>
-<td id="T_a9859_row7_col3" class="data row7 col3">+0.000</td>
-<td id="T_a9859_row7_col4" class="data row7 col4">+0.000</td>
-<td id="T_a9859_row7_col5" class="data row7 col5">+0.000</td>
-<td id="T_a9859_row7_col6" class="data row7 col6">5.5%</td>
-<td id="T_a9859_row7_col7" class="data row7 col7">4.6%</td>
-<td id="T_a9859_row7_col8" class="data row7 col8">6.6%</td>
+<th id="T_19ae0_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</th>
+<td id="T_19ae0_row7_col0" class="data row7 col0">8</td>
+<td id="T_19ae0_row7_col1" class="data row7 col1">1</td>
+<td id="T_19ae0_row7_col2" class="data row7 col2">MGTA 403 AI Math, Prog., &amp; Analytics (Summer with Nijs)</td>
+<td id="T_19ae0_row7_col3" class="data row7 col3">+0.000</td>
+<td id="T_19ae0_row7_col4" class="data row7 col4">+0.000</td>
+<td id="T_19ae0_row7_col5" class="data row7 col5">+0.000</td>
+<td id="T_19ae0_row7_col6" class="data row7 col6">5.5%</td>
+<td id="T_19ae0_row7_col7" class="data row7 col7">4.6%</td>
+<td id="T_19ae0_row7_col8" class="data row7 col8">6.6%</td>
 </tr>
 <tr class="odd">
-<th id="T_a9859_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</th>
-<td id="T_a9859_row8_col0" class="data row8 col0">9</td>
-<td id="T_a9859_row8_col1" class="data row8 col1">3</td>
-<td id="T_a9859_row8_col2" class="data row8 col2">MGTA 451 Marketing/Finance/Operations (Summer with Wilbur/Buti/Shin)</td>
-<td id="T_a9859_row8_col3" class="data row8 col3">-0.058</td>
-<td id="T_a9859_row8_col4" class="data row8 col4">-0.333</td>
-<td id="T_a9859_row8_col5" class="data row8 col5">+0.200</td>
-<td id="T_a9859_row8_col6" class="data row8 col6">5.2%</td>
-<td id="T_a9859_row8_col7" class="data row8 col7">4.2%</td>
-<td id="T_a9859_row8_col8" class="data row8 col8">6.3%</td>
+<th id="T_19ae0_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</th>
+<td id="T_19ae0_row8_col0" class="data row8 col0">9</td>
+<td id="T_19ae0_row8_col1" class="data row8 col1">3</td>
+<td id="T_19ae0_row8_col2" class="data row8 col2">MGTA 451 Marketing/Finance/Operations (Summer with Wilbur/Buti/Shin)</td>
+<td id="T_19ae0_row8_col3" class="data row8 col3">-0.058</td>
+<td id="T_19ae0_row8_col4" class="data row8 col4">-0.333</td>
+<td id="T_19ae0_row8_col5" class="data row8 col5">+0.200</td>
+<td id="T_19ae0_row8_col6" class="data row8 col6">5.2%</td>
+<td id="T_19ae0_row8_col7" class="data row8 col7">4.2%</td>
+<td id="T_19ae0_row8_col8" class="data row8 col8">6.3%</td>
 </tr>
 <tr class="even">
-<th id="T_a9859_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</th>
-<td id="T_a9859_row9_col0" class="data row9 col0">10</td>
-<td id="T_a9859_row9_col1" class="data row9 col1">6</td>
-<td id="T_a9859_row9_col2" class="data row9 col2">MGTA 444 Analytics Consulting (Winter with Peterson)</td>
-<td id="T_a9859_row9_col3" class="data row9 col3">-0.229</td>
-<td id="T_a9859_row9_col4" class="data row9 col4">-0.484</td>
-<td id="T_a9859_row9_col5" class="data row9 col5">+0.024</td>
-<td id="T_a9859_row9_col6" class="data row9 col6">4.4%</td>
-<td id="T_a9859_row9_col7" class="data row9 col7">3.5%</td>
-<td id="T_a9859_row9_col8" class="data row9 col8">5.3%</td>
+<th id="T_19ae0_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</th>
+<td id="T_19ae0_row9_col0" class="data row9 col0">10</td>
+<td id="T_19ae0_row9_col1" class="data row9 col1">6</td>
+<td id="T_19ae0_row9_col2" class="data row9 col2">MGTA 444 Analytics Consulting (Winter with Peterson)</td>
+<td id="T_19ae0_row9_col3" class="data row9 col3">-0.229</td>
+<td id="T_19ae0_row9_col4" class="data row9 col4">-0.484</td>
+<td id="T_19ae0_row9_col5" class="data row9 col5">+0.024</td>
+<td id="T_19ae0_row9_col6" class="data row9 col6">4.4%</td>
+<td id="T_19ae0_row9_col7" class="data row9 col7">3.5%</td>
+<td id="T_19ae0_row9_col8" class="data row9 col8">5.3%</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="32efcbc4" class="cell" data-execution_count="21">
+<div id="90ad1ded" class="cell" data-execution_count="21">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">5</span>))</span>
@@ -1439,7 +1443,7 @@ Acceptance rate: 42.2%
 </section>
 <section id="comparing-the-three-methods" class="level2">
 <h2 class="anchored" data-anchor-id="comparing-the-three-methods">Comparing the three methods</h2>
-<div id="0f1c811c" class="cell" data-execution_count="22">
+<div id="332abd01" class="cell" data-execution_count="22">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bring all three sets of results together</span></span>
@@ -1473,136 +1477,136 @@ Acceptance rate: 42.2%
 <style type="text/css">
 </style>
 
-<table id="T_53d18" class="caption-top table table-sm table-striped small">
+<table id="T_017f5" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
-<th id="T_53d18_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Item</th>
-<th id="T_53d18_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Label</th>
-<th id="T_53d18_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Counts Score</th>
-<th id="T_53d18_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Counts Rank</th>
-<th id="T_53d18_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">MLE Share</th>
-<th id="T_53d18_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">MLE Rank</th>
-<th id="T_53d18_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Bayes Share</th>
-<th id="T_53d18_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Bayes Rank</th>
+<th id="T_017f5_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Item</th>
+<th id="T_017f5_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Label</th>
+<th id="T_017f5_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Counts Score</th>
+<th id="T_017f5_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Counts Rank</th>
+<th id="T_017f5_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">MLE Share</th>
+<th id="T_017f5_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">MLE Rank</th>
+<th id="T_017f5_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Bayes Share</th>
+<th id="T_017f5_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Bayes Rank</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th id="T_53d18_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</th>
-<td id="T_53d18_row0_col0" class="data row0 col0">9</td>
-<td id="T_53d18_row0_col1" class="data row0 col1">MGTA 495 Marketing Analytics (Spring with Yavorsky)</td>
-<td id="T_53d18_row0_col2" class="data row0 col2">+0.493</td>
-<td id="T_53d18_row0_col3" class="data row0 col3">1</td>
-<td id="T_53d18_row0_col4" class="data row0 col4">28.4%</td>
-<td id="T_53d18_row0_col5" class="data row0 col5">1</td>
-<td id="T_53d18_row0_col6" class="data row0 col6">28.5%</td>
-<td id="T_53d18_row0_col7" class="data row0 col7">1</td>
+<th id="T_017f5_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</th>
+<td id="T_017f5_row0_col0" class="data row0 col0">9</td>
+<td id="T_017f5_row0_col1" class="data row0 col1">MGTA 495 Marketing Analytics (Spring with Yavorsky)</td>
+<td id="T_017f5_row0_col2" class="data row0 col2">+0.493</td>
+<td id="T_017f5_row0_col3" class="data row0 col3">1</td>
+<td id="T_017f5_row0_col4" class="data row0 col4">28.4%</td>
+<td id="T_017f5_row0_col5" class="data row0 col5">1</td>
+<td id="T_017f5_row0_col6" class="data row0 col6">28.5%</td>
+<td id="T_017f5_row0_col7" class="data row0 col7">1</td>
 </tr>
 <tr class="even">
-<th id="T_53d18_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</th>
-<td id="T_53d18_row1_col0" class="data row1 col0">5</td>
-<td id="T_53d18_row1_col1" class="data row1 col1">MGTA 453 Business Analytics (Fall with August)</td>
-<td id="T_53d18_row1_col2" class="data row1 col2">+0.141</td>
-<td id="T_53d18_row1_col3" class="data row1 col3">2</td>
-<td id="T_53d18_row1_col4" class="data row1 col4">11.7%</td>
-<td id="T_53d18_row1_col5" class="data row1 col5">2</td>
-<td id="T_53d18_row1_col6" class="data row1 col6">11.7%</td>
-<td id="T_53d18_row1_col7" class="data row1 col7">2</td>
+<th id="T_017f5_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</th>
+<td id="T_017f5_row1_col0" class="data row1 col0">5</td>
+<td id="T_017f5_row1_col1" class="data row1 col1">MGTA 453 Business Analytics (Fall with August)</td>
+<td id="T_017f5_row1_col2" class="data row1 col2">+0.141</td>
+<td id="T_017f5_row1_col3" class="data row1 col3">2</td>
+<td id="T_017f5_row1_col4" class="data row1 col4">11.7%</td>
+<td id="T_017f5_row1_col5" class="data row1 col5">2</td>
+<td id="T_017f5_row1_col6" class="data row1 col6">11.7%</td>
+<td id="T_017f5_row1_col7" class="data row1 col7">2</td>
 </tr>
 <tr class="odd">
-<th id="T_53d18_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</th>
-<td id="T_53d18_row2_col0" class="data row2 col0">7</td>
-<td id="T_53d18_row2_col1" class="data row2 col1">MGTA 455 Customer Analytics (Winter with Nijs)</td>
-<td id="T_53d18_row2_col2" class="data row2 col2">+0.120</td>
-<td id="T_53d18_row2_col3" class="data row2 col3">3</td>
-<td id="T_53d18_row2_col4" class="data row2 col4">10.7%</td>
-<td id="T_53d18_row2_col5" class="data row2 col5">3</td>
-<td id="T_53d18_row2_col6" class="data row2 col6">10.7%</td>
-<td id="T_53d18_row2_col7" class="data row2 col7">3</td>
+<th id="T_017f5_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</th>
+<td id="T_017f5_row2_col0" class="data row2 col0">7</td>
+<td id="T_017f5_row2_col1" class="data row2 col1">MGTA 455 Customer Analytics (Winter with Nijs)</td>
+<td id="T_017f5_row2_col2" class="data row2 col2">+0.120</td>
+<td id="T_017f5_row2_col3" class="data row2 col3">3</td>
+<td id="T_017f5_row2_col4" class="data row2 col4">10.7%</td>
+<td id="T_017f5_row2_col5" class="data row2 col5">3</td>
+<td id="T_017f5_row2_col6" class="data row2 col6">10.7%</td>
+<td id="T_017f5_row2_col7" class="data row2 col7">3</td>
 </tr>
 <tr class="even">
-<th id="T_53d18_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</th>
-<td id="T_53d18_row3_col0" class="data row3 col0">4</td>
-<td id="T_53d18_row3_col1" class="data row3 col1">MGTA 452 Large Data (Fall with Hansen)</td>
-<td id="T_53d18_row3_col2" class="data row3 col2">+0.062</td>
-<td id="T_53d18_row3_col3" class="data row3 col3">4</td>
-<td id="T_53d18_row3_col4" class="data row3 col4">9.7%</td>
-<td id="T_53d18_row3_col5" class="data row3 col5">4</td>
-<td id="T_53d18_row3_col6" class="data row3 col6">9.7%</td>
-<td id="T_53d18_row3_col7" class="data row3 col7">4</td>
+<th id="T_017f5_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</th>
+<td id="T_017f5_row3_col0" class="data row3 col0">4</td>
+<td id="T_017f5_row3_col1" class="data row3 col1">MGTA 452 Large Data (Fall with Hansen)</td>
+<td id="T_017f5_row3_col2" class="data row3 col2">+0.062</td>
+<td id="T_017f5_row3_col3" class="data row3 col3">4</td>
+<td id="T_017f5_row3_col4" class="data row3 col4">9.7%</td>
+<td id="T_017f5_row3_col5" class="data row3 col5">4</td>
+<td id="T_017f5_row3_col6" class="data row3 col6">9.7%</td>
+<td id="T_017f5_row3_col7" class="data row3 col7">4</td>
 </tr>
 <tr class="odd">
-<th id="T_53d18_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</th>
-<td id="T_53d18_row4_col0" class="data row4 col0">8</td>
-<td id="T_53d18_row4_col1" class="data row4 col1">MGTA 454 Capstone Project (Spring with Advisor)</td>
-<td id="T_53d18_row4_col2" class="data row4 col2">+0.011</td>
-<td id="T_53d18_row4_col3" class="data row4 col3">5</td>
-<td id="T_53d18_row4_col4" class="data row4 col4">8.7%</td>
-<td id="T_53d18_row4_col5" class="data row4 col5">5</td>
-<td id="T_53d18_row4_col6" class="data row4 col6">8.7%</td>
-<td id="T_53d18_row4_col7" class="data row4 col7">5</td>
+<th id="T_017f5_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</th>
+<td id="T_017f5_row4_col0" class="data row4 col0">8</td>
+<td id="T_017f5_row4_col1" class="data row4 col1">MGTA 454 Capstone Project (Spring with Advisor)</td>
+<td id="T_017f5_row4_col2" class="data row4 col2">+0.011</td>
+<td id="T_017f5_row4_col3" class="data row4 col3">5</td>
+<td id="T_017f5_row4_col4" class="data row4 col4">8.7%</td>
+<td id="T_017f5_row4_col5" class="data row4 col5">5</td>
+<td id="T_017f5_row4_col6" class="data row4 col6">8.7%</td>
+<td id="T_017f5_row4_col7" class="data row4 col7">5</td>
 </tr>
 <tr class="even">
-<th id="T_53d18_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</th>
-<td id="T_53d18_row5_col0" class="data row5 col0">2</td>
-<td id="T_53d18_row5_col1" class="data row5 col1">MGTA 464 SQL (Summer with Nijs)</td>
-<td id="T_53d18_row5_col2" class="data row5 col2">-0.004</td>
-<td id="T_53d18_row5_col3" class="data row5 col3">6</td>
-<td id="T_53d18_row5_col4" class="data row5 col4">8.6%</td>
-<td id="T_53d18_row5_col5" class="data row5 col5">6</td>
-<td id="T_53d18_row5_col6" class="data row5 col6">8.6%</td>
-<td id="T_53d18_row5_col7" class="data row5 col7">6</td>
+<th id="T_017f5_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</th>
+<td id="T_017f5_row5_col0" class="data row5 col0">2</td>
+<td id="T_017f5_row5_col1" class="data row5 col1">MGTA 464 SQL (Summer with Nijs)</td>
+<td id="T_017f5_row5_col2" class="data row5 col2">-0.004</td>
+<td id="T_017f5_row5_col3" class="data row5 col3">6</td>
+<td id="T_017f5_row5_col4" class="data row5 col4">8.6%</td>
+<td id="T_017f5_row5_col5" class="data row5 col5">6</td>
+<td id="T_017f5_row5_col6" class="data row5 col6">8.6%</td>
+<td id="T_017f5_row5_col7" class="data row5 col7">6</td>
 </tr>
 <tr class="odd">
-<th id="T_53d18_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</th>
-<td id="T_53d18_row6_col0" class="data row6 col0">10</td>
-<td id="T_53d18_row6_col1" class="data row6 col1">MGTA 457 Biz. Intelligence Systems (Fall with Schibler)</td>
-<td id="T_53d18_row6_col2" class="data row6 col2">-0.120</td>
-<td id="T_53d18_row6_col3" class="data row6 col3">7</td>
-<td id="T_53d18_row6_col4" class="data row6 col4">7.0%</td>
-<td id="T_53d18_row6_col5" class="data row6 col5">7</td>
-<td id="T_53d18_row6_col6" class="data row6 col6">7.1%</td>
-<td id="T_53d18_row6_col7" class="data row6 col7">7</td>
+<th id="T_017f5_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</th>
+<td id="T_017f5_row6_col0" class="data row6 col0">10</td>
+<td id="T_017f5_row6_col1" class="data row6 col1">MGTA 457 Biz. Intelligence Systems (Fall with Schibler)</td>
+<td id="T_017f5_row6_col2" class="data row6 col2">-0.120</td>
+<td id="T_017f5_row6_col3" class="data row6 col3">7</td>
+<td id="T_017f5_row6_col4" class="data row6 col4">7.0%</td>
+<td id="T_017f5_row6_col5" class="data row6 col5">7</td>
+<td id="T_017f5_row6_col6" class="data row6 col6">7.1%</td>
+<td id="T_017f5_row6_col7" class="data row6 col7">7</td>
 </tr>
 <tr class="even">
-<th id="T_53d18_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</th>
-<td id="T_53d18_row7_col0" class="data row7 col0">1</td>
-<td id="T_53d18_row7_col1" class="data row7 col1">MGTA 403 AI Math, Prog., &amp; Analytics (Summer with Nijs)</td>
-<td id="T_53d18_row7_col2" class="data row7 col2">-0.209</td>
-<td id="T_53d18_row7_col3" class="data row7 col3">8</td>
-<td id="T_53d18_row7_col4" class="data row7 col4">5.6%</td>
-<td id="T_53d18_row7_col5" class="data row7 col5">8</td>
-<td id="T_53d18_row7_col6" class="data row7 col6">5.5%</td>
-<td id="T_53d18_row7_col7" class="data row7 col7">8</td>
+<th id="T_017f5_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</th>
+<td id="T_017f5_row7_col0" class="data row7 col0">1</td>
+<td id="T_017f5_row7_col1" class="data row7 col1">MGTA 403 AI Math, Prog., &amp; Analytics (Summer with Nijs)</td>
+<td id="T_017f5_row7_col2" class="data row7 col2">-0.209</td>
+<td id="T_017f5_row7_col3" class="data row7 col3">8</td>
+<td id="T_017f5_row7_col4" class="data row7 col4">5.6%</td>
+<td id="T_017f5_row7_col5" class="data row7 col5">8</td>
+<td id="T_017f5_row7_col6" class="data row7 col6">5.5%</td>
+<td id="T_017f5_row7_col7" class="data row7 col7">8</td>
 </tr>
 <tr class="odd">
-<th id="T_53d18_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</th>
-<td id="T_53d18_row8_col0" class="data row8 col0">3</td>
-<td id="T_53d18_row8_col1" class="data row8 col1">MGTA 451 Marketing/Finance/Operations (Summer with Wilbur/Buti/Shin)</td>
-<td id="T_53d18_row8_col2" class="data row8 col2">-0.213</td>
-<td id="T_53d18_row8_col3" class="data row8 col3">9</td>
-<td id="T_53d18_row8_col4" class="data row8 col4">5.2%</td>
-<td id="T_53d18_row8_col5" class="data row8 col5">9</td>
-<td id="T_53d18_row8_col6" class="data row8 col6">5.2%</td>
-<td id="T_53d18_row8_col7" class="data row8 col7">9</td>
+<th id="T_017f5_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</th>
+<td id="T_017f5_row8_col0" class="data row8 col0">3</td>
+<td id="T_017f5_row8_col1" class="data row8 col1">MGTA 451 Marketing/Finance/Operations (Summer with Wilbur/Buti/Shin)</td>
+<td id="T_017f5_row8_col2" class="data row8 col2">-0.213</td>
+<td id="T_017f5_row8_col3" class="data row8 col3">9</td>
+<td id="T_017f5_row8_col4" class="data row8 col4">5.2%</td>
+<td id="T_017f5_row8_col5" class="data row8 col5">9</td>
+<td id="T_017f5_row8_col6" class="data row8 col6">5.2%</td>
+<td id="T_017f5_row8_col7" class="data row8 col7">9</td>
 </tr>
 <tr class="even">
-<th id="T_53d18_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</th>
-<td id="T_53d18_row9_col0" class="data row9 col0">6</td>
-<td id="T_53d18_row9_col1" class="data row9 col1">MGTA 444 Analytics Consulting (Winter with Peterson)</td>
-<td id="T_53d18_row9_col2" class="data row9 col2">-0.292</td>
-<td id="T_53d18_row9_col3" class="data row9 col3">10</td>
-<td id="T_53d18_row9_col4" class="data row9 col4">4.4%</td>
-<td id="T_53d18_row9_col5" class="data row9 col5">10</td>
-<td id="T_53d18_row9_col6" class="data row9 col6">4.4%</td>
-<td id="T_53d18_row9_col7" class="data row9 col7">10</td>
+<th id="T_017f5_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</th>
+<td id="T_017f5_row9_col0" class="data row9 col0">6</td>
+<td id="T_017f5_row9_col1" class="data row9 col1">MGTA 444 Analytics Consulting (Winter with Peterson)</td>
+<td id="T_017f5_row9_col2" class="data row9 col2">-0.292</td>
+<td id="T_017f5_row9_col3" class="data row9 col3">10</td>
+<td id="T_017f5_row9_col4" class="data row9 col4">4.4%</td>
+<td id="T_017f5_row9_col5" class="data row9 col5">10</td>
+<td id="T_017f5_row9_col6" class="data row9 col6">4.4%</td>
+<td id="T_017f5_row9_col7" class="data row9 col7">10</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="79f481c7" class="cell" data-execution_count="23">
+<div id="c6cfe6ff" class="cell" data-execution_count="23">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">5</span>), sharey<span class="op">=</span><span class="va">True</span>)</span>

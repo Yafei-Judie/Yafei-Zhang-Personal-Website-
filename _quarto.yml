@@ -15,17 +15,19 @@ website:
   google-analytics: "G-XXXXXXXXXX"
   navbar:
     left:
-      - href: index.qmd
-        text: Hi
+      - href: index.qmd#home
+        text: Home
+      - href: index.qmd#about
+        text: About
+      - href: index.qmd#skills
+        text: Skills
+      - href: index.qmd#portfolio
+        text: Portfolio
+      - href: index.qmd#culture
+        text: Culture
       - href: cv.qmd
         text: Resume
-      - href: projects.qmd
-        text: Projects
-      - href: blog.qmd
-        text: Blog
-      - href: more-about-me.qmd
-        text: More About Me
-      - href: connect.qmd
+      - href: index.qmd#contact
         text: Connect
 
 format:
