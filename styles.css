@@ -4,7 +4,7 @@
 /* ─── Base ──────────────────────────────────────────────────── */
 body {
   font-family: 'Jost', sans-serif;
-  background-color: #faf8f5;
+  background-color: #f7f5fa;
   color: #3a3a3a;
   font-weight: 300;
   letter-spacing: 0.01em;
@@ -19,9 +19,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ─── Navbar ────────────────────────────────────────────────── */
 .navbar {
-  background-color: rgba(250, 248, 245, 0.96) !important;
+  background-color: rgba(247, 245, 250, 0.96) !important;
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e8ddd5;
+  border-bottom: 1px solid #d9d5e8;
   padding: 0.9rem 2rem;
 }
 
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
-  color: #c4849a !important;
+  color: #84a7c4 !important;
 }
 
 /* ─── About / Landing ───────────────────────────────────────── */
@@ -55,8 +55,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .quarto-about-jolla .about-image {
   border-radius: 50%;
-  border: 4px solid #f0e2e6;
-  box-shadow: 0 8px 36px rgba(196, 132, 154, 0.18);
+  border: 4px solid #e2e9f0;
+  box-shadow: 0 8px 36px rgba(132, 167, 196, 0.18);
 }
 
 .quarto-about-jolla h1 {
@@ -76,8 +76,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Social link buttons */
 .quarto-about-jolla .about-links .btn {
-  border: 1px solid #e0cfcf;
-  color: #c4849a;
+  border: 1px solid #cfd2e0;
+  color: #84a7c4;
   background: transparent;
   border-radius: 50px;
   padding: 0.4rem 1.2rem;
@@ -89,11 +89,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .quarto-about-jolla .about-links .btn:hover {
-  background-color: #c4849a;
-  border-color: #c4849a;
+  background-color: #84a7c4;
+  border-color: #84a7c4;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(196, 132, 154, 0.3);
+  box-shadow: 0 4px 14px rgba(132, 167, 196, 0.3);
 }
 
 /* ─── Photo Gallery ─────────────────────────────────────────── */
@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 36px;
   height: 1px;
-  background: #c4849a;
+  background: #84a7c4;
   margin: 0.75rem auto 0;
 }
 
@@ -150,8 +150,8 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
   display: block;
   margin: 0.5rem auto 1.8rem;
-  border: 3px solid #f0e2e6;
-  box-shadow: 0 6px 28px rgba(196, 132, 154, 0.22);
+  border: 3px solid #e2e9f0;
+  box-shadow: 0 6px 28px rgba(132, 167, 196, 0.22);
 }
 
 .connect-intro {
@@ -185,7 +185,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .quarto-listing-default .list-item:hover {
-  box-shadow: 0 10px 36px rgba(196, 132, 154, 0.18);
+  box-shadow: 0 10px 36px rgba(132, 167, 196, 0.18);
   transform: translateY(-4px);
 }
 
@@ -196,8 +196,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ─── Category Tags ─────────────────────────────────────────── */
 .quarto-category {
-  background-color: #f5e6eb !important;
-  color: #b0607a !important;
+  background-color: #e6eef5 !important;
+  color: #608ab0 !important;
   border: none !important;
   font-family: 'Jost', sans-serif;
   font-size: 0.72rem;
@@ -209,18 +209,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ─── Links ─────────────────────────────────────────────────── */
 a {
-  color: #c4849a;
+  color: #84a7c4;
   transition: color 0.25s ease;
 }
 
 a:hover {
-  color: #a66880;
+  color: #688ca6;
   text-decoration: none;
 }
 
 /* ─── Dividers ──────────────────────────────────────────────── */
 hr {
-  border-color: #ece4df;
+  border-color: #e1dfec;
   margin: 2rem 0;
 }
 
@@ -241,7 +241,7 @@ hr {
 
 #TOC .nav-link:hover,
 #TOC .nav-link.active {
-  color: #c4849a;
+  color: #84a7c4;
 }
 
 /* ─── Project Pages — Larger Text ───────────────────────────── */
@@ -256,7 +256,7 @@ main#quarto-document-content > section h2 {
   font-size: 1.65rem;
   margin-top: 2.5rem;
   margin-bottom: 0.8rem;
-  color: #5a4a50;
+  color: #4a535a;
 }
 
 /* ─── Project Images ────────────────────────────────────────── */
@@ -270,7 +270,7 @@ main#quarto-document-content > section img {
 
 main#quarto-document-content figure img:hover,
 main#quarto-document-content > section img:hover {
-  box-shadow: 0 8px 36px rgba(196, 132, 154, 0.22);
+  box-shadow: 0 8px 36px rgba(132, 167, 196, 0.22);
 }
 
 /* ─── Tables ────────────────────────────────────────────────── */
@@ -282,8 +282,8 @@ main#quarto-document-content table {
 }
 
 main#quarto-document-content table thead {
-  background-color: #f5e6eb;
-  color: #5a4a50;
+  background-color: #e6eef5;
+  color: #4a535a;
 }
 
 main#quarto-document-content table th {
@@ -298,7 +298,7 @@ main#quarto-document-content table td {
 }
 
 main#quarto-document-content table tbody tr:hover {
-  background-color: #fdf5f7;
+  background-color: #f5f9fd;
 }
 
 /* ─── Connect Page Links ───────────────────────────────────── */
@@ -314,8 +314,8 @@ main#quarto-document-content table tbody tr:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border: 1px solid #e0cfcf;
-  color: #c4849a;
+  border: 1px solid #cfd2e0;
+  color: #84a7c4;
   background: transparent;
   border-radius: 50px;
   padding: 0.55rem 1.4rem;
@@ -327,11 +327,11 @@ main#quarto-document-content table tbody tr:hover {
 }
 
 .connect-btn:hover {
-  background-color: #c4849a;
-  border-color: #c4849a;
+  background-color: #84a7c4;
+  border-color: #84a7c4;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(196, 132, 154, 0.3);
+  box-shadow: 0 4px 14px rgba(132, 167, 196, 0.3);
   text-decoration: none;
 }
 
@@ -346,7 +346,7 @@ main#quarto-document-content table tbody tr:hover {
   text-align: center;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid #ece4df;
+  border-bottom: 1px solid #e1dfec;
 }
 
 .resume-name {
@@ -367,18 +367,18 @@ main#quarto-document-content table tbody tr:hover {
 }
 
 .resume-contact a {
-  color: #c4849a;
+  color: #84a7c4;
   text-decoration: none;
 }
 
 .resume-contact a:hover {
-  color: #a66880;
+  color: #688ca6;
 }
 
 .resume-download {
   display: inline-block;
-  border: 1px solid #e0cfcf;
-  color: #c4849a;
+  border: 1px solid #cfd2e0;
+  color: #84a7c4;
   background: transparent;
   border-radius: 50px;
   padding: 0.4rem 1.4rem;
@@ -390,11 +390,11 @@ main#quarto-document-content table tbody tr:hover {
 }
 
 .resume-download:hover {
-  background-color: #c4849a;
-  border-color: #c4849a;
+  background-color: #84a7c4;
+  border-color: #84a7c4;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(196, 132, 154, 0.3);
+  box-shadow: 0 4px 14px rgba(132, 167, 196, 0.3);
   text-decoration: none;
 }
 
@@ -404,8 +404,8 @@ main#quarto-document-content table tbody tr:hover {
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #5a4a50;
-  border-bottom: 1px solid #ece4df;
+  color: #4a535a;
+  border-bottom: 1px solid #e1dfec;
   padding-bottom: 0.4rem;
   margin-top: 2rem;
   margin-bottom: 1.2rem;
@@ -450,7 +450,7 @@ main#quarto-document-content table tbody tr:hover {
   font-family: 'Jost', sans-serif;
   font-weight: 300;
   font-size: 0.85rem;
-  color: #c4849a;
+  color: #84a7c4;
   white-space: nowrap;
 }
 
@@ -477,7 +477,7 @@ main#quarto-document-content table tbody tr:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: #c4849a;
+  background-color: #84a7c4;
 }
 
 .resume-edu-detail {
@@ -555,8 +555,8 @@ main#quarto-document-content table tbody tr:hover {
   padding-bottom: 3rem;
   background: linear-gradient(
     to bottom,
-    rgba(40, 30, 35, 0) 40%,
-    rgba(40, 30, 35, 0.45) 100%
+    rgba(30, 37, 40, 0) 40%,
+    rgba(30, 37, 40, 0.45) 100%
   );
 }
 
@@ -588,13 +588,13 @@ main#quarto-document-content table tbody tr:hover {
   content: '';
   flex: 1;
   height: 1px;
-  background: linear-gradient(to right, transparent, #d4b5be, transparent);
+  background: linear-gradient(to right, transparent, #b5c4d4, transparent);
 }
 
 .art-divider-diamond {
   width: 6px;
   height: 6px;
-  background: #c4849a;
+  background: #84a7c4;
   transform: rotate(45deg);
   flex-shrink: 0;
 }
@@ -622,7 +622,7 @@ main#quarto-document-content table tbody tr:hover {
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #b0909a;
+  color: #90a0b0;
   margin-bottom: 1.5rem;
 }
 
@@ -631,7 +631,7 @@ main#quarto-document-content table tbody tr:hover {
   display: block;
   width: 30px;
   height: 1px;
-  background: #c4849a;
+  background: #84a7c4;
   margin: 0.8rem auto 0;
 }
 
@@ -651,16 +651,16 @@ main#quarto-document-content table tbody tr:hover {
 }
 
 .art-frame {
-  border: 1px solid #e0d3d7;
+  border: 1px solid #d3dae0;
   padding: 8px;
-  background: #faf8f5;
-  box-shadow: 0 6px 36px rgba(150, 100, 120, 0.1);
+  background: #f7f5fa;
+  box-shadow: 0 6px 36px rgba(100, 130, 150, 0.1);
   display: inline-block;
   transition: box-shadow 0.5s ease;
 }
 
 .art-frame:hover {
-  box-shadow: 0 12px 48px rgba(150, 100, 120, 0.18);
+  box-shadow: 0 12px 48px rgba(100, 130, 150, 0.18);
 }
 
 .art-frame img {
@@ -677,7 +677,7 @@ main#quarto-document-content table tbody tr:hover {
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.9rem;
   font-style: italic;
-  color: #a09098;
+  color: #909ba0;
   letter-spacing: 0.02em;
 }
 
@@ -729,17 +729,17 @@ main#quarto-document-content table tbody tr:hover {
 }
 
 .art-frame-wide {
-  border: 1px solid #e0d3d7;
+  border: 1px solid #d3dae0;
   padding: 8px;
-  background: #faf8f5;
-  box-shadow: 0 8px 44px rgba(150, 100, 120, 0.1);
+  background: #f7f5fa;
+  box-shadow: 0 8px 44px rgba(100, 130, 150, 0.1);
   display: inline-block;
   max-width: 100%;
   transition: box-shadow 0.5s ease;
 }
 
 .art-frame-wide:hover {
-  box-shadow: 0 14px 56px rgba(150, 100, 120, 0.17);
+  box-shadow: 0 14px 56px rgba(100, 130, 150, 0.17);
 }
 
 .art-frame-wide img {
@@ -763,17 +763,17 @@ main#quarto-document-content table tbody tr:hover {
   font-size: 0.72rem;
   font-weight: 400;
   letter-spacing: 0.04em;
-  color: #9a7a84;
-  border: 1px solid #e4d4da;
+  color: #7a8a9a;
+  border: 1px solid #d4dde4;
   padding: 0.35rem 0.9rem;
   background: rgba(255, 255, 255, 0.7);
   transition: all 0.3s ease;
 }
 
 .art-tag:hover {
-  background: #c4849a;
+  background: #84a7c4;
   color: white;
-  border-color: #c4849a;
+  border-color: #84a7c4;
 }
 
 /* ── Pillars with numbers ─── */
@@ -795,7 +795,7 @@ main#quarto-document-content table tbody tr:hover {
 
 .art-pillar {
   padding: 2rem 1.4rem;
-  border: 1px solid #ece0e4;
+  border: 1px solid #e0e6ec;
   background: white;
   transition: all 0.4s ease;
   position: relative;
@@ -809,13 +809,13 @@ main#quarto-document-content table tbody tr:hover {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(to right, transparent, #c4849a, transparent);
+  background: linear-gradient(to right, transparent, #84a7c4, transparent);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
 .art-pillar:hover {
-  box-shadow: 0 10px 40px rgba(196, 132, 154, 0.12);
+  box-shadow: 0 10px 40px rgba(132, 167, 196, 0.12);
   transform: translateY(-4px);
 }
 
@@ -827,7 +827,7 @@ main#quarto-document-content table tbody tr:hover {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.2rem;
   font-weight: 300;
-  color: #e8d4da;
+  color: #d4dee8;
   letter-spacing: 0.05em;
   margin-bottom: 0.6rem;
   line-height: 1;
@@ -860,15 +860,15 @@ main#quarto-document-content table tbody tr:hover {
 }
 
 .art-featured-frame {
-  border: 1px solid #e0d3d7;
+  border: 1px solid #d3dae0;
   border-radius: 0;
   padding: 6px;
-  background: #faf8f5;
-  box-shadow: 0 8px 44px rgba(150, 100, 120, 0.08);
+  background: #f7f5fa;
+  box-shadow: 0 8px 44px rgba(100, 130, 150, 0.08);
 }
 
 .art-featured-inner {
-  border: 1px solid #ece0e4;
+  border: 1px solid #e0e6ec;
   padding: 3rem 2.5rem;
   text-align: center;
   position: relative;
@@ -881,7 +881,7 @@ main#quarto-document-content table tbody tr:hover {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255, 252, 250, 0.65);
+  background: rgba(251, 250, 255, 0.65);
   backdrop-filter: blur(1px);
 }
 
@@ -896,7 +896,7 @@ main#quarto-document-content table tbody tr:hover {
   font-weight: 400;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #c4849a;
+  color: #84a7c4;
   display: block;
   margin-bottom: 1rem;
 }
@@ -927,8 +927,8 @@ main#quarto-document-content table tbody tr:hover {
   flex-wrap: wrap;
   margin-bottom: 2rem;
   padding: 1.2rem 0;
-  border-top: 1px solid #ece0e4;
-  border-bottom: 1px solid #ece0e4;
+  border-top: 1px solid #e0e6ec;
+  border-bottom: 1px solid #e0e6ec;
 }
 
 .art-detail {
@@ -944,7 +944,7 @@ main#quarto-document-content table tbody tr:hover {
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #b0909a;
+  color: #90a0b0;
 }
 
 .art-detail-value {
@@ -958,8 +958,8 @@ main#quarto-document-content table tbody tr:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  border: 1px solid #c4849a;
-  color: #c4849a;
+  border: 1px solid #84a7c4;
+  color: #84a7c4;
   background: transparent;
   border-radius: 0;
   padding: 0.75rem 2.2rem;
@@ -973,11 +973,11 @@ main#quarto-document-content table tbody tr:hover {
 }
 
 .art-view-btn:hover {
-  background: #c4849a;
+  background: #84a7c4;
   color: white;
   text-decoration: none;
   transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(196, 132, 154, 0.3);
+  box-shadow: 0 6px 28px rgba(132, 167, 196, 0.3);
 }
 
 /* ── Pullquote Closing ─── */
@@ -993,11 +993,11 @@ main#quarto-document-content table tbody tr:hover {
   padding: 3.5rem 3rem 2.5rem;
   background: linear-gradient(
     160deg,
-    #fdf8f9 0%,
-    #f8f0f2 40%,
-    #f5eaed 100%
+    #f8fafd 0%,
+    #f0f4f8 40%,
+    #eaeff5 100%
   );
-  border: 1px solid #ecdfe3;
+  border: 1px solid #dfe6ec;
   overflow: hidden;
 }
 
@@ -1009,7 +1009,7 @@ main#quarto-document-content table tbody tr:hover {
   font-family: 'Cormorant Garamond', serif;
   font-size: 7rem;
   font-weight: 300;
-  color: #e8ced6;
+  color: #cedbe8;
   line-height: 1;
   pointer-events: none;
   user-select: none;
@@ -1020,7 +1020,7 @@ main#quarto-document-content table tbody tr:hover {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.45rem;
   font-weight: 300;
-  color: #4a3a40;
+  color: #3a434a;
   line-height: 2;
   max-width: 720px;
   margin: 0 auto;
@@ -1028,26 +1028,26 @@ main#quarto-document-content table tbody tr:hover {
 }
 
 .art-pullquote-text em {
-  color: #c4849a;
+  color: #84a7c4;
   font-style: italic;
 }
 
 .art-pullquote-second {
   margin-top: 0.8rem;
   font-size: 1.3rem;
-  color: #5a4a50;
+  color: #4a535a;
 }
 
 .art-pullquote-second strong {
   font-weight: 600;
-  color: #c4849a;
+  color: #84a7c4;
   letter-spacing: 0.03em;
 }
 
 .art-pullquote-line {
   width: 50px;
   height: 2px;
-  background: linear-gradient(to right, transparent, #c4849a, transparent);
+  background: linear-gradient(to right, transparent, #84a7c4, transparent);
   margin: 1.8rem auto 0;
 }
 
@@ -1110,7 +1110,7 @@ main#quarto-document-content table tbody tr:hover {
   font-size: 0.85rem;
   font-weight: 400;
   letter-spacing: 0.08em;
-  color: #c4849a;
+  color: #84a7c4;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
@@ -1118,8 +1118,8 @@ main#quarto-document-content table tbody tr:hover {
 }
 
 .gallery-view-all:hover {
-  border-bottom-color: #c4849a;
-  color: #a66880;
+  border-bottom-color: #84a7c4;
+  color: #688ca6;
   text-decoration: none;
 }
 
@@ -1161,8 +1161,8 @@ main#quarto-document-content table tbody tr:hover {
   padding-bottom: 2.5rem;
   background: linear-gradient(
     to bottom,
-    rgba(40, 30, 35, 0) 40%,
-    rgba(40, 30, 35, 0.5) 100%
+    rgba(30, 37, 40, 0) 40%,
+    rgba(30, 37, 40, 0.5) 100%
   );
 }
 
@@ -1207,7 +1207,7 @@ main#quarto-document-content table tbody tr:hover {
   font-size: 1.2rem;
   font-weight: 300;
   font-style: italic;
-  color: #8a7a7f;
+  color: #7a828a;
   line-height: 2.1;
 }
 
@@ -1218,7 +1218,7 @@ main#quarto-document-content table tbody tr:hover {
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #b0909a;
+  color: #90a0b0;
   text-align: center;
   margin: 2.5rem 0 1.2rem;
 }
@@ -1228,7 +1228,7 @@ main#quarto-document-content table tbody tr:hover {
   display: block;
   width: 30px;
   height: 1px;
-  background: #c4849a;
+  background: #84a7c4;
   margin: 0.7rem auto 0;
 }
 
@@ -1264,7 +1264,7 @@ main#quarto-document-content table tbody tr:hover {
 
 .lens-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(196, 132, 154, 0.2);
+  box-shadow: 0 12px 40px rgba(132, 167, 196, 0.2);
 }
 
 .lens-item:hover img {
@@ -1282,8 +1282,8 @@ main#quarto-document-content table tbody tr:hover {
   padding: 1.2rem;
   background: linear-gradient(
     to bottom,
-    rgba(40, 30, 35, 0) 30%,
-    rgba(40, 30, 35, 0.65) 100%
+    rgba(30, 37, 40, 0) 30%,
+    rgba(30, 37, 40, 0.65) 100%
   );
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -1315,7 +1315,7 @@ main#quarto-document-content table tbody tr:hover {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(20, 15, 18, 0.95);
+  background: rgba(15, 19, 20, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1477,9 +1477,9 @@ main#quarto-document-content table tbody tr:hover {
   font-family: 'Jost', sans-serif;
   font-size: 0.8rem;
   letter-spacing: 0.04em;
-  color: #9a7a84;
+  color: #7a8a9a;
   background: white;
-  border: 1px solid #e4d4da;
+  border: 1px solid #d4dde4;
   border-radius: 50px;
   padding: 0.5rem 1.3rem;
   cursor: pointer;
@@ -1487,13 +1487,13 @@ main#quarto-document-content table tbody tr:hover {
 }
 
 .proj-filter:hover {
-  border-color: #c4849a;
-  color: #c4849a;
+  border-color: #84a7c4;
+  color: #84a7c4;
 }
 
 .proj-filter.active {
-  background: #c4849a;
-  border-color: #c4849a;
+  background: #84a7c4;
+  border-color: #84a7c4;
   color: white;
 }
 
@@ -1517,7 +1517,7 @@ main#quarto-document-content table tbody tr:hover {
 }
 
 .proj-card:hover {
-  box-shadow: 0 12px 40px rgba(196, 132, 154, 0.2);
+  box-shadow: 0 12px 40px rgba(132, 167, 196, 0.2);
   transform: translateY(-4px);
   text-decoration: none;
 }
@@ -1526,7 +1526,8 @@ main#quarto-document-content table tbody tr:hover {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle 180px at var(--glow-x) var(--glow-y), rgba(255, 255, 255, 0.55), transparent 70%);
+  background: radial-gradient(circle 180px at var(--glow-x) var(--glow-y), rgba(132, 167, 196, 0.28), transparent 70%);
+  mix-blend-mode: soft-light;
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
@@ -1539,7 +1540,21 @@ main#quarto-document-content table tbody tr:hover {
 .proj-card-img {
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: #f0e9e5;
+  background: #e7e5f0;
+  position: relative;
+}
+
+.proj-card-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 0 rgba(132, 167, 196, 0.6);
+  transition: box-shadow 0.35s ease;
+  pointer-events: none;
+}
+
+.proj-card:hover .proj-card-img::after {
+  box-shadow: inset 0 0 0 3px rgba(132, 167, 196, 0.6);
 }
 
 .proj-card-img img {
@@ -1564,7 +1579,7 @@ main#quarto-document-content table tbody tr:hover {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #c4849a;
+  color: #84a7c4;
   margin-bottom: 0.5rem;
 }
 
@@ -1600,7 +1615,7 @@ main#quarto-document-content table tbody tr:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #c4849a;
+  background: #84a7c4;
   color: white;
   border-radius: 50px;
   padding: 0.7rem 1.8rem;
@@ -1609,13 +1624,13 @@ main#quarto-document-content table tbody tr:hover {
   letter-spacing: 0.04em;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 18px rgba(196, 132, 154, 0.35);
+  box-shadow: 0 4px 18px rgba(132, 167, 196, 0.35);
 }
 
 .hero-cta-primary:hover {
-  background: #a66880;
+  background: #688ca6;
   transform: translateY(-2px);
-  box-shadow: 0 8px 26px rgba(196, 132, 154, 0.4);
+  box-shadow: 0 8px 26px rgba(132, 167, 196, 0.4);
   color: white;
   text-decoration: none;
 }
@@ -1624,7 +1639,7 @@ main#quarto-document-content table tbody tr:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border: 1px solid #e0cfcf;
+  border: 1px solid #cfd2e0;
   color: #8a8a8a;
   background: transparent;
   border-radius: 50px;
@@ -1637,8 +1652,8 @@ main#quarto-document-content table tbody tr:hover {
 }
 
 .hero-cta-secondary:hover {
-  border-color: #c4849a;
-  color: #c4849a;
+  border-color: #84a7c4;
+  color: #84a7c4;
   text-decoration: none;
 }
 
@@ -1673,7 +1688,7 @@ main#quarto-document-content table tbody tr:hover {
   height: 460px;
   top: -100px;
   left: 4%;
-  background: radial-gradient(circle, #e3a9c1 0%, rgba(227, 169, 193, 0) 70%);
+  background: radial-gradient(circle, #a9cde3 0%, rgba(169, 205, 227, 0) 70%);
 }
 
 .blob-2 {
@@ -1681,7 +1696,7 @@ main#quarto-document-content table tbody tr:hover {
   height: 400px;
   top: 8%;
   right: 6%;
-  background: radial-gradient(circle, #d9bcc7 0%, rgba(217, 188, 199, 0) 70%);
+  background: radial-gradient(circle, #bccdd9 0%, rgba(188, 205, 217, 0) 70%);
 }
 
 .blob-3 {
@@ -1689,7 +1704,7 @@ main#quarto-document-content table tbody tr:hover {
   height: 380px;
   bottom: -120px;
   left: 22%;
-  background: radial-gradient(circle, #f2dcae 0%, rgba(242, 220, 174, 0) 70%);
+  background: radial-gradient(circle, #8fbfc9 0%, rgba(143, 191, 201, 0) 70%);
 }
 
 .blob-4 {
@@ -1697,7 +1712,7 @@ main#quarto-document-content table tbody tr:hover {
   height: 320px;
   top: 38%;
   right: 22%;
-  background: radial-gradient(circle, #c9dfd3 0%, rgba(201, 223, 211, 0) 70%);
+  background: radial-gradient(circle, #a8b8d8 0%, rgba(168, 184, 216, 0) 70%);
 }
 
 @media (max-width: 700px) {
@@ -1715,7 +1730,7 @@ main#quarto-document-content table tbody tr:hover {
    it's no longer meant to show the network (everything past the hero). */
 .home-section {
   position: relative;
-  background: #faf8f5;
+  background: #f7f5fa;
 }
 
 .quarto-about-jolla {
@@ -1738,7 +1753,7 @@ section[id], #home {
   gap: 0.3rem;
   width: fit-content;
   margin: 0.5rem auto 4rem;
-  color: #b0909a;
+  color: #90a0b0;
   font-family: 'Jost', sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.15em;
@@ -1749,7 +1764,7 @@ section[id], #home {
 }
 
 .scroll-cue:hover {
-  color: #c4849a;
+  color: #84a7c4;
 }
 
 @keyframes scroll-cue-bounce {
@@ -1761,7 +1776,7 @@ section[id], #home {
   max-width: 980px;
   margin: 0 auto;
   padding: 4.5rem 1.5rem;
-  border-top: 1px solid #ece4df;
+  border-top: 1px solid #e1dfec;
 }
 
 .home-section-label {
@@ -1815,7 +1830,7 @@ section[id], #home {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.8rem;
   font-weight: 400;
-  color: #c4849a;
+  color: #84a7c4;
   line-height: 1;
 }
 
@@ -1868,32 +1883,32 @@ section[id], #home {
   font-family: 'Jost', sans-serif;
   font-size: 0.82rem;
   font-weight: 500;
-  color: #6a3a49;
-  background: #fbf1f4;
-  border: 1px solid #dcaebb;
+  color: #3a536a;
+  background: #f1f6fb;
+  border: 1px solid #aec4dc;
   border-radius: 50px;
   padding: 0.45rem 1rem;
   cursor: pointer;
-  box-shadow: 0 1px 4px rgba(150, 100, 120, 0.06);
+  box-shadow: 0 1px 4px rgba(100, 130, 150, 0.06);
   transition: all 0.25s ease;
 }
 
 .skill-pill:focus-visible {
-  outline: 2px solid #c4849a;
+  outline: 2px solid #84a7c4;
   outline-offset: 2px;
 }
 
 .skill-pill:hover {
-  background: #c4849a;
+  background: #84a7c4;
   color: white;
-  border-color: #c4849a;
-  box-shadow: 0 4px 12px rgba(196, 132, 154, 0.3);
+  border-color: #84a7c4;
+  box-shadow: 0 4px 12px rgba(132, 167, 196, 0.3);
 }
 
 .skill-pill.active {
-  background: #a66880;
+  background: #688ca6;
   color: white;
-  border-color: #a66880;
+  border-color: #688ca6;
 }
 
 /* Skill proof popover: shown when a skill pill is clicked */
@@ -1902,7 +1917,7 @@ section[id], #home {
   max-width: 480px;
   margin: 1.8rem auto 0;
   background: white;
-  border: 1px solid #e4d4da;
+  border: 1px solid #d4dde4;
   border-radius: 14px;
   padding: 1.3rem 1.6rem;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
@@ -1917,12 +1932,12 @@ section[id], #home {
   border: none;
   font-size: 1.3rem;
   line-height: 1;
-  color: #b0a0a4;
+  color: #a0a7b0;
   cursor: pointer;
 }
 
 .skill-proof-close:hover {
-  color: #6a3a49;
+  color: #3a536a;
 }
 
 .skill-proof-label {
@@ -1931,7 +1946,7 @@ section[id], #home {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #c4849a;
+  color: #84a7c4;
   margin: 0 0 0.7rem;
 }
 
@@ -1954,7 +1969,7 @@ section[id], #home {
   color: #3a3a3a;
   text-decoration: none;
   padding: 0.4rem 0;
-  border-bottom: 1px solid #f0e6e9;
+  border-bottom: 1px solid #e6ebf0;
 }
 
 .skill-proof-list a:last-child {
@@ -1962,7 +1977,7 @@ section[id], #home {
 }
 
 .skill-proof-list a:hover {
-  color: #c4849a;
+  color: #84a7c4;
 }
 
 .skill-proof-list a::after {
@@ -1980,8 +1995,8 @@ section[id], #home {
   gap: 0.5rem;
   width: fit-content;
   margin: 2.2rem auto 0;
-  border: 1px solid #c4849a;
-  color: #c4849a;
+  border: 1px solid #84a7c4;
+  color: #84a7c4;
   background: transparent;
   border-radius: 50px;
   padding: 0.7rem 1.7rem;
@@ -1994,11 +2009,11 @@ section[id], #home {
 }
 
 .view-all-btn:hover {
-  background: #c4849a;
+  background: #84a7c4;
   color: white;
   text-decoration: none;
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(196, 132, 154, 0.3);
+  box-shadow: 0 8px 22px rgba(132, 167, 196, 0.3);
 }
 
 /* Culture teaser */
@@ -2010,10 +2025,10 @@ section[id], #home {
 }
 
 .culture-teaser-img {
-  border: 1px solid #e0d3d7;
+  border: 1px solid #d3dae0;
   padding: 8px;
-  background: #faf8f5;
-  box-shadow: 0 6px 36px rgba(150, 100, 120, 0.1);
+  background: #f7f5fa;
+  box-shadow: 0 6px 36px rgba(100, 130, 150, 0.1);
 }
 
 .culture-teaser-img img {
@@ -2026,7 +2041,7 @@ section[id], #home {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.35rem;
   font-style: italic;
-  color: #4a3a40;
+  color: #3a434a;
   line-height: 1.6;
   margin-bottom: 1rem;
 }
@@ -2070,7 +2085,7 @@ section[id], #home {
 }
 
 .home-footer a:hover {
-  color: #c4849a;
+  color: #84a7c4;
 }
 
 @media (max-width: 700px) {
@@ -2094,8 +2109,8 @@ section[id], #home {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: rgba(58, 45, 50, 0.82);
-  color: #fff;
+  background: rgba(45, 53, 58, 0.82);
+  color: #ffffff;
   font-family: 'Jost', sans-serif;
   font-size: 0.72rem;
   font-weight: 500;
@@ -2123,7 +2138,7 @@ section[id], #home {
 .testimonial-mark {
   font-family: 'Cormorant Garamond', serif;
   font-size: 3rem;
-  color: #e8ced6;
+  color: #cedbe8;
   line-height: 1;
   display: block;
   margin-bottom: 0.3rem;
@@ -2193,11 +2208,11 @@ section[id], #home {
   opacity: 0;
   transition: opacity 0.4s ease;
   background: radial-gradient(
-    circle 260px at var(--spot-x, 50%) var(--spot-y, 50%),
-    rgba(255, 255, 255, 0.55),
+    circle 220px at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(132, 167, 196, 0.3),
     transparent 70%
   );
-  mix-blend-mode: overlay;
+  mix-blend-mode: soft-light;
 }
 
 @media (max-width: 900px), (pointer: coarse) {
@@ -2215,7 +2230,7 @@ section[id], #home {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: #c4849a;
+  background: #84a7c4;
   color: white;
   border-radius: 50px;
   padding: 0.75rem 1.1rem;
@@ -2223,14 +2238,14 @@ section[id], #home {
   font-size: 0.85rem;
   letter-spacing: 0.02em;
   text-decoration: none;
-  box-shadow: 0 6px 22px rgba(196, 132, 154, 0.4);
+  box-shadow: 0 6px 22px rgba(132, 167, 196, 0.4);
   transition: all 0.3s ease;
 }
 
 .floating-contact:hover {
-  background: #a66880;
+  background: #688ca6;
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(196, 132, 154, 0.45);
+  box-shadow: 0 10px 28px rgba(132, 167, 196, 0.45);
   color: white;
   text-decoration: none;
 }
@@ -2258,7 +2273,7 @@ section[id], #home {
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 6px 32px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e4d4da;
+  border: 1px solid #d4dde4;
 }
 
 .dashboard-embed {
@@ -2276,8 +2291,8 @@ section[id], #home {
 
 /* ─── Inline Code / Skill Tags ──────────────────────────────── */
 main#quarto-document-content code {
-  background-color: #f5e6eb;
-  color: #b0607a;
+  background-color: #e6eef5;
+  color: #608ab0;
   border-radius: 4px;
   padding: 0.15rem 0.45rem;
   font-size: 0.88rem;

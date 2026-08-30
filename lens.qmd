@@ -4,6 +4,12 @@ toc: false
 ---
 
 ```{=html}
+<div id="bg-canvas" aria-hidden="true">
+  <div class="aurora-blob blob-1"></div>
+  <div class="aurora-blob blob-2"></div>
+  <div class="aurora-blob blob-3"></div>
+  <div class="aurora-blob blob-4"></div>
+</div>
 <div class="lens-page">
 
   <!-- Hero -->
