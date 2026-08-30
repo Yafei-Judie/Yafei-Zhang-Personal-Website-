@@ -258,6 +258,70 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
   <span class="floating-contact-label">Let's Connect</span>
 </a>
+
+<div id="cursor-spotlight" aria-hidden="true"></div>
+
+<script>
+(function() {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
+  if (prefersReducedMotion || !hasFinePointer) return; // skip on touch/reduced-motion devices
+
+  // ── Sitewide cursor spotlight: a soft light that follows the mouse
+  // everywhere, so the page feels alive wherever you point. ──
+  const spot = document.getElementById('cursor-spotlight');
+  if (spot) {
+    window.addEventListener('mousemove', (e) => {
+      spot.style.setProperty('--spot-x', e.clientX + 'px');
+      spot.style.setProperty('--spot-y', e.clientY + 'px');
+      spot.style.opacity = '1';
+    });
+    window.addEventListener('mouseleave', () => { spot.style.opacity = '0'; });
+  }
+
+  // ── Card tilt + internal glow-follow ──
+  function initTilt(selector, maxTilt) {
+    document.querySelectorAll(selector).forEach((el) => {
+      el.addEventListener('mousemove', (e) => {
+        el.style.transition = 'box-shadow 0.35s ease'; // instant transform while tracking
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const cx = rect.width / 2, cy = rect.height / 2;
+        const rotateX = ((y - cy) / cy) * -maxTilt;
+        const rotateY = ((x - cx) / cx) * maxTilt;
+        el.style.transform = `perspective(800px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+        el.style.setProperty('--glow-x', x + 'px');
+        el.style.setProperty('--glow-y', y + 'px');
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transition = 'transform 0.4s ease, box-shadow 0.35s ease'; // smooth snap back
+        el.style.transform = '';
+      });
+    });
+  }
+
+  // ── Magnetic pull: button drifts slightly toward the cursor ──
+  function initMagnetic(selector, strength) {
+    document.querySelectorAll(selector).forEach((el) => {
+      el.addEventListener('mousemove', (e) => {
+        el.style.transition = 'none';
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        el.style.transform = `translate(${(x * strength).toFixed(1)}px, ${(y * strength).toFixed(1)}px)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+        el.style.transform = '';
+      });
+    });
+  }
+
+  initTilt('.proj-card', 5);
+  initMagnetic('.hero-cta-primary, .hero-cta-secondary, .connect-btn, .floating-contact, .proj-filter', 0.22);
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

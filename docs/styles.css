@@ -1505,18 +1505,35 @@ main#quarto-document-content table tbody tr:hover {
 
 .proj-card {
   display: block;
+  position: relative;
   border-radius: 14px;
   overflow: hidden;
   background: white;
   box-shadow: 0 2px 18px rgba(0, 0, 0, 0.05);
   text-decoration: none;
   transition: box-shadow 0.35s ease, transform 0.35s ease;
+  --glow-x: 50%;
+  --glow-y: 50%;
 }
 
 .proj-card:hover {
   box-shadow: 0 12px 40px rgba(196, 132, 154, 0.2);
   transform: translateY(-4px);
   text-decoration: none;
+}
+
+.proj-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle 180px at var(--glow-x) var(--glow-y), rgba(255, 255, 255, 0.55), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.proj-card:hover::after {
+  opacity: 1;
 }
 
 .proj-card-img {
@@ -2062,6 +2079,28 @@ section[id], #home {
 .now-strip strong {
   color: #3a3a3a;
   font-weight: 500;
+}
+
+/* ─── Sitewide Cursor Spotlight ──────────────────────────────── */
+#cursor-spotlight {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(
+    circle 260px at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(255, 255, 255, 0.55),
+    transparent 70%
+  );
+  mix-blend-mode: overlay;
+}
+
+@media (max-width: 900px), (pointer: coarse) {
+  #cursor-spotlight {
+    display: none;
+  }
 }
 
 /* ─── Floating Contact Button ───────────────────────────────── */
