@@ -8,7 +8,7 @@ format:
 
 ```{=html}
 <div class="proj-intro">
-  <p>Six projects, ordered by the business decision each one actually changes — not by how fancy the model is. Every chart and diagram below is a real output from my own analysis, not a mockup.</p>
+  <p>Seven projects, ordered by the business decision each one actually changes — not by how fancy the model is. Every chart and diagram below is a real output from my own analysis, not a mockup.</p>
 </div>
 
 <div class="proj-filters">
@@ -16,12 +16,24 @@ format:
   <button class="proj-filter" data-filter="bi">Business Intelligence</button>
   <button class="proj-filter" data-filter="sql">SQL &amp; Data Engineering</button>
   <button class="proj-filter" data-filter="ml">Machine Learning</button>
+  <button class="proj-filter" data-filter="pm">Product Management</button>
   <button class="proj-filter" data-filter="marketing">Marketing Analytics</button>
   <button class="proj-filter" data-filter="ops">Operations</button>
   <button class="proj-filter" data-filter="exp">Experimentation</button>
 </div>
 
 <div class="proj-grid">
+
+  <a class="proj-card" href="projects/project8/index.html" data-cats="sql ml pm marketing">
+    <div class="proj-card-img">
+      <img src="images/projects/ecommerce/delay-vs-review.png" alt="Delivery timing versus average review score chart">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">SQL · Machine Learning · Product Management</span>
+      <h3>E-Commerce Customer Journey: SQL, Churn &amp; CLV</h3>
+      <p>8 SQL queries + a churn/CLV model on real GA4, Olist, and UK retail data, pressure-tested against its own critique before shipping a PRD. Public repo + live dashboard.</p>
+    </div>
+  </a>
 
   <a class="proj-card" href="projects/project2/index.html" data-cats="bi marketing">
     <div class="proj-card-img">

@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
+<meta name="dcterms.date" content="2026-08-21">
+<meta name="description" content="A self-directed case study on two real public datasets — 8 SQL queries against GA4 and Olist e-commerce data, a churn/CLV model, and a PM decision built from the finding, pressure-tested against its own critique before shipping.">
 
-<title>Projects – Yafei (Judie) Zhang</title>
+<title>End-to-End E-Commerce Customer Journey: SQL, Churn &amp; CLV – Yafei (Judie) Zhang</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,24 +28,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,32 +84,32 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Projects – Yafei (Judie) Zhang">
-<meta property="og:description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
-<meta property="og:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/ecommerce/delay-vs-review.png">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="End-to-End E-Commerce Customer Journey: SQL, Churn &amp; CLV – Yafei (Judie) Zhang">
+<meta property="og:description" content="A self-directed case study on two real public datasets — 8 SQL queries against GA4 and Olist e-commerce data, a churn/CLV model, and a PM decision built from the finding, pressure-tested against its own critique before shipping.">
+<meta property="og:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/ecommerce/ga4-funnel.png">
 <meta property="og:site_name" content="Yafei (Judie) Zhang">
 <meta property="og:locale" content="en_US">
-<meta property="og:image:alt" content="Delivery timing versus average review score chart">
+<meta property="og:image:alt" content="Acquisition and on-site funnel chart built from GA4 e-commerce sample data">
 <meta property="og:image:height" content="750">
 <meta property="og:image:width" content="1350">
-<meta name="twitter:title" content="Projects – Yafei (Judie) Zhang">
-<meta name="twitter:description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
-<meta name="twitter:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/ecommerce/delay-vs-review.png">
+<meta name="twitter:title" content="End-to-End E-Commerce Customer Journey: SQL, Churn &amp; CLV – Yafei (Judie) Zhang">
+<meta name="twitter:description" content="A self-directed case study on two real public datasets — 8 SQL queries against GA4 and Olist e-commerce data, a churn/CLV model, and a PM decision built from the finding, pressure-tested against its own critique before shipping.">
+<meta name="twitter:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/ecommerce/ga4-funnel.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image:alt" content="Delivery timing versus average review score chart">
+<meta name="twitter:image:alt" content="Acquisition and on-site funnel chart built from GA4 e-commerce sample data">
 <meta name="twitter:image-height" content="750">
 <meta name="twitter:image-width" content="1350">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Yafei (Judie) Zhang</span>
     </a>
   </div>
@@ -119,31 +120,31 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#home"> 
+    <a class="nav-link" href="../../index.html#home"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#about"> 
+    <a class="nav-link" href="../../index.html#about"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#skills"> 
+    <a class="nav-link" href="../../index.html#skills"> 
 <span class="menu-text">Skills</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#portfolio"> 
+    <a class="nav-link" href="../../index.html#portfolio"> 
 <span class="menu-text">Portfolio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#culture"> 
+    <a class="nav-link" href="../../index.html#culture"> 
 <span class="menu-text">Culture</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html"> 
+    <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">Resume</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#contact"> 
+    <a class="nav-link" href="../../index.html#contact"> 
 <span class="menu-text">Connect</span></a>
   </li>  
 </ul>
@@ -157,18 +158,39 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-i-built-this" id="toc-why-i-built-this" class="nav-link active" data-scroll-target="#why-i-built-this">Why I Built This</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
+  <li><a href="#the-headline-finding" id="toc-the-headline-finding" class="nav-link" data-scroll-target="#the-headline-finding">The Headline Finding</a></li>
+  <li><a href="#the-finding-this-project-almost-missed" id="toc-the-finding-this-project-almost-missed" class="nav-link" data-scroll-target="#the-finding-this-project-almost-missed">The Finding This Project Almost Missed</a></li>
+  <li><a href="#from-finding-to-product-decision" id="toc-from-finding-to-product-decision" class="nav-link" data-scroll-target="#from-finding-to-product-decision">From Finding to Product Decision</a></li>
+  <li><a href="#a-second-module-churn-clv" id="toc-a-second-module-churn-clv" class="nav-link" data-scroll-target="#a-second-module-churn-clv">A Second Module: Churn &amp; CLV</a></li>
+  <li><a href="#why-it-matters" id="toc-why-it-matters" class="nav-link" data-scroll-target="#why-it-matters">Why It Matters</a></li>
+  <li><a href="#skills-used" id="toc-skills-used" class="nav-link" data-scroll-target="#skills-used">Skills Used</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
-</div>
+<h1 class="title">End-to-End E-Commerce Customer Journey: SQL, Churn &amp; CLV</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">SQL</div>
+    <div class="quarto-category">Machine Learning</div>
+    <div class="quarto-category">Product Management</div>
+    <div class="quarto-category">Marketing Analytics</div>
+  </div>
+  </div>
 
 <div>
   <div class="description">
-    Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.
+    A self-directed case study on two real public datasets — 8 SQL queries against GA4 and Olist e-commerce data, a churn/CLV model, and a PM decision built from the finding, pressure-tested against its own critique before shipping.
   </div>
 </div>
 
@@ -176,6 +198,12 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 21, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -185,121 +213,74 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </header>
 
 
-<div class="proj-intro">
-  <p>Seven projects, ordered by the business decision each one actually changes — not by how fancy the model is. Every chart and diagram below is a real output from my own analysis, not a mockup.</p>
+<section id="why-i-built-this" class="level2">
+<h2 class="anchored" data-anchor-id="why-i-built-this">Why I Built This</h2>
+<p>Most portfolio pieces are either a pure SQL/dashboard project with no product thinking, or a PM write-up with no data behind it. I wanted one project that did both — and went a step further most stop short of: pressure-test its own headline finding before trusting it, instead of just reporting the first plausible number.</p>
+<p><strong><a href="https://github.com/Yafei-Judie/pm-portfolio-ecommerce-journey">View the repo →</a></strong> · <strong><a href="https://claude.ai/code/artifact/4b343ae2-f31e-4c63-ae51-77ef521a5498">Live interactive dashboard →</a></strong></p>
+</section>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">The Data</h2>
+<p>Two real public datasets, no invented numbers: Google’s <strong>GA4 e-commerce sample dataset</strong> (real BigQuery event export from the Google Merchandise Store) for acquisition and funnel analysis, and the <strong>Olist Brazilian E-Commerce dataset</strong> (~100K real orders, 2016–2018, from Kaggle) for delivery and post-purchase analysis.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/projects/ecommerce/ga4-funnel.png" class="img-fluid figure-img" alt="Acquisition and on-site funnel chart built from GA4 e-commerce sample data"></p>
+<figcaption>Acquisition funnel from GA4 event data</figcaption>
+</figure>
 </div>
-
-<div class="proj-filters">
-  <button class="proj-filter active" data-filter="all">Show all</button>
-  <button class="proj-filter" data-filter="bi">Business Intelligence</button>
-  <button class="proj-filter" data-filter="sql">SQL &amp; Data Engineering</button>
-  <button class="proj-filter" data-filter="ml">Machine Learning</button>
-  <button class="proj-filter" data-filter="pm">Product Management</button>
-  <button class="proj-filter" data-filter="marketing">Marketing Analytics</button>
-  <button class="proj-filter" data-filter="ops">Operations</button>
-  <button class="proj-filter" data-filter="exp">Experimentation</button>
+</section>
+<section id="the-headline-finding" class="level2">
+<h2 class="anchored" data-anchor-id="the-headline-finding">The Headline Finding</h2>
+<p>Eight SQL queries later — covering delivery lateness by state, seller-customer distance, repeat-purchase rate, and freight economics — one result stood out: a delivery that lands 7+ days late drops the average review score from about 4.3 to 1.70, and pushes the share of 1–2 star reviews from ~9% to 79%. Being early costs almost nothing.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/projects/ecommerce/delay-vs-review.png" class="img-fluid figure-img" alt="Bar chart showing average review score dropping from 4.32 for early deliveries to 1.70 for deliveries 7 or more days late"></p>
+<figcaption>Delivery timing vs.&nbsp;average review score across 96,353 delivered orders</figcaption>
+</figure>
 </div>
-
-<div class="proj-grid">
-
-  <a class="proj-card" href="projects/project8/index.html" data-cats="sql ml pm marketing">
-    <div class="proj-card-img">
-      <img src="images/projects/ecommerce/delay-vs-review.png" alt="Delivery timing versus average review score chart">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">SQL · Machine Learning · Product Management</span>
-      <h3 class="anchored">E-Commerce Customer Journey: SQL, Churn &amp; CLV</h3>
-      <p>8 SQL queries + a churn/CLV model on real GA4, Olist, and UK retail data, pressure-tested against its own critique before shipping a PRD. Public repo + live dashboard.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project2/index.html" data-cats="bi marketing">
-    <div class="proj-card-img">
-      <img src="images/projects/wine/dashboard-quality-price.png" alt="Global wine quality and price dashboard">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Business Intelligence · Tableau</span>
-      <h3 class="anchored">Global Wine Market Sourcing Strategy</h3>
-      <p>Built a 4-dashboard Tableau system to turn 130K wine reviews and global GDP data into a two-tier country sourcing recommendation.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project7/index.html" data-cats="sql ops">
-    <div class="proj-card-img">
-      <img src="images/projects/sql/erd-procure-to-pay.png" alt="Procure-to-pay entity relationship diagram">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">SQL · Snowflake · ETL</span>
-      <h3 class="anchored">Multi-Source ETL Pipeline for Spend Analysis</h3>
-      <p>Built a Snowflake pipeline joining CSV, Postgres, and XML sources to catch supplier invoice-vs-quote variance at the transaction level.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project1/index.html" data-cats="ml marketing">
-    <div class="proj-card-img">
-      <img src="images/projects/smobile/permutation-importance.png" alt="Permutation importance chart for churn drivers">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Machine Learning · CLV</span>
-      <h3 class="anchored">S-Mobile: Proactive Churn Management</h3>
-      <p>Churn model + 60-month CLV framework on 1M subscribers — found two retention programs worth $105M combined, and one that loses money.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project4/index.html" data-cats="ml marketing">
-    <div class="proj-card-img">
-      <img src="images/projects/uplift/xgboost-comparison.png" alt="Uplift versus propensity targeting comparison">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Marketing Analytics · Uplift Modeling</span>
-      <h3 class="anchored">Who to Target: Uplift Modeling</h3>
-      <p>Compared propensity vs. uplift targeting across Neural Net, Random Forest, and XGBoost to find who a campaign actually moves — not who looks like a buyer.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project5/index.html" data-cats="ops">
-    <div class="proj-card-img">
-      <img src="images/projects/supplychain/total-cost-by-policy.png" alt="Inventory policy cost comparison chart">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Operations · Simulation</span>
-      <h3 class="anchored">Inventory Policy Under Supply Uncertainty</h3>
-      <p>Monte Carlo simulation across 1,000 trials found my seasonally adaptive ordering policy beats fixed and JIT policies by ~$10K/location/year.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project6/index.html" data-cats="exp">
-    <div class="proj-card-img">
-      <img src="images/projects/abtest/click-rate-treatment-vs-control.png" alt="A/B test click rate results">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Experimentation · A/B Testing</span>
-      <h3 class="anchored">A/B Test: Landing Page Click-Through</h3>
-      <p>Randomized test lifted click-through from 34.7% to 63.9%, confirmed with OLS regression and a day-of-week heterogeneity check.</p>
-    </div>
-  </a>
-
+</section>
+<section id="the-finding-this-project-almost-missed" class="level2">
+<h2 class="anchored" data-anchor-id="the-finding-this-project-almost-missed">The Finding This Project Almost Missed</h2>
+<p>Rather than stop there, I ran four independent critiques against the finding — causal inference, business strategy, customer behavior, and measurement quality. The measurement-quality pass caught something real: <strong>97.3% of reviews in the “7+ days late” bucket were submitted before the package even arrived</strong>, because Olist’s review survey triggers off the <em>estimated</em> delivery date, not the actual one. That doesn’t kill the finding — but it changes what the success metric has to compare against. I re-ran every number the critique produced against the live database myself before touching anything downstream, and corrected two that were slightly off.</p>
+</section>
+<section id="from-finding-to-product-decision" class="level2">
+<h2 class="anchored" data-anchor-id="from-finding-to-product-decision">From Finding to Product Decision</h2>
+<p>The corrected finding pointed at a specific, ownable problem: customers aren’t proactively told when a delivery is going to miss its window. I scoped a <strong>PRD</strong> for a proactive-delivery-notification feature, sequenced it in a <strong>RICE-prioritized roadmap</strong>, built two clickable prototypes, and wrote a <strong>QA test plan</strong> — including an actual trigger-logic simulator (8/8 test cases passing) that surfaced a real gap: the v1 notification rule never fires for a package that’s never scanned even once. That’s logged as an open defect in the PRD, not quietly patched.</p>
+</section>
+<section id="a-second-module-churn-clv" class="level2">
+<h2 class="anchored" data-anchor-id="a-second-module-churn-clv">A Second Module: Churn &amp; CLV</h2>
+<p>The same repo includes a separate data-analyst module on a third dataset (UCI Online Retail II — 1,067,371 raw invoice lines, cleaned to 796,622 rows across 5,840 customers) to cover ground the SQL/PM module doesn’t: <strong>RFM segmentation</strong>, a <strong>churn classification model</strong> (logistic regression AUC 0.787, random forest AUC 0.797 — close enough that the interpretable model is the one worth handing to a stakeholder), and <strong>probabilistic CLV</strong> via BG/NBD and Gamma-Gamma.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/projects/ecommerce/rfm-segments.png" class="img-fluid figure-img" alt="RFM segmentation chart showing customer segments by recency, frequency, and monetary value"></p>
+<figcaption>RFM customer segments</figcaption>
+</figure>
 </div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/projects/ecommerce/risk-value-quadrant.png" class="img-fluid figure-img" alt="Scatter plot quadrant chart identifying high-value, high-churn-risk customers to prioritize for retention"></p>
+<figcaption>Who to prioritize: churn risk vs.&nbsp;predicted CLV</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Combining churn risk and predicted value: <strong>326 customers carry £565,689 of projected 12-month value and above-median churn risk</strong> — the specific group a retention effort should target first. The cleaning step caught a real bug along the way: one 80,995-unit order, placed and cancelled 12 minutes later, was still being counted as revenue under the standard “drop cancelled invoices” approach — it had inflated one segment’s average predicted CLV by roughly 4x before a proper order-matcher caught it.</p>
+</section>
+<section id="why-it-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-it-matters">Why It Matters</h2>
+<p>The self-correction is the part that actually differentiates this from a standard SQL-plus-Kaggle-dataset project: I found my own critique’s errors and fixed them before they went into the PRD, instead of shipping the first plausible answer. That’s the same discipline a real PM or analyst role expects — the finding isn’t done until it survives someone actively trying to break it.</p>
+</section>
+<section id="skills-used" class="level2">
+<h2 class="anchored" data-anchor-id="skills-used">Skills Used</h2>
+<p><code>SQL</code> · <code>BigQuery</code> · <code>Python</code> · <code>RFM Segmentation</code> · <code>Logistic Regression</code> · <code>Random Forest</code> · <code>BG/NBD &amp; Gamma-Gamma CLV</code> · <code>PRD Writing</code> · <code>RICE Prioritization</code> · <code>QA Test Design</code></p>
 
-<script>
-(function() {
-  const buttons = document.querySelectorAll('.proj-filter');
-  const cards = document.querySelectorAll('.proj-card');
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      cards.forEach(card => {
-        const cats = card.dataset.cats.split(' ');
-        card.style.display = (filter === 'all' || cats.includes(filter)) ? '' : 'none';
-      });
-    });
-  });
-})();
-</script>
 
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
