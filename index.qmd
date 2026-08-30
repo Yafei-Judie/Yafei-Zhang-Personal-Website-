@@ -82,53 +82,60 @@ I turn messy data into decisions companies actually act on: churn models that fl
 <!-- ═══════════════════════ SKILLS ═══════════════════════ -->
 <section id="skills" class="home-section reveal">
   <h2 class="art-section-label home-section-label">Skills</h2>
+  <p class="home-section-intro">Click any skill to see where it was actually used.</p>
 
   <div class="skills-grid">
     <div class="skills-group">
       <h4>Business Intelligence &amp; Analytics</h4>
       <div class="skill-pills">
-        <span class="skill-pill">Agentic AI</span>
-        <span class="skill-pill">Customer Segmentation</span>
-        <span class="skill-pill">Customer Behavior Analysis</span>
-        <span class="skill-pill">Funnel &amp; Conversion Analysis</span>
-        <span class="skill-pill">Operational Metrics Analysis</span>
-        <span class="skill-pill">A/B Testing</span>
-        <span class="skill-pill">Pricing &amp; Sensitivity Analysis</span>
-        <span class="skill-pill">Predictive Analytics</span>
+        <button class="skill-pill" data-skill="Agentic AI">Agentic AI</button>
+        <button class="skill-pill" data-skill="Customer Segmentation">Customer Segmentation</button>
+        <button class="skill-pill" data-skill="Customer Behavior Analysis">Customer Behavior Analysis</button>
+        <button class="skill-pill" data-skill="Funnel & Conversion Analysis">Funnel &amp; Conversion Analysis</button>
+        <button class="skill-pill" data-skill="Operational Metrics Analysis">Operational Metrics Analysis</button>
+        <button class="skill-pill" data-skill="A/B Testing">A/B Testing</button>
+        <button class="skill-pill" data-skill="Pricing & Sensitivity Analysis">Pricing &amp; Sensitivity Analysis</button>
+        <button class="skill-pill" data-skill="Predictive Analytics">Predictive Analytics</button>
       </div>
     </div>
     <div class="skills-group">
       <h4>Customer &amp; Operations Analysis</h4>
       <div class="skill-pills">
-        <span class="skill-pill">KPI Design &amp; Performance Tracking</span>
-        <span class="skill-pill">Customer Lifecycle Analysis</span>
-        <span class="skill-pill">Revenue &amp; Profitability Analysis</span>
-        <span class="skill-pill">Pipeline Performance Tracking</span>
-        <span class="skill-pill">Process Optimization</span>
-        <span class="skill-pill">Competitive Market Analysis</span>
+        <button class="skill-pill" data-skill="KPI Design & Performance Tracking">KPI Design &amp; Performance Tracking</button>
+        <button class="skill-pill" data-skill="Customer Lifecycle Analysis">Customer Lifecycle Analysis</button>
+        <button class="skill-pill" data-skill="Revenue & Profitability Analysis">Revenue &amp; Profitability Analysis</button>
+        <button class="skill-pill" data-skill="Pipeline Performance Tracking">Pipeline Performance Tracking</button>
+        <button class="skill-pill" data-skill="Process Optimization">Process Optimization</button>
+        <button class="skill-pill" data-skill="Competitive Market Analysis">Competitive Market Analysis</button>
       </div>
     </div>
     <div class="skills-group">
       <h4>Data &amp; BI Tools</h4>
       <div class="skill-pills">
-        <span class="skill-pill">SQL</span>
-        <span class="skill-pill">Python</span>
-        <span class="skill-pill">Tableau</span>
-        <span class="skill-pill">Power BI</span>
-        <span class="skill-pill">Excel (Advanced)</span>
-        <span class="skill-pill">Snowflake</span>
-        <span class="skill-pill">Rhino3D</span>
-        <span class="skill-pill">AI-Assisted Workflow</span>
+        <button class="skill-pill" data-skill="SQL">SQL</button>
+        <button class="skill-pill" data-skill="Python">Python</button>
+        <button class="skill-pill" data-skill="Tableau">Tableau</button>
+        <button class="skill-pill" data-skill="Power BI">Power BI</button>
+        <button class="skill-pill" data-skill="Excel (Advanced)">Excel (Advanced)</button>
+        <button class="skill-pill" data-skill="Snowflake">Snowflake</button>
+        <button class="skill-pill" data-skill="Rhino3D">Rhino3D</button>
+        <button class="skill-pill" data-skill="AI-Assisted Workflow">AI-Assisted Workflow</button>
       </div>
     </div>
     <div class="skills-group">
       <h4>Communication</h4>
       <div class="skill-pills">
-        <span class="skill-pill">Technical-to-Business Communication</span>
-        <span class="skill-pill">Cross-Functional Communication</span>
-        <span class="skill-pill">Slide Deck Development</span>
+        <button class="skill-pill" data-skill="Technical-to-Business Communication">Technical-to-Business Communication</button>
+        <button class="skill-pill" data-skill="Cross-Functional Communication">Cross-Functional Communication</button>
+        <button class="skill-pill" data-skill="Slide Deck Development">Slide Deck Development</button>
       </div>
     </div>
+  </div>
+
+  <div id="skill-proof" class="skill-proof" hidden>
+    <button class="skill-proof-close" aria-label="Close">&times;</button>
+    <p class="skill-proof-label"></p>
+    <ul class="skill-proof-list"></ul>
   </div>
 </section>
 
@@ -187,7 +194,7 @@ I turn messy data into decisions companies actually act on: churn models that fl
     </a>
   </div>
 
-  <a href="projects.html" class="view-all-link">View All 7 Projects &rarr;</a>
+  <a href="projects.html" class="view-all-btn">View All 7 Projects <span aria-hidden="true">&rarr;</span></a>
 </section>
 
 <!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
@@ -278,6 +285,109 @@ I turn messy data into decisions companies actually act on: churn models that fl
     });
   }, { threshold: 0.12 });
   revealEls.forEach(el => observer.observe(el));
+})();
+</script>
+
+<script>
+(function() {
+  // Skill -> proof mapping. Arrays are real project/resume links; plain
+  // strings are honest notes for skills without a published example yet
+  // (never a fabricated link).
+  const SKILL_PROOF = {
+    "Agentic AI": [{ title: "Resume: PlanetArt AI product-matching tool (60% → 85% match accuracy)", href: "cv.html" }],
+    "Customer Segmentation": [{ title: "E-Commerce Customer Journey (RFM Segmentation)", href: "projects/project8/index.html" }],
+    "Customer Behavior Analysis": [{ title: "Who to Target: Uplift Modeling", href: "projects/project4/index.html" }],
+    "Funnel & Conversion Analysis": [{ title: "E-Commerce Customer Journey (GA4 acquisition funnel)", href: "projects/project8/index.html" }],
+    "Operational Metrics Analysis": [{ title: "Multi-Source ETL Pipeline for Spend Analysis", href: "projects/project7/index.html" }],
+    "A/B Testing": [{ title: "A/B Test: Landing Page Click-Through", href: "projects/project6/index.html" }],
+    "Pricing & Sensitivity Analysis": [
+      { title: "Inventory Policy Under Supply Uncertainty", href: "projects/project5/index.html" },
+      { title: "Global Wine Market Sourcing Strategy", href: "projects/project2/index.html" }
+    ],
+    "Predictive Analytics": [
+      { title: "S-Mobile: Proactive Churn Management", href: "projects/project1/index.html" },
+      { title: "Who to Target: Uplift Modeling", href: "projects/project4/index.html" }
+    ],
+    "KPI Design & Performance Tracking": [{ title: "Inventory Policy Under Supply Uncertainty", href: "projects/project5/index.html" }],
+    "Customer Lifecycle Analysis": [{ title: "S-Mobile: Proactive Churn Management (CLV framework)", href: "projects/project1/index.html" }],
+    "Revenue & Profitability Analysis": [{ title: "S-Mobile: Proactive Churn Management ($105M impact)", href: "projects/project1/index.html" }],
+    "Pipeline Performance Tracking": [{ title: "Resume: Levra Labs investor metrics workbook (MRR, ARR, LTV:CAC)", href: "cv.html" }],
+    "Process Optimization": [
+      { title: "Multi-Source ETL Pipeline for Spend Analysis", href: "projects/project7/index.html" },
+      { title: "Resume: PlanetArt (8-step COGS workflow cut to 2 steps)", href: "cv.html" }
+    ],
+    "Competitive Market Analysis": [{ title: "Global Wine Market Sourcing Strategy", href: "projects/project2/index.html" }],
+    "SQL": [
+      { title: "E-Commerce Customer Journey: SQL, Churn & CLV", href: "projects/project8/index.html" },
+      { title: "Multi-Source ETL Pipeline for Spend Analysis", href: "projects/project7/index.html" }
+    ],
+    "Python": [
+      { title: "S-Mobile: Proactive Churn Management", href: "projects/project1/index.html" },
+      { title: "Who to Target: Uplift Modeling", href: "projects/project4/index.html" },
+      { title: "Inventory Policy Under Supply Uncertainty", href: "projects/project5/index.html" },
+      { title: "A/B Test: Landing Page Click-Through", href: "projects/project6/index.html" },
+      { title: "Multi-Source ETL Pipeline for Spend Analysis", href: "projects/project7/index.html" },
+      { title: "E-Commerce Customer Journey: SQL, Churn & CLV", href: "projects/project8/index.html" }
+    ],
+    "Tableau": [{ title: "Global Wine Market Sourcing Strategy", href: "projects/project2/index.html" }],
+    "Power BI": "Part of my toolkit from coursework; not yet in a published case study on this site.",
+    "Excel (Advanced)": [{ title: "Resume: Levra Labs investor metrics workbook & PlanetArt pricing model", href: "cv.html" }],
+    "Snowflake": [{ title: "Multi-Source ETL Pipeline for Spend Analysis", href: "projects/project7/index.html" }],
+    "Rhino3D": [{ title: "More About Me: Product Design coursework at UPenn", href: "more-about-me.html" }],
+    "AI-Assisted Workflow": [{ title: "Resume: PlanetArt AI product-matching tool", href: "cv.html" }],
+    "Technical-to-Business Communication": [{ title: "E-Commerce Customer Journey (PRD & stakeholder-facing writing)", href: "projects/project8/index.html" }],
+    "Cross-Functional Communication": [{ title: "Resume: MirrorAI (partnered with Engineering & Product)", href: "cv.html" }],
+    "Slide Deck Development": "Used constantly in client and internship work; not yet packaged into a public deck on this site."
+  };
+
+  const proofBox = document.getElementById('skill-proof');
+  if (!proofBox) return;
+  const proofLabel = proofBox.querySelector('.skill-proof-label');
+  const proofList = proofBox.querySelector('.skill-proof-list');
+  const closeBtn = proofBox.querySelector('.skill-proof-close');
+  const pills = document.querySelectorAll('.skill-pill');
+
+  function closeProof() {
+    proofBox.hidden = true;
+    pills.forEach(p => p.classList.remove('active'));
+  }
+
+  function openProof(skill, pill) {
+    const data = SKILL_PROOF[skill];
+    proofLabel.textContent = skill;
+    proofList.innerHTML = '';
+    if (Array.isArray(data)) {
+      data.forEach(item => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = item.href;
+        a.textContent = item.title;
+        li.appendChild(a);
+        proofList.appendChild(li);
+      });
+    } else {
+      const li = document.createElement('li');
+      li.textContent = data || "Applied in professional work; not yet tied to a specific project on this site.";
+      li.style.cssText = 'color:#8a8a8a; font-family:"Jost",sans-serif; font-size:0.92rem; line-height:1.6; padding:0.3rem 0;';
+      proofList.appendChild(li);
+    }
+    proofBox.hidden = false;
+    pills.forEach(p => p.classList.toggle('active', p === pill));
+    proofBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const skill = pill.dataset.skill;
+      if (pill.classList.contains('active')) {
+        closeProof();
+      } else {
+        openProof(skill, pill);
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeProof);
 })();
 </script>
 
