@@ -8,12 +8,13 @@ format:
 
 ```{=html}
 <div class="proj-intro">
-  <p>Five projects, ordered by the business decision each one actually changes — not by how fancy the model is. Every chart below is a real output from my own analysis, not a mockup.</p>
+  <p>Six projects, ordered by the business decision each one actually changes — not by how fancy the model is. Every chart and diagram below is a real output from my own analysis, not a mockup.</p>
 </div>
 
 <div class="proj-filters">
   <button class="proj-filter active" data-filter="all">Show all</button>
   <button class="proj-filter" data-filter="bi">Business Intelligence</button>
+  <button class="proj-filter" data-filter="sql">SQL &amp; Data Engineering</button>
   <button class="proj-filter" data-filter="ml">Machine Learning</button>
   <button class="proj-filter" data-filter="marketing">Marketing Analytics</button>
   <button class="proj-filter" data-filter="ops">Operations</button>
@@ -30,6 +31,17 @@ format:
       <span class="proj-card-tags">Business Intelligence · Tableau</span>
       <h3>Global Wine Market Sourcing Strategy</h3>
       <p>Built a 4-dashboard Tableau system to turn 130K wine reviews and global GDP data into a two-tier country sourcing recommendation.</p>
+    </div>
+  </a>
+
+  <a class="proj-card" href="projects/project7/index.html" data-cats="sql ops">
+    <div class="proj-card-img">
+      <img src="images/projects/sql/erd-procure-to-pay.png" alt="Procure-to-pay entity relationship diagram">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">SQL · Snowflake · ETL</span>
+      <h3>Multi-Source ETL Pipeline for Spend Analysis</h3>
+      <p>Built a Snowflake pipeline joining CSV, Postgres, and XML sources to catch supplier invoice-vs-quote variance at the transaction level.</p>
     </div>
   </a>
 

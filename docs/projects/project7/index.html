@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
+<meta name="dcterms.date" content="2025-06-15">
+<meta name="description" content="Built a Snowflake data pipeline pulling purchase orders, supplier invoices, and geospatial data from three different source formats to answer one question: are we being invoiced what we were quoted?">
 
-<title>Projects – Yafei (Judie) Zhang</title>
+<title>Multi-Source ETL Pipeline for Supplier Spend Analysis – Yafei (Judie) Zhang</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,27 +25,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,32 +119,32 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Projects – Yafei (Judie) Zhang">
-<meta property="og:description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
-<meta property="og:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/wine/dashboard-quality-price.png">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Multi-Source ETL Pipeline for Supplier Spend Analysis – Yafei (Judie) Zhang">
+<meta property="og:description" content="Built a Snowflake data pipeline pulling purchase orders, supplier invoices, and geospatial data from three different source formats to answer one question: are we being invoiced what we were quoted?">
+<meta property="og:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/sql/erd-procure-to-pay.png">
 <meta property="og:site_name" content="Yafei (Judie) Zhang">
 <meta property="og:locale" content="en_US">
-<meta property="og:image:alt" content="Global wine quality and price dashboard">
-<meta property="og:image:height" content="953">
-<meta property="og:image:width" content="1368">
-<meta name="twitter:title" content="Projects – Yafei (Judie) Zhang">
-<meta name="twitter:description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
-<meta name="twitter:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/wine/dashboard-quality-price.png">
+<meta property="og:image:alt" content="Entity relationship diagram showing Supplier, SupplierLocation, PurchaseOrderHeader, PurchaseOrderLine, ReceivingReportHeader, ReceivingReportLine, and SupplierInvoice tables with their keys and relationships">
+<meta property="og:image:height" content="1224">
+<meta property="og:image:width" content="1584">
+<meta name="twitter:title" content="Multi-Source ETL Pipeline for Supplier Spend Analysis – Yafei (Judie) Zhang">
+<meta name="twitter:description" content="Built a Snowflake data pipeline pulling purchase orders, supplier invoices, and geospatial data from three different source formats to answer one question: are we being invoiced what we were quoted?">
+<meta name="twitter:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/sql/erd-procure-to-pay.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image:alt" content="Global wine quality and price dashboard">
-<meta name="twitter:image-height" content="953">
-<meta name="twitter:image-width" content="1368">
+<meta name="twitter:image:alt" content="Entity relationship diagram showing Supplier, SupplierLocation, PurchaseOrderHeader, PurchaseOrderLine, ReceivingReportHeader, ReceivingReportLine, and SupplierInvoice tables with their keys and relationships">
+<meta name="twitter:image-height" content="1224">
+<meta name="twitter:image-width" content="1584">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Yafei (Judie) Zhang</span>
     </a>
   </div>
@@ -119,27 +155,27 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Hi</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html"> 
+    <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">Resume</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+    <a class="nav-link" href="../../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./more-about-me.html"> 
+    <a class="nav-link" href="../../more-about-me.html"> 
 <span class="menu-text">More About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./connect.html"> 
+    <a class="nav-link" href="../../connect.html"> 
 <span class="menu-text">Connect</span></a>
   </li>  
 </ul>
@@ -153,18 +189,37 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-business-question" id="toc-the-business-question" class="nav-link active" data-scroll-target="#the-business-question">The Business Question</a></li>
+  <li><a href="#the-data-problem" id="toc-the-data-problem" class="nav-link" data-scroll-target="#the-data-problem">The Data Problem</a></li>
+  <li><a href="#data-model" id="toc-data-model" class="nav-link" data-scroll-target="#data-model">Data Model</a></li>
+  <li><a href="#pipeline" id="toc-pipeline" class="nav-link" data-scroll-target="#pipeline">Pipeline</a></li>
+  <li><a href="#why-it-matters" id="toc-why-it-matters" class="nav-link" data-scroll-target="#why-it-matters">Why It Matters</a></li>
+  <li><a href="#skills-used" id="toc-skills-used" class="nav-link" data-scroll-target="#skills-used">Skills Used</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
-</div>
+<h1 class="title">Multi-Source ETL Pipeline for Supplier Spend Analysis</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">SQL</div>
+    <div class="quarto-category">Data Engineering</div>
+    <div class="quarto-category">Snowflake</div>
+    <div class="quarto-category">Operations</div>
+  </div>
+  </div>
 
 <div>
   <div class="description">
-    Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.
+    Built a Snowflake data pipeline pulling purchase orders, supplier invoices, and geospatial data from three different source formats to answer one question: are we being invoiced what we were quoted?
   </div>
 </div>
 
@@ -172,6 +227,12 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 15, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -181,109 +242,50 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </header>
 
 
-<div class="proj-intro">
-  <p>Six projects, ordered by the business decision each one actually changes — not by how fancy the model is. Every chart and diagram below is a real output from my own analysis, not a mockup.</p>
+<section id="the-business-question" class="level2">
+<h2 class="anchored" data-anchor-id="the-business-question">The Business Question</h2>
+<p>Every purchase order carries an expected price. Every supplier invoice carries what actually got billed. When those two numbers drift apart across thousands of orders, nobody notices row by row — it shows up as margin leakage a quarter later. This project (a team assignment; my role was building and owning the pipeline) set out to make that drift visible at the transaction level, automatically, instead of after the fact.</p>
+</section>
+<section id="the-data-problem" class="level2">
+<h2 class="anchored" data-anchor-id="the-data-problem">The Data Problem</h2>
+<p>The inputs didn’t live in one place or one format: monthly purchase-order extracts as CSVs, supplier invoice records in a Postgres database, supplier contact/location data in XML, and a public U.S. Census ZCTA gazetteer file for geocoding supplier locations. Before any analysis could happen, all four had to land in the same warehouse in a shape that could actually be joined.</p>
+</section>
+<section id="data-model" class="level2">
+<h2 class="anchored" data-anchor-id="data-model">Data Model</h2>
+<p>I mapped the underlying Procure-to-Pay structure — suppliers, purchase orders, receiving reports, and supplier invoices — before writing a single COPY statement, since a bad join here silently corrupts the variance calculation downstream:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/projects/sql/erd-procure-to-pay.png" class="img-fluid figure-img" alt="Entity relationship diagram showing Supplier, SupplierLocation, PurchaseOrderHeader, PurchaseOrderLine, ReceivingReportHeader, ReceivingReportLine, and SupplierInvoice tables with their keys and relationships"></p>
+<figcaption>Procure-to-Pay entity relationship diagram — suppliers, purchase orders, receiving reports, and invoices</figcaption>
+</figure>
 </div>
-
-<div class="proj-filters">
-  <button class="proj-filter active" data-filter="all">Show all</button>
-  <button class="proj-filter" data-filter="bi">Business Intelligence</button>
-  <button class="proj-filter" data-filter="sql">SQL &amp; Data Engineering</button>
-  <button class="proj-filter" data-filter="ml">Machine Learning</button>
-  <button class="proj-filter" data-filter="marketing">Marketing Analytics</button>
-  <button class="proj-filter" data-filter="ops">Operations</button>
-  <button class="proj-filter" data-filter="exp">Experimentation</button>
-</div>
-
-<div class="proj-grid">
-
-  <a class="proj-card" href="projects/project2/index.html" data-cats="bi marketing">
-    <div class="proj-card-img">
-      <img src="images/projects/wine/dashboard-quality-price.png" alt="Global wine quality and price dashboard">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Business Intelligence · Tableau</span>
-      <h3 class="anchored">Global Wine Market Sourcing Strategy</h3>
-      <p>Built a 4-dashboard Tableau system to turn 130K wine reviews and global GDP data into a two-tier country sourcing recommendation.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project7/index.html" data-cats="sql ops">
-    <div class="proj-card-img">
-      <img src="images/projects/sql/erd-procure-to-pay.png" alt="Procure-to-pay entity relationship diagram">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">SQL · Snowflake · ETL</span>
-      <h3 class="anchored">Multi-Source ETL Pipeline for Spend Analysis</h3>
-      <p>Built a Snowflake pipeline joining CSV, Postgres, and XML sources to catch supplier invoice-vs-quote variance at the transaction level.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project1/index.html" data-cats="ml marketing">
-    <div class="proj-card-img">
-      <img src="images/projects/smobile/permutation-importance.png" alt="Permutation importance chart for churn drivers">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Machine Learning · CLV</span>
-      <h3 class="anchored">S-Mobile: Proactive Churn Management</h3>
-      <p>Churn model + 60-month CLV framework on 1M subscribers — found two retention programs worth $105M combined, and one that loses money.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project4/index.html" data-cats="ml marketing">
-    <div class="proj-card-img">
-      <img src="images/projects/uplift/xgboost-comparison.png" alt="Uplift versus propensity targeting comparison">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Marketing Analytics · Uplift Modeling</span>
-      <h3 class="anchored">Who to Target: Uplift Modeling</h3>
-      <p>Compared propensity vs. uplift targeting across Neural Net, Random Forest, and XGBoost to find who a campaign actually moves — not who looks like a buyer.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project5/index.html" data-cats="ops">
-    <div class="proj-card-img">
-      <img src="images/projects/supplychain/total-cost-by-policy.png" alt="Inventory policy cost comparison chart">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Operations · Simulation</span>
-      <h3 class="anchored">Inventory Policy Under Supply Uncertainty</h3>
-      <p>Monte Carlo simulation across 1,000 trials found my seasonally adaptive ordering policy beats fixed and JIT policies by ~$10K/location/year.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project6/index.html" data-cats="exp">
-    <div class="proj-card-img">
-      <img src="images/projects/abtest/click-rate-treatment-vs-control.png" alt="A/B test click rate results">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Experimentation · A/B Testing</span>
-      <h3 class="anchored">A/B Test: Landing Page Click-Through</h3>
-      <p>Randomized test lifted click-through from 34.7% to 63.9%, confirmed with OLS regression and a day-of-week heterogeneity check.</p>
-    </div>
-  </a>
-
-</div>
-
-<script>
-(function() {
-  const buttons = document.querySelectorAll('.proj-filter');
-  const cards = document.querySelectorAll('.proj-card');
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      cards.forEach(card => {
-        const cats = card.dataset.cats.split(' ');
-        card.style.display = (filter === 'all' || cats.includes(filter)) ? '' : 'none';
-      });
-    });
-  });
-})();
-</script>
+</section>
+<section id="pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="pipeline">Pipeline</h2>
+<p>I built a Python-orchestrated pipeline (<code>pipeline_runner.py</code>) that: exports the Postgres invoice table to CSV, stages all three source formats into Snowflake internal stages, <code>COPY INTO</code>s them into raw tables with tolerant staging (numeric and date fields loaded as text first, then normalized — messy real-world CSVs break strict-typed loads), normalizes order dates into a consistent format, and geocodes supplier ZIP codes against the ZCTA gazetteer using <code>TO_GEOGRAPHY</code> for spatial joins.</p>
+<p>On top of the raw tables, I layered views that total purchase-order amounts, aggregate invoice line items per order, and finally join the two:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">or</span> <span class="kw">replace</span> <span class="kw">table</span> purchase_orders_and_invoices <span class="kw">as</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">with</span> inv_ex <span class="kw">as</span> (</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">select</span> purchaseorderid, <span class="fu">sum</span>(amount_ex_tax) <span class="kw">as</span> amount_ex_tax</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">from</span> v_supplier_invoices <span class="kw">group</span> <span class="kw">by</span> purchaseorderid</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> p.purchaseorderid, p.supplierid, p.orderdate_norm,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>       p.POAmount, inv_ex.amount_ex_tax,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>       (inv_ex.amount_ex_tax <span class="op">-</span> p.POAmount) <span class="kw">as</span> invoiced_vs_quoted</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> v_po_amounts p</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">join</span> inv_ex <span class="kw">on</span> inv_ex.purchaseorderid <span class="op">=</span> p.purchaseorderid;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>invoiced_vs_quoted</code> is the column the whole pipeline exists to produce — a per-order variance that can be sorted, thresholded, and handed to a procurement team as an exception list instead of a full re-audit.</p>
+</section>
+<section id="why-it-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-it-matters">Why It Matters</h2>
+<p>This is the unglamorous half of analytics that most portfolios skip: before you can build a dashboard or a model, the data has to actually be trustworthy and joinable. Tolerant staging, explicit normalization steps, and verification queries against <code>COPY_HISTORY</code> were as important to getting a correct answer here as the final variance formula — and it’s exactly the kind of pipeline work a business or data analyst role expects you to be comfortable owning, not just consuming.</p>
+</section>
+<section id="skills-used" class="level2">
+<h2 class="anchored" data-anchor-id="skills-used">Skills Used</h2>
+<p><code>Snowflake</code> · <code>SQL</code> · <code>Python</code> · <code>ETL Pipeline Design</code> · <code>Postgres</code> · <code>Data Normalization</code> · <code>Geospatial Joins</code></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
