@@ -210,13 +210,55 @@ I turn messy data into decisions companies actually act on: churn models that fl
       <p class="testimonial-attribution"><strong>Sophia Sunjara</strong> &middot; Director, Merchandising, PlanetArt</p>
       <span class="testimonial-read-more">Read the full letter &rarr;</span>
     </a>
-    <div class="testimonial-card">
+    <div class="testimonial-card testimonial-card-link" role="button" tabindex="0" onclick="openTestimonialModal('katherine-modal')" onkeydown="if(event.key==='Enter'){openTestimonialModal('katherine-modal')}">
       <span class="testimonial-mark">&ldquo;</span>
       <p class="testimonial-quote">She translated complex technical findings into concise, actionable recommendations that both technical teams and business leaders could immediately understand. I would highly recommend Yafei to any organization looking for someone who can bridge analytics, data governance, and business strategy.</p>
       <p class="testimonial-attribution"><strong>Katherine Paulsen</strong> &middot; Customer Experience Manager, Thermo Fisher Scientific</p>
+      <span class="testimonial-read-more">Read the full recommendation &rarr;</span>
     </div>
   </div>
 </section>
+
+<!-- Katherine Paulsen full recommendation modal -->
+<div class="testimonial-modal" id="katherine-modal" onclick="closeTestimonialModal(event, 'katherine-modal')">
+  <div class="testimonial-modal-content">
+    <button class="testimonial-modal-close" onclick="closeTestimonialModal(event, 'katherine-modal')" aria-label="Close">&times;</button>
+    <span class="testimonial-modal-mark">&ldquo;</span>
+    <p class="testimonial-modal-quote">
+      I had the pleasure of working with Yafei during a UCSD Rady Capstone Project focused on evaluating and strengthening scoring methodology.
+      <br><br>
+      Yafei quickly became an expert in a highly complex data model, independently auditing multiple data sources, business rules, and calculation methodologies to identify inconsistencies that had accumulated over time. What impressed me most was her ability to combine rigorous analytical thinking with clear business communication. She translated complex technical findings into concise, actionable recommendations that both technical teams and business leaders could immediately understand.
+      <br><br>
+      Yafei is intellectually curious, highly organized, and approaches problems with a level of precision that inspires confidence. She consistently asked thoughtful questions, validated assumptions with evidence, and produced work of exceptional quality.
+      <br><br>
+      I would highly recommend Yafei to any organization looking for someone who can bridge analytics, data governance, and business strategy. She has a bright future ahead of her.
+    </p>
+    <p class="testimonial-modal-attribution"><strong>Katherine Paulsen</strong> &middot; Customer Experience Manager, Thermo Fisher Scientific</p>
+    <p class="testimonial-modal-meta">LinkedIn recommendation &middot; July 28, 2026 &middot; Katherine was Yafei's client</p>
+  </div>
+</div>
+
+<script>
+function openTestimonialModal(id) {
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeTestimonialModal(event, id) {
+  const modal = document.getElementById(id);
+  if (event.target === modal || event.target.classList.contains('testimonial-modal-close')) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.testimonial-modal.active').forEach(m => {
+      m.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+});
+</script>
 
 <!-- ═══════════════════════ CULTURE ═══════════════════════ -->
 <section id="culture" class="home-section reveal">
