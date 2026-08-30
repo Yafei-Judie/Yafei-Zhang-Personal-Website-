@@ -1,9 +1,99 @@
 ---
 title: "Projects"
-description: "Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, market analysis, and business intelligence."
-listing:
-  contents: projects
-  sort: "date desc"
-  type: default
-  fields: [title, description, categories, date]
+description: "Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact."
+format:
+  html:
+    toc: false
 ---
+
+```{=html}
+<div class="proj-intro">
+  <p>Five projects, ordered by the business decision each one actually changes — not by how fancy the model is. Every chart below is a real output from my own analysis, not a mockup.</p>
+</div>
+
+<div class="proj-filters">
+  <button class="proj-filter active" data-filter="all">Show all</button>
+  <button class="proj-filter" data-filter="bi">Business Intelligence</button>
+  <button class="proj-filter" data-filter="ml">Machine Learning</button>
+  <button class="proj-filter" data-filter="marketing">Marketing Analytics</button>
+  <button class="proj-filter" data-filter="ops">Operations</button>
+  <button class="proj-filter" data-filter="exp">Experimentation</button>
+</div>
+
+<div class="proj-grid">
+
+  <a class="proj-card" href="projects/project2/index.html" data-cats="bi marketing">
+    <div class="proj-card-img">
+      <img src="images/projects/wine/dashboard-quality-price.png" alt="Global wine quality and price dashboard">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">Business Intelligence · Tableau</span>
+      <h3>Global Wine Market Sourcing Strategy</h3>
+      <p>Built a 4-dashboard Tableau system to turn 130K wine reviews and global GDP data into a two-tier country sourcing recommendation.</p>
+    </div>
+  </a>
+
+  <a class="proj-card" href="projects/project1/index.html" data-cats="ml marketing">
+    <div class="proj-card-img">
+      <img src="images/projects/smobile/permutation-importance.png" alt="Permutation importance chart for churn drivers">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">Machine Learning · CLV</span>
+      <h3>S-Mobile: Proactive Churn Management</h3>
+      <p>Churn model + 60-month CLV framework on 1M subscribers — found two retention programs worth $105M combined, and one that loses money.</p>
+    </div>
+  </a>
+
+  <a class="proj-card" href="projects/project4/index.html" data-cats="ml marketing">
+    <div class="proj-card-img">
+      <img src="images/projects/uplift/xgboost-comparison.png" alt="Uplift versus propensity targeting comparison">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">Marketing Analytics · Uplift Modeling</span>
+      <h3>Who to Target: Uplift Modeling</h3>
+      <p>Compared propensity vs. uplift targeting across Neural Net, Random Forest, and XGBoost to find who a campaign actually moves — not who looks like a buyer.</p>
+    </div>
+  </a>
+
+  <a class="proj-card" href="projects/project5/index.html" data-cats="ops">
+    <div class="proj-card-img">
+      <img src="images/projects/supplychain/total-cost-by-policy.png" alt="Inventory policy cost comparison chart">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">Operations · Simulation</span>
+      <h3>Inventory Policy Under Supply Uncertainty</h3>
+      <p>Monte Carlo simulation across 1,000 trials found my seasonally adaptive ordering policy beats fixed and JIT policies by ~$10K/location/year.</p>
+    </div>
+  </a>
+
+  <a class="proj-card" href="projects/project6/index.html" data-cats="exp">
+    <div class="proj-card-img">
+      <img src="images/projects/abtest/click-rate-treatment-vs-control.png" alt="A/B test click rate results">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">Experimentation · A/B Testing</span>
+      <h3>A/B Test: Landing Page Click-Through</h3>
+      <p>Randomized test lifted click-through from 34.7% to 63.9%, confirmed with OLS regression and a day-of-week heterogeneity check.</p>
+    </div>
+  </a>
+
+</div>
+
+<script>
+(function() {
+  const buttons = document.querySelectorAll('.proj-filter');
+  const cards = document.querySelectorAll('.proj-card');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        const cats = card.dataset.cats.split(' ');
+        card.style.display = (filter === 'all' || cats.includes(filter)) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+```

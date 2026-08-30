@@ -1450,6 +1450,187 @@ main#quarto-document-content table tbody tr:hover {
   }
 }
 
+/* ─── Projects Grid ──────────────────────────────────────────── */
+.proj-intro {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.proj-intro p {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: #6a6a6a;
+}
+
+.proj-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.proj-filter {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: #9a7a84;
+  background: white;
+  border: 1px solid #e4d4da;
+  border-radius: 50px;
+  padding: 0.5rem 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.proj-filter:hover {
+  border-color: #c4849a;
+  color: #c4849a;
+}
+
+.proj-filter.active {
+  background: #c4849a;
+  border-color: #c4849a;
+  color: white;
+}
+
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.6rem;
+}
+
+.proj-card {
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.proj-card:hover {
+  box-shadow: 0 12px 40px rgba(196, 132, 154, 0.2);
+  transform: translateY(-4px);
+  text-decoration: none;
+}
+
+.proj-card-img {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f0e9e5;
+}
+
+.proj-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.proj-card:hover .proj-card-img img {
+  transform: scale(1.05);
+}
+
+.proj-card-body {
+  padding: 1.3rem 1.4rem 1.5rem;
+}
+
+.proj-card-tags {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c4849a;
+  margin-bottom: 0.5rem;
+}
+
+.proj-card-body h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #3a3a3a;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.proj-card-body p {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #7a7a7a;
+  margin: 0;
+}
+
+/* ─── Homepage Hero CTA ──────────────────────────────────────── */
+.hero-cta-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  margin: 1.6rem 0 2.6rem;
+}
+
+.hero-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #c4849a;
+  color: white;
+  border-radius: 50px;
+  padding: 0.7rem 1.8rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 18px rgba(196, 132, 154, 0.35);
+}
+
+.hero-cta-primary:hover {
+  background: #a66880;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(196, 132, 154, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.hero-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #e0cfcf;
+  color: #8a8a8a;
+  background: transparent;
+  border-radius: 50px;
+  padding: 0.68rem 1.5rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-cta-secondary:hover {
+  border-color: #c4849a;
+  color: #c4849a;
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .proj-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ─── Inline Code / Skill Tags ──────────────────────────────── */
 main#quarto-document-content code {
   background-color: #f5e6eb;

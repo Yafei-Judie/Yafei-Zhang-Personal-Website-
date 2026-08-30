@@ -23,10 +23,8 @@ website:
         text: Projects
       - href: blog.qmd
         text: Blog
-      - href: lens.qmd
-        text: Through the Lens
-      - href: art.qmd
-        text: Art & Heritage
+      - href: more-about-me.qmd
+        text: More About Me
       - href: connect.qmd
         text: Connect
 

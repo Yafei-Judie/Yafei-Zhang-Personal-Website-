@@ -17,7 +17,7 @@ Designed a **multi-dashboard analytics system** integrating:
 - Global **GDP per capita** data
 - Wine **production & consumption** statistics
 
-![Global Wine Quality & Price Insights Dashboard](../../Picture1.png){fig-alt="Dashboard showing overall price and point analysis by country, price comparison with higher rating, and top wine regions by average rating"}
+![Global Wine Quality & Price Insights Dashboard](../../images/projects/wine/dashboard-quality-price.png){fig-alt="Dashboard showing overall price and point analysis by country, price comparison with higher rating, and top wine regions by average rating"}
 
 ## Key Insights
 
@@ -28,14 +28,14 @@ Identified a **two-tier sourcing strategy**:
 | **Tier 1** | France, Italy, Spain | High quality + high production stability |
 | **Tier 2** | US, Australia, China | Scalable volume with competitive quality |
 
-![Investment Insights by Country](../../Picture2.png){fig-alt="Dashboard showing tier classification, GDP vs wine price scatter plot, and regional rating vs production volume analysis"}
+![Investment Insights by Country](../../images/projects/wine/dashboard-investment-tiers.png){fig-alt="Dashboard showing tier classification, GDP vs wine price scatter plot, and regional rating vs production volume analysis"}
 
 Additional findings:
 
 - Revealed **underpriced high-quality markets** using price-rating analysis
 - Highlighted wine varieties offering **premium quality at lower cost**
 
-![Investment Insights by Variety (Top 20)](../../Picture3.png){fig-alt="Dashboard showing price distribution, vintage distribution, country distribution, and top 20 variety ratings"}
+![Investment Insights by Variety (Top 20)](../../images/projects/wine/dashboard-variety-analysis.png){fig-alt="Dashboard showing price distribution, vintage distribution, country distribution, and top 20 variety ratings"}
 
 ## Impact
 

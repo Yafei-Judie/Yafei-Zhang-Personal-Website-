@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, market analysis, and business intelligence.">
+<meta name="description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
 
 <title>Projects – Yafei (Judie) Zhang</title>
 <style>
@@ -35,8 +35,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./favicon.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -74,35 +72,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-description','listing-categories','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 
 <script type="text/javascript">
@@ -113,47 +82,26 @@ gtag('js', new Date());
 gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Projects – Yafei (Judie) Zhang">
-<meta property="og:description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, market analysis, and business intelligence.">
+<meta property="og:description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
+<meta property="og:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/wine/dashboard-quality-price.png">
 <meta property="og:site_name" content="Yafei (Judie) Zhang">
 <meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content="Global wine quality and price dashboard">
+<meta property="og:image:height" content="953">
+<meta property="og:image:width" content="1368">
 <meta name="twitter:title" content="Projects – Yafei (Judie) Zhang">
-<meta name="twitter:description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, market analysis, and business intelligence.">
+<meta name="twitter:description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
+<meta name="twitter:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/wine/dashboard-quality-price.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:alt" content="Global wine quality and price dashboard">
+<meta name="twitter:image-height" content="953">
+<meta name="twitter:image-width" content="1368">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -187,12 +135,8 @@ window.Quarto = {
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./lens.html"> 
-<span class="menu-text">Through the Lens</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./art.html"> 
-<span class="menu-text">Art &amp; Heritage</span></a>
+    <a class="nav-link" href="./more-about-me.html"> 
+<span class="menu-text">More About Me</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./connect.html"> 
@@ -209,9 +153,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -222,7 +164,7 @@ window.Quarto = {
 
 <div>
   <div class="description">
-    Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, market analysis, and business intelligence.
+    Data analytics and marketing strategy projects by Yafei (Judie) Zhang — churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.
   </div>
 </div>
 
@@ -239,93 +181,99 @@ window.Quarto = {
 </header>
 
 
+<div class="proj-intro">
+  <p>Five projects, ordered by the business decision each one actually changes — not by how fancy the model is. Every chart below is a real output from my own analysis, not a mockup.</p>
+</div>
+
+<div class="proj-filters">
+  <button class="proj-filter active" data-filter="all">Show all</button>
+  <button class="proj-filter" data-filter="bi">Business Intelligence</button>
+  <button class="proj-filter" data-filter="ml">Machine Learning</button>
+  <button class="proj-filter" data-filter="marketing">Marketing Analytics</button>
+  <button class="proj-filter" data-filter="ops">Operations</button>
+  <button class="proj-filter" data-filter="exp">Experimentation</button>
+</div>
+
+<div class="proj-grid">
+
+  <a class="proj-card" href="projects/project2/index.html" data-cats="bi marketing">
+    <div class="proj-card-img">
+      <img src="images/projects/wine/dashboard-quality-price.png" alt="Global wine quality and price dashboard">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">Business Intelligence · Tableau</span>
+      <h3 class="anchored">Global Wine Market Sourcing Strategy</h3>
+      <p>Built a 4-dashboard Tableau system to turn 130K wine reviews and global GDP data into a two-tier country sourcing recommendation.</p>
+    </div>
+  </a>
+
+  <a class="proj-card" href="projects/project1/index.html" data-cats="ml marketing">
+    <div class="proj-card-img">
+      <img src="images/projects/smobile/permutation-importance.png" alt="Permutation importance chart for churn drivers">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">Machine Learning · CLV</span>
+      <h3 class="anchored">S-Mobile: Proactive Churn Management</h3>
+      <p>Churn model + 60-month CLV framework on 1M subscribers — found two retention programs worth $105M combined, and one that loses money.</p>
+    </div>
+  </a>
+
+  <a class="proj-card" href="projects/project4/index.html" data-cats="ml marketing">
+    <div class="proj-card-img">
+      <img src="images/projects/uplift/xgboost-comparison.png" alt="Uplift versus propensity targeting comparison">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">Marketing Analytics · Uplift Modeling</span>
+      <h3 class="anchored">Who to Target: Uplift Modeling</h3>
+      <p>Compared propensity vs. uplift targeting across Neural Net, Random Forest, and XGBoost to find who a campaign actually moves — not who looks like a buyer.</p>
+    </div>
+  </a>
+
+  <a class="proj-card" href="projects/project5/index.html" data-cats="ops">
+    <div class="proj-card-img">
+      <img src="images/projects/supplychain/total-cost-by-policy.png" alt="Inventory policy cost comparison chart">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">Operations · Simulation</span>
+      <h3 class="anchored">Inventory Policy Under Supply Uncertainty</h3>
+      <p>Monte Carlo simulation across 1,000 trials found my seasonally adaptive ordering policy beats fixed and JIT policies by ~$10K/location/year.</p>
+    </div>
+  </a>
+
+  <a class="proj-card" href="projects/project6/index.html" data-cats="exp">
+    <div class="proj-card-img">
+      <img src="images/projects/abtest/click-rate-treatment-vs-control.png" alt="A/B test click rate results">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">Experimentation · A/B Testing</span>
+      <h3 class="anchored">A/B Test: Landing Page Click-Through</h3>
+      <p>Randomized test lifted click-through from 34.7% to 63.9%, confirmed with OLS regression and a day-of-week heterogeneity check.</p>
+    </div>
+  </a>
+
+</div>
+
+<script>
+(function() {
+  const buttons = document.querySelectorAll('.proj-filter');
+  const cards = document.querySelectorAll('.proj-card');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        const cats = card.dataset.cats.split(' ');
+        card.style.display = (filter === 'all' || cats.includes(filter)) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="QnVzaW5lc3MlMjBJbnRlbGxpZ2VuY2UlMkNUYWJsZWF1JTJDRGF0YSUyMFZpc3VhbGl6YXRpb24=" data-listing-date-sort="1736928000000" data-listing-file-modified-sort="1775707338422" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="194">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./projects/project2/index.html" class="no-external">Global Wine Market Investment &amp; Sourcing Strategy</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('QnVzaW5lc3MlMjBJbnRlbGxpZ2VuY2U='); return false;">Business Intelligence</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('VGFibGVhdQ=='); return false;">Tableau</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMFZpc3VhbGl6YXRpb24='); return false;">Data Visualization</div>
-
-</div>
-<div class="delink listing-description"><a href="./projects/project2/index.html" class="no-external">
-<p>Built an interactive Tableau dashboard to support wine distributors and investment decision-makers in identifying high-potential sourcing and investment opportunities across global wine markets.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./projects/project2/index.html" class="no-external">
-<div class="listing-date">
-Jan 15, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="TWFjaGluZSUyMExlYXJuaW5nJTJDQ0xWJTIwQW5hbHlzaXMlMkNNYXJrZXRpbmclMjBBbmFseXRpY3M=" data-listing-date-sort="1733040000000" data-listing-file-modified-sort="1775707533256" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="248">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./projects/project1/index.html" class="no-external">S-Mobile: Proactive Churn Management</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFjaGluZSUyMExlYXJuaW5n'); return false;">Machine Learning</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q0xWJTIwQW5hbHlzaXM='); return false;">CLV Analysis</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5nJTIwQW5hbHl0aWNz'); return false;">Marketing Analytics</div>
-
-</div>
-<div class="delink listing-description"><a href="./projects/project1/index.html" class="no-external">
-<p>Built a predictive churn model for a Singapore telecom with 1 million subscribers, designed targeted retention interventions, and evaluated profitability using a 60-month CLV framework.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./projects/project1/index.html" class="no-external">
-<div class="listing-date">
-Dec 1, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="V2ViJTIwRGVzaWduJTJDUG9ydGZvbGlvJTJDVVglMjBEZXNpZ24=" data-listing-date-sort="1711954800000" data-listing-file-modified-sort="1775852613055" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="146">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./projects/project3/index.html" class="no-external">Project Overview Portfolio Site</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('V2ViJTIwRGVzaWdu'); return false;">Web Design</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UG9ydGZvbGlv'); return false;">Portfolio</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('VVglMjBEZXNpZ24='); return false;">UX Design</div>
-
-</div>
-<div class="delink listing-description"><a href="./projects/project3/index.html" class="no-external">
-<p>Designed and built a portfolio website to showcase project work, combining visual storytelling with responsive web design using the Wix platform.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./projects/project3/index.html" class="no-external">
-<div class="listing-date">
-Apr 1, 2024
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -4,7 +4,7 @@ description: "I ran a simulated A/B test on two newsletter CTAs — and the real
 author: "Yafei (Judie) Zhang"
 date: 2025-04-13
 categories: [A/B Testing, Statistics, Marketing Analytics]
-image: "../../Picture1.png"
+image: "../../images/projects/wine/dashboard-quality-price.png"
 format:
   html:
     code-fold: true
