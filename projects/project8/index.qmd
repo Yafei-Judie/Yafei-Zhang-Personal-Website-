@@ -3,13 +3,21 @@ title: "End-to-End E-Commerce Customer Journey: SQL, Churn & CLV"
 description: "A self-directed case study on two real public datasets: 8 SQL queries against GA4 and Olist e-commerce data, a churn/CLV model, and a PM decision built from the finding, pressure-tested against its own critique before shipping."
 date: 2026-08-21
 categories: [SQL, Machine Learning, Product Management, Marketing Analytics]
+resources:
+  - dashboard/index.html
 ---
 
 ## Why I Built This
 
 Most portfolio pieces are either a pure SQL/dashboard project with no product thinking, or a PM write-up with no data behind it. I wanted one project that did both, and went a step further most stop short of: pressure-test its own headline finding before trusting it, instead of just reporting the first plausible number.
 
-**[View the repo →](https://github.com/Yafei-Judie/pm-portfolio-ecommerce-journey)** · **[Live interactive dashboard →](https://claude.ai/code/artifact/4b343ae2-f31e-4c63-ae51-77ef521a5498)**
+**[View the repo →](https://github.com/Yafei-Judie/pm-portfolio-ecommerce-journey)** · **[Open dashboard full-screen →](dashboard/index.html)**
+
+```{=html}
+<div class="dashboard-embed-wrapper">
+  <iframe src="dashboard/index.html" class="dashboard-embed" title="Delivery Signal: interactive dashboard" loading="lazy"></iframe>
+</div>
+```
 
 ## The Data
 

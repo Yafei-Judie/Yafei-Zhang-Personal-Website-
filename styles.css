@@ -1913,6 +1913,173 @@ section[id], #home {
   }
 }
 
+/* ─── Project Card Impact Badge ─────────────────────────────── */
+.proj-card-img {
+  position: relative;
+}
+
+.proj-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(58, 45, 50, 0.82);
+  color: #fff;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 0.32rem 0.75rem;
+  border-radius: 50px;
+  backdrop-filter: blur(2px);
+}
+
+/* ─── Testimonials ───────────────────────────────────────────── */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 14px;
+  padding: 2rem 1.8rem;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.testimonial-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  color: #e8ced6;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.testimonial-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.18rem;
+  font-style: italic;
+  color: #3a3a3a;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-attribution {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  color: #7a7a7a;
+}
+
+.testimonial-attribution strong {
+  color: #3a3a3a;
+  font-weight: 500;
+}
+
+/* ─── Now Strip ──────────────────────────────────────────────── */
+.now-strip {
+  max-width: 680px;
+  margin: 0 auto 2rem;
+  background: white;
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.88rem;
+  color: #5a5a5a;
+}
+
+.now-strip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #7fc29b;
+  flex-shrink: 0;
+  animation: now-pulse 2s ease-in-out infinite;
+}
+
+@keyframes now-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.now-strip strong {
+  color: #3a3a3a;
+  font-weight: 500;
+}
+
+/* ─── Floating Contact Button ───────────────────────────────── */
+.floating-contact {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #c4849a;
+  color: white;
+  border-radius: 50px;
+  padding: 0.75rem 1.1rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: 0 6px 22px rgba(196, 132, 154, 0.4);
+  transition: all 0.3s ease;
+}
+
+.floating-contact:hover {
+  background: #a66880;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(196, 132, 154, 0.45);
+  color: white;
+  text-decoration: none;
+}
+
+.floating-contact svg {
+  flex-shrink: 0;
+}
+
+.floating-contact-label {
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .floating-contact-label {
+    display: none;
+  }
+  .floating-contact {
+    padding: 0.75rem;
+  }
+}
+
+/* ─── Embedded Live Dashboard ────────────────────────────────── */
+.dashboard-embed-wrapper {
+  margin: 1.5rem 0 2rem;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e4d4da;
+}
+
+.dashboard-embed {
+  width: 100%;
+  height: 720px;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .dashboard-embed {
+    height: 560px;
+  }
+}
+
 /* ─── Inline Code / Skill Tags ──────────────────────────────── */
 main#quarto-document-content code {
   background-color: #f5e6eb;

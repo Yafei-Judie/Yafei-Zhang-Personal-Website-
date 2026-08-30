@@ -6,7 +6,7 @@ website:
   title: "Yafei (Judie) Zhang"
   favicon: favicon.svg
   site-url: https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-
-  description: "Yafei (Judie) Zhang — Data-driven business and marketing strategist. MSBA candidate at UC San Diego specializing in customer analytics, predictive modeling, and marketing strategy."
+  description: "Yafei (Judie) Zhang: data-driven business and marketing strategist. MSBA candidate at UC San Diego specializing in customer analytics, predictive modeling, and marketing strategy."
   open-graph:
     locale: en_US
     site-name: "Yafei (Judie) Zhang"
@@ -23,6 +23,8 @@ website:
         text: Skills
       - href: index.qmd#portfolio
         text: Portfolio
+      - href: index.qmd#testimonials
+        text: Testimonials
       - href: index.qmd#culture
         text: Culture
       - href: cv.qmd
@@ -36,3 +38,4 @@ format:
       - cosmo
     css: styles.css
     toc: true
+    include-after-body: floating-contact.html

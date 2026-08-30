@@ -37,6 +37,11 @@ I turn messy data into decisions companies actually act on: churn models that fl
 <section id="about" class="home-section reveal">
   <h2 class="art-section-label home-section-label">About</h2>
 
+  <div class="now-strip">
+    <span class="now-strip-dot"></span>
+    <span><strong>Right now:</strong> wrapping up a Merchandising Analyst internship at PlanetArt and finishing my MSBA capstone at UC San Diego (Dec 2026 grad), open to full-time analyst and PM roles.</span>
+  </div>
+
   <div class="about-stats">
     <div class="about-stat">
       <span class="about-stat-num">5</span>
@@ -130,17 +135,19 @@ I turn messy data into decisions companies actually act on: churn models that fl
   <div class="proj-grid">
     <a class="proj-card" href="projects/project8/index.html">
       <div class="proj-card-img">
+        <span class="proj-badge">$565K value at risk</span>
         <img src="images/projects/ecommerce/delay-vs-review.png" alt="Delivery timing versus average review score chart">
       </div>
       <div class="proj-card-body">
         <span class="proj-card-tags">SQL · Machine Learning · PM</span>
         <h3>E-Commerce Customer Journey: SQL, Churn &amp; CLV</h3>
-        <p>8 SQL queries + a churn/CLV model on real GA4 and Olist data, pressure-tested against its own critique before shipping a PRD. Public repo + live dashboard.</p>
+        <p>8 SQL queries + a churn/CLV model on real GA4 and Olist data, pressure-tested against its own critique before shipping a PRD. Public repo + live embedded dashboard.</p>
       </div>
     </a>
 
     <a class="proj-card" href="projects/project2/index.html">
       <div class="proj-card-img">
+        <span class="proj-badge">130K reviews analyzed</span>
         <img src="images/projects/wine/dashboard-quality-price.png" alt="Global wine quality and price dashboard">
       </div>
       <div class="proj-card-body">
@@ -152,6 +159,7 @@ I turn messy data into decisions companies actually act on: churn models that fl
 
     <a class="proj-card" href="projects/project1/index.html">
       <div class="proj-card-img">
+        <span class="proj-badge">$105M impact</span>
         <img src="images/projects/smobile/permutation-importance.png" alt="Permutation importance chart for churn drivers">
       </div>
       <div class="proj-card-body">
@@ -163,6 +171,7 @@ I turn messy data into decisions companies actually act on: churn models that fl
 
     <a class="proj-card" href="projects/project5/index.html">
       <div class="proj-card-img">
+        <span class="proj-badge">$10K/yr saved</span>
         <img src="images/projects/supplychain/total-cost-by-policy.png" alt="Inventory policy cost comparison chart">
       </div>
       <div class="proj-card-body">
@@ -174,6 +183,24 @@ I turn messy data into decisions companies actually act on: churn models that fl
   </div>
 
   <a href="projects.html" class="view-all-link">View All 7 Projects &rarr;</a>
+</section>
+
+<!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
+<section id="testimonials" class="home-section reveal">
+  <h2 class="art-section-label home-section-label">Testimonials</h2>
+
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <span class="testimonial-mark">&ldquo;</span>
+      <p class="testimonial-quote">What sets Yafei apart is a rare combination of analytical rigor and creativity. When faced with a challenge, she never simply flagged it. Yafei came to the table with well-thought-out options and a recommendation.</p>
+      <p class="testimonial-attribution"><strong>Sophia Sunjara</strong> &middot; Director, Merchandising, PlanetArt</p>
+    </div>
+    <div class="testimonial-card">
+      <span class="testimonial-mark">&ldquo;</span>
+      <p class="testimonial-quote">She translated complex technical findings into concise, actionable recommendations that both technical teams and business leaders could immediately understand. I would highly recommend Yafei to any organization looking for someone who can bridge analytics, data governance, and business strategy.</p>
+      <p class="testimonial-attribution"><strong>Katherine Paulsen</strong> &middot; Customer Experience Manager, Thermo Fisher Scientific</p>
+    </div>
+  </div>
 </section>
 
 <!-- ═══════════════════════ CULTURE ═══════════════════════ -->
