@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang: churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
+<meta name="dcterms.date" content="2026-06-01">
+<meta name="description" content="Built a supervised fraud model on 1M product applications, engineering 1,841 velocity and identity-linkage features to catch 59% of fraud by reviewing just 3% of applications.">
 
-<title>Projects – Yafei (Judie) Zhang</title>
+<title>Application Identity Fraud Detection – Yafei (Judie) Zhang</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,24 +28,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,32 +84,32 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Projects – Yafei (Judie) Zhang">
-<meta property="og:description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang: churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Application Identity Fraud Detection – Yafei (Judie) Zhang">
+<meta property="og:description" content="Built a supervised fraud model on 1M product applications, engineering 1,841 velocity and identity-linkage features to catch 59% of fraud by reviewing just 3% of applications.">
 <meta property="og:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/fraud/placeholder-ssn-spike.png">
 <meta property="og:site_name" content="Yafei (Judie) Zhang">
 <meta property="og:locale" content="en_US">
-<meta property="og:image:alt" content="Bar chart showing a placeholder SSN value appearing over 16,000 times, far more than any real value">
+<meta property="og:image:alt" content="Bar chart showing the SSN value 999999999 appearing over 16,000 times versus near-zero counts for every other SSN">
 <meta property="og:image:height" content="352">
 <meta property="og:image:width" content="880">
-<meta name="twitter:title" content="Projects – Yafei (Judie) Zhang">
-<meta name="twitter:description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang: churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
+<meta name="twitter:title" content="Application Identity Fraud Detection – Yafei (Judie) Zhang">
+<meta name="twitter:description" content="Built a supervised fraud model on 1M product applications, engineering 1,841 velocity and identity-linkage features to catch 59% of fraud by reviewing just 3% of applications.">
 <meta name="twitter:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/fraud/placeholder-ssn-spike.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image:alt" content="Bar chart showing a placeholder SSN value appearing over 16,000 times, far more than any real value">
+<meta name="twitter:image:alt" content="Bar chart showing the SSN value 999999999 appearing over 16,000 times versus near-zero counts for every other SSN">
 <meta name="twitter:image-height" content="352">
 <meta name="twitter:image-width" content="880">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Yafei (Judie) Zhang</span>
     </a>
   </div>
@@ -119,35 +120,35 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#home"> 
+    <a class="nav-link" href="../../index.html#home"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#about"> 
+    <a class="nav-link" href="../../index.html#about"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#skills"> 
+    <a class="nav-link" href="../../index.html#skills"> 
 <span class="menu-text">Skills</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#portfolio"> 
+    <a class="nav-link" href="../../index.html#portfolio"> 
 <span class="menu-text">Portfolio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#testimonials"> 
+    <a class="nav-link" href="../../index.html#testimonials"> 
 <span class="menu-text">Testimonials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#culture"> 
+    <a class="nav-link" href="../../index.html#culture"> 
 <span class="menu-text">Culture</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html"> 
+    <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">Resume</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html#contact"> 
+    <a class="nav-link" href="../../index.html#contact"> 
 <span class="menu-text">Connect</span></a>
   </li>  
 </ul>
@@ -161,18 +162,35 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#problem" id="toc-problem" class="nav-link active" data-scroll-target="#problem">Problem</a></li>
+  <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach">Approach</a></li>
+  <li><a href="#key-insights" id="toc-key-insights" class="nav-link" data-scroll-target="#key-insights">Key Insights</a></li>
+  <li><a href="#impact" id="toc-impact" class="nav-link" data-scroll-target="#impact">Impact</a></li>
+  <li><a href="#tools-skills" id="toc-tools-skills" class="nav-link" data-scroll-target="#tools-skills">Tools &amp; Skills</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
-</div>
+<h1 class="title">Application Identity Fraud Detection</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Machine Learning</div>
+    <div class="quarto-category">Fraud Detection</div>
+    <div class="quarto-category">Imbalanced Classification</div>
+  </div>
+  </div>
 
 <div>
   <div class="description">
-    Data analytics and marketing strategy projects by Yafei (Judie) Zhang: churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.
+    Built a supervised fraud model on 1M product applications, engineering 1,841 velocity and identity-linkage features to catch 59% of fraud by reviewing just 3% of applications.
   </div>
 </div>
 
@@ -180,6 +198,12 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 1, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -189,158 +213,57 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </header>
 
 
-<div id="bg-canvas" aria-hidden="true">
-  <div class="aurora-blob blob-1"></div>
-  <div class="aurora-blob blob-2"></div>
-  <div class="aurora-blob blob-3"></div>
-  <div class="aurora-blob blob-4"></div>
+<section id="problem" class="level2">
+<h2 class="anchored" data-anchor-id="problem">Problem</h2>
+<p>A lender processing a million loan and cell-phone applications a year, with a small fraud team, can’t manually review every application. Fraudsters use stolen or synthetic identities to open accounts and then default or disappear, leaving the issuer to absorb the loss. The team needed a way to rank applications by risk so limited review capacity gets pointed at the small slice most likely to be fraudulent.</p>
+</section>
+<section id="approach" class="level2">
+<h2 class="anchored" data-anchor-id="approach">Approach</h2>
+<p>Started from 1,000,000 application records (2017, 1.44% fraud rate) with just 10 raw fields — SSN, name, address, phone, date of birth. Before any modeling, the data quality review surfaced something specific to fraud data: identity fields double as <em>linking keys</em> that connect applications to the same person, and several fields were full of frivolous placeholder values that would have manufactured false connections.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/projects/fraud/placeholder-ssn-spike.png" class="img-fluid figure-img" alt="Bar chart showing the SSN value 999999999 appearing over 16,000 times versus near-zero counts for every other SSN"></p>
+<figcaption>One SSN value shows up 16,935 times — a placeholder, not a person</figcaption>
+</figure>
 </div>
-<div class="proj-intro">
-  <p>Nine projects, ordered by the business decision each one actually changes, from the highest-stakes call down. Every chart and diagram below is pulled straight from my own analysis.</p>
+<p>The same pattern showed up in home phone (<code>9999999999</code>, 78,512 times), address (<code>123 MAIN ST</code>, 1,079 times), and date of birth (a default <code>06/26/1907</code>). Left alone, the model would have treated tens of thousands of unrelated applications as one person and invented enormous, false velocity signals. Each placeholder was replaced with a unique, non-linking value so it could only ever link to itself.</p>
+<p>From the cleaned data, engineered <strong>1,841 candidate variables</strong> across six families — velocity counts, relative velocity, cross-entity uniqueness counts, max indicators, age indicators, day-of-week risk — all built to measure how fast and how inconsistently an identity gets reused across applications. A two-stage selection process (a KS-statistic univariate filter, then a LightGBM forward-stepwise wrapper) narrowed that down to the 10 strongest predictors, which turned out to be dominated by <strong>address-based velocity</strong> — a physical address is one of the hardest things for a fraudster to vary, so a burst of applications from the same address is the strongest signal a fraud ring is operating from one location.</p>
+<p>Eight algorithms were compared on FDR@3% (fraction of fraud caught while reviewing the riskiest 3% of applications), each run four times with fresh train/test splits and validated out-of-time on two held-out months:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/projects/fraud/model-comparison.png" class="img-fluid figure-img" alt="Bar chart comparing FDR at 3% across nine model configurations on train, test, and out-of-time sets"></p>
+<figcaption>LightGBM and the other boosting models lead out-of-time; the single decision tree overfits, the neural net underfits</figcaption>
+</figure>
 </div>
-
-<div class="proj-filters">
-  <button class="proj-filter active" data-filter="all">Show all</button>
-  <button class="proj-filter" data-filter="bi">Business Intelligence</button>
-  <button class="proj-filter" data-filter="sql">SQL &amp; Data Engineering</button>
-  <button class="proj-filter" data-filter="ml">Machine Learning</button>
-  <button class="proj-filter" data-filter="pm">Product Management</button>
-  <button class="proj-filter" data-filter="marketing">Marketing Analytics</button>
-  <button class="proj-filter" data-filter="ops">Operations</button>
-  <button class="proj-filter" data-filter="exp">Experimentation</button>
+</section>
+<section id="key-insights" class="level2">
+<h2 class="anchored" data-anchor-id="key-insights">Key Insights</h2>
+<ul>
+<li><strong>LightGBM won on generalization, not just raw accuracy</strong> — 64.2% FDR on training, 62.0% on test, 59.1% out-of-time. The small train-to-out-of-time gap is what mattered: a single decision tree hit 70.5% on training but collapsed to 48.1% out-of-time, the classic overfitting failure a portfolio-worthy model has to avoid.</li>
+<li>Rebalancing techniques (SMOTE, downsampling) didn’t beat plain LightGBM on the out-of-time set — added complexity that wasn’t worth it.</li>
+<li>Every field was 100% populated, which looked like clean data until the placeholder-value check — a reminder that “no missing values” isn’t the same as “no data quality problem” in fraud work.</li>
+</ul>
+</section>
+<section id="impact" class="level2">
+<h2 class="anchored" data-anchor-id="impact">Impact</h2>
+<p>Translated the model’s ranking into dollars: $4,000 saved per fraud caught, $100 lost per false positive, scaled to a full year of the 10-million-application population.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/projects/fraud/financial-curves.png" class="img-fluid figure-img" alt="Line chart showing fraud savings, false positive loss, and overall net savings against review cutoff percentage, with net savings peaking around $320 million"></p>
+<figcaption>Net savings peak near the 2% cutoff and stay essentially flat through 3%</figcaption>
+</figure>
 </div>
-
-<div class="proj-grid">
-
-  <a class="proj-card" href="projects/project9/index.html" data-cats="ml">
-    <div class="proj-card-img">
-      <span class="proj-badge">$317M/yr savings</span>
-      <img src="images/projects/fraud/placeholder-ssn-spike.png" alt="Bar chart showing a placeholder SSN value appearing over 16,000 times, far more than any real value">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Machine Learning · Fraud Detection</span>
-      <h3 class="anchored">Application Identity Fraud Detection</h3>
-      <p>1,841 engineered velocity features on 1M applications, an insight about placeholder SSNs faking identity links, and a LightGBM model that catches 59% of fraud reviewing just 3% of cases.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project8/index.html" data-cats="sql ml pm marketing">
-    <div class="proj-card-img">
-      <span class="proj-badge">$565K value at risk</span>
-      <img src="images/projects/ecommerce/delay-vs-review.png" alt="Delivery timing versus average review score chart">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">SQL · Machine Learning · Product Management</span>
-      <h3 class="anchored">E-Commerce Customer Journey: SQL, Churn &amp; CLV</h3>
-      <p>8 SQL queries + a churn/CLV model on real GA4, Olist, and UK retail data, pressure-tested against its own critique before shipping a PRD. Public repo + live embedded dashboard.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project2/index.html" data-cats="bi marketing">
-    <div class="proj-card-img">
-      <span class="proj-badge">130K reviews analyzed</span>
-      <img src="images/projects/wine/dashboard-quality-price.png" alt="Global wine quality and price dashboard">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Business Intelligence · Tableau</span>
-      <h3 class="anchored">Global Wine Market Sourcing Strategy</h3>
-      <p>Built a 4-dashboard Tableau system to turn 130K wine reviews and global GDP data into a two-tier country sourcing recommendation.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project10/index.html" data-cats="bi marketing">
-    <div class="proj-card-img">
-      <span class="proj-badge">11 competitors tracked</span>
-      <img src="images/projects/vianexta/positioning-matrix.png" alt="Bubble chart mapping competitors by enterprise-vs-emerging-brand focus and point-solution-vs-end-to-end scope">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Business Intelligence · Automation</span>
-      <h3 class="anchored">Competitive Intelligence Dashboard for a Startup</h3>
-      <p>An automated Python pipeline that scans public funding and market signals for an early-stage CPG startup and renders them into a live, interactive competitive dashboard.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project7/index.html" data-cats="sql ops">
-    <div class="proj-card-img">
-      <span class="proj-badge">3 sources unified</span>
-      <img src="images/projects/sql/erd-procure-to-pay.png" alt="Procure-to-pay entity relationship diagram">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">SQL · Snowflake · ETL</span>
-      <h3 class="anchored">Multi-Source ETL Pipeline for Spend Analysis</h3>
-      <p>Built a Snowflake pipeline joining CSV, Postgres, and XML sources to catch supplier invoice-vs-quote variance at the transaction level.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project1/index.html" data-cats="ml marketing">
-    <div class="proj-card-img">
-      <span class="proj-badge">$105M impact</span>
-      <img src="images/projects/smobile/permutation-importance.png" alt="Permutation importance chart for churn drivers">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Machine Learning · CLV</span>
-      <h3 class="anchored">S-Mobile: Proactive Churn Management</h3>
-      <p>Churn model + 60-month CLV framework on 1M subscribers: two retention programs worth $105M combined, and one that loses money.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project4/index.html" data-cats="ml marketing">
-    <div class="proj-card-img">
-      <span class="proj-badge">20-25% optimal reach</span>
-      <img src="images/projects/uplift/xgboost-comparison.png" alt="Uplift versus propensity targeting comparison">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Marketing Analytics · Uplift Modeling</span>
-      <h3 class="anchored">Who to Target: Uplift Modeling</h3>
-      <p>Compared propensity vs. uplift targeting across Neural Net, Random Forest, and XGBoost to find who a campaign actually moves, versus who simply looks like a buyer.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project5/index.html" data-cats="ops">
-    <div class="proj-card-img">
-      <span class="proj-badge">$10K/yr saved</span>
-      <img src="images/projects/supplychain/total-cost-by-policy.png" alt="Inventory policy cost comparison chart">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Operations · Simulation</span>
-      <h3 class="anchored">Inventory Policy Under Supply Uncertainty</h3>
-      <p>Monte Carlo simulation across 1,000 trials found my seasonally adaptive ordering policy beats fixed and JIT policies by about $10K per location a year.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project6/index.html" data-cats="exp">
-    <div class="proj-card-img">
-      <span class="proj-badge">+29pt lift</span>
-      <img src="images/projects/abtest/click-rate-treatment-vs-control.png" alt="A/B test click rate results">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">Experimentation · A/B Testing</span>
-      <h3 class="anchored">A/B Test: Landing Page Click-Through</h3>
-      <p>Randomized test lifted click-through from 34.7% to 63.9%, confirmed with OLS regression and a day-of-week heterogeneity check.</p>
-    </div>
-  </a>
-
-</div>
-
-<script>
-(function() {
-  const buttons = document.querySelectorAll('.proj-filter');
-  const cards = document.querySelectorAll('.proj-card');
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      cards.forEach(card => {
-        const cats = card.dataset.cats.split(' ');
-        card.style.display = (filter === 'all' || cats.includes(filter)) ? '' : 'none';
-      });
-    });
-  });
-})();
-</script>
+<ul>
+<li><strong>Recommended cutoff: review the riskiest 3% of applications.</strong> It sits on the flat top of the savings curve, gives up less than 1% of the theoretical maximum, and catches more fraud (59% vs.&nbsp;58%) than the marginally-higher-savings 2% cutoff.</li>
+<li>Projected <strong>~$317M/year in net savings</strong> at that cutoff (peaking near $320M at 2%) — the fraud team can find roughly three out of five frauds while reviewing three out of every hundred applications.</li>
+</ul>
+</section>
+<section id="tools-skills" class="level2">
+<h2 class="anchored" data-anchor-id="tools-skills">Tools &amp; Skills</h2>
+<p><code>Python</code> · <code>LightGBM / XGBoost / CatBoost</code> · <code>Feature Engineering at Scale</code> · <code>KS-Statistic Feature Selection</code> · <code>Imbalanced Classification</code> · <code>Out-of-Time Validation</code> · <code>Financial ROI Modeling</code></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <a href="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/index.html#contact" class="floating-contact" aria-label="Contact Yafei">

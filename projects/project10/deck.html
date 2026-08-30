@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ViaNexta — Competitive Landscape (Case Study)</title>
+<style>
+  :root{
+    --green:#0d4d3a;--green-700:#0e5a43;--green-900:#082b20;--green-50:#e8f3ee;--green-100:#d3e7dd;
+    --lime:#c6f23a;--lime-soft:#e4fab0;--ink:#15231e;--slate:#46524c;--muted:#7a857f;
+    --line:#e7eae8;--cream:#f5f2e8;--white:#fff;
+    --red:#e0584f;--orange:#e08a2e;--yellow:#d8b400;--blue:#3f7fc4;
+    --shadow:0 1px 2px rgba(8,30,22,.05),0 14px 40px rgba(8,30,22,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#0a3329;color:var(--ink);-webkit-font-smoothing:antialiased}
+  .display{font-weight:900;letter-spacing:-.5px;line-height:1;text-transform:uppercase}
+  .mark{background:var(--lime);color:var(--green-900);padding:0 .1em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+  .deck{scroll-snap-type:y mandatory;height:100vh;overflow-y:scroll}
+  .slide{scroll-snap-align:start;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:72px 7vw;position:relative}
+  .slide.cream{background:var(--cream)}
+  .slide.white{background:var(--white)}
+  .slide.green{background:linear-gradient(150deg,#0d4d3a,#082b20);color:#eafaf3}
+  .slide.green .h2,.slide.green h1{color:#fff}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--green-700);margin-bottom:18px}
+  .slide.green .kicker{color:var(--lime)}
+  .h2{font-size:clamp(28px,4vw,46px);color:var(--green);line-height:1.04}
+  .lede{font-size:clamp(15px,1.5vw,19px);color:var(--slate);max-width:760px;margin-top:16px;line-height:1.55}
+  .slide.green .lede{color:#cfe3da}
+  .snum{position:absolute;top:28px;right:7vw;font-size:13px;color:var(--muted);font-weight:700}
+  .slide.green .snum{color:#7fae9d}
+  .brandtag{position:absolute;top:28px;left:7vw;font-size:13px;font-weight:800;color:var(--green);letter-spacing:.3px}
+  .slide.green .brandtag{color:#fff}
+  .brandtag b{color:var(--lime)}
+
+  .pbar{position:fixed;top:0;left:0;height:4px;background:var(--lime);z-index:50;transition:width .2s}
+  .dots{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:11px}
+  .dots a{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.35);display:block}
+  .dots a.on{background:var(--lime);transform:scale(1.35)}
+  .hint{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:50;font-size:12px;color:rgba(255,255,255,.55);background:rgba(0,0,0,.25);padding:6px 13px;border-radius:20px}
+
+  .cover{background:radial-gradient(circle at 78% 20%,rgba(198,242,58,.18),transparent 55%),linear-gradient(150deg,#0d4d3a,#072018);color:#eafaf3}
+  .cover h1{font-size:clamp(36px,6vw,72px);color:#fff}
+  .cover .logo{display:flex;align-items:center;gap:11px;font-weight:900;font-size:24px;color:#fff;margin-bottom:40px}
+  .cover .logo .lm{width:34px;height:34px;border-radius:9px;background:var(--lime);color:var(--green-900);display:flex;align-items:center;justify-content:center;font-size:18px}
+  .cover .sub{font-size:clamp(16px,2vw,22px);color:#bfe0d2;margin-top:22px;max-width:680px;line-height:1.5}
+  .cover .meta{margin-top:46px;display:flex;gap:30px;flex-wrap:wrap;font-size:14px;color:#8fbcac}
+  .cover .credit{margin-top:14px;font-size:13px;color:#7fae9d}
+
+  .grid{display:grid;gap:18px;margin-top:34px}
+  .g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:1fr 1fr}
+  .stat{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+  .slide.green .stat{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)}
+  .stat .n{font-size:clamp(30px,4vw,46px);font-weight:900;color:var(--green);line-height:1}
+  .slide.green .stat .n{color:var(--lime)}
+  .stat .l{font-size:14px;color:var(--slate);margin-top:10px;line-height:1.45}
+  .slide.green .stat .l{color:#cfe3da}
+  .stat .src{font-size:11px;color:var(--muted);margin-top:10px}
+  .slide.green .stat .src{color:#7fae9d}
+
+  .matrixwrap{display:grid;grid-template-columns:1.55fr .85fr;gap:34px;align-items:center;margin-top:24px}
+  .matrix{position:relative;aspect-ratio:1.25/1;background:var(--white);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px}
+  .matrix .axis{position:absolute;background:var(--line)}
+  .matrix .ax-x{left:8%;right:8%;top:50%;height:2px}
+  .matrix .ax-y{top:8%;bottom:8%;left:50%;width:2px}
+  .axlabel{position:absolute;font-size:11px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--muted)}
+  .axlabel.l{left:10px;top:50%;transform:translateY(-50%) rotate(-90deg);transform-origin:left}
+  .quad{position:absolute;font-size:11px;font-weight:700;color:var(--muted);opacity:.7}
+  .bubble{position:absolute;transform:translate(-50%,-50%);border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-size:10.5px;font-weight:800;color:#fff;border:2px solid rgba(255,255,255,.8);box-shadow:0 4px 12px rgba(0,0,0,.18);line-height:1.05;padding:2px}
+  .bubble.via{background:var(--lime);color:var(--green-900);border-color:var(--green);z-index:5;box-shadow:0 0 0 6px rgba(198,242,58,.25),0 6px 16px rgba(0,0,0,.2)}
+  .bubble.ent{background:#5b7d72}.bubble.adj{background:#7a9ac4}.bubble.dir{background:#d98a3a}
+  .legend{font-size:13px;color:var(--slate);line-height:1.7}
+  .legend .row{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+  .legend .sw{width:14px;height:14px;border-radius:50%;flex:none}
+  .keypoint{background:var(--green-50);border:1px solid var(--green-100);border-radius:14px;padding:18px;margin-top:18px;font-size:14px;color:var(--green-900);line-height:1.5}
+  .keypoint b{color:var(--green)}
+
+  .bars{margin-top:26px;display:flex;flex-direction:column;gap:14px;max-width:880px}
+  .bar{display:grid;grid-template-columns:140px 1fr 74px;align-items:center;gap:14px}
+  .bar .nm{font-size:14px;font-weight:700;text-align:right;color:var(--ink)}
+  .slide.green .bar .nm{color:#eafaf3}
+  .bar .track{height:30px;background:rgba(0,0,0,.05);border-radius:8px;overflow:hidden}
+  .slide.green .bar .track{background:rgba(255,255,255,.08)}
+  .bar .fill{height:100%;border-radius:8px;background:linear-gradient(90deg,#138a5e,#0e5a43)}
+  .bar.via .fill{background:linear-gradient(90deg,#c6f23a,#9bd000)}
+  .bar .v{font-size:14px;font-weight:800;color:var(--green)}
+  .slide.green .bar .v{color:var(--lime)}
+  .bar.via .v{color:var(--green-900)}
+
+  .ttab{width:100%;border-collapse:collapse;margin-top:24px;font-size:14px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+  .ttab th{background:var(--green);color:#fff;text-align:left;padding:14px 16px;font-size:12px;letter-spacing:.5px;text-transform:uppercase}
+  .ttab td{padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+  .ttab tr:last-child td{border-bottom:0}
+  .ttab .co{font-weight:800;color:var(--ink)}
+  .lvl{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;padding:4px 10px;border-radius:20px;color:#fff}
+  .lvl.crit{background:var(--red)}.lvl.high{background:var(--orange)}.lvl.med{background:var(--yellow);color:#5a4b00}.lvl.low{background:#9aa6a0}
+
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:26px}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow)}
+  .slide.green .panel{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)}
+  .panel h3{font-size:19px;color:var(--green);margin-bottom:12px;display:flex;align-items:center;gap:9px}
+  .slide.green .panel h3{color:var(--lime)}
+  .panel ul{list-style:none}
+  .panel li{font-size:14.5px;color:var(--slate);padding:9px 0 9px 26px;position:relative;line-height:1.45}
+  .slide.green .panel li{color:#dfeee7}
+  .panel li:before{content:"›";position:absolute;left:4px;color:var(--green);font-weight:900;font-size:17px}
+  .slide.green .panel li:before{color:var(--lime)}
+
+  .acts{margin-top:24px;display:flex;flex-direction:column;gap:12px}
+  .act{display:grid;grid-template-columns:120px 1fr;gap:18px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;box-shadow:var(--shadow);align-items:center}
+  .act .when{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--green)}
+  .act .what{font-size:15px;color:var(--ink);line-height:1.4}
+  .act .what b{color:var(--green)}
+
+  .signals{margin-top:22px;display:flex;flex-direction:column;gap:11px;max-width:1000px}
+  .sig{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;box-shadow:var(--shadow)}
+  .sig .tag2{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;padding:4px 9px;border-radius:6px;flex:none;margin-top:1px}
+  .sig .tag2.opp{background:var(--green-50);color:var(--green-700)}
+  .sig .tag2.thr{background:#fdecea;color:var(--red)}
+  .sig .tx{font-size:14px;color:var(--slate);line-height:1.45}
+  .sig .tx b{color:var(--ink)}
+
+  .closing h2{font-size:clamp(30px,5vw,60px);max-width:16ch;line-height:1.05}
+  @media(max-width:880px){
+    .g4,.g3,.cols,.matrixwrap{grid-template-columns:1fr}.bar{grid-template-columns:96px 1fr 60px}
+    .dots{display:none}.slide{padding:64px 6vw}.act{grid-template-columns:1fr}
+  }
+  @media print{.deck{height:auto;overflow:visible}.slide{min-height:96vh;page-break-after:always;scroll-snap-align:none}.dots,.hint,.pbar{display:none}}
+</style>
+</head>
+<body>
+<div class="pbar" id="pbar"></div>
+<div class="dots" id="dots"></div>
+<div class="hint">Scroll or use ↑ ↓ arrow keys · Print to PDF to save</div>
+
+<div class="deck" id="deck">
+
+  <!-- 1 COVER -->
+  <section class="slide cover">
+    <div class="logo"><span class="lm">V</span> ViaNexta</div>
+    <h1 class="display">Competitive<br>Landscape <span class="mark">2026</span></h1>
+    <p class="sub">Portfolio case study: a public-data competitive-intelligence dashboard, built and automatically refreshed for an early-stage CPG supply-chain startup.</p>
+    <div class="meta"><span>June 2026</span><span>11 competitors tracked</span><span>Public funding &amp; market data</span></div>
+    <p class="credit">Built by Yafei (Judie) Zhang · pipeline + report generator in Python, data sourced from public funding announcements and market research</p>
+  </section>
+
+  <!-- 2 MARKET NEED -->
+  <section class="slide cream">
+    <span class="brandtag">Via<b>Nexta</b></span><span class="snum">02</span>
+    <span class="kicker">The market need</span>
+    <h2 class="h2 display">Emerging brands want to build,<br>but the supply chain breaks them</h2>
+    <p class="lede">Founders can design a product in a weekend and stall for a year on sourcing, manufacturing, packaging, and fulfillment. The tools that exist serve big companies. The pain is loudest exactly where the help is thinnest.</p>
+    <div class="grid g4">
+      <div class="stat"><div class="n">71%</div><div class="l">of CPG leaders use AI, yet none have scaled it</div><div class="src">McKinsey</div></div>
+      <div class="stat"><div class="n">$330B</div><div class="l">private label sales squeezing emerging brands on shelf</div><div class="src">Circana</div></div>
+      <div class="stat"><div class="n">82%</div><div class="l">of supply-chain leaders hit by tariffs, small brands worst</div><div class="src">McKinsey</div></div>
+      <div class="stat"><div class="n">~70%</div><div class="l">of new CPG products fail; most premium F&amp;B never pass $1M</div><div class="src">Industry est.</div></div>
+    </div>
+    <div class="keypoint"><b>The need:</b> an affordable, end-to-end partner that takes an emerging brand from idea to inventory, sourcing through fulfillment, with AI doing the busywork. That partner does not exist at this segment yet.</div>
+  </section>
+
+  <!-- 3 POSITIONING MATRIX -->
+  <section class="slide white">
+    <span class="brandtag">Via<b>Nexta</b></span><span class="snum">03</span>
+    <span class="kicker">The competitive landscape</span>
+    <h2 class="h2 display">Everyone is crowded into three corners.<br>The top-right is open.</h2>
+    <div class="matrixwrap">
+      <div class="matrix" id="matrix">
+        <div class="axis ax-x"></div><div class="axis ax-y"></div>
+        <span class="axlabel" style="right:12px;top:50%;transform:translateY(-50%)">Serves emerging brands →</span>
+        <span class="axlabel" style="left:24px;top:50%;transform:translateY(-50%)">← Serves enterprise</span>
+        <span class="axlabel" style="left:50%;top:8px;transform:translateX(-50%)">End-to-end ↑</span>
+        <span class="axlabel" style="left:50%;bottom:8px;transform:translateX(-50%)">Point solution ↓</span>
+      </div>
+      <div>
+        <div class="legend">
+          <div class="row"><span class="sw" style="background:#5b7d72"></span> Enterprise focus (Keychain, BackOps, HappyRobot)</div>
+          <div class="row"><span class="sw" style="background:#d98a3a"></span> Direct, emerging-brand (Jampack, Corvera, Airgoods)</div>
+          <div class="row"><span class="sw" style="background:#7a9ac4"></span> Adjacent point tools (Cavela, Iris)</div>
+          <div class="row"><span class="sw" style="background:#c6f23a;border:2px solid #0d4d3a"></span> <b>&nbsp;ViaNexta</b></div>
+        </div>
+        <div class="keypoint" style="margin-top:20px"><b>White space:</b> emerging-brand + end-to-end. Rivals are either enterprise, or single-workflow wedges. Bubble size = total funding.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 FUNDING -->
+  <section class="slide green">
+    <span class="brandtag">Via<b>Nexta</b></span><span class="snum">04</span>
+    <span class="kicker">Follow the money</span>
+    <h2 class="h2 display">Big capital, aimed away from the emerging brand</h2>
+    <p class="lede">The best-funded players (Keychain, HappyRobot, BackOps) point at enterprise and logistics. The brands chasing the emerging-brand buyer directly are still small and early — an open lane, for now.</p>
+    <div class="bars" id="bars"></div>
+    <p style="font-size:12px;color:#7fae9d;margin-top:18px">Total raised, $M. Figures validated against primary funding announcements (TechCrunch, PRNewswire, FreightWaves, Tech.eu, Glasswing), June 2026.</p>
+  </section>
+
+  <!-- 5 THREAT MATRIX -->
+  <section class="slide cream">
+    <span class="brandtag">Via<b>Nexta</b></span><span class="snum">05</span>
+    <span class="kicker">Mapping the field</span>
+    <h2 class="h2 display">Competitive overlap matrix</h2>
+    <table class="ttab">
+      <thead><tr><th>Company</th><th>What they do</th><th>Overlap</th><th>Proximity</th></tr></thead>
+      <tbody>
+        <tr><td class="co">Jampack AI</td><td>Wholesale ops automation for CPG (order-to-cash, EDI, 3PL)</td><td>Direct, same buyer</td><td><span class="lvl crit">Closest</span></td></tr>
+        <tr><td class="co">Corvera</td><td>Agentic OS / data layer for CPG brands. ~$6.2M total raised</td><td>Direct, slightly upmarket</td><td><span class="lvl high">Close</span></td></tr>
+        <tr><td class="co">Keychain</td><td>AI OS for CPG manufacturing, moving to retailer private-label</td><td>Adjacent, enterprise</td><td><span class="lvl high">Close</span></td></tr>
+        <tr><td class="co">Airgoods</td><td>Wholesale marketplace, emerging F&amp;B to grocers</td><td>Marketplace sell-side</td><td><span class="lvl med">Watch</span></td></tr>
+        <tr><td class="co">Cavela</td><td>AI agents to source and negotiate with factories</td><td>Sourcing point tool</td><td><span class="lvl med">Watch</span></td></tr>
+        <tr><td class="co">HappyRobot</td><td>AI voice/agents for freight and logistics comms</td><td>Different layer</td><td><span class="lvl low">Distant</span></td></tr>
+        <tr><td class="co">BackOps</td><td>AI supply-chain OS for large enterprises</td><td>Enterprise, not CPG</td><td><span class="lvl low">Distant</span></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px;color:var(--muted);margin-top:14px">Figures validated against primary funding announcements, June 2026. Airgoods is a single $500K seed (YC S23).</p>
+  </section>
+
+  <!-- 6 DIFFERENTIATION -->
+  <section class="slide white">
+    <span class="brandtag">Via<b>Nexta</b></span><span class="snum">06</span>
+    <span class="kicker">Where ViaNexta differentiates</span>
+    <h2 class="h2 display">The only end-to-end platform<br>built for emerging brands</h2>
+    <div class="cols">
+      <div class="panel"><h3>✓ What only ViaNexta bundles</h3><ul>
+        <li>Sourcing marketplace plus build, packaging, and fulfillment in one flow</li>
+        <li>An AI guide that turns an idea into a real supply-chain plan in minutes</li>
+        <li>Verified suppliers and fulfillment partners, not just software</li>
+        <li>Seller payouts and transactions handled in-platform</li>
+      </ul></div>
+      <div class="panel"><h3>✗ Why rivals cover less ground</h3><ul>
+        <li>Keychain and BackOps are built for enterprise economics and sales motions</li>
+        <li>Jampack solves wholesale ops only, after a brand already makes product</li>
+        <li>Corvera is a data/agent layer, not physical operations</li>
+        <li>Point tools (Cavela, Iris) cover one slice each, not the journey</li>
+      </ul></div>
+    </div>
+    <div class="keypoint"><b>Positioning line:</b> "From idea to inventory. The AI supply chain for the brands everyone else is too big to serve."</div>
+  </section>
+
+  <!-- 7 THE TWO CLOSEST COMPETITORS -->
+  <section class="slide cream">
+    <span class="brandtag">Via<b>Nexta</b></span><span class="snum">07</span>
+    <span class="kicker">Closest in the field</span>
+    <h2 class="h2 display">Jampack and Corvera sit nearest ViaNexta</h2>
+    <div class="cols">
+      <div class="panel"><h3>🟥 Jampack AI</h3><ul>
+        <li>$3.2M seed (Maveron). Processing $500M+ annualized wholesale volume</li>
+        <li>Same emerging-CPG buyer, but only the wholesale-ops slice of the journey</li>
+      </ul></div>
+      <div class="panel"><h3>🟧 Corvera</h3><ul>
+        <li>Raised a $4.2M seed (6 Degrees Capital). ~$6.2M total</li>
+        <li>Agentic OS for CPG, sitting just upmarket of ViaNexta's core buyer</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <!-- 8 MARKET SIGNALS -->
+  <section class="slide white">
+    <span class="brandtag">Via<b>Nexta</b></span><span class="snum">08</span>
+    <span class="kicker">Tailwinds &amp; headwinds</span>
+    <h2 class="h2 display">Signals shaping the next 12 months</h2>
+    <div class="signals">
+      <div class="sig"><span class="tag2 opp">Opportunity</span><div class="tx"><b>AI took 48% of all 2025 VC</b> and vertical AI overtook horizontal in Q4. Strong appetite for a vertical CPG play. <span style="color:var(--muted)">(CB Insights)</span></div></div>
+      <div class="sig"><span class="tag2 opp">Opportunity</span><div class="tx"><b>Only ~10% of consumer-goods firms have integrated AI agents</b>, while ~94% plan to within two years. First-inning timing. <span style="color:var(--muted)">(BCG)</span></div></div>
+      <div class="sig"><span class="tag2 opp">Opportunity</span><div class="tx"><b>Tariffs and private label are squeezing margins</b>, pushing brands to rethink sourcing. <span style="color:var(--muted)">(McKinsey, Circana)</span></div></div>
+      <div class="sig"><span class="tag2 thr">Watch</span><div class="tx"><b>Incumbents are widening fast</b>: Keychain expanding to the UK and retailer private-label, AI-native ERPs (Doss, $55M) pulling big rounds nearby. <span style="color:var(--muted)">(TechCrunch)</span></div></div>
+      <div class="sig"><span class="tag2 thr">Watch</span><div class="tx"><b>Direct rivals are funding up</b>: Corvera +$4.2M, Jampack scaling volume. The emerging-brand lane is now contested. <span style="color:var(--muted)">(Tech.eu)</span></div></div>
+    </div>
+  </section>
+
+  <!-- 9 METHODOLOGY (replaces the internal action plan) -->
+  <section class="slide green">
+    <span class="brandtag">Via<b>Nexta</b></span><span class="snum">09</span>
+    <span class="kicker">How this gets built</span>
+    <h2 class="h2 display">The pipeline behind the dashboard</h2>
+    <div class="acts">
+      <div class="act"><div class="when">Scan</div><div class="what">A Python competitor-monitor scanner pulls funding announcements and market signals from public sources (TechCrunch, PRNewswire, Tech.eu, CB Insights, McKinsey, BCG) on a recurring cadence.</div></div>
+      <div class="act"><div class="when">Verify</div><div class="what">Every figure is checked against a primary source before it lands in the report — no funding number ships without a citable announcement behind it.</div></div>
+      <div class="act"><div class="when">Structure</div><div class="what">Findings get organized into a positioning matrix, funding comparison, and threat/overlap table — the same three views a strategy team would build by hand, generated automatically.</div></div>
+      <div class="act"><div class="when">Publish</div><div class="what">A report generator renders the structured data straight into this interactive, scroll-snap deck — no manual slide-building for each refresh.</div></div>
+    </div>
+  </section>
+
+  <!-- 10 CLOSING -->
+  <section class="slide green closing" style="text-align:left">
+    <span class="brandtag">Via<b>Nexta</b></span><span class="snum">10</span>
+    <span class="kicker">Bottom line</span>
+    <h2 class="h2 display">Turning scattered public signals into <span class="mark">one clear map</span></h2>
+    <p class="lede" style="margin-top:24px">No competitor offers end-to-end supply chain for emerging brands today. The analysis above — market need, positioning, funding, and signals — comes from an automated pipeline that keeps that picture current without a manual research sprint every time it's needed.</p>
+  </section>
+
+</div>
+
+<script>
+  // ---- positioning bubbles ----
+  const M=[
+    {n:'Keychain',x:26,y:58,f:78,c:'ent'},
+    {n:'HappyRobot',x:15,y:34,f:62,c:'ent'},
+    {n:'BackOps',x:22,y:72,f:32,c:'ent'},
+    {n:'Cavela',x:80,y:24,f:8.6,c:'adj'},
+    {n:'Iris',x:67,y:18,f:9.7,c:'adj'},
+    {n:'Corvera',x:70,y:56,f:6.2,c:'dir'},
+    {n:'Jampack',x:73,y:40,f:3.2,c:'dir'},
+    {n:'Airgoods',x:83,y:34,f:0.5,c:'dir'},
+    {n:'ViaNexta',x:86,y:90,f:14,c:'via'},
+  ];
+  const mx=document.getElementById('matrix');
+  const area=84, off=8;
+  M.forEach(d=>{
+    const r=Math.max(34,Math.min(86,28+Math.sqrt(d.f)*7));
+    const b=document.createElement('div');
+    b.className='bubble '+d.c;
+    b.style.width=r+'px';b.style.height=r+'px';
+    b.style.left=(off+d.x/100*area)+'%';
+    b.style.top=(off+(100-d.y)/100*area)+'%';
+    b.textContent=d.n;
+    if(d.f && d.c!=='via') b.title=d.n+' · $'+d.f+'M';
+    mx.appendChild(b);
+  });
+
+  // ---- funding bars ----
+  const F=[
+    {n:'Keychain',v:78},{n:'HappyRobot',v:62},{n:'BackOps',v:32},
+    {n:'Iris Finance',v:9.7},{n:'Cavela',v:8.6},{n:'Corvera',v:6.2},
+    {n:'Jampack AI',v:3.2},
+  ];
+  const max=78, barsEl=document.getElementById('bars');
+  F.forEach(d=>{
+    const w=Math.max(1.5,d.v/max*100);
+    const el=document.createElement('div');
+    el.className='bar'+(d.via?' via':'');
+    el.innerHTML=`<div class="nm">${d.n}</div><div class="track"><div class="fill" style="width:${w}%"></div></div><div class="v">$${d.v}M</div>`;
+    barsEl.appendChild(el);
+  });
+
+  // ---- nav dots + progress ----
+  const slides=[...document.querySelectorAll('.slide')];
+  const deck=document.getElementById('deck'), dots=document.getElementById('dots'), pbar=document.getElementById('pbar');
+  slides.forEach((s,i)=>{const a=document.createElement('a');a.href='#';a.onclick=e=>{e.preventDefault();s.scrollIntoView({behavior:'smooth'})};dots.appendChild(a)});
+  const dotEls=[...dots.children];
+  function upd(){
+    const i=Math.round(deck.scrollTop/window.innerHeight);
+    dotEls.forEach((d,k)=>d.classList.toggle('on',k===i));
+    pbar.style.width=(deck.scrollTop/(deck.scrollHeight-window.innerHeight)*100)+'%';
+  }
+  deck.addEventListener('scroll',upd); upd();
+  addEventListener('keydown',e=>{
+    const i=Math.round(deck.scrollTop/window.innerHeight);
+    if(e.key==='ArrowDown'||e.key==='PageDown'||e.key===' '){e.preventDefault();slides[Math.min(i+1,slides.length-1)].scrollIntoView({behavior:'smooth'})}
+    if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();slides[Math.max(i-1,0)].scrollIntoView({behavior:'smooth'})}
+  });
+</script>
+</body>
+</html>

@@ -14,7 +14,7 @@ format:
   <div class="aurora-blob blob-4"></div>
 </div>
 <div class="proj-intro">
-  <p>Seven projects, ordered by the business decision each one actually changes, from the highest-stakes call down. Every chart and diagram below is pulled straight from my own analysis.</p>
+  <p>Nine projects, ordered by the business decision each one actually changes, from the highest-stakes call down. Every chart and diagram below is pulled straight from my own analysis.</p>
 </div>
 
 <div class="proj-filters">
@@ -29,6 +29,18 @@ format:
 </div>
 
 <div class="proj-grid">
+
+  <a class="proj-card" href="projects/project9/index.html" data-cats="ml">
+    <div class="proj-card-img">
+      <span class="proj-badge">$317M/yr savings</span>
+      <img src="images/projects/fraud/placeholder-ssn-spike.png" alt="Bar chart showing a placeholder SSN value appearing over 16,000 times, far more than any real value">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">Machine Learning · Fraud Detection</span>
+      <h3>Application Identity Fraud Detection</h3>
+      <p>1,841 engineered velocity features on 1M applications, an insight about placeholder SSNs faking identity links, and a LightGBM model that catches 59% of fraud reviewing just 3% of cases.</p>
+    </div>
+  </a>
 
   <a class="proj-card" href="projects/project8/index.html" data-cats="sql ml pm marketing">
     <div class="proj-card-img">
@@ -51,6 +63,18 @@ format:
       <span class="proj-card-tags">Business Intelligence · Tableau</span>
       <h3>Global Wine Market Sourcing Strategy</h3>
       <p>Built a 4-dashboard Tableau system to turn 130K wine reviews and global GDP data into a two-tier country sourcing recommendation.</p>
+    </div>
+  </a>
+
+  <a class="proj-card" href="projects/project10/index.html" data-cats="bi marketing">
+    <div class="proj-card-img">
+      <span class="proj-badge">11 competitors tracked</span>
+      <img src="images/projects/vianexta/positioning-matrix.png" alt="Bubble chart mapping competitors by enterprise-vs-emerging-brand focus and point-solution-vs-end-to-end scope">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">Business Intelligence · Automation</span>
+      <h3>Competitive Intelligence Dashboard for a Startup</h3>
+      <p>An automated Python pipeline that scans public funding and market signals for an early-stage CPG startup and renders them into a live, interactive competitive dashboard.</p>
     </div>
   </a>
 

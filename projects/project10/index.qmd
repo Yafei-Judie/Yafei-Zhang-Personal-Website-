@@ -1,0 +1,38 @@
+---
+title: "Competitive Intelligence Dashboard for an Early-Stage Startup"
+description: "Built an automated competitor-monitoring pipeline for ViaNexta, an early-stage CPG supply-chain startup, turning public funding and market signals into a live, interactive positioning dashboard."
+date: 2026-06-20
+categories: [Business Intelligence, Competitive Strategy, Automation]
+format:
+  html:
+    resources:
+      - deck.html
+---
+
+## Problem
+
+ViaNexta, an early-stage CPG supply-chain startup I do business development and analytics work for, needed a clear read on its competitive landscape: who else is building for the same buyer, how well-funded they are, and where the actual white space is. Doing that by hand every time it's needed is slow and it goes stale the moment a competitor raises a new round.
+
+## Approach
+
+Built a Python pipeline that scans public sources — funding announcements, press coverage, and market research (TechCrunch, PRNewswire, Tech.eu, CB Insights, McKinsey, BCG) — on a recurring cadence, cross-checks every figure against a primary source before it's used, and structures the findings into the three views a strategy team would normally build by hand: a positioning matrix, a funding comparison, and a competitive-overlap table. A report generator then renders that structured data straight into an interactive, scroll-snap dashboard, so refreshing the analysis doesn't mean rebuilding slides from scratch.
+
+**[Open the interactive dashboard ↗](deck.html){target="_blank"}**
+
+![Positioning matrix: most competitors cluster into enterprise-focused or point-solution corners, leaving the end-to-end / emerging-brand quadrant largely open](../../images/projects/vianexta/positioning-matrix.png){fig-alt="Bubble chart plotting competitors by enterprise-vs-emerging-brand focus and point-solution-vs-end-to-end scope, with ViaNexta positioned in the open top-right quadrant"}
+
+## Key Insights
+
+- Mapping competitors on two axes (who they serve, how much of the journey they cover) made the white space visible at a glance instead of buried in a table — the kind of view that's obvious once you see it and easy to miss without it.
+- Cross-checking every funding figure against a primary source before publishing it matters: it's the difference between a competitive analysis someone can act on and a hallucinated one.
+
+![Funding comparison across 7 tracked competitors, sourced from public funding announcements](../../images/projects/vianexta/funding-comparison.jpg){fig-alt="Horizontal bar chart comparing total funding raised across seven competitor companies, ranging from $3.2M to $78M"}
+
+## Impact
+
+- Turned a manual, point-in-time competitive research exercise into a pipeline that can be re-run on demand as new funding rounds and market signals land, instead of going stale after one presentation.
+- Gives a non-technical founder a self-contained, no-dependencies HTML artifact he can open, scroll through, or print to PDF without any software beyond a browser.
+
+## Tools & Skills
+
+`Python` · `Automated Web Research` · `Data Validation & Source-Checking` · `Competitive Positioning Analysis` · `HTML/CSS/JS Report Generation` · `Business Strategy Communication`
