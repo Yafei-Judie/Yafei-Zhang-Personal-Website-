@@ -430,11 +430,37 @@ document.addEventListener('keydown', function(e) {
       GitHub
     </a>
   </div>
+  <div class="contact-form-wrapper">
+    <p class="contact-form-lede">Or send a quick message directly:</p>
+    <form class="contact-form" id="contactForm" onsubmit="return sendContactEmail(event)">
+      <label for="contact-subject">Subject</label>
+      <input type="text" id="contact-subject" name="subject" required="">
+      <label for="contact-message">Message</label>
+      <textarea id="contact-message" name="message" rows="6" required=""></textarea>
+      <button type="submit" class="contact-form-submit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        Send Email
+      </button>
+      <p class="contact-form-note">Opens your email app with this pre-filled, addressed to me.</p>
+    </form>
+  </div>
   <div class="cal-wrapper">
     <iframe src="https://cal.com/yafei-zhang-calendar/let-s-connect?embed=true" style="width:100%; height:700px; border:0;" frameborder="0" title="Schedule a meeting with Yafei Zhang">
     </iframe>
   </div>
 </section>
+<script>
+function sendContactEmail(event) {
+  event.preventDefault();
+  const subject = document.getElementById('contact-subject').value;
+  const message = document.getElementById('contact-message').value;
+  const to = 'zhangyafeijudy@gmail.com';
+  window.location.href = 'mailto:' + to
+    + '?subject=' + encodeURIComponent(subject)
+    + '&body=' + encodeURIComponent(message);
+  return false;
+}
+</script>
 <footer class="home-footer">
   <a href="blog.html">Blog</a>
   <span>·</span>

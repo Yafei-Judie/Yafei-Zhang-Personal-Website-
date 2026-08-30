@@ -173,6 +173,96 @@ h1, h2, h3, h4, h5, h6 {
   background: white;
 }
 
+/* ─── Quick Contact Form ────────────────────────────────────── */
+.contact-form-wrapper {
+  margin-bottom: 2.5rem;
+}
+
+.contact-form-lede {
+  text-align: center;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: #a0a0a0;
+  margin-bottom: 1.2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.06);
+}
+
+.contact-form label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: #5a5a5a;
+  margin-top: 0.7rem;
+}
+
+.contact-form label:first-of-type {
+  margin-top: 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  color: #3a3a3a;
+  background: #f7f5fa;
+  border: 1px solid #e1dfec;
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #84a7c4;
+  box-shadow: 0 0 0 3px rgba(132, 167, 196, 0.18);
+  background: white;
+}
+
+.contact-form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 1.4rem;
+  border: none;
+  background: #84a7c4;
+  color: white;
+  border-radius: 50px;
+  padding: 0.75rem 1.6rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form-submit:hover {
+  background: #6d95b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(132, 167, 196, 0.35);
+}
+
+.contact-form-note {
+  text-align: center;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  color: #a0a0a0;
+  margin-top: 0.9rem;
+}
+
 /* ─── Project Listing Cards ─────────────────────────────────── */
 .quarto-listing-default .list-item {
   border: none !important;
@@ -1773,10 +1863,28 @@ section[id], #home {
 }
 
 .home-section {
-  max-width: 980px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 4.5rem 1.5rem;
   border-top: 1px solid #e1dfec;
+}
+
+/* Quarto's default docs-style grid pins body content to an ~850px column
+   flanked by huge empty gutters, which reads as cramped/over-centered on
+   wide screens. Widen it on our full-bleed marketing pages (index, projects,
+   more-about-me) while leaving the TOC pages (cv, blog) at the reading width
+   they're designed for. Mobile is untouched — Quarto's own <768px layout is
+   already full-width. */
+@media (min-width: 768px) {
+  body.fullcontent .page-columns {
+    grid-template-columns:
+      [screen-start] 1fr
+      [screen-start-inset page-start page-start-inset body-start-outset body-start] 1.5em
+      [body-content-start] minmax(0, 1320px)
+      [body-content-end] 1.5em
+      [body-end body-end-outset page-end-inset page-end screen-end-inset] 1fr
+      [screen-end] !important;
+  }
 }
 
 .home-section-label {
