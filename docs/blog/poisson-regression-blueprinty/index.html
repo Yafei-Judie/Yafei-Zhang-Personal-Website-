@@ -316,7 +316,7 @@ window.Quarto = {
 <p>We have 1,500 firms. Let’s start with the most basic comparison: do customers get more patents?</p>
 <section id="patent-counts" class="level3">
 <h3 class="anchored" data-anchor-id="patent-counts">Patent counts</h3>
-<div id="b25ee04d" class="cell" data-execution_count="3">
+<div id="b3b78df6" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -326,7 +326,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="5dcf0e04" class="cell" data-execution_count="4">
+<div id="3b2d0900" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
@@ -362,7 +362,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="fdc661be" class="cell" data-execution_count="5">
+<div id="ef842bc0" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
 <pre><code>Customers average 4.13 patents over five years. Non-customers average 3.47. That's a gap of about 0.66.</code></pre>
 </div>
@@ -371,7 +371,7 @@ window.Quarto = {
 </section>
 <section id="where-are-these-firms" class="level3">
 <h3 class="anchored" data-anchor-id="where-are-these-firms">Where are these firms?</h3>
-<div id="51a4f7de" class="cell" data-execution_count="6">
+<div id="4e5ce249" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -385,7 +385,7 @@ window.Quarto = {
 </section>
 <section id="how-old-are-these-firms" class="level3">
 <h3 class="anchored" data-anchor-id="how-old-are-these-firms">How old are these firms?</h3>
-<div id="e074069f" class="cell" data-execution_count="7">
+<div id="c12bc209" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -395,7 +395,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="5da6a401" class="cell" data-execution_count="8">
+<div id="5405f778" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-stdout">
 <pre><code>Customers average 26.9 years old, non-customers 26.1.</code></pre>
 </div>
@@ -434,7 +434,7 @@ L(\lambda) = \prod_{i=1}^{n} \frac{e^{-\lambda} \lambda^{Y_i}}{Y_i!}
 <section id="coding-it-up" class="level3">
 <h3 class="anchored" data-anchor-id="coding-it-up">Coding it up</h3>
 <p>My first attempt used <code>math.factorial</code>, which works but gets shaky with large counts:</p>
-<div id="bb35d30f" class="cell" data-execution_count="9">
+<div id="e324d6b8" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> poisson_loglikelihood(lam, Y):</span>
@@ -445,7 +445,7 @@ L(\lambda) = \prod_{i=1}^{n} \frac{e^{-\lambda} \lambda^{Y_i}}{Y_i!}
 </details>
 </div>
 <p>A cleaner approach uses <code>gammaln</code> from scipy, since <span class="math inline">\(\log(Y!) = \texttt{gammaln}(Y+1)\)</span>:</p>
-<div id="59e28144" class="cell" data-execution_count="10">
+<div id="fd5c3d9e" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.special <span class="im">import</span> gammaln</span>
@@ -458,7 +458,7 @@ L(\lambda) = \prod_{i=1}^{n} \frac{e^{-\lambda} \lambda^{Y_i}}{Y_i!}
 </section>
 <section id="what-does-the-log-likelihood-surface-look-like" class="level3">
 <h3 class="anchored" data-anchor-id="what-does-the-log-likelihood-surface-look-like">What does the log-likelihood surface look like?</h3>
-<div id="48fe60fa" class="cell" data-execution_count="11">
+<div id="a4210c0f" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> df[<span class="st">'patents'</span>].values</span>
@@ -497,7 +497,7 @@ L(\lambda) = \prod_{i=1}^{n} \frac{e^{-\lambda} \lambda^{Y_i}}{Y_i!}
 </section>
 <section id="confirming-numerically" class="level3">
 <h3 class="anchored" data-anchor-id="confirming-numerically">Confirming numerically</h3>
-<div id="513b4851" class="cell" data-execution_count="12">
+<div id="3cd8efea" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> optimize.minimize_scalar(<span class="kw">lambda</span> lam: <span class="op">-</span>poisson_loglikelihood(lam, Y), bounds<span class="op">=</span>(<span class="fl">0.1</span>, <span class="dv">20</span>), method<span class="op">=</span><span class="st">'bounded'</span>)</span>
@@ -526,7 +526,7 @@ Y_i \sim \text{Poisson}(\lambda_i) \qquad \text{where} \qquad \lambda_i = \exp(X
 </section>
 <section id="building-the-covariate-matrix" class="level3">
 <h3 class="anchored" data-anchor-id="building-the-covariate-matrix">Building the covariate matrix</h3>
-<div id="9dba7e39" class="cell" data-execution_count="13">
+<div id="0fd02438" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.DataFrame({</span>
@@ -629,7 +629,7 @@ Y_i \sim \text{Poisson}(\lambda_i) \qquad \text{where} \qquad \lambda_i = \exp(X
 </section>
 <section id="updating-the-log-likelihood" class="level3">
 <h3 class="anchored" data-anchor-id="updating-the-log-likelihood">Updating the log-likelihood</h3>
-<div id="5d2bc1b1" class="cell" data-execution_count="14">
+<div id="47b60165" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> poisson_regression_loglikelihood(beta, Y, X):</span>
@@ -646,7 +646,7 @@ Y_i \sim \text{Poisson}(\lambda_i) \qquad \text{where} \qquad \lambda_i = \exp(X
 </section>
 <section id="finding-the-mle" class="level3">
 <h3 class="anchored" data-anchor-id="finding-the-mle">Finding the MLE</h3>
-<div id="db6d1a9c" class="cell" data-execution_count="15">
+<div id="8cf41b30" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start the intercept near log(mean), everything else at zero</span></span>
@@ -684,83 +684,83 @@ Y_i \sim \text{Poisson}(\lambda_i) \qquad \text{where} \qquad \lambda_i = \exp(X
 <span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>se <span class="op">=</span> np.sqrt(np.diag(cov_matrix))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="8c961035" class="cell" data-execution_count="16">
+<div id="ca7af4d7" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-display" data-execution_count="16">
 <style type="text/css">
-#T_feade th {
+#T_59cf6 th {
   text-align: center;
 }
-#T_feade_row0_col0, #T_feade_row0_col1, #T_feade_row0_col2, #T_feade_row0_col3, #T_feade_row0_col4, #T_feade_row1_col0, #T_feade_row1_col1, #T_feade_row1_col2, #T_feade_row1_col3, #T_feade_row1_col4, #T_feade_row2_col0, #T_feade_row2_col1, #T_feade_row2_col2, #T_feade_row2_col3, #T_feade_row2_col4, #T_feade_row3_col0, #T_feade_row3_col1, #T_feade_row3_col2, #T_feade_row3_col3, #T_feade_row3_col4, #T_feade_row4_col0, #T_feade_row4_col1, #T_feade_row4_col2, #T_feade_row4_col3, #T_feade_row4_col4, #T_feade_row5_col0, #T_feade_row5_col1, #T_feade_row5_col2, #T_feade_row5_col3, #T_feade_row5_col4, #T_feade_row6_col0, #T_feade_row6_col1, #T_feade_row6_col2, #T_feade_row6_col3, #T_feade_row6_col4, #T_feade_row7_col0, #T_feade_row7_col1, #T_feade_row7_col2, #T_feade_row7_col3, #T_feade_row7_col4 {
+#T_59cf6_row0_col0, #T_59cf6_row0_col1, #T_59cf6_row0_col2, #T_59cf6_row0_col3, #T_59cf6_row0_col4, #T_59cf6_row1_col0, #T_59cf6_row1_col1, #T_59cf6_row1_col2, #T_59cf6_row1_col3, #T_59cf6_row1_col4, #T_59cf6_row2_col0, #T_59cf6_row2_col1, #T_59cf6_row2_col2, #T_59cf6_row2_col3, #T_59cf6_row2_col4, #T_59cf6_row3_col0, #T_59cf6_row3_col1, #T_59cf6_row3_col2, #T_59cf6_row3_col3, #T_59cf6_row3_col4, #T_59cf6_row4_col0, #T_59cf6_row4_col1, #T_59cf6_row4_col2, #T_59cf6_row4_col3, #T_59cf6_row4_col4, #T_59cf6_row5_col0, #T_59cf6_row5_col1, #T_59cf6_row5_col2, #T_59cf6_row5_col3, #T_59cf6_row5_col4, #T_59cf6_row6_col0, #T_59cf6_row6_col1, #T_59cf6_row6_col2, #T_59cf6_row6_col3, #T_59cf6_row6_col4, #T_59cf6_row7_col0, #T_59cf6_row7_col1, #T_59cf6_row7_col2, #T_59cf6_row7_col3, #T_59cf6_row7_col4 {
   text-align: right;
 }
 </style>
 
-<table id="T_feade" class="caption-top table table-sm table-striped small">
+<table id="T_59cf6" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_feade_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Variable</th>
-<th id="T_feade_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Coefficient</th>
-<th id="T_feade_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Std. Error</th>
-<th id="T_feade_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">z-value</th>
-<th id="T_feade_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">p-value</th>
+<th id="T_59cf6_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Variable</th>
+<th id="T_59cf6_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Coefficient</th>
+<th id="T_59cf6_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Std. Error</th>
+<th id="T_59cf6_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">z-value</th>
+<th id="T_59cf6_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">p-value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_feade_row0_col0" class="data row0 col0">Intercept</td>
-<td id="T_feade_row0_col1" class="data row0 col1">-0.4808</td>
-<td id="T_feade_row0_col2" class="data row0 col2">0.1815</td>
-<td id="T_feade_row0_col3" class="data row0 col3">-2.649</td>
-<td id="T_feade_row0_col4" class="data row0 col4">0.0081</td>
+<td id="T_59cf6_row0_col0" class="data row0 col0">Intercept</td>
+<td id="T_59cf6_row0_col1" class="data row0 col1">-0.4808</td>
+<td id="T_59cf6_row0_col2" class="data row0 col2">0.1815</td>
+<td id="T_59cf6_row0_col3" class="data row0 col3">-2.649</td>
+<td id="T_59cf6_row0_col4" class="data row0 col4">0.0081</td>
 </tr>
 <tr class="even">
-<td id="T_feade_row1_col0" class="data row1 col0">Age</td>
-<td id="T_feade_row1_col1" class="data row1 col1">0.1487</td>
-<td id="T_feade_row1_col2" class="data row1 col2">0.0137</td>
-<td id="T_feade_row1_col3" class="data row1 col3">10.874</td>
-<td id="T_feade_row1_col4" class="data row1 col4">0.0000</td>
+<td id="T_59cf6_row1_col0" class="data row1 col0">Age</td>
+<td id="T_59cf6_row1_col1" class="data row1 col1">0.1487</td>
+<td id="T_59cf6_row1_col2" class="data row1 col2">0.0137</td>
+<td id="T_59cf6_row1_col3" class="data row1 col3">10.874</td>
+<td id="T_59cf6_row1_col4" class="data row1 col4">0.0000</td>
 </tr>
 <tr class="odd">
-<td id="T_feade_row2_col0" class="data row2 col0">Age squared</td>
-<td id="T_feade_row2_col1" class="data row2 col1">-0.0030</td>
-<td id="T_feade_row2_col2" class="data row2 col2">0.0003</td>
-<td id="T_feade_row2_col3" class="data row2 col3">-11.779</td>
-<td id="T_feade_row2_col4" class="data row2 col4">0.0000</td>
+<td id="T_59cf6_row2_col0" class="data row2 col0">Age squared</td>
+<td id="T_59cf6_row2_col1" class="data row2 col1">-0.0030</td>
+<td id="T_59cf6_row2_col2" class="data row2 col2">0.0003</td>
+<td id="T_59cf6_row2_col3" class="data row2 col3">-11.779</td>
+<td id="T_59cf6_row2_col4" class="data row2 col4">0.0000</td>
 </tr>
 <tr class="even">
-<td id="T_feade_row3_col0" class="data row3 col0">Midwest</td>
-<td id="T_feade_row3_col1" class="data row3 col1">-0.0291</td>
-<td id="T_feade_row3_col2" class="data row3 col2">0.0436</td>
-<td id="T_feade_row3_col3" class="data row3 col3">-0.668</td>
-<td id="T_feade_row3_col4" class="data row3 col4">0.5042</td>
+<td id="T_59cf6_row3_col0" class="data row3 col0">Midwest</td>
+<td id="T_59cf6_row3_col1" class="data row3 col1">-0.0291</td>
+<td id="T_59cf6_row3_col2" class="data row3 col2">0.0436</td>
+<td id="T_59cf6_row3_col3" class="data row3 col3">-0.668</td>
+<td id="T_59cf6_row3_col4" class="data row3 col4">0.5042</td>
 </tr>
 <tr class="odd">
-<td id="T_feade_row4_col0" class="data row4 col0">Northwest</td>
-<td id="T_feade_row4_col1" class="data row4 col1">-0.0468</td>
-<td id="T_feade_row4_col2" class="data row4 col2">0.0466</td>
-<td id="T_feade_row4_col3" class="data row4 col3">-1.003</td>
-<td id="T_feade_row4_col4" class="data row4 col4">0.3157</td>
+<td id="T_59cf6_row4_col0" class="data row4 col0">Northwest</td>
+<td id="T_59cf6_row4_col1" class="data row4 col1">-0.0468</td>
+<td id="T_59cf6_row4_col2" class="data row4 col2">0.0466</td>
+<td id="T_59cf6_row4_col3" class="data row4 col3">-1.003</td>
+<td id="T_59cf6_row4_col4" class="data row4 col4">0.3157</td>
 </tr>
 <tr class="even">
-<td id="T_feade_row5_col0" class="data row5 col0">South</td>
-<td id="T_feade_row5_col1" class="data row5 col1">0.0274</td>
-<td id="T_feade_row5_col2" class="data row5 col2">0.0451</td>
-<td id="T_feade_row5_col3" class="data row5 col3">0.608</td>
-<td id="T_feade_row5_col4" class="data row5 col4">0.5433</td>
+<td id="T_59cf6_row5_col0" class="data row5 col0">South</td>
+<td id="T_59cf6_row5_col1" class="data row5 col1">0.0274</td>
+<td id="T_59cf6_row5_col2" class="data row5 col2">0.0451</td>
+<td id="T_59cf6_row5_col3" class="data row5 col3">0.608</td>
+<td id="T_59cf6_row5_col4" class="data row5 col4">0.5433</td>
 </tr>
 <tr class="odd">
-<td id="T_feade_row6_col0" class="data row6 col0">Southwest</td>
-<td id="T_feade_row6_col1" class="data row6 col1">0.0214</td>
-<td id="T_feade_row6_col2" class="data row6 col2">0.0385</td>
-<td id="T_feade_row6_col3" class="data row6 col3">0.557</td>
-<td id="T_feade_row6_col4" class="data row6 col4">0.5776</td>
+<td id="T_59cf6_row6_col0" class="data row6 col0">Southwest</td>
+<td id="T_59cf6_row6_col1" class="data row6 col1">0.0214</td>
+<td id="T_59cf6_row6_col2" class="data row6 col2">0.0385</td>
+<td id="T_59cf6_row6_col3" class="data row6 col3">0.557</td>
+<td id="T_59cf6_row6_col4" class="data row6 col4">0.5776</td>
 </tr>
 <tr class="even">
-<td id="T_feade_row7_col0" class="data row7 col0">Customer</td>
-<td id="T_feade_row7_col1" class="data row7 col1">0.2076</td>
-<td id="T_feade_row7_col2" class="data row7 col2">0.0309</td>
-<td id="T_feade_row7_col3" class="data row7 col3">6.721</td>
-<td id="T_feade_row7_col4" class="data row7 col4">0.0000</td>
+<td id="T_59cf6_row7_col0" class="data row7 col0">Customer</td>
+<td id="T_59cf6_row7_col1" class="data row7 col1">0.2076</td>
+<td id="T_59cf6_row7_col2" class="data row7 col2">0.0309</td>
+<td id="T_59cf6_row7_col3" class="data row7 col3">6.721</td>
+<td id="T_59cf6_row7_col4" class="data row7 col4">0.0000</td>
 </tr>
 </tbody>
 </table>
@@ -770,7 +770,7 @@ Y_i \sim \text{Poisson}(\lambda_i) \qquad \text{where} \qquad \lambda_i = \exp(X
 <section id="sanity-check-against-statsmodels" class="level3">
 <h3 class="anchored" data-anchor-id="sanity-check-against-statsmodels">Sanity check against statsmodels</h3>
 <p>I want to make sure my hand-rolled optimizer is giving the right answer. Here’s the same model fit with <code>statsmodels</code>:</p>
-<div id="1cba6b97" class="cell" data-execution_count="17">
+<div id="4e206732" class="cell" data-execution_count="17">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
@@ -778,83 +778,83 @@ Y_i \sim \text{Poisson}(\lambda_i) \qquad \text{where} \qquad \lambda_i = \exp(X
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>glm_model <span class="op">=</span> sm.GLM(Y, np.array(X), family<span class="op">=</span>sm.families.Poisson()).fit()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="e2ca1134" class="cell" data-execution_count="18">
+<div id="d6b35cef" class="cell" data-execution_count="18">
 <div class="cell-output cell-output-display" data-execution_count="18">
 <style type="text/css">
-#T_8b83a th {
+#T_53a48 th {
   text-align: center;
 }
-#T_8b83a_row0_col0, #T_8b83a_row0_col1, #T_8b83a_row0_col2, #T_8b83a_row0_col3, #T_8b83a_row0_col4, #T_8b83a_row1_col0, #T_8b83a_row1_col1, #T_8b83a_row1_col2, #T_8b83a_row1_col3, #T_8b83a_row1_col4, #T_8b83a_row2_col0, #T_8b83a_row2_col1, #T_8b83a_row2_col2, #T_8b83a_row2_col3, #T_8b83a_row2_col4, #T_8b83a_row3_col0, #T_8b83a_row3_col1, #T_8b83a_row3_col2, #T_8b83a_row3_col3, #T_8b83a_row3_col4, #T_8b83a_row4_col0, #T_8b83a_row4_col1, #T_8b83a_row4_col2, #T_8b83a_row4_col3, #T_8b83a_row4_col4, #T_8b83a_row5_col0, #T_8b83a_row5_col1, #T_8b83a_row5_col2, #T_8b83a_row5_col3, #T_8b83a_row5_col4, #T_8b83a_row6_col0, #T_8b83a_row6_col1, #T_8b83a_row6_col2, #T_8b83a_row6_col3, #T_8b83a_row6_col4, #T_8b83a_row7_col0, #T_8b83a_row7_col1, #T_8b83a_row7_col2, #T_8b83a_row7_col3, #T_8b83a_row7_col4 {
+#T_53a48_row0_col0, #T_53a48_row0_col1, #T_53a48_row0_col2, #T_53a48_row0_col3, #T_53a48_row0_col4, #T_53a48_row1_col0, #T_53a48_row1_col1, #T_53a48_row1_col2, #T_53a48_row1_col3, #T_53a48_row1_col4, #T_53a48_row2_col0, #T_53a48_row2_col1, #T_53a48_row2_col2, #T_53a48_row2_col3, #T_53a48_row2_col4, #T_53a48_row3_col0, #T_53a48_row3_col1, #T_53a48_row3_col2, #T_53a48_row3_col3, #T_53a48_row3_col4, #T_53a48_row4_col0, #T_53a48_row4_col1, #T_53a48_row4_col2, #T_53a48_row4_col3, #T_53a48_row4_col4, #T_53a48_row5_col0, #T_53a48_row5_col1, #T_53a48_row5_col2, #T_53a48_row5_col3, #T_53a48_row5_col4, #T_53a48_row6_col0, #T_53a48_row6_col1, #T_53a48_row6_col2, #T_53a48_row6_col3, #T_53a48_row6_col4, #T_53a48_row7_col0, #T_53a48_row7_col1, #T_53a48_row7_col2, #T_53a48_row7_col3, #T_53a48_row7_col4 {
   text-align: right;
 }
 </style>
 
-<table id="T_8b83a" class="caption-top table table-sm table-striped small">
+<table id="T_53a48" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_8b83a_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Variable</th>
-<th id="T_8b83a_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">My MLE</th>
-<th id="T_8b83a_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">GLM</th>
-<th id="T_8b83a_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">My SE</th>
-<th id="T_8b83a_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">GLM SE</th>
+<th id="T_53a48_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Variable</th>
+<th id="T_53a48_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">My MLE</th>
+<th id="T_53a48_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">GLM</th>
+<th id="T_53a48_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">My SE</th>
+<th id="T_53a48_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">GLM SE</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_8b83a_row0_col0" class="data row0 col0">Intercept</td>
-<td id="T_8b83a_row0_col1" class="data row0 col1">-0.480800</td>
-<td id="T_8b83a_row0_col2" class="data row0 col2">-0.479700</td>
-<td id="T_8b83a_row0_col3" class="data row0 col3">0.181500</td>
-<td id="T_8b83a_row0_col4" class="data row0 col4">0.183200</td>
+<td id="T_53a48_row0_col0" class="data row0 col0">Intercept</td>
+<td id="T_53a48_row0_col1" class="data row0 col1">-0.480800</td>
+<td id="T_53a48_row0_col2" class="data row0 col2">-0.479700</td>
+<td id="T_53a48_row0_col3" class="data row0 col3">0.181500</td>
+<td id="T_53a48_row0_col4" class="data row0 col4">0.183200</td>
 </tr>
 <tr class="even">
-<td id="T_8b83a_row1_col0" class="data row1 col0">Age</td>
-<td id="T_8b83a_row1_col1" class="data row1 col1">0.148700</td>
-<td id="T_8b83a_row1_col2" class="data row1 col2">0.148600</td>
-<td id="T_8b83a_row1_col3" class="data row1 col3">0.013700</td>
-<td id="T_8b83a_row1_col4" class="data row1 col4">0.013900</td>
+<td id="T_53a48_row1_col0" class="data row1 col0">Age</td>
+<td id="T_53a48_row1_col1" class="data row1 col1">0.148700</td>
+<td id="T_53a48_row1_col2" class="data row1 col2">0.148600</td>
+<td id="T_53a48_row1_col3" class="data row1 col3">0.013700</td>
+<td id="T_53a48_row1_col4" class="data row1 col4">0.013900</td>
 </tr>
 <tr class="odd">
-<td id="T_8b83a_row2_col0" class="data row2 col0">Age squared</td>
-<td id="T_8b83a_row2_col1" class="data row2 col1">-0.003000</td>
-<td id="T_8b83a_row2_col2" class="data row2 col2">-0.003000</td>
-<td id="T_8b83a_row2_col3" class="data row2 col3">0.000300</td>
-<td id="T_8b83a_row2_col4" class="data row2 col4">0.000300</td>
+<td id="T_53a48_row2_col0" class="data row2 col0">Age squared</td>
+<td id="T_53a48_row2_col1" class="data row2 col1">-0.003000</td>
+<td id="T_53a48_row2_col2" class="data row2 col2">-0.003000</td>
+<td id="T_53a48_row2_col3" class="data row2 col3">0.000300</td>
+<td id="T_53a48_row2_col4" class="data row2 col4">0.000300</td>
 </tr>
 <tr class="even">
-<td id="T_8b83a_row3_col0" class="data row3 col0">Midwest</td>
-<td id="T_8b83a_row3_col1" class="data row3 col1">-0.029100</td>
-<td id="T_8b83a_row3_col2" class="data row3 col2">-0.029200</td>
-<td id="T_8b83a_row3_col3" class="data row3 col3">0.043600</td>
-<td id="T_8b83a_row3_col4" class="data row3 col4">0.043600</td>
+<td id="T_53a48_row3_col0" class="data row3 col0">Midwest</td>
+<td id="T_53a48_row3_col1" class="data row3 col1">-0.029100</td>
+<td id="T_53a48_row3_col2" class="data row3 col2">-0.029200</td>
+<td id="T_53a48_row3_col3" class="data row3 col3">0.043600</td>
+<td id="T_53a48_row3_col4" class="data row3 col4">0.043600</td>
 </tr>
 <tr class="odd">
-<td id="T_8b83a_row4_col0" class="data row4 col0">Northwest</td>
-<td id="T_8b83a_row4_col1" class="data row4 col1">-0.046800</td>
-<td id="T_8b83a_row4_col2" class="data row4 col2">-0.046700</td>
-<td id="T_8b83a_row4_col3" class="data row4 col3">0.046600</td>
-<td id="T_8b83a_row4_col4" class="data row4 col4">0.046600</td>
+<td id="T_53a48_row4_col0" class="data row4 col0">Northwest</td>
+<td id="T_53a48_row4_col1" class="data row4 col1">-0.046800</td>
+<td id="T_53a48_row4_col2" class="data row4 col2">-0.046700</td>
+<td id="T_53a48_row4_col3" class="data row4 col3">0.046600</td>
+<td id="T_53a48_row4_col4" class="data row4 col4">0.046600</td>
 </tr>
 <tr class="even">
-<td id="T_8b83a_row5_col0" class="data row5 col0">South</td>
-<td id="T_8b83a_row5_col1" class="data row5 col1">0.027400</td>
-<td id="T_8b83a_row5_col2" class="data row5 col2">0.027400</td>
-<td id="T_8b83a_row5_col3" class="data row5 col3">0.045100</td>
-<td id="T_8b83a_row5_col4" class="data row5 col4">0.045100</td>
+<td id="T_53a48_row5_col0" class="data row5 col0">South</td>
+<td id="T_53a48_row5_col1" class="data row5 col1">0.027400</td>
+<td id="T_53a48_row5_col2" class="data row5 col2">0.027400</td>
+<td id="T_53a48_row5_col3" class="data row5 col3">0.045100</td>
+<td id="T_53a48_row5_col4" class="data row5 col4">0.045100</td>
 </tr>
 <tr class="odd">
-<td id="T_8b83a_row6_col0" class="data row6 col0">Southwest</td>
-<td id="T_8b83a_row6_col1" class="data row6 col1">0.021400</td>
-<td id="T_8b83a_row6_col2" class="data row6 col2">0.021400</td>
-<td id="T_8b83a_row6_col3" class="data row6 col3">0.038500</td>
-<td id="T_8b83a_row6_col4" class="data row6 col4">0.038500</td>
+<td id="T_53a48_row6_col0" class="data row6 col0">Southwest</td>
+<td id="T_53a48_row6_col1" class="data row6 col1">0.021400</td>
+<td id="T_53a48_row6_col2" class="data row6 col2">0.021400</td>
+<td id="T_53a48_row6_col3" class="data row6 col3">0.038500</td>
+<td id="T_53a48_row6_col4" class="data row6 col4">0.038500</td>
 </tr>
 <tr class="even">
-<td id="T_8b83a_row7_col0" class="data row7 col0">Customer</td>
-<td id="T_8b83a_row7_col1" class="data row7 col1">0.207600</td>
-<td id="T_8b83a_row7_col2" class="data row7 col2">0.207600</td>
-<td id="T_8b83a_row7_col3" class="data row7 col3">0.030900</td>
-<td id="T_8b83a_row7_col4" class="data row7 col4">0.030900</td>
+<td id="T_53a48_row7_col0" class="data row7 col0">Customer</td>
+<td id="T_53a48_row7_col1" class="data row7 col1">0.207600</td>
+<td id="T_53a48_row7_col2" class="data row7 col2">0.207600</td>
+<td id="T_53a48_row7_col3" class="data row7 col3">0.030900</td>
+<td id="T_53a48_row7_col4" class="data row7 col4">0.030900</td>
 </tr>
 </tbody>
 </table>
@@ -864,7 +864,7 @@ Y_i \sim \text{Poisson}(\lambda_i) \qquad \text{where} \qquad \lambda_i = \exp(X
 </section>
 <section id="what-do-the-coefficients-tell-us" class="level3">
 <h3 class="anchored" data-anchor-id="what-do-the-coefficients-tell-us">What do the coefficients tell us?</h3>
-<div id="4b948df9" class="cell" data-execution_count="19">
+<div id="15d103eb" class="cell" data-execution_count="19">
 <div class="cell-output cell-output-stdout">
 <pre><code>                 Generalized Linear Model Regression Results                  
 ==============================================================================
@@ -874,7 +874,7 @@ Model Family:                 Poisson   Df Model:                            7
 Link Function:                    Log   Scale:                          1.0000
 Method:                          IRLS   Log-Likelihood:                -3258.1
 Date:                Sat, 29 Aug 2026   Deviance:                       2143.3
-Time:                        20:53:34   Pearson chi2:                 2.07e+03
+Time:                        21:48:35   Pearson chi2:                 2.07e+03
 No. Iterations:                     5   Pseudo R-squ. (CS):             0.1360
 Covariance Type:            nonrobust                                         
 ==============================================================================
@@ -900,7 +900,7 @@ x7             0.2076      0.031      6.719      0.000       0.147       0.268
 <h2 class="anchored" data-anchor-id="so-whats-the-actual-estimated-effect">So what’s the actual estimated effect?</h2>
 <p>Coefficients from Poisson regression are multiplicative, not additive. Saying “the customer coefficient is 0.21” doesn’t directly tell you how many extra patents a firm gets. To translate this into something concrete, I use counterfactual predictions.</p>
 <p>The logic: take all 1,500 firms with their actual ages and regions, predict their patent rate if none of them were customers, then predict again if all of them were. The average difference is the estimated effect.</p>
-<div id="9e11f8a4" class="cell" data-execution_count="20">
+<div id="e54a1132" class="cell" data-execution_count="20">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What if nobody was a customer?</span></span>
@@ -917,7 +917,7 @@ x7             0.2076      0.031      6.719      0.000       0.147       0.268
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>ate <span class="op">=</span> np.mean(y_hat_1 <span class="op">-</span> y_hat_0)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="e71e071c" class="cell" data-execution_count="21">
+<div id="f4a3ad4f" class="cell" data-execution_count="21">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -927,7 +927,7 @@ x7             0.2076      0.031      6.719      0.000       0.147       0.268
 </div>
 </div>
 </div>
-<div id="9e8a14bb" class="cell" data-execution_count="22">
+<div id="5bb1ce1d" class="cell" data-execution_count="22">
 <div class="cell-output cell-output-stdout">
 <pre><code>Average predicted patents if nobody uses Blueprinty: 3.44
 Average predicted patents if everybody uses Blueprinty: 4.23

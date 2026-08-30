@@ -67,10 +67,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .quarto-about-jolla p {
-  font-size: 1.02rem;
-  line-height: 1.85;
-  color: #5a5a5a;
-  max-width: 600px;
+  font-size: 1.22rem;
+  line-height: 1.75;
+  color: #333333;
+  max-width: 640px;
   margin: 0 auto;
 }
 
@@ -1763,10 +1763,10 @@ section[id], #home {
   max-width: 680px;
   margin: 0 auto 1.2rem;
   font-family: 'Jost', sans-serif;
-  font-weight: 300;
-  font-size: 1.02rem;
-  line-height: 1.9;
-  color: #5a5a5a;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333333;
   text-align: center;
 }
 
