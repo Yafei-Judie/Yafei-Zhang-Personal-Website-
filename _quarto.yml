@@ -12,7 +12,6 @@ website:
     site-name: "Yafei (Judie) Zhang"
   twitter-card:
     card-style: summary_large_image
-  google-analytics: "G-XXXXXXXXXX"
   navbar:
     left:
       - href: index.qmd#home
@@ -27,6 +26,8 @@ website:
         text: Testimonials
       - href: index.qmd#culture
         text: Culture
+      - href: blog.qmd
+        text: Blog
       - href: cv.qmd
         text: Resume
       - href: index.qmd#contact

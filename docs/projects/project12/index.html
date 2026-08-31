@@ -73,15 +73,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-
-<script type="text/javascript">
-
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
-</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -142,6 +133,10 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
   <li class="nav-item">
     <a class="nav-link" href="../../index.html#culture"> 
 <span class="menu-text">Culture</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../cv.html"> 
@@ -215,38 +210,38 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <section id="problem" class="level2">
 <h2 class="anchored" data-anchor-id="problem">Problem</h2>
-<p>A classic direct-mail scenario: after a first-wave mailing promoting a product upgrade, non-responders are candidates for a second wave. Mailing everyone wastes money on people who were never going to respond; mailing no one leaves real profit on the table. The question is who, among the non-responders, is actually worth a second mailing — a 3-person team project (with Ruijie Ma and Wanying Hu) built to answer exactly that with a real response dataset.</p>
+<p>A classic direct-mail scenario: after a first-wave mailing promoting a product upgrade, non-responders are candidates for a second wave. Mailing everyone wastes money on people who were never going to respond; mailing no one leaves real profit on the table. The question is who, among the non-responders, is actually worth a second mailing. This was a 3-person team project (with Ruijie Ma and Wanying Hu) built to answer exactly that with a real response dataset.</p>
 </section>
 <section id="approach" class="level2">
 <h2 class="anchored" data-anchor-id="approach">Approach</h2>
-<p>Started with RFM-style exploratory analysis — recency, frequency, monetary value, and geography — before modeling anything. One pattern stood out immediately:</p>
+<p>Started with RFM-style exploratory analysis (recency, frequency, monetary value, and geography) before modeling anything. One pattern stood out immediately:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../images/projects/intuit/zip-bin-response-rate.png" class="img-fluid figure-img" alt="Bar chart of response rate by ZIP code bin, with bin 1 spiking to about 22% against a 4.8% average across the other 19 bins"></p>
 <figcaption>One ZIP code bin responds at roughly 22%, more than 4x the 4.8% average across the other nineteen</figcaption>
 </figure>
 </div>
-<p>Built a logistic regression on the full variable set, checked it against a permutation-importance plot, then <strong>refined it by removing three variables</strong> (customer tenure, business-name flag, gender) whose p-values were all above 0.45 — noise, not signal, both statistically and on business logic (how long someone’s been a customer doesn’t predict whether this specific offer lands).</p>
+<p>Built a logistic regression on the full variable set, checked it against a permutation-importance plot, then <strong>refined it by removing three variables</strong> (customer tenure, business-name flag, gender) whose p-values were all above 0.45: noise, not signal, both statistically and on business logic (how long someone’s been a customer doesn’t predict whether this specific offer lands).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../images/projects/intuit/permutation-importance.png" class="img-fluid figure-img" alt="Horizontal bar chart of permutation importance for the logistic regression model, with zip_bins, upgraded, and recency as the top three predictors and sincepurch and sex contributing almost nothing"></p>
-<figcaption>ZIP bin, prior upgrade status, and recency dominate — tenure, business flag, and gender contribute almost nothing</figcaption>
+<figcaption>ZIP bin, prior upgrade status, and recency dominate; tenure, business flag, and gender contribute almost nothing</figcaption>
 </figure>
 </div>
-<p>The refined model (<code>logit2</code>) hit an AUC of 0.754. We then built a two-hidden-layer neural network (16 and 8 neurons, ReLU) on the same variables to see whether a non-linear model would find signal the logistic regression missed. It did — AUC 0.823, a real 7-point gain.</p>
+<p>The refined model (<code>logit2</code>) hit an AUC of 0.754. We then built a two-hidden-layer neural network (16 and 8 neurons, ReLU) on the same variables to see whether a non-linear model would find signal the logistic regression missed. It did: AUC 0.823, a real 7-point gain.</p>
 </section>
 <section id="key-insights" class="level2">
 <h2 class="anchored" data-anchor-id="key-insights">Key Insights</h2>
 <ul>
 <li><strong>We picked the worse-scoring model on purpose.</strong> The neural network’s extra accuracy came at the cost of 625 uninterpretable weights versus logit2’s 26 coefficients that read directly as odds ratios (“customers in ZIP bin 1 are over 5x more likely to upgrade than the reference bin, holding recency and frequency constant”). For a mailing decision the business needs to explain and audit, that trade was worth more than 7 points of AUC.</li>
-<li>Turning the model into a mail/no-mail rule required one more step beyond AUC: computing the <strong>breakeven response probability</strong> from the campaign’s own cost and margin structure, then mailing only customers scoring above it — the model doesn’t decide who to mail, the economics do.</li>
+<li>Turning the model into a mail/no-mail rule required one more step beyond AUC: computing the <strong>breakeven response probability</strong> from the campaign’s own cost and margin structure, then mailing only customers scoring above it. The model doesn’t decide who to mail, the economics do.</li>
 </ul>
 </section>
 <section id="impact" class="level2">
 <h2 class="anchored" data-anchor-id="impact">Impact</h2>
 <ul>
-<li>Applying the <code>logit2</code> breakeven rule (mail if predicted response probability ≥ 0.0235) to the 763,334 eligible non-responders selects <strong>239,483 customers</strong> — about a third of the list — projected to deliver <strong>$369,808 in profit</strong>, a <strong>35x improvement</strong> over mailing the full list untargeted.</li>
-<li>The takeaway that traveled best in this project wasn’t the model itself — it was the discipline of picking the model that the business could actually act on and defend, not the one with the best leaderboard score.</li>
+<li>Applying the <code>logit2</code> breakeven rule (mail if predicted response probability ≥ 0.0235) to the 763,334 eligible non-responders selects <strong>239,483 customers</strong> (about a third of the list) projected to deliver <strong>$369,808 in profit</strong>, a <strong>35x improvement</strong> over mailing the full list untargeted.</li>
+<li>The takeaway that traveled best in this project was the discipline of picking a model the business could actually act on and defend, not the one with the best leaderboard score.</li>
 </ul>
 </section>
 <section id="tools-skills" class="level2">

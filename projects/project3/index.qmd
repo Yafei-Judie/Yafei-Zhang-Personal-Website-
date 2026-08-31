@@ -1,13 +1,13 @@
 ---
 title: "Project Overview Portfolio Site"
-description: "Designed and built a portfolio website to showcase project work, combining visual storytelling with responsive web design using the Wix platform."
+description: "A portfolio website built on Wix, combining visual storytelling with responsive design to present project work."
 date: 2024-04-01
 categories: [Web Design, Portfolio, UX Design]
 ---
 
 ## Overview
 
-Built a professional portfolio website to present and organize project work in a visually engaging, accessible format. The site serves as a centralized hub for showcasing case studies, creative projects, and professional accomplishments.
+Built a portfolio website on Wix to organize my project work in one place: case studies, creative projects, and professional work, in a format that's visually engaging and easy to navigate.
 
 **View the live site:** [yafeiz.wixsite.com/yafei-zhang](https://yafeiz.wixsite.com/yafei-zhang){target="_blank"}
 
@@ -19,10 +19,7 @@ Built a professional portfolio website to present and organize project work in a
 
 ## Features
 
-- **Project showcase:** dedicated sections for presenting individual projects with context, visuals, and key takeaways
-- **Responsive layout:** grid and flexbox-based design that adapts to different screen sizes
-- **View transitions:** smooth page navigation animations for a polished user experience
-- **Accessibility:** built with browser zoom support and accessible navigation patterns
+The site has dedicated sections for each project with context, visuals, and key takeaways. Layout uses grid and flexbox so it adapts across screen sizes, page navigation has smooth transition animations, and it supports browser zoom and accessible navigation patterns.
 
 ## Tools & Skills
 

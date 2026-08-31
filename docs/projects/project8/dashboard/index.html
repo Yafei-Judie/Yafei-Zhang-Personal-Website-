@@ -286,13 +286,13 @@
         <div class="card-sub">Distinct users at each stage · view → cart → checkout → purchase</div>
         <div class="legend" id="legend-funnel"></div>
         <div class="chart-wrap"><svg class="chart" id="chart-funnel" viewBox="0 0 560 320"></svg></div>
-        <div class="card-read"><b>Read:</b> view→cart is the weakest, most volatile stage (9.6%–31.1%) — the bigger lever is product-page friction, not checkout. November's cart→checkout figure over 100% is a known data quirk in this sample, documented in the repo, not smoothed over.</div>
+        <div class="card-read"><b>Read:</b> view→cart is the weakest, most volatile stage (9.6%–31.1%): the bigger lever is product-page friction, not checkout. November's cart→checkout figure over 100% is a known data quirk in this sample, documented in the repo, not smoothed over.</div>
       </div>
       <div class="card">
         <h3>Revenue by acquisition channel</h3>
         <div class="card-sub">3-month total, sorted by revenue</div>
         <div class="chart-wrap"><svg class="chart" id="chart-channel" viewBox="0 0 560 320"></svg></div>
-        <div class="card-read"><b>Read:</b> Google organic + direct traffic drive ~60% of tracked revenue. Paid search (cpc) converts at roughly 1.0%, below organic's ~1.2% — not an obvious place to weight more spend without knowing what's being bid on.</div>
+        <div class="card-read"><b>Read:</b> Google organic + direct traffic drive ~60% of tracked revenue. Paid search (cpc) converts at roughly 1.0%, below organic's ~1.2%, not an obvious place to weight more spend without knowing what's being bid on.</div>
       </div>
     </div>
   </section>
@@ -300,7 +300,7 @@
   <section id="delivery">
     <div class="section-head">
       <span class="eyebrow">02 · Delivery</span>
-      <h2>Lateness isn't random — it's geography</h2>
+      <h2>Lateness isn't random: it's geography</h2>
       <p>Olist Brazilian e-commerce dataset, ~100k real orders 2016–2018, loaded into local SQLite.</p>
     </div>
     <div class="chart-grid">
@@ -308,7 +308,7 @@
         <h3>Lateness by state</h3>
         <div class="card-sub">All 27 states with 30+ delivered orders</div>
         <div class="chart-wrap"><svg class="chart" id="chart-state" viewBox="0 0 560 480"></svg></div>
-        <div class="card-read"><b>Read:</b> São Paulo — 42% of all volume — sits at a relatively good 4.5% late. Alagoas, Maranhão, and Sergipe run 15–21% late. This is a coverage problem concentrated in specific regions.</div>
+        <div class="card-read"><b>Read:</b> São Paulo (42% of all volume) sits at a relatively good 4.5% late. Alagoas, Maranhão, and Sergipe run 15–21% late. This is a coverage problem concentrated in specific regions.</div>
       </div>
       <div class="card">
         <h3>Lateness by seller-customer distance</h3>
@@ -319,7 +319,7 @@
     </div>
     <div class="callout">
       <div class="cal-label">Sequencing note</div>
-      <p>São Paulo and Rio de Janeiro together account for roughly half of all late orders <i>by volume</i>, not rate — SP ships 40,494 orders at 4.5% late (~1,822 late); RJ ships 12,350 at 12.1% late (~1,494 late), nearly as many from a third the volume. That's a scoped, answerable ops question (why does RJ underperform SP by 3x?) worth running in parallel with the notification feature below, not instead of it.</p>
+      <p>São Paulo and Rio de Janeiro together account for roughly half of all late orders <i>by volume</i>, not rate: SP ships 40,494 orders at 4.5% late (~1,822 late); RJ ships 12,350 at 12.1% late (~1,494 late), nearly as many from a third the volume. That's a scoped, answerable ops question (why does RJ underperform SP by 3x?) worth running in parallel with the notification feature below, not instead of it.</p>
     </div>
   </section>
 
@@ -341,19 +341,19 @@
         <h3>Repeat-purchase rate by first-order experience</h3>
         <div class="card-sub">Using customer_unique_id, which persists across orders</div>
         <div class="chart-wrap"><svg class="chart" id="chart-repeat" viewBox="0 0 400 320"></svg></div>
-        <div class="card-read"><b>Read:</b> real effect, same direction — but a 16% relative drop, not the ~60% collapse the review-score mean implies. Baseline repeat rate is only ~3% across the board; Olist is a structurally low-repeat marketplace.</div>
+        <div class="card-read"><b>Read:</b> real effect, same direction, but a 16% relative drop, not the ~60% collapse the review-score mean implies. Baseline repeat rate is only ~3% across the board; Olist is a structurally low-repeat marketplace.</div>
       </div>
       <div class="card">
         <h3>Freight cost as % of item price</h3>
         <div class="card-sub">Highest freight-to-price categories, 200+ items</div>
         <div class="chart-wrap"><svg class="chart" id="chart-freight" viewBox="0 0 560 320"></svg></div>
-        <div class="card-read"><b>Read:</b> freight already eats 20–30% of price in electronics, furniture, and food/drink — a fix that adds shipping cost has a tight margin ceiling. A notification doesn't.</div>
+        <div class="card-read"><b>Read:</b> freight already eats 20–30% of price in electronics, furniture, and food/drink: a fix that adds shipping cost has a tight margin ceiling. A notification doesn't.</div>
       </div>
     </div>
 
     <div class="caveat">
       <div class="cav-label">The finding this dashboard almost missed</div>
-      <p><b>97.3% of reviews in the "7+ days late" bucket were submitted before the package arrived.</b> Olist's review survey triggers off the estimated delivery date, not actual receipt — so for the bucket the whole feature is built on, the review is mostly measuring "still overdue," not "arrived late and I'm upset." That doesn't kill the case for a notification. It changes what to measure: compare against when the review was submitted relative to the notification, not against final delivery date. Full derivation in <code>sql/08_review_timing_vs_delivery.sql</code>.</p>
+      <p><b>97.3% of reviews in the "7+ days late" bucket were submitted before the package arrived.</b> Olist's review survey triggers off the estimated delivery date, not actual receipt, so for the bucket the whole feature is built on, the review is mostly measuring "still overdue," not "arrived late and I'm upset." That doesn't kill the case for a notification. It changes what to measure: compare against when the review was submitted relative to the notification, not against final delivery date. Full derivation in <code>sql/08_review_timing_vs_delivery.sql</code>.</p>
     </div>
   </section>
 
@@ -361,20 +361,20 @@
     <div class="section-head">
       <span class="eyebrow">04 · Rigor</span>
       <h2>Pressure-testing the finding, not just reporting it</h2>
-      <p>A finding that only shows the angle supporting the roadmap decision is less credible than one checked from other directions. Four independent agents, each given the real data, argued a different lens against the core claim — then every load-bearing number they produced was independently re-run against the live database before it went in this repo.</p>
+      <p>A finding that only shows the angle supporting the roadmap decision is less credible than one checked from other directions. Four independent agents, each given the real data, argued a different lens against the core claim, then every load-bearing number they produced was independently re-run against the live database before it went in this repo.</p>
     </div>
     <div class="chart-grid">
       <div class="card">
         <h3>Causal inference</h3>
-        <div class="card-read" style="margin-top:0;border-top:none;padding-top:0;">Is this causation, or do bad sellers just produce both slow shipping <i>and</i> bad reviews? The 1–2 star <b>share</b> is more defensible than the mean-score gap — a 1–5 scale isn't linear, and "costs 2.6 points" implies a precision the data doesn't support.</div>
+        <div class="card-read" style="margin-top:0;border-top:none;padding-top:0;">Is this causation, or do bad sellers just produce both slow shipping <i>and</i> bad reviews? The 1–2 star <b>share</b> is more defensible than the mean-score gap: a 1–5 scale isn't linear, and "costs 2.6 points" implies a precision the data doesn't support.</div>
       </div>
       <div class="card">
         <h3>Business strategy</h3>
-        <div class="card-read" style="margin-top:0;border-top:none;padding-top:0;">The metric that moved most (review score) isn't the metric that matters most (revenue). Repeat-purchase impact is real but small. An ops fix in RJ may have a higher ceiling than a comms feature — worth running in parallel, not instead.</div>
+        <div class="card-read" style="margin-top:0;border-top:none;padding-top:0;">The metric that moved most (review score) isn't the metric that matters most (revenue). Repeat-purchase impact is real but small. An ops fix in RJ may have a higher ceiling than a comms feature, worth running in parallel, not instead.</div>
       </div>
       <div class="card">
         <h3>Customer behavior</h3>
-        <div class="card-read" style="margin-top:0;border-top:none;padding-top:0;">A notification can backfire two ways: manufacturing concern over a mild delay, or "double deviation" if the revised estimate itself slips. v1's trigger is a weak heuristic — the message needs to show a range, not a confident-sounding date.</div>
+        <div class="card-read" style="margin-top:0;border-top:none;padding-top:0;">A notification can backfire two ways: manufacturing concern over a mild delay, or "double deviation" if the revised estimate itself slips. v1's trigger is a weak heuristic: the message needs to show a range, not a confident-sounding date.</div>
       </div>
       <div class="card">
         <h3>Measurement quality</h3>
@@ -384,7 +384,7 @@
     <details class="methodology">
       <summary>How this critique pass actually worked</summary>
       <div class="m-body">
-        Four agents ran in parallel, each reading the real repo files directly and arguing one lens against the same finding — not generic disclaimers, concrete alternative explanations using the actual numbers. A fifth agent synthesized all four into <code>analysis/limitations-and-alternative-views.md</code>. Every specific number that came out of that pass (the 97.3% review-timing figure, the 646 missing reviews, the 547 duplicates) was then independently re-run against the live SQLite database by hand before being trusted — two of the agent's numbers were off by small amounts and got corrected to the verified figures shown here. The PRD itself was then edited to match: softened from "confirmed the premise cleanly" to what a two-variable crosstab can actually support, with two real scope changes (the success metric, and a message-confidence requirement) rather than just an appended disagreement.
+        Four agents ran in parallel, each reading the real repo files directly and arguing one lens against the same finding, not generic disclaimers but concrete alternative explanations using the actual numbers. A fifth agent synthesized all four into <code>analysis/limitations-and-alternative-views.md</code>. Every specific number that came out of that pass (the 97.3% review-timing figure, the 646 missing reviews, the 547 duplicates) was then independently re-run against the live SQLite database by hand before being trusted. Two of the agent's numbers were off by small amounts and got corrected to the verified figures shown here. The PRD itself was then edited to match: softened from "confirmed the premise cleanly" to what a two-variable crosstab can actually support, with two real scope changes (the success metric, and a message-confidence requirement) rather than just an appended disagreement.
       </div>
     </details>
   </section>
@@ -397,7 +397,7 @@
       <div class="foot-col">
         <h4>Repo</h4>
         <a href="https://github.com/Yafei-Judie/pm-portfolio-ecommerce-journey" target="_blank" rel="noopener">github.com/Yafei-Judie/pm-portfolio-ecommerce-journey</a>
-        <a href="https://github.com/Yafei-Judie/pm-portfolio-ecommerce-journey/blob/main/analysis/findings.md" target="_blank" rel="noopener">analysis/findings.md — full write-up</a>
+        <a href="https://github.com/Yafei-Judie/pm-portfolio-ecommerce-journey/blob/main/analysis/findings.md" target="_blank" rel="noopener">analysis/findings.md: full write-up</a>
         <a href="https://github.com/Yafei-Judie/pm-portfolio-ecommerce-journey/blob/main/analysis/limitations-and-alternative-views.md" target="_blank" rel="noopener">analysis/limitations-and-alternative-views.md</a>
         <a href="https://github.com/Yafei-Judie/pm-portfolio-ecommerce-journey/blob/main/prd/proactive-delivery-notifications-prd.md" target="_blank" rel="noopener">The PRD this data justifies</a>
       </div>
@@ -522,7 +522,7 @@
     });
   }
 
-  // Morandi palette — dusty, low-chroma hues, validated against the dataviz
+  // Morandi palette: dusty, low-chroma hues, validated against the dataviz
   // skill's six checks (chroma floor, CVD separation, normal-vision floor,
   // contrast) for every pair actually shown together on a chart.
   const BLUE = "#4583bc", BLUE_DARK = "#12568b", BLUE_MID = "#5b99d3", BLUE_LIGHT = "#70afea";
@@ -536,7 +536,7 @@
       { label: "2020-11", values: [
         { key: "Viewed", val: 21440, color: BLUE_LIGHT, tipTitle: "Viewed item: 21,440", tipSub: "Nov 2020" },
         { key: "Cart", val: 2060, color: BLUE_MID, tipTitle: "Added to cart: 2,060", tipSub: "Nov 2020" },
-        { key: "Checkout", val: 4219, color: BLUE, tipTitle: "Began checkout: 4,219", tipSub: "Nov 2020 — data quirk, exceeds cart-adds" },
+        { key: "Checkout", val: 4219, color: BLUE, tipTitle: "Began checkout: 4,219", tipSub: "Nov 2020, data quirk, exceeds cart-adds" },
         { key: "Purchased", val: 1532, color: BLUE_DARK, tipTitle: "Purchased: 1,532", tipSub: "Nov 2020" },
       ]},
       { label: "2020-12", values: [

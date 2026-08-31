@@ -25,7 +25,7 @@ library(kableExtra)
 
 ## Introduction
 
-Angrist and Lavy (1999) exploit a natural experiment arising from **Maimonides' Rule** --- an administrative rule in Israel that caps class sizes at 40 students. When enrollment crosses a multiple of 40, an additional class is created, producing a sharp, discontinuous drop in predicted class size. The authors use this rule as an instrumental variable to estimate the causal effect of class size on student achievement (reading and math scores) for 4th and 5th graders in Israeli public schools.
+Angrist and Lavy (1999) exploit a natural experiment arising from **Maimonides' Rule**: an administrative rule in Israel that caps class sizes at 40 students. When enrollment crosses a multiple of 40, an additional class is created, producing a sharp, discontinuous drop in predicted class size. The authors use this rule as an instrumental variable to estimate the causal effect of class size on student achievement (reading and math scores) for 4th and 5th graders in Israeli public schools.
 
 The key identification strategy is that Maimonides' Rule creates exogenous variation in actual class size: schools with enrollment just above a cutoff (e.g., 41, 81, 121) are predicted to have smaller classes than schools just below. This allows for a regression-discontinuity / instrumental-variables approach that overcomes the endogeneity problem inherent in OLS estimates of class size effects.
 
@@ -413,4 +413,4 @@ legend("topright", legend = c("Actual class size (mean)", "Maimonides' Rule pred
        col = c("steelblue", "firebrick"), bty = "n")
 ```
 
-This figure illustrates the key mechanism: at enrollment counts just above 40, 80, and 120, Maimonides' Rule predicts a sharp drop in class size as the school must split into additional classes. The actual class sizes broadly follow this pattern but with considerable noise --- exactly the kind of variation that makes a strong first stage for the IV strategy.
+This figure illustrates the key mechanism: at enrollment counts just above 40, 80, and 120, Maimonides' Rule predicts a sharp drop in class size as the school must split into additional classes. The actual class sizes broadly follow this pattern but with considerable noise, exactly the kind of variation that makes a strong first stage for the IV strategy.

@@ -73,15 +73,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-
-<script type="text/javascript">
-
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
-</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -142,6 +133,10 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
   <li class="nav-item">
     <a class="nav-link" href="../../index.html#culture"> 
 <span class="menu-text">Culture</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../cv.html"> 
@@ -214,13 +209,13 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <section id="problem" class="level2">
 <h2 class="anchored" data-anchor-id="problem">Problem</h2>
-<p>A two-person capstone asking: does proximity to SAMHSA-affiliated substance-abuse treatment facilities weaken the relationship between low county income and opioid overdose deaths? We built the analysis from scratch — merging CDC overdose surveillance, SAMHSA facility locations, and county-level income and unemployment data, none of which arrive pre-joined.</p>
-<p><strong>My role:</strong> the regression modeling and visualization — specifying and interpreting the negative binomial models below, including the income-stratified and clinic-access specifications.</p>
+<p>A two-person capstone asking: does proximity to SAMHSA-affiliated substance-abuse treatment facilities weaken the relationship between low county income and opioid overdose deaths? We built the analysis from scratch, merging CDC overdose surveillance, SAMHSA facility locations, and county-level income and unemployment data, none of which arrive pre-joined.</p>
+<p><strong>My role:</strong> the regression modeling and visualization: specifying and interpreting the negative binomial models below, including the income-stratified and clinic-access specifications.</p>
 <p><strong><a href="deck.html" target="_blank">Explore the team’s interactive site ↗</a></strong> (Tableau dashboards + the team’s shared regression writeup)</p>
 </section>
 <section id="approach" class="level2">
 <h2 class="anchored" data-anchor-id="approach">Approach</h2>
-<p>Merged CDC drug-overdose counts, SAMHSA facility locations, and county income/unemployment data on FIPS codes into a single panel of 3,081 U.S. counties (2023). Overdose counts are a skewed count outcome, so I modeled them with a <strong>negative binomial GLM</strong> (population offset) rather than OLS, and converted every coefficient to an <strong>incidence rate ratio (IRR)</strong> with 95% confidence intervals so the results read in plain terms — “X% more/less overdose risk” — instead of raw log-coefficients.</p>
+<p>Merged CDC drug-overdose counts, SAMHSA facility locations, and county income/unemployment data on FIPS codes into a single panel of 3,081 U.S. counties (2023). Overdose counts are a skewed count outcome, so I modeled them with a <strong>negative binomial GLM</strong> (population offset) rather than OLS, and converted every coefficient to an <strong>incidence rate ratio (IRR)</strong> with 95% confidence intervals so the results read in plain terms, “X% more/less overdose risk,” instead of raw log-coefficients.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../images/projects/opioid/income-group-od-rate.png" class="img-fluid figure-img" alt="Scatterplot of county overdose rate per 100,000 residents against median household income, colored by above- versus below-median income group, showing overdose rate declining as income rises"></p>
@@ -233,16 +228,16 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <ul>
 <li><strong>Income is the strongest driver.</strong> Every $10,000 increase in median household income is associated with roughly <strong>12% lower</strong> overdose incidence, holding unemployment, opioid dispensing, and clinic access constant (IRR = 0.9999866 per dollar, p &lt; .001).</li>
 <li><strong>Unemployment moves the other way.</strong> Each 1-point increase in the unemployment rate is associated with about <strong>8.2% higher</strong> overdose incidence (IRR = 1.082, p &lt; .001).</li>
-<li><strong>Below-median-income counties carry 37% higher overdose risk</strong> than above-median counties in a simplified model isolating that gap (IRR = 1.374, p &lt; .001) — the clearest single number in the analysis.</li>
-<li><strong>Clinic density is not protective in this cross-section — and that’s the honest, harder-to-report finding.</strong> Counties with more SAMHSA-affiliated clinics per capita showed a small but statistically significant <em>increase</em> in overdose incidence (IRR = 1.006, p = .003), and a binary “has clinic access” indicator showed a non-significant effect (p = .18).</li>
+<li><strong>Below-median-income counties carry 37% higher overdose risk</strong> than above-median counties in a simplified model isolating that gap (IRR = 1.374, p &lt; .001), the clearest single number in the analysis.</li>
+<li><strong>Clinic density is not protective in this cross-section, and that’s the honest, harder-to-report finding.</strong> Counties with more SAMHSA-affiliated clinics per capita showed a small but statistically significant <em>increase</em> in overdose incidence (IRR = 1.006, p = .003), and a binary “has clinic access” indicator showed a non-significant effect (p = .18).</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../images/projects/opioid/clinic-count-vs-od-rate.png" class="img-fluid figure-img" alt="Scatterplot of SAMHSA clinic count per county against overdose rate per 100,000 residents, showing the highest overdose rates concentrated among counties with very few clinics"></p>
-<figcaption>Counties with the highest overdose rates cluster at low clinic counts — a pattern consistent with clinics being deployed in response to an existing crisis, not preventing one</figcaption>
+<figcaption>Counties with the highest overdose rates cluster at low clinic counts, a pattern consistent with clinics being deployed in response to an existing crisis rather than preventing one</figcaption>
 </figure>
 </div>
-<p>That last result is easy to misread as “clinics don’t work.” The more defensible read: this is a single cross-section, and counties experiencing a worse crisis are precisely the ones installing more clinics in response. A static regression can’t separate “clinics fail to help” from “clinics get built where the fire is already burning” — that needs panel data tracking counties before and after a clinic opens, which we flagged as the direct next step.</p>
+<p>That last result is easy to misread as “clinics don’t work.” The more defensible read: this is a single cross-section, and counties experiencing a worse crisis are precisely the ones installing more clinics in response. A static regression can’t separate “clinics fail to help” from “clinics get built where the fire is already burning”; that needs panel data tracking counties before and after a clinic opens, which we flagged as the direct next step.</p>
 </section>
 <section id="tools-skills" class="level2">
 <h2 class="anchored" data-anchor-id="tools-skills">Tools &amp; Skills</h2>

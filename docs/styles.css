@@ -334,7 +334,7 @@ hr {
   color: #84a7c4;
 }
 
-/* ─── Project Pages — Larger Text ───────────────────────────── */
+/* --- Project Pages: Larger Text --- */
 .quarto-title + .quarto-categories + section,
 main#quarto-document-content > section p,
 main#quarto-document-content > section li {
@@ -1873,7 +1873,7 @@ section[id], #home {
    flanked by huge empty gutters, which reads as cramped/over-centered on
    wide screens. Widen it on our full-bleed marketing pages (index, projects,
    more-about-me) while leaving the TOC pages (cv, blog) at the reading width
-   they're designed for. Mobile is untouched — Quarto's own <768px layout is
+   they're designed for. Mobile is untouched: Quarto's own <768px layout is
    already full-width. */
 @media (min-width: 768px) {
   body.fullcontent .page-columns {
@@ -2226,6 +2226,16 @@ section[id], #home {
   padding: 0.32rem 0.75rem;
   border-radius: 50px;
   backdrop-filter: blur(2px);
+}
+
+.proj-card--featured {
+  box-shadow: 0 0 0 2px rgba(132, 167, 196, 0.55), 0 12px 40px rgba(132, 167, 196, 0.18);
+}
+
+.proj-badge--featured {
+  left: auto;
+  right: 10px;
+  background: #6b8fae;
 }
 
 /* ─── Testimonials ───────────────────────────────────────────── */

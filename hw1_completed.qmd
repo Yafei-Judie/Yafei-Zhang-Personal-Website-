@@ -13,16 +13,16 @@ jupyter: python3
 
 ## Introduction
 
-Imagine you run a website — maybe it's a cooking blog, a SaaS product, or a personal portfolio — and your landing page includes a spot where visitors can subscribe to your newsletter.  You've been using the same sign-up prompt for months: **"Sign up for our newsletter here!"** (we'll call this CTA A).  But a colleague suggests an alternative: **"Stay up to date — join our list!"** (CTA B).  Which one actually gets more people to hit that subscribe button?
+Imagine you run a website (maybe it's a cooking blog, a SaaS product, or a personal portfolio) and your landing page includes a spot where visitors can subscribe to your newsletter.  You've been using the same sign-up prompt for months: **"Sign up for our newsletter here!"** (we'll call this CTA A).  But a colleague suggests an alternative: **"Stay up to date, join our list!"** (CTA B).  Which one actually gets more people to hit that subscribe button?
 
 Gut feelings won't cut it here.  What we need is an **A/B test**: a controlled experiment in which every visitor to our site is randomly assigned to see one of the two CTAs, and we compare sign-up rates between the groups.  Because the assignment is random, any difference we observe in sign-up rates can be attributed to the CTA itself rather than to differences in who happened to visit on a particular day.
 
-In this post, we'll walk through the full statistical machinery behind an A/B test — from modeling the data, to estimating the treatment effect, to testing whether the difference is "real" — all via simulation.  Along the way we'll encounter the Law of Large Numbers, the bootstrap, the Central Limit Theorem, and the (sometimes misunderstood) t-test.
+In this post, we'll walk through the full statistical machinery behind an A/B test: modeling the data, estimating the treatment effect, and testing whether the difference is "real," all via simulation.  Along the way we'll encounter the Law of Large Numbers, the bootstrap, the Central Limit Theorem, and the (sometimes misunderstood) t-test.
 
 
 ## The A/B Test as a Statistical Problem
 
-Let's formalize the setup.  Each visitor to our site either signs up or doesn't — a binary outcome.  We can model each visitor's behavior as a draw from a **Bernoulli distribution** with some probability parameter $\pi$ representing the chance of signing up.
+Let's formalize the setup.  Each visitor to our site either signs up or doesn't: a binary outcome.  We can model each visitor's behavior as a draw from a **Bernoulli distribution** with some probability parameter $\pi$ representing the chance of signing up.
 
 Because the CTA a visitor sees may influence whether they sign up, we let the parameter differ across groups:
 
@@ -43,12 +43,12 @@ $$
 \hat\theta = \bar{X}_A - \bar{X}_B
 $$
 
-Since each observation is 0 or 1, the sample mean of each group is simply the fraction of visitors who signed up — so $\bar{X}_A = \hat\pi_A$ and $\bar{X}_B = \hat\pi_B$.
+Since each observation is 0 or 1, the sample mean of each group is simply the fraction of visitors who signed up, so $\bar{X}_A = \hat\pi_A$ and $\bar{X}_B = \hat\pi_B$.
 
 
 ## Simulating Data
 
-In practice, we would never know the true values of $\pi_A$ and $\pi_B$ — that's the whole reason we run the experiment.  But for this exercise, we'll play the role of an omniscient simulator and **set the truth ourselves**.  This lets us study how our estimator behaves when we already know the right answer — a powerful way to build intuition.
+In practice, we would never know the true values of $\pi_A$ and $\pi_B$ (that's the whole reason we run the experiment).  But for this exercise, we'll play the role of an omniscient simulator and **set the truth ourselves**.  This lets us study how our estimator behaves when we already know the right answer, a useful way to build intuition.
 
 We'll set $\pi_A = 0.22$ and $\pi_B = 0.18$, giving a true difference of $\theta = 0.04$ (a 4-percentage-point lift for CTA A).  Below, we simulate 1,000 visitors per group.
 
@@ -102,15 +102,15 @@ plt.tight_layout()
 plt.show()
 ```
 
-The pattern is exactly what the LLN predicts.  With only a handful of observations the running average bounces wildly — it could be positive, negative, or anywhere in between.  But as the sample size grows, the noise diminishes and the estimate settles down near the true value of 0.04.  This is the fundamental reason statistics works: **more data means more precision**.
+The pattern is exactly what the LLN predicts.  With only a handful of observations the running average bounces wildly: it could be positive, negative, or anywhere in between.  But as the sample size grows, the noise diminishes and the estimate settles down near the true value of 0.04.  This is the fundamental reason statistics works: **more data means more precision**.
 
 Early fluctuations are large because each additional observation has a strong influence when the sample is still small. As the sample grows, each new observation has less impact, and the estimate stabilizes near the true effect.
 
 ## Bootstrap Standard Errors
 
-Knowing that $\hat\theta$ converges to $\theta$ is comforting, but a point estimate alone isn't very useful — we also need a sense of **how uncertain** that estimate is.  That's where the **bootstrap** comes in.
+Knowing that $\hat\theta$ converges to $\theta$ is comforting, but a point estimate alone isn't very useful; we also need a sense of **how uncertain** that estimate is.  That's where the **bootstrap** comes in.
 
-The bootstrap is a resampling technique: we treat our observed data as a stand-in for the population, draw many samples *with replacement* from it, and compute our statistic on each resample.  The spread of those resampled statistics gives us an estimate of the standard error — no closed-form formula required.
+The bootstrap is a resampling technique: we treat our observed data as a stand-in for the population, draw many samples *with replacement* from it, and compute our statistic on each resample.  The spread of those resampled statistics gives us an estimate of the standard error without needing a closed-form formula.
 
 ```{python}
 n_boot = 1000
@@ -159,7 +159,7 @@ print("=== 95% Confidence Interval (Bootstrap) ===")
 print(ci_df.to_string(index=False))
 ```
 
-The two standard errors are very close, which is reassuring — the bootstrap is recovering essentially the same uncertainty estimate as the formula.
+The two standard errors are very close, which is reassuring: the bootstrap is recovering essentially the same uncertainty estimate as the formula.
 
 Using the bootstrap SE, our 95% confidence interval for $\theta$ is $\hat\theta \pm 1.96 \times SE$.  If this interval excludes zero, we have evidence that the CTAs differ in effectiveness.  If it includes zero, we can't rule out that the difference is due to chance.
 
@@ -169,7 +169,7 @@ Because zero would represent no difference between the two CTAs, checking whethe
 
 The **Central Limit Theorem (CLT)** is one of the most remarkable results in statistics: no matter what the underlying distribution of the data looks like, the sampling distribution of the sample mean becomes approximately **Normal** as the sample size grows.  Since $\hat\theta$ is a difference of two sample means, the CLT applies to it as well.
 
-Let's watch this happen.  For each of four sample sizes — $n \in \{25, 50, 100, 500\}$ — we'll simulate 1,000 experiments, compute $\hat\theta$ each time, and plot the resulting histogram.
+Let's watch this happen.  For each of four sample sizes ($n \in \{25, 50, 100, 500\}$), we'll simulate 1,000 experiments, compute $\hat\theta$ each time, and plot the resulting histogram.
 
 ```{python}
 #| echo: false
@@ -203,7 +203,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-At $n = 25$, the histogram is jagged and lumpy — with only 25 binary observations per group, $\hat\theta$ can only take on a limited set of discrete values.  By $n = 50$ the shape is already smoother, and at $n = 500$ the distribution is unmistakably bell-shaped and tightly concentrated around the true value of 0.04.  This is the CLT in action, and it's the foundation for the hypothesis test we'll conduct next.
+At $n = 25$, the histogram is jagged and lumpy: with only 25 binary observations per group, $\hat\theta$ can only take on a limited set of discrete values.  By $n = 50$ the shape is already smoother, and at $n = 500$ the distribution is unmistakably bell-shaped and tightly concentrated around the true value of 0.04.  This is the CLT in action, and it's the foundation for the hypothesis test we'll conduct next.
 
 
 ## Hypothesis Testing
@@ -212,8 +212,8 @@ With the CLT in hand, we know that for large samples $\hat\theta$ is approximate
 
 Formally, we set up:
 
-- **Null hypothesis** $H_0: \theta = 0$ — the two CTAs produce the same sign-up rate.
-- **Alternative hypothesis** $H_1: \theta \neq 0$ — the CTAs differ.
+- **Null hypothesis** $H_0: \theta = 0$, meaning the two CTAs produce the same sign-up rate.
+- **Alternative hypothesis** $H_1: \theta \neq 0$, meaning the CTAs differ.
 
 To test this, we standardize $\hat\theta$ into a **z-statistic**:
 
@@ -225,9 +225,9 @@ Why standardize?  Three steps of logic:
 
 1. By the CLT, $\hat\theta$ is approximately Normal for large $n$.  Under $H_0$, its mean is 0.
 2. Dividing a Normal variable by its standard deviation yields a **standard Normal** $N(0, 1)$.
-3. Because we know the distribution of $z$ under $H_0$, we can compute a **p-value** — the probability of seeing a test statistic at least as extreme as what we observed, if the null were true.
+3. Because we know the distribution of $z$ under $H_0$, we can compute a **p-value**: the probability of seeing a test statistic at least as extreme as what we observed, if the null were true.
 
-A note on terminology: this procedure is often called a "t-test," but that label is slightly misleading here.  The classical t-test assumes the data are drawn from a Normal distribution — when the variance is estimated, the test statistic follows an exact $t$-distribution.  Our data are Bernoulli (zeros and ones), not Normal, so there's no exact $t$-distribution result.  What we're really doing is a **z-test** justified by the CLT.  In practice, for large samples the $t$-distribution and the standard Normal are nearly identical, so the distinction rarely matters — but it's good to know what's actually going on under the hood.
+A note on terminology: this procedure is often called a "t-test," but that label is slightly misleading here.  The classical t-test assumes the data are drawn from a Normal distribution: when the variance is estimated, the test statistic follows an exact $t$-distribution.  Our data are Bernoulli (zeros and ones), not Normal, so there's no exact $t$-distribution result.  What we're really doing is a **z-test** justified by the CLT.  In practice, for large samples the $t$-distribution and the standard Normal are nearly identical, so the distinction rarely matters, but it's good to know what's actually going on under the hood.
 
 ```{python}
 z_stat = theta_hat / analytical_se
@@ -243,9 +243,9 @@ print(f"p-value  = {p_value:.4f}")
 #| echo: false
 
 if p_value < 0.05:
-    verdict = "we reject the null hypothesis at the 5% significance level — there is statistically significant evidence that CTA A outperforms CTA B."
+    verdict = "we reject the null hypothesis at the 5% significance level: there is statistically significant evidence that CTA A outperforms CTA B."
 else:
-    verdict = "we fail to reject the null hypothesis at the 5% significance level — the observed difference is not statistically significant."
+    verdict = "we fail to reject the null hypothesis at the 5% significance level: the observed difference is not statistically significant."
 
 print(f"Conclusion: {verdict}")
 ```
@@ -253,7 +253,7 @@ print(f"Conclusion: {verdict}")
 
 ## The T-Test as a Regression
 
-Here's a useful fact that surprises many people: the two-sample test we just ran is **mathematically equivalent** to a simple linear regression.  Understanding this connection is valuable because it means the same software and framework you use for regression can also perform hypothesis tests — and it generalizes naturally to more complex designs (adding covariates, multiple treatment arms, etc.).
+Here's a useful fact that surprises many people: the two-sample test we just ran is **mathematically equivalent** to a simple linear regression.  Understanding this connection is valuable because it means the same software and framework you use for regression can also perform hypothesis tests, and it generalizes naturally to more complex designs (adding covariates, multiple treatment arms, etc.).
 
 The setup is straightforward.  Stack all 2,000 observations into a single dataset with two columns:
 
@@ -268,8 +268,8 @@ $$
 
 The interpretation is clean:
 
-- $\beta_0$ is the expected outcome when $D_i = 0$ — i.e., the mean of the B group, estimating $\pi_B$.
-- $\beta_0 + \beta_1$ is the expected outcome when $D_i = 1$ — i.e., the mean of the A group, estimating $\pi_A$.
+- $\beta_0$ is the expected outcome when $D_i = 0$, i.e., the mean of the B group, estimating $\pi_B$.
+- $\beta_0 + \beta_1$ is the expected outcome when $D_i = 1$, i.e., the mean of the A group, estimating $\pi_A$.
 - Therefore $\beta_1 = \pi_A - \pi_B = \theta$, so the OLS estimate $\hat\beta_1$ is numerically identical to $\hat\theta$.
 
 ```{python}
@@ -300,16 +300,16 @@ print(f"Compare: manual θ̂ = {theta_hat:.4f}, regression β̂₁ = {model.para
 print(f"Compare: manual z  = {z_stat:.4f}, regression t  = {model.tvalues[1]:.4f}")
 ```
 
-The coefficient $\hat\beta_1$ matches our earlier $\hat\theta$ exactly.  The standard errors and test statistics may differ very slightly — OLS uses a single pooled variance estimate, while our earlier two-sample formula allowed separate variances for each group — but for balanced samples of this size, the difference is negligible.
+The coefficient $\hat\beta_1$ matches our earlier $\hat\theta$ exactly.  The standard errors and test statistics may differ very slightly (OLS uses a single pooled variance estimate, while our earlier two-sample formula allowed separate variances for each group), but for balanced samples of this size, the difference is negligible.
 
 **Why does this matter?**  Because the regression framework is far more flexible.  Want to control for day-of-week effects?  Add a covariate.  Want to test three CTAs instead of two?  Add more indicator variables.  The simple A/B test is just the special case where the regression has a single binary predictor.
 
 
 ## The Problem with Peeking
 
-Your boss is impatient.  Rather than waiting for the full 1,000 visitors per group, she wants to check the results after every 100 visitors — at $n = 100, 200, \ldots, 1000$ — and declare a winner as soon as any test hits $p < 0.05$.  What could go wrong?
+Your boss is impatient.  Rather than waiting for the full 1,000 visitors per group, she wants to check the results after every 100 visitors (at $n = 100, 200, \ldots, 1000$) and declare a winner as soon as any test hits $p < 0.05$.  What could go wrong?
 
-**Quite a lot, actually.**  A single hypothesis test at $\alpha = 0.05$ has a 5% chance of a false positive — that's by design.  But each time you peek at the data and run a new test, you're giving yourself another chance to get a spurious significant result.  Over 10 peeks, the probability of at least one false positive is substantially higher than 5%.
+**Quite a lot, actually.**  A single hypothesis test at $\alpha = 0.05$ has a 5% chance of a false positive; that's by design.  But each time you peek at the data and run a new test, you're giving yourself another chance to get a spurious significant result.  Over 10 peeks, the probability of at least one false positive is substantially higher than 5%.
 
 Let's quantify this with a simulation.  We'll set up a world where the null hypothesis is **true** ($\pi_A = \pi_B = 0.20$, so $\theta = 0$) and see how often peeking leads us to incorrectly declare a winner.
 
@@ -355,6 +355,6 @@ print(f"Nominal α (single test):          5.0%")
 print(f"Inflation factor:                 {false_positive_rate / 0.05:.1f}×")
 ```
 
-The result is striking.  Instead of the nominal 5%, the false positive rate under peeking is roughly **two to three times higher** — meaning in about 15% or more of experiments where there is *no real effect*, the peeking strategy would lead us to incorrectly declare a winner.
+The result is striking.  Instead of the nominal 5%, the false positive rate under peeking is roughly **two to three times higher**: in about 15% or more of experiments where there is *no real effect*, the peeking strategy would lead us to incorrectly declare a winner.
 
-This is a serious problem in practice.  Companies running A/B tests are often tempted to check results early and stop as soon as something looks significant.  But doing so dramatically inflates the chance of making a wrong decision.  If you want to peek at results as they come in, you need to use methods designed for sequential testing — such as **group sequential designs** or **always-valid p-values** — that explicitly account for the multiple looks at the data.  The classical fixed-sample hypothesis test simply wasn't built for this, and using it that way undermines the very guarantees it provides.
+This is a serious problem in practice.  Companies running A/B tests are often tempted to check results early and stop as soon as something looks significant.  But doing so dramatically inflates the chance of making a wrong decision.  If you want to peek at results as they come in, you need to use methods designed for sequential testing, such as **group sequential designs** or **always-valid p-values**, that explicitly account for the multiple looks at the data.  The classical fixed-sample hypothesis test simply wasn't built for this, and using it that way undermines the very guarantees it provides.

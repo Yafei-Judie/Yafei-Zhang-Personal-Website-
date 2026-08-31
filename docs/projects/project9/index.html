@@ -73,15 +73,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-
-<script type="text/javascript">
-
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
-</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -142,6 +133,10 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
   <li class="nav-item">
     <a class="nav-link" href="../../index.html#culture"> 
 <span class="menu-text">Culture</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../cv.html"> 
@@ -219,15 +214,15 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </section>
 <section id="approach" class="level2">
 <h2 class="anchored" data-anchor-id="approach">Approach</h2>
-<p>Started from 1,000,000 application records (2017, 1.44% fraud rate) with just 10 raw fields — SSN, name, address, phone, date of birth. Before any modeling, the data quality review surfaced something specific to fraud data: identity fields double as <em>linking keys</em> that connect applications to the same person, and several fields were full of frivolous placeholder values that would have manufactured false connections.</p>
+<p>Started from 1,000,000 application records (2017, 1.44% fraud rate) with just 10 raw fields: SSN, name, address, phone, date of birth. Before any modeling, the data quality review surfaced something specific to fraud data: identity fields double as <em>linking keys</em> that connect applications to the same person, and several fields were full of frivolous placeholder values that would have manufactured false connections.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../images/projects/fraud/placeholder-ssn-spike.png" class="img-fluid figure-img" alt="Bar chart showing the SSN value 999999999 appearing over 16,000 times versus near-zero counts for every other SSN"></p>
-<figcaption>One SSN value shows up 16,935 times — a placeholder, not a person</figcaption>
+<figcaption>One SSN value shows up 16,935 times: a placeholder, not a person</figcaption>
 </figure>
 </div>
 <p>The same pattern showed up in home phone (<code>9999999999</code>, 78,512 times), address (<code>123 MAIN ST</code>, 1,079 times), and date of birth (a default <code>06/26/1907</code>). Left alone, the model would have treated tens of thousands of unrelated applications as one person and invented enormous, false velocity signals. Each placeholder was replaced with a unique, non-linking value so it could only ever link to itself.</p>
-<p>From the cleaned data, engineered <strong>1,841 candidate variables</strong> across six families — velocity counts, relative velocity, cross-entity uniqueness counts, max indicators, age indicators, day-of-week risk — all built to measure how fast and how inconsistently an identity gets reused across applications. A two-stage selection process (a KS-statistic univariate filter, then a LightGBM forward-stepwise wrapper) narrowed that down to the 10 strongest predictors, which turned out to be dominated by <strong>address-based velocity</strong> — a physical address is one of the hardest things for a fraudster to vary, so a burst of applications from the same address is the strongest signal a fraud ring is operating from one location.</p>
+<p>From the cleaned data, engineered <strong>1,841 candidate variables</strong> across six families (velocity counts, relative velocity, cross-entity uniqueness counts, max indicators, age indicators, day-of-week risk), all built to measure how fast and how inconsistently an identity gets reused across applications. A two-stage selection process (a KS-statistic univariate filter, then a LightGBM forward-stepwise wrapper) narrowed that down to the 10 strongest predictors, which turned out to be dominated by <strong>address-based velocity</strong>: a physical address is one of the hardest things for a fraudster to vary, so a burst of applications from the same address is the strongest signal a fraud ring is operating from one location.</p>
 <p>Eight algorithms were compared on FDR@3% (fraction of fraud caught while reviewing the riskiest 3% of applications), each run four times with fresh train/test splits and validated out-of-time on two held-out months:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -239,9 +234,9 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <section id="key-insights" class="level2">
 <h2 class="anchored" data-anchor-id="key-insights">Key Insights</h2>
 <ul>
-<li><strong>LightGBM won on generalization, not just raw accuracy</strong> — 64.2% FDR on training, 62.0% on test, 59.1% out-of-time. The small train-to-out-of-time gap is what mattered: a single decision tree hit 70.5% on training but collapsed to 48.1% out-of-time, the classic overfitting failure a portfolio-worthy model has to avoid.</li>
-<li>Rebalancing techniques (SMOTE, downsampling) didn’t beat plain LightGBM on the out-of-time set — added complexity that wasn’t worth it.</li>
-<li>Every field was 100% populated, which looked like clean data until the placeholder-value check — a reminder that “no missing values” isn’t the same as “no data quality problem” in fraud work.</li>
+<li><strong>LightGBM won on generalization, not just raw accuracy</strong>: 64.2% FDR on training, 62.0% on test, 59.1% out-of-time. The small train-to-out-of-time gap is what mattered: a single decision tree hit 70.5% on training but collapsed to 48.1% out-of-time, the classic overfitting failure a portfolio-worthy model has to avoid.</li>
+<li>Rebalancing techniques (SMOTE, downsampling) didn’t beat plain LightGBM on the out-of-time set. The added complexity wasn’t worth it.</li>
+<li>Every field was 100% populated, which looked like clean data until the placeholder-value check: a reminder that “no missing values” isn’t the same as “no data quality problem” in fraud work.</li>
 </ul>
 </section>
 <section id="impact" class="level2">
@@ -255,7 +250,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </div>
 <ul>
 <li><strong>Recommended cutoff: review the riskiest 3% of applications.</strong> It sits on the flat top of the savings curve, gives up less than 1% of the theoretical maximum, and catches more fraud (59% vs.&nbsp;58%) than the marginally-higher-savings 2% cutoff.</li>
-<li>Projected <strong>~$317M/year in net savings</strong> at that cutoff (peaking near $320M at 2%) — the fraud team can find roughly three out of five frauds while reviewing three out of every hundred applications.</li>
+<li>Projected <strong>~$317M/year in net savings</strong> at that cutoff (peaking near $320M at 2%). The fraud team can find roughly three out of five frauds while reviewing three out of every hundred applications.</li>
 </ul>
 </section>
 <section id="tools-skills" class="level2">

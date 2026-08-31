@@ -71,15 +71,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-
-<script type="text/javascript">
-
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
-</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -134,6 +125,10 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
   <li class="nav-item">
     <a class="nav-link" href="./index.html#culture"> 
 <span class="menu-text">Culture</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./cv.html"> 
@@ -290,6 +285,18 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
   <h2 class="art-section-label home-section-label">Portfolio</h2>
   <p class="home-section-intro">A few highlights. Every chart below is a real output pulled straight from my own notebooks and dashboards.</p>
   <div class="proj-grid">
+    <a class="proj-card proj-card--featured" href="projects/project8/index.html">
+      <div class="proj-card-img">
+        <span class="proj-badge">$565K value at risk</span>
+        <span class="proj-badge proj-badge--featured">Start here</span>
+        <img src="images/projects/ecommerce/delay-vs-review.png" alt="Delivery timing versus average review score chart">
+      </div>
+      <div class="proj-card-body">
+        <span class="proj-card-tags">SQL · Machine Learning · PM</span>
+        <h3>E-Commerce Customer Journey: SQL, Churn &amp; CLV</h3>
+        <p>8 SQL queries + a churn/CLV model on real GA4 and Olist data, pressure-tested against its own critique before shipping a PRD. Public repo + live embedded dashboard.</p>
+      </div>
+    </a>
     <a class="proj-card" href="projects/project9/index.html">
       <div class="proj-card-img">
         <span class="proj-badge">$317M/yr savings</span>
@@ -299,17 +306,6 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
         <span class="proj-card-tags">Machine Learning · Fraud Detection</span>
         <h3>Application Identity Fraud Detection</h3>
         <p>1,841 engineered velocity features on 1M applications, an insight about placeholder SSNs faking identity links, and a LightGBM model that catches 59% of fraud reviewing just 3% of cases.</p>
-      </div>
-    </a>
-    <a class="proj-card" href="projects/project8/index.html">
-      <div class="proj-card-img">
-        <span class="proj-badge">$565K value at risk</span>
-        <img src="images/projects/ecommerce/delay-vs-review.png" alt="Delivery timing versus average review score chart">
-      </div>
-      <div class="proj-card-body">
-        <span class="proj-card-tags">SQL · Machine Learning · PM</span>
-        <h3>E-Commerce Customer Journey: SQL, Churn &amp; CLV</h3>
-        <p>8 SQL queries + a churn/CLV model on real GA4 and Olist data, pressure-tested against its own critique before shipping a PRD. Public repo + live embedded dashboard.</p>
       </div>
     </a>
     <a class="proj-card" href="projects/project2/index.html">

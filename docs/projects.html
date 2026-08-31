@@ -72,33 +72,24 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-
-<script type="text/javascript">
-
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
-</script>
 
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Projects – Yafei (Judie) Zhang">
 <meta property="og:description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang: churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
-<meta property="og:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/fraud/placeholder-ssn-spike.png">
+<meta property="og:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/ecommerce/delay-vs-review.png">
 <meta property="og:site_name" content="Yafei (Judie) Zhang">
 <meta property="og:locale" content="en_US">
-<meta property="og:image:alt" content="Bar chart showing a placeholder SSN value appearing over 16,000 times, far more than any real value">
-<meta property="og:image:height" content="352">
-<meta property="og:image:width" content="880">
+<meta property="og:image:alt" content="Delivery timing versus average review score chart">
+<meta property="og:image:height" content="750">
+<meta property="og:image:width" content="1350">
 <meta name="twitter:title" content="Projects – Yafei (Judie) Zhang">
 <meta name="twitter:description" content="Data analytics and marketing strategy projects by Yafei (Judie) Zhang: churn modeling, uplift targeting, BI dashboards, and experimentation, ranked by real business impact.">
-<meta name="twitter:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/fraud/placeholder-ssn-spike.png">
+<meta name="twitter:image" content="https://yafei-judie.github.io/Yafei-Zhang-Personal-Website-/images/projects/ecommerce/delay-vs-review.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image:alt" content="Bar chart showing a placeholder SSN value appearing over 16,000 times, far more than any real value">
-<meta name="twitter:image-height" content="352">
-<meta name="twitter:image-width" content="880">
+<meta name="twitter:image:alt" content="Delivery timing versus average review score chart">
+<meta name="twitter:image-height" content="750">
+<meta name="twitter:image-width" content="1350">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -141,6 +132,10 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
   <li class="nav-item">
     <a class="nav-link" href="./index.html#culture"> 
 <span class="menu-text">Culture</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./cv.html"> 
@@ -212,6 +207,19 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <div class="proj-grid">
 
+  <a class="proj-card proj-card--featured" href="projects/project8/index.html" data-cats="sql ml pm marketing">
+    <div class="proj-card-img">
+      <span class="proj-badge">$565K value at risk</span>
+      <span class="proj-badge proj-badge--featured">Start here</span>
+      <img src="images/projects/ecommerce/delay-vs-review.png" alt="Delivery timing versus average review score chart">
+    </div>
+    <div class="proj-card-body">
+      <span class="proj-card-tags">SQL · Machine Learning · Product Management</span>
+      <h3 class="anchored">E-Commerce Customer Journey: SQL, Churn &amp; CLV</h3>
+      <p>8 SQL queries + a churn/CLV model on real GA4, Olist, and UK retail data, pressure-tested against its own critique before shipping a PRD. Public repo + live embedded dashboard.</p>
+    </div>
+  </a>
+
   <a class="proj-card" href="projects/project9/index.html" data-cats="ml">
     <div class="proj-card-img">
       <span class="proj-badge">$317M/yr savings</span>
@@ -221,18 +229,6 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
       <span class="proj-card-tags">Machine Learning · Fraud Detection</span>
       <h3 class="anchored">Application Identity Fraud Detection</h3>
       <p>1,841 engineered velocity features on 1M applications, an insight about placeholder SSNs faking identity links, and a LightGBM model that catches 59% of fraud reviewing just 3% of cases.</p>
-    </div>
-  </a>
-
-  <a class="proj-card" href="projects/project8/index.html" data-cats="sql ml pm marketing">
-    <div class="proj-card-img">
-      <span class="proj-badge">$565K value at risk</span>
-      <img src="images/projects/ecommerce/delay-vs-review.png" alt="Delivery timing versus average review score chart">
-    </div>
-    <div class="proj-card-body">
-      <span class="proj-card-tags">SQL · Machine Learning · Product Management</span>
-      <h3 class="anchored">E-Commerce Customer Journey: SQL, Churn &amp; CLV</h3>
-      <p>8 SQL queries + a churn/CLV model on real GA4, Olist, and UK retail data, pressure-tested against its own critique before shipping a PRD. Public repo + live embedded dashboard.</p>
     </div>
   </a>
 
