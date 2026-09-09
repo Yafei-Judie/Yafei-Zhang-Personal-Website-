@@ -65,20 +65,85 @@ I turn messy data into decisions companies actually act on: churn models that fl
   </div>
 
   <p class="about-copy">
-    I'm an MSBA candidate at UC San Diego's Rady School of Management, and before that
-    spent four years moving between business development, marketing, and data
-    roles, which is really one job: finding the number that changes what a
-    business does next. Most recently that's meant building a vendor
-    intelligence dashboard for a $10M e-commerce merchandiser, an investor
-    metrics workbook a CEO uses in every board meeting, and a churn model
-    that told a telecom which retention program actually pays for itself.
+    I've had different titles for my work, analyst, ops, product, but it's
+    the same job every time: figure out where a process is really breaking,
+    engineer the fix, and get a team to actually use it.
   </p>
   <p class="about-copy">
-    Before analytics, I studied Media, Heritage, and Integrated Product
-    Design at UPenn, which is less of a detour than it sounds. Both fields
-    are about the same thing: finding the story inside a pile of evidence,
-    and presenting it so someone else can act on it.
+    At Thermo Fisher Scientific, I reengineered a customer experience
+    scoring system that teams didn't trust enough to act on. The model was
+    never the difficult part. The stakeholder work to get frontline teams to
+    believe the score and change what they did because of it took as much
+    effort as the data work. At a B2B AI agent startup, I automated the
+    workflows behind customer conversations so reps could stop wasting time
+    on manual busywork between calls. When I joined PlanetArt, I built
+    vendor and competitive intelligence tools so merchandising teams could
+    read their own market rather than waiting for me to run the numbers
+    each week.
   </p>
+  <p class="about-copy">
+    The hand-off is my favorite moment, when something I've built stops
+    being my project and just becomes how the team works. I use Python,
+    SQL, and AI agent tools like Claude Code to get there faster, but the
+    real work is in figuring out what is worth building, and then proving
+    that it earned its place.
+  </p>
+</section>
+
+<!-- ═══════════════════════ TRAJECTORY ═══════════════════════ -->
+<section id="trajectory" class="home-section reveal">
+  <h2 class="art-section-label home-section-label">Trajectory</h2>
+  <div class="trajectory-scroll">
+  <div class="trajectory-track">
+    <div class="trajectory-item">
+      <span class="trajectory-date">May 2023</span>
+      <span class="trajectory-role">BA, Communication</span>
+      <span class="trajectory-org">Univ. of Colorado Denver</span>
+    </div>
+    <span class="trajectory-arrow">&rsaquo;</span>
+    <div class="trajectory-item">
+      <span class="trajectory-date">May 2024 &ndash; Jul 2025</span>
+      <span class="trajectory-role">Data &amp; Strategy Analyst</span>
+      <span class="trajectory-org">Hawaii DBET</span>
+    </div>
+    <span class="trajectory-arrow">&rsaquo;</span>
+    <div class="trajectory-item">
+      <span class="trajectory-date">Nov 2024 &ndash; Jul 2025</span>
+      <span class="trajectory-role">Marketing &amp; Content Strategist</span>
+      <span class="trajectory-org">MirrorAI</span>
+    </div>
+    <span class="trajectory-arrow">&rsaquo;</span>
+    <div class="trajectory-item">
+      <span class="trajectory-date">May 2025</span>
+      <span class="trajectory-role">MA, Media, Heritage &amp; Product Design</span>
+      <span class="trajectory-org">University of Pennsylvania</span>
+    </div>
+    <span class="trajectory-arrow">&rsaquo;</span>
+    <div class="trajectory-item">
+      <span class="trajectory-date">Feb 2026 &ndash; Present</span>
+      <span class="trajectory-role">Data Marketing Analyst</span>
+      <span class="trajectory-org">Levra Labs</span>
+    </div>
+    <span class="trajectory-arrow">&rsaquo;</span>
+    <div class="trajectory-item">
+      <span class="trajectory-date">Spring 2026</span>
+      <span class="trajectory-role">CX Score Framework</span>
+      <span class="trajectory-org">Thermo Fisher Scientific Client</span>
+    </div>
+    <span class="trajectory-arrow">&rsaquo;</span>
+    <div class="trajectory-item">
+      <span class="trajectory-date">Jun 2026 &ndash; Present</span>
+      <span class="trajectory-role">Merchandise Analyst (Intern)</span>
+      <span class="trajectory-org">PlanetArt</span>
+    </div>
+    <span class="trajectory-arrow">&rsaquo;</span>
+    <div class="trajectory-item">
+      <span class="trajectory-date">Dec 2026 (expected)</span>
+      <span class="trajectory-role">MSBA</span>
+      <span class="trajectory-org">Rady School of Management, UC San Diego</span>
+    </div>
+  </div>
+  </div>
 </section>
 
 <!-- ═══════════════════════ SKILLS ═══════════════════════ -->
