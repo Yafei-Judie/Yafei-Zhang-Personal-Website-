@@ -25,7 +25,7 @@ website:
       - href: index.qmd#testimonials
         text: Testimonials
       - href: index.qmd#culture
-        text: Culture
+        text: Get to Know Me
       - href: blog.qmd
         text: Blog
       - href: cv.qmd
