@@ -6,7 +6,7 @@ format:
     toc: true
     toc-depth: 2
     resources:
-      - files/Yafei-Zhang-Resume.pdf
+      - files/Judie_Zhang_Resume.pdf
 ---
 
 ```{=html}
@@ -20,14 +20,65 @@ format:
 
   <!-- Header -->
   <div class="resume-header">
-    <h1 class="resume-name">Yafei Zhang</h1>
+    <h1 class="resume-name">Judie Zhang</h1>
     <div class="resume-contact">
       San Diego, CA &nbsp;|&nbsp; (445) 800-6477 &nbsp;|&nbsp;
       <a href="mailto:zhangyafeijudy@gmail.com">zhangyafeijudy@gmail.com</a> &nbsp;|&nbsp;
-      <a href="https://www.linkedin.com/in/yafei-zhang-judie/" target="_blank">LinkedIn</a> &nbsp;|&nbsp;
-      Available Aug 31, 2026
+      <a href="https://www.linkedin.com/in/yafei-zhang-judie/" target="_blank">linkedin.com/in/yafei-zhang-judie</a>
     </div>
-    <a href="files/Yafei-Zhang-Resume.pdf" class="resume-download" download>Download PDF</a>
+    <a href="files/Judie_Zhang_Resume.pdf" class="resume-download" download>Download PDF</a>
+  </div>
+
+  <!-- Education -->
+  <h2 class="resume-section-title">Education</h2>
+
+  <div class="resume-entry">
+    <div class="resume-entry-header">
+      <div>
+        <span class="resume-role">M.S. Business Analytics</span>
+        <span class="resume-company">&middot; University of California San Diego, Rady School of Management</span>
+      </div>
+      <span class="resume-date">Aug 2025 &ndash; Dec 2026</span>
+    </div>
+    <p class="resume-edu-detail"><em>Focus: Customer Analytics, AI for Business, Applied ML | uplift modeling and churn analysis</em></p>
+  </div>
+
+  <div class="resume-entry">
+    <div class="resume-entry-header">
+      <div>
+        <span class="resume-role">M.A. Media &amp; Integrated Product Design</span>
+        <span class="resume-company">&middot; University of Pennsylvania</span>
+      </div>
+      <span class="resume-date">Sep 2023 &ndash; May 2025</span>
+    </div>
+  </div>
+
+  <div class="resume-entry">
+    <div class="resume-entry-header">
+      <div>
+        <span class="resume-role">B.A. Communication</span>
+        <span class="resume-company">&middot; University of Colorado Denver</span>
+      </div>
+      <span class="resume-date">Sep 2019 &ndash; May 2023</span>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <h2 class="resume-section-title">Skills</h2>
+
+  <div class="resume-skills">
+    <div class="resume-skill-group">
+      <span class="resume-skill-label">Technical:</span>
+      Agentic AI Automation workflow, Excel, Claude Code, Python, SQL, Tableau, R, Snowflake
+    </div>
+    <div class="resume-skill-group">
+      <span class="resume-skill-label">Marketing Analytics:</span>
+      A/B Testing, Customer Segmentation, HTML, Predictive Modeling, Financial Modeling, Sensitivity &amp; Scenario analysis, Customer Experience (CX) analytics, Performance KPI analysis, Go-to-Market analytics, Sharepoint
+    </div>
+    <div class="resume-skill-group">
+      <span class="resume-skill-label">Strategy &amp; Communication:</span>
+      Competitive Analysis, Executive Reporting, Data Storytelling, Cross-Functional Collaboration
+    </div>
   </div>
 
   <!-- Experience -->
@@ -41,12 +92,12 @@ format:
         <span class="resume-type">(Intern)</span>
         <span class="resume-type">&middot; La Jolla, CA (On-site)</span>
       </div>
-      <span class="resume-date">Jun 2026 &ndash; Present</span>
+      <span class="resume-date">Jun 2026 &ndash; Aug 2026</span>
     </div>
     <ul>
-      <li>Vibe-coded a vendor intelligence dashboard prototype in Cursor for a $10M-revenue e-commerce merchandiser: cut an 8-step, 6-system cost and margin workflow across 11 suppliers to 2 steps, scored all 11 vendors 0&ndash;100 on data quality and surfaced 4 as off-strategy, and turned every data conflict into an assigned job in a daily ops queue.</li>
-      <li>Used a pricing model to analyze margin, break-even rates, and ROAS to select Doorbuster's products from 5 vendors, and set 3 different pricing targets while benchmarking against 3 competitors' pricing to reach the highest margin.</li>
-      <li>Tuned an AI product-matching tool across the bundle range, traced its errors to products matched against single items, and gave the developer team the failure pattern for next steps; match accuracy moved from 60% to 85%.</li>
+      <li>Coded a vendor intelligence dashboard prototype with Cursor for a $10M-revenue ecommerce merchandiser: turned an 8-step, 6-system workflow across 11 suppliers to 2 steps, turning data conflict into an assigned job.</li>
+      <li>Used a pricing model to analyze margin, break-even rates, and ROAS to select Doorbuster's products from 5 vendors, and set 3 different pricing targets while comparing against 3 other competitors' pricing to reach the highest margin.</li>
+      <li>Tuned an AI product-matching tool across the bundle range, traced its errors to products matched against single items, and gave the developer team the failure pattern for next-step recommendations, the match accuracy rose from 60% to 85%.</li>
     </ul>
   </div>
 
@@ -55,15 +106,15 @@ format:
       <div>
         <span class="resume-role">Data Marketing Analyst</span>
         <span class="resume-company">&middot; Levra Labs LLC</span>
-        <span class="resume-type">(Part-Time)</span>
+        <span class="resume-type">(Part-time)</span>
         <span class="resume-type">&middot; La Jolla, CA (Remote)</span>
       </div>
-      <span class="resume-date">Mar 2026 &ndash; Present</span>
+      <span class="resume-date">Mar 2026 &ndash; Sep 2026</span>
     </div>
     <ul>
-      <li>Saved the team about 10 hours a week by building an end-to-end lead outreach automation with the developer team: 19 workflows handling discovery, verification, and outreach, delivering 222 verified leads across VC, partner, and customer lists.</li>
-      <li>Vibe-coded in Claude Code using skills to build three mobile-responsive email one-pagers, one each for brands, investors, and partners, with segment-specific messaging so each list gets the right pitch.</li>
-      <li>Benchmarked 8 funded competitors in the brand-launch and supply-chain space on funding, stage, traction, and customer wins, then turned it into a gap and positioning analysis the team uses for pitching and GTM planning.</li>
+      <li>Cut about 520 hours a year of manual lead research for the team by building an end-to-end outreach automation with the developer team, delivering 222 verified leads.</li>
+      <li>Vibe coded 3 mobile-responsive, segment-specific email one-pagers in Claude Code using skills, which the CEO adopted as the standard for every initial outreach, raising communication effectiveness.</li>
+      <li>Benchmarked 8 funded competitors on funding, stage, traction, and customer wins, then built a gap and positioning analysis the team used for pitching and GTM planning.</li>
     </ul>
   </div>
 
@@ -71,45 +122,18 @@ format:
     <div class="resume-entry-header">
       <div>
         <span class="resume-role">Data Analyst Consultant</span>
-        <span class="resume-company">&middot; Thermo Fisher Scientific</span>
-        <span class="resume-type">(UCSD Rady Capstone)</span>
+        <span class="resume-company">&middot; Thermo Fisher Scientific (UCSD Rady)</span>
         <span class="resume-type">&middot; La Jolla, CA</span>
       </div>
-      <span class="resume-date">Mar &ndash; Jun 2026</span>
+      <span class="resume-date">Mar 2026 &ndash; Jun 2026</span>
     </div>
     <ul>
-      <li>Rebuilt a broken customer experience score (SHAP + supervised blending), lifting correlation with customer satisfaction from ~0.02 to +0.43 and giving CX leaders an early-warning metric to act on before churn hits.</li>
-      <li>Turned model outputs into a prioritized investment roadmap, showing that 3 of 17 KPIs (Availability, Complaint Resolution, Order Accuracy) drive two-thirds of CX impact, and redirected effort to where customers feel it.</li>
-      <li>Built a risk-flagging system that surfaced 15 at-risk segments invisible to the old method, with a 50%+ higher detractor rate, giving customer success a full quarter to intervene before survey scores confirmed the damage.</li>
-      <li>Partnered with cross-functional stakeholders across CX leadership and BI engineering to translate technical findings into data-driven recommendations for non-technical leadership to adopt.</li>
-    </ul>
-  </div>
-
-  <div class="resume-entry">
-    <div class="resume-entry-header">
-      <div>
-        <span class="resume-role">Data & Strategy Analyst</span>
-        <span class="resume-company">&middot; Hawaii Dept. of Business, Economic Development & Tourism</span>
-        <span class="resume-type">(Part-Time)</span>
-      </div>
-      <span class="resume-date">May 2024 &ndash; Jul 2025</span>
-    </div>
-    <ul>
-      <li>Built an automated Python reporting pipeline analyzing 9 years of USDA data (production, yield, pricing), replacing manual workflows and cutting stakeholder reporting turnaround by 40%.</li>
-    </ul>
-  </div>
-
-  <div class="resume-entry">
-    <div class="resume-entry-header">
-      <div>
-        <span class="resume-role">Marketing and Content Strategist</span>
-        <span class="resume-company">&middot; MirrorAI</span>
-        <span class="resume-type">(Part-Time)</span>
-      </div>
-      <span class="resume-date">Nov 2024 &ndash; Jul 2025</span>
-    </div>
-    <ul>
-      <li>Ran an A/B test on report delivery flow that showed 70% of customers preferred partial previews over a 3-minute wait, findings that drove a UX redesign and improved user satisfaction. Partnered with Engineering and Product to translate customer behavior patterns into the AI development cycle, contributing to a 30% lift in customer retention.</li>
+      <li>Initiated a diagnostic of an Isolation Forest CX score and traced its failure to 14 of 17 KPIs moving opposite to NPS, which explained why the anomaly model ranked satisfied accounts as high risk.</li>
+      <li>Developed a blended scoring model that paired TreeSHAP importance from Isolation Forest with a cross-validated ElasticNet trained on survey detractor rate, raising out-of-time correlation with NPS from +0.02 to +0.43.</li>
+      <li>Built a leak-free pipeline with a time-based train and test split (300 and 321 segment-quarters) and winsorizing, imputation, and scaling fit only on training data, keeping future quarters out of every model decision.</li>
+      <li>Tested 3 alternative model designs, including feature filtering, IF outputs as regression inputs, and KMeans cluster-then-IF, and showed none beat the supervised baseline, ruling out a simple fix to the original model.</li>
+      <li>Validated the final model with a 1,000-sample bootstrap (95% CI +0.34 to +0.51) and a blend-ratio sensitivity sweep that held correlation at +0.42 to +0.43 across a 50% to 80% range, confirming the result did not depend on one tuning choice.</li>
+      <li>Proposed keeping 70% SHAP weight after finding 74% to 79% of AR dispute values were zero in training, trading 0.05 in correlation to retain a business-critical index the pure regression model dropped to 0.2% weight.</li>
     </ul>
   </div>
 
@@ -120,7 +144,7 @@ format:
     <div class="resume-entry-header">
       <div>
         <span class="resume-role">Claude Code Job Finding Agent</span>
-        <span class="resume-company">&middot; Claude Code, Agentic AI</span>
+        <span class="resume-company">&middot; Claude Code Agentic AI</span>
       </div>
     </div>
     <ul>
@@ -131,66 +155,13 @@ format:
   <div class="resume-entry">
     <div class="resume-entry-header">
       <div>
-        <span class="resume-role">S-Mobile: Proactive Churn Management</span>
-        <span class="resume-company">&middot; Python, Scikit-learn</span>
+        <span class="resume-role">Global Wine Market Investment &amp; Sourcing Strategy (Tableau)</span>
       </div>
-      <span class="resume-date">Winter 2026</span>
+      <span class="resume-date">Winter 2025</span>
     </div>
     <ul>
-      <li>Trained weighted logistic regression and Random Forest (AUC 0.688) on 27K customers to predict churn; designed 5 retention strategies using counterfactual simulation and a 60-month CLV framework.</li>
+      <li>Built Tableau dashboard joining 130K+ wine reviews with GDP per capita and production data in Python (Polars), scoring countries into two sourcing tiers and surfacing underpriced high-quality markets via price-rating analysis.</li>
     </ul>
-  </div>
-
-  <!-- Skills -->
-  <h2 class="resume-section-title">Specialized Skills</h2>
-
-  <div class="resume-skills">
-    <div class="resume-skill-group">
-      <span class="resume-skill-label">Technical:</span>
-      Agentic AI Automation Workflows, Excel, Claude Code, Python, SQL, Tableau, Power BI, Snowflake
-    </div>
-    <div class="resume-skill-group">
-      <span class="resume-skill-label">Marketing Analytics:</span>
-      A/B Testing, Customer Segmentation, HTML, Predictive Modeling, KPI Analysis, Financial Modeling, Sensitivity & Scenario Analysis, Customer Experience (CX) Analytics, UI/UX Design, Go-to-Market Analytics
-    </div>
-    <div class="resume-skill-group">
-      <span class="resume-skill-label">Strategy & Communication:</span>
-      Competitive Analysis, Executive Reporting, Data Storytelling, Cross-Functional Collaboration
-    </div>
-  </div>
-
-  <!-- Education -->
-  <h2 class="resume-section-title">Education</h2>
-
-  <div class="resume-entry">
-    <div class="resume-entry-header">
-      <div>
-        <span class="resume-role">Master of Science in Business Analytics</span>
-        <span class="resume-company">&middot; Rady School of Management, UC San Diego</span>
-      </div>
-      <span class="resume-date">Dec 2026</span>
-    </div>
-    <p class="resume-edu-detail"><em>Focus: Customer Analytics, AI for Business, Applied ML | Uplift modeling and churn analysis</em></p>
-  </div>
-
-  <div class="resume-entry">
-    <div class="resume-entry-header">
-      <div>
-        <span class="resume-role">Master of Arts in Media, Heritage, and Integrated Product Design</span>
-        <span class="resume-company">&middot; University of Pennsylvania</span>
-      </div>
-      <span class="resume-date">May 2025</span>
-    </div>
-  </div>
-
-  <div class="resume-entry">
-    <div class="resume-entry-header">
-      <div>
-        <span class="resume-role">Bachelor of Arts in Communication</span>
-        <span class="resume-company">&middot; University of Colorado Denver</span>
-      </div>
-      <span class="resume-date">May 2023</span>
-    </div>
   </div>
 
 </div>

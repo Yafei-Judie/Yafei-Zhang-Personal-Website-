@@ -46,12 +46,12 @@ I turn messy data into decisions companies actually act on: churn models that fl
 
   <div class="now-strip">
     <span class="now-strip-dot"></span>
-    <span><strong>Right now:</strong> wrapping up a Merchandising Analyst internship at PlanetArt and finishing my MSBA capstone at UC San Diego (Dec 2026 grad), open to full-time analyst and PM roles.</span>
+    <span><strong>Right now:</strong> finishing my MSBA at UC San Diego (Dec 2026 grad) after a Merchandise Analyst internship at PlanetArt, open to full-time analyst and PM roles.</span>
   </div>
 
   <div class="about-stats">
     <div class="about-stat">
-      <span class="about-stat-num">5</span>
+      <span class="about-stat-num">3</span>
       <span class="about-stat-label">Analytics &amp; Strategy Roles</span>
     </div>
     <div class="about-stat">
@@ -88,79 +88,6 @@ I turn messy data into decisions companies actually act on: churn models that fl
     real work is in figuring out what is worth building, and then proving
     that it earned its place.
   </p>
-</section>
-
-<!-- ═══════════════════════ TRAJECTORY ═══════════════════════ -->
-<section id="trajectory" class="home-section reveal">
-  <h2 class="art-section-label home-section-label">Trajectory</h2>
-  <div class="trajectory-scroll">
-  <div class="trajectory-track">
-    <div class="trajectory-item">
-      <span class="trajectory-dot"></span>
-      <div class="trajectory-card">
-        <span class="trajectory-date">May 2023</span>
-        <span class="trajectory-role">BA, Communication</span>
-        <span class="trajectory-org">Univ. of Colorado Denver</span>
-      </div>
-    </div>
-    <div class="trajectory-item">
-      <span class="trajectory-dot"></span>
-      <div class="trajectory-card">
-        <span class="trajectory-date">May 2024 &ndash; Jul 2025</span>
-        <span class="trajectory-role">Data &amp; Strategy Analyst</span>
-        <span class="trajectory-org">Hawaii DBET</span>
-      </div>
-    </div>
-    <div class="trajectory-item">
-      <span class="trajectory-dot"></span>
-      <div class="trajectory-card">
-        <span class="trajectory-date">Nov 2024 &ndash; Jul 2025</span>
-        <span class="trajectory-role">Marketing &amp; Content Strategist</span>
-        <span class="trajectory-org">MirrorAI</span>
-      </div>
-    </div>
-    <div class="trajectory-item">
-      <span class="trajectory-dot"></span>
-      <div class="trajectory-card">
-        <span class="trajectory-date">May 2025</span>
-        <span class="trajectory-role">MA, Media, Heritage &amp; Product Design</span>
-        <span class="trajectory-org">University of Pennsylvania</span>
-      </div>
-    </div>
-    <div class="trajectory-item">
-      <span class="trajectory-dot"></span>
-      <div class="trajectory-card">
-        <span class="trajectory-date">Feb 2026 &ndash; Present</span>
-        <span class="trajectory-role">Data Marketing Analyst</span>
-        <span class="trajectory-org">Levra Labs</span>
-      </div>
-    </div>
-    <div class="trajectory-item">
-      <span class="trajectory-dot"></span>
-      <div class="trajectory-card">
-        <span class="trajectory-date">Spring 2026</span>
-        <span class="trajectory-role">CX Score Framework</span>
-        <span class="trajectory-org">Thermo Fisher Scientific Client</span>
-      </div>
-    </div>
-    <div class="trajectory-item">
-      <span class="trajectory-dot"></span>
-      <div class="trajectory-card">
-        <span class="trajectory-date">Jun 2026 &ndash; Present</span>
-        <span class="trajectory-role">Merchandise Analyst (Intern)</span>
-        <span class="trajectory-org">PlanetArt</span>
-      </div>
-    </div>
-    <div class="trajectory-item">
-      <span class="trajectory-dot"></span>
-      <div class="trajectory-card">
-        <span class="trajectory-date">Dec 2026 (expected)</span>
-        <span class="trajectory-role">MSBA</span>
-        <span class="trajectory-org">Rady School of Management, UC San Diego</span>
-      </div>
-    </div>
-  </div>
-  </div>
 </section>
 
 <!-- ═══════════════════════ SKILLS ═══════════════════════ -->
@@ -481,7 +408,7 @@ function sendContactEmail(event) {
     "KPI Design & Performance Tracking": [{ title: "Inventory Policy Under Supply Uncertainty", href: "projects/project5/index.html" }],
     "Customer Lifecycle Analysis": [{ title: "S-Mobile: Proactive Churn Management (CLV framework)", href: "projects/project1/index.html" }],
     "Revenue & Profitability Analysis": [{ title: "S-Mobile: Proactive Churn Management ($105M impact)", href: "projects/project1/index.html" }],
-    "Pipeline Performance Tracking": [{ title: "Resume: Levra Labs investor metrics workbook (MRR, ARR, LTV:CAC)", href: "cv.html" }],
+    "Pipeline Performance Tracking": [{ title: "Resume: Levra Labs outreach automation (222 verified leads, ~520 hours a year saved)", href: "cv.html" }],
     "Process Optimization": [
       { title: "Multi-Source ETL Pipeline for Spend Analysis", href: "projects/project7/index.html" },
       { title: "Resume: PlanetArt (8-step COGS workflow cut to 2 steps)", href: "cv.html" }
@@ -501,12 +428,12 @@ function sendContactEmail(event) {
     ],
     "Tableau": [{ title: "Global Wine Market Sourcing Strategy", href: "projects/project2/index.html" }],
     "Power BI": "Part of my toolkit from coursework; not yet in a published case study on this site.",
-    "Excel (Advanced)": [{ title: "Resume: Levra Labs investor metrics workbook & PlanetArt pricing model", href: "cv.html" }],
+    "Excel (Advanced)": [{ title: "Resume: PlanetArt pricing model (margin, break-even, ROAS)", href: "cv.html" }],
     "Snowflake": [{ title: "Multi-Source ETL Pipeline for Spend Analysis", href: "projects/project7/index.html" }],
     "Rhino3D": [{ title: "More About Me: Product Design coursework at UPenn", href: "more-about-me.html" }],
     "AI-Assisted Workflow": [{ title: "Resume: PlanetArt AI product-matching tool", href: "cv.html" }],
     "Technical-to-Business Communication": [{ title: "E-Commerce Customer Journey (PRD & stakeholder-facing writing)", href: "projects/project8/index.html" }],
-    "Cross-Functional Communication": [{ title: "Resume: MirrorAI (partnered with Engineering & Product)", href: "cv.html" }],
+    "Cross-Functional Communication": [{ title: "Resume: PlanetArt & Levra Labs (worked with the developer team)", href: "cv.html" }],
     "Slide Deck Development": "Used constantly in client and internship work; not yet packaged into a public deck on this site."
   };
 
